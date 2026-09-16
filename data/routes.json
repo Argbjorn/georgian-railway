@@ -2208,13 +2208,11 @@
       },
       "analogue": [
          803,
-         805,
          807
       ],
       "reverse": [
          802,
          804,
-         806,
          808
       ]
    },
@@ -2284,13 +2282,11 @@
       },
       "analogue": [
          804,
-         806,
          808
       ],
       "reverse": [
          801,
          803,
-         805,
          807
       ]
    },
@@ -2360,13 +2356,11 @@
       },
       "analogue": [
          801,
-         805,
          807
       ],
       "reverse": [
          802,
          804,
-         806,
          808
       ]
    },
@@ -2436,165 +2430,11 @@
       },
       "analogue": [
          802,
-         806,
          808
       ],
       "reverse": [
          801,
          803,
-         805,
-         807
-      ]
-   },
-   {
-      "id": 17890099,
-      "ref": 805,
-      "name:ka": "ბათუმი → თბილისი",
-      "name:en": "Batumi → Tbilisi",
-      "name:ru": "Батуми → Тбилиси",
-      "active": true,
-      "frequency": "daily",
-      "start_date": null,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "batumicentral",
-            "role": "start",
-            "departure_time": "14:10",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "14:29",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "14:49",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "15:38",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "tbilisicentralstation",
-            "role": "end",
-            "departure_time": "18:13",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:03",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         801,
-         803,
-         807
-      ],
-      "reverse": [
-         802,
-         804,
-         806,
-         808
-      ]
-   },
-   {
-      "id": 17890097,
-      "ref": 806,
-      "name:ka": "თბილისი → ბათუმი",
-      "name:en": "Tbilisi → Batumi",
-      "name:ru": "Тбилиси → Батуми",
-      "active": true,
-      "frequency": "daily",
-      "start_date": null,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "tbilisicentralstation",
-            "role": "start",
-            "departure_time": "06:30",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "09:05",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "09:53",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "10:13",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "batumicentral",
-            "role": "end",
-            "departure_time": "10:31",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:01",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         802,
-         804,
-         808
-      ],
-      "reverse": [
-         801,
-         803,
-         805,
          807
       ]
    },
@@ -2664,13 +2504,11 @@
       },
       "analogue": [
          801,
-         803,
-         805
+         803
       ],
       "reverse": [
          802,
          804,
-         806,
          808
       ]
    },
@@ -2740,13 +2578,11 @@
       },
       "analogue": [
          802,
-         804,
-         806
+         804
       ],
       "reverse": [
          801,
          803,
-         805,
          807
       ]
    },
