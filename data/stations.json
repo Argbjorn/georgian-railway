@@ -351,8 +351,8 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "06:03",
-               "departure_time": "06:06",
+               "arrival_time": "05:43",
+               "departure_time": "05:46",
                "stop_time": 3
             },
             {
@@ -363,8 +363,8 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "22:16",
-               "departure_time": "22:18",
+               "arrival_time": "21:46",
+               "departure_time": "21:48",
                "stop_time": 2
             }
          ]
@@ -466,8 +466,8 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "23:40",
-               "departure_time": "00:40",
+               "arrival_time": "23:20",
+               "departure_time": "00:20",
                "stop_time": 60
             },
             {
@@ -478,8 +478,8 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "03:24",
-               "departure_time": "04:15",
+               "arrival_time": "02:54",
+               "departure_time": "03:45",
                "stop_time": 51
             }
          ]
@@ -2031,8 +2031,8 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "03:50",
-               "departure_time": "04:10",
+               "arrival_time": "03:30",
+               "departure_time": "03:50",
                "stop_time": 20
             },
             {
@@ -2043,8 +2043,8 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "23:59",
-               "departure_time": "00:13",
+               "arrival_time": "23:29",
+               "departure_time": "23:43",
                "stop_time": 14
             }
          ]
@@ -5014,9 +5014,9 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "22:10",
-               "departure_time": "23:15",
-               "stop_time": 65
+               "arrival_time": "21:55",
+               "departure_time": "22:55",
+               "stop_time": 60
             },
             {
                "ref": 372,
@@ -5026,8 +5026,8 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "04:40",
-               "departure_time": "05:40",
+               "arrival_time": "04:10",
+               "departure_time": "05:10",
                "stop_time": 60
             }
          ]
@@ -5641,7 +5641,7 @@
                "start_date": 1790985600000,
                "end_date": 1812844800000,
                "arrival_time": "-",
-               "departure_time": "20:20",
+               "departure_time": "20:00",
                "stop_time": null
             },
             {
@@ -5786,7 +5786,7 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "07:35",
+               "arrival_time": "07:05",
                "departure_time": "-",
                "stop_time": null
             },
@@ -6242,8 +6242,8 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "02:20",
-               "departure_time": "02:25",
+               "arrival_time": "02:00",
+               "departure_time": "02:05",
                "stop_time": 5
             },
             {
@@ -6254,8 +6254,8 @@
                "frequency": "every second day",
                "start_date": 1790899200000,
                "end_date": 1812758400000,
-               "arrival_time": "01:33",
-               "departure_time": "01:38",
+               "arrival_time": "01:03",
+               "departure_time": "01:08",
                "stop_time": 5
             }
          ]
@@ -6371,7 +6371,7 @@
                "start_date": 1790899200000,
                "end_date": 1812758400000,
                "arrival_time": "-",
-               "departure_time": "21:30",
+               "departure_time": "21:00",
                "stop_time": null
             }
          ],
@@ -6384,7 +6384,7 @@
                "frequency": "every second day",
                "start_date": 1790985600000,
                "end_date": 1812844800000,
-               "arrival_time": "06:55",
+               "arrival_time": "06:35",
                "departure_time": "-",
                "stop_time": null
             }

@@ -524,50 +524,50 @@
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "departure_time": "20:20",
+            "departure_time": "20:00",
             "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "sadakhlo",
             "role": "middle",
-            "departure_time": "23:15",
-            "arrival_time": "22:10",
-            "stop_time": 65
+            "departure_time": "22:55",
+            "arrival_time": "21:55",
+            "stop_time": 60
          },
          {
             "code": "ayrum",
             "role": "middle",
-            "departure_time": "00:40",
-            "arrival_time": "23:40",
+            "departure_time": "00:20",
+            "arrival_time": "23:20",
             "stop_time": 60
          },
          {
             "code": "vanadzor",
             "role": "middle",
-            "departure_time": "02:25",
-            "arrival_time": "02:20",
+            "departure_time": "02:05",
+            "arrival_time": "02:00",
             "stop_time": 5
          },
          {
             "code": "gyumri",
             "role": "middle",
-            "departure_time": "04:10",
-            "arrival_time": "03:50",
+            "departure_time": "03:50",
+            "arrival_time": "03:30",
             "stop_time": 20
          },
          {
             "code": "armavir",
             "role": "middle",
-            "departure_time": "06:06",
-            "arrival_time": "06:03",
+            "departure_time": "05:46",
+            "arrival_time": "05:43",
             "stop_time": 3
          },
          {
             "code": "yerevan",
             "role": "end",
             "departure_time": "-",
-            "arrival_time": "06:55",
+            "arrival_time": "06:35",
             "stop_time": null
          }
       ],
@@ -604,57 +604,59 @@
          {
             "code": "yerevan",
             "role": "start",
-            "departure_time": "21:30",
+            "departure_time": "21:00",
             "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "armavir",
             "role": "middle",
-            "departure_time": "22:18",
-            "arrival_time": "22:16",
+            "departure_time": "21:48",
+            "arrival_time": "21:46",
             "stop_time": 2
          },
          {
             "code": "gyumri",
             "role": "middle",
-            "departure_time": "00:13",
-            "arrival_time": "23:59",
+            "departure_time": "23:43",
+            "arrival_time": "23:29",
             "stop_time": 14
          },
          {
             "code": "vanadzor",
             "role": "middle",
-            "departure_time": "01:38",
-            "arrival_time": "01:33",
+            "departure_time": "01:08",
+            "arrival_time": "01:03",
             "stop_time": 5
          },
          {
             "code": "ayrum",
             "role": "middle",
-            "departure_time": "04:15",
-            "arrival_time": "03:24",
+            "departure_time": "03:45",
+            "arrival_time": "02:54",
             "stop_time": 51
          },
          {
             "code": "sadakhlo",
             "role": "middle",
-            "departure_time": "05:40",
-            "arrival_time": "04:40",
+            "departure_time": "05:10",
+            "arrival_time": "04:10",
             "stop_time": 60
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
             "departure_time": "-",
-            "arrival_time": "07:35",
+            "arrival_time": "07:05",
             "stop_time": null
          }
       ],
       "travel_time": "10:05",
       "price": null,
       "analogue": [],
-      "reverse": []
+      "reverse": [
+         371
+      ]
    },
    {
       "id": 15689521,
