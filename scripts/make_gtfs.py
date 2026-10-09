@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from config import ROUTES_JSON_PATH, STATIONS_JSON_PATH, DIRECTIONS_CONTENT_DIR, GTFS_BUILD_DIR
-from gtfs import agency, calendar, calendar_dates, routes as gtfs_routes, stop_times, stops, trips
+from gtfs import agency, calendar, calendar_dates, feed_info, routes as gtfs_routes, stop_times, stops, trips
 from gtfs.services import feed_window, split_by_service, unique_services
 from gtfs.source import load_direction_pages, load_json, select_routes
 from gtfs.writer import write_table
@@ -32,13 +32,20 @@ def make_gtfs(output_dir=GTFS_BUILD_DIR, today=None):
         (calendar, calendar.build_calendar(services)),
         (calendar_dates, calendar_dates.build_calendar_dates(services)),
     ]
+    written = []
     for table, rows in tables:
         path = os.path.join(output_dir, table.FILE_NAME)
         if rows:
             write_table(path, table.FIELDS, rows, table.REQUIRED_FIELDS)
+            written.append(path)
         elif os.path.exists(path):
             # An empty optional table is omitted rather than written as a header-only file
             os.remove(path)
+
+    # Written last: its version is a hash of the other files
+    version = feed_info.feed_version(window, written)
+    write_table(os.path.join(output_dir, feed_info.FILE_NAME), feed_info.FIELDS,
+                feed_info.build_feed_info(window, version), feed_info.REQUIRED_FIELDS)
 
     print(f'GTFS feed for {window.start}..{window.end} written to {output_dir}')
 

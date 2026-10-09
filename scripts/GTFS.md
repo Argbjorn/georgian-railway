@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы: `agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -255,9 +255,9 @@
 
 # Рекомендуемые файлы
 
-## 8. feed_info.txt
+## 8. feed_info.txt ✅ реализовано
 
-Формально «Recommended», но **становится обязательным**, как только есть `translations.txt` (а он у нас будет).
+Формально «Recommended», но **становится обязательным**, как только есть `translations.txt` (а он у нас будет). Константы — в `gtfs/config.py`. Пишется последним в `make_gtfs.py`: `feed_version` — хэш остальных файлов.
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
@@ -265,11 +265,11 @@
 | `feed_publisher_url` | **Обязательно** | `https://georailway.com` | 📌 |
 | `feed_lang` | **Обязательно** | `en` — основные тексты (`stop_name` и т. д.) на английском, `ka`/`ru` — переводы | 📌 |
 | `default_lang` | Опционально | `en` | 📌 |
-| `feed_start_date` | Рекомендуется | `W_start` | 🔧 |
-| `feed_end_date` | Рекомендуется | `W_end` | 🔧 |
-| `feed_version` | Рекомендуется | Хэш содержимого (первые 8 символов sha256 от всех txt без `feed_info`) + дата: `20261008-3fa9c1d2`. С хэшем версия не меняется, если данные не менялись. Но окно сдвигается каждый день, так что на практике меняется при каждой сборке. Простая альтернатива — `YYYYMMDD` сборки | 🔧 |
-| `feed_contact_email` | Опционально | ➕ Контактный email проекта (решить, какой публиковать) | ➕ |
-| `feed_contact_url` | Опционально | `https://github.com/Argbjorn/georgian-railway/issues` (если репо публичный) или страница About сайта | 📌 |
+| `feed_start_date` | Рекомендуется | `W_start` (дата сборки) | 🔧 |
+| `feed_end_date` | Рекомендуется | `W_end` (дата сборки + 6 мес) | 🔧 |
+| `feed_version` | Рекомендуется | `<дата сборки>-<первые 8 символов sha256>` от имён и содержимого всех остальных записанных файлов фида: `20261009-0f956de3`. Повторная сборка с теми же данными в тот же день даёт ту же версию; на следующий день меняется и дата, и (из-за сдвига окна) хэш | 🔧 |
+| `feed_contact_email` | Опционально | `geo.railways.help@gmail.com` | 📌 |
+| `feed_contact_url` | Опционально | `https://georailway.com/about/` | 📌 |
 
 ## 9. shapes.txt
 
@@ -364,7 +364,6 @@
 | Праздничные даты | конфиг генератора | Исключения для `on workdays` |
 | Доступность для колясок, велосипеды | по `train_type` в конфиге или колонки | `wheelchair_accessible`, `bikes_allowed`, `wheelchair_boarding` |
 | `block` | лист `routes` | `block_id` (оборот составов) |
-| Контакт проекта | конфиг | `feed_contact_*` |
 
 # Открытые вопросы
 

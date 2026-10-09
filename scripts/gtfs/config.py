@@ -8,6 +8,12 @@ FEED_UTC_OFFSET_HOURS = 4
 FEED_HORIZON_MONTHS = 6
 
 SITE_URL = 'https://georailway.com'
+
+# feed_info.txt: the feed is published by the site, not by the railways.
+FEED_PUBLISHER_NAME = 'Georgian Railway Map'
+FEED_LANG = 'en'
+FEED_CONTACT_EMAIL = 'geo.railways.help@gmail.com'
+FEED_CONTACT_URL = f'{SITE_URL}/about/'
 # Site URL prefix per language; English pages live at the site root.
 LANG_URL_PREFIX = {'en': '', 'ka': '/ka', 'ru': '/ru'}
 
