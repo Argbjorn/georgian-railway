@@ -112,10 +112,18 @@ class TestCalendar:
         assert calendar.build_calendar(svc) == [
             {'service_id': 'daily', 'monday': 1, 'tuesday': 1, 'wednesday': 1, 'thursday': 1,
              'friday': 1, 'saturday': 1, 'sunday': 1, 'start_date': '20261009', 'end_date': '20270409'},
+            {'service_id': 'odd', 'monday': 0, 'tuesday': 0, 'wednesday': 0, 'thursday': 0,
+             'friday': 0, 'saturday': 0, 'sunday': 0, 'start_date': '20261009', 'end_date': '20270409'},
             {'service_id': 'workdays_20261101_open', 'monday': 1, 'tuesday': 1, 'wednesday': 1,
              'thursday': 1, 'friday': 1, 'saturday': 0, 'sunday': 0,
              'start_date': '20261101', 'end_date': '20270409'},
         ]
+
+    def test_dated_service_range_is_clipped_like_its_dates(self):
+        [service] = services.unique_services(
+            [train(1, 'every second day', start=date(2026, 11, 1), end=date(2026, 11, 30))], WINDOW)
+        [row] = calendar.build_calendar([service])
+        assert (row['start_date'], row['end_date']) == ('20261101', '20261130')
 
 
 class TestCalendarDates:

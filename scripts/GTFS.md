@@ -210,15 +210,17 @@
 
 ## 6. calendar.txt ✅ реализовано
 
-Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: `calendar.txt` — для недельных шаблонов (`daily`, `workdays`), `calendar_dates.txt` — для `esd`, `odd`, `even`. Логика дат — `gtfs/services.py`.
+Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: в `calendar.txt` — строка на **каждый** сервис (недельный шаблон и диапазон дат), в `calendar_dates.txt` — конкретные даты `esd`, `odd`, `even`. Логика дат — `gtfs/services.py`.
+
+Сервисы без недельного шаблона (`esd`, `odd`, `even`) тоже получают строку в `calendar.txt` — со всеми днями недели `0` и диапазоном дат; сами даты добавляются через `calendar_dates.txt`. По спецификации строка не обязательна, но некоторые потребители берут диапазон сервиса только из `calendar.txt`: без неё gtfs-to-html пишет «No regular service days» и не показывает список дат.
 
 Окно: `W_start = дата сборки (Тбилиси)`, `W_end = W_start + 6 мес` (включительно; день месяца ограничивается длиной месяца: 31 августа + 6 мес = 28 февраля).
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
 | `service_id` | **Обязательно** | См. trips. Одна строка на `service_id` | 🔧 |
-| `monday` … `friday` | **Обязательно** | `daily` → `1`; `on workdays` → `1`; `every second day`, `on odd days`, `on even days` → строку в `calendar.txt` не создаём (§7) | ✅ |
-| `saturday`, `sunday` | **Обязательно** | `daily` → `1`; `on workdays` → `0` | ✅ |
+| `monday` … `friday` | **Обязательно** | `daily` → `1`; `on workdays` → `1`; `every second day`, `on odd days`, `on even days` → `0` (даты — в §7) | ✅ |
+| `saturday`, `sunday` | **Обязательно** | `daily` → `1`; `on workdays`, `every second day`, `on odd days`, `on even days` → `0` | ✅ |
 | `start_date` | **Обязательно** | `max(route.start_date, W_start)`, `YYYYMMDD` | ✅ 🔧 |
 | `end_date` | **Обязательно** | `min(route.end_date, W_end)`. `end_date` в Sheets — последний день движения включительно, как и в GTFS, поэтому без сдвига | ✅ 🔧 |
 
