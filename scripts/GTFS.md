@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — `agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы: `agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -32,7 +32,8 @@
 
 - Только маршруты с `active=true` и непустым `stations`.
 - **Upcoming-маршруты (`start_date` в будущем) включаются.** В отличие от сайта, в GTFS они нужны: сервис просто начинается с `start_date`.
-- Маршрут исключается, если в окне `[сегодня; сегодня + 6 мес]` у него нет ни одного дня движения: например, `end_date` в прошлом. Иначе валидатор ругается на пустой сервис.
+- Поезд исключается из всего фида, если в окне `[сегодня; сегодня + 6 мес]` у него нет ни одного дня движения: например, `end_date` в прошлом или `on workdays` с диапазоном только на выходные (`services.split_by_service`; исключённые номера печатаются в лог). Иначе валидатор ругается на пустой сервис.
+- «Сегодня» — дата по тбилисскому времени (фиксированное смещение UTC+4 `FEED_UTC_OFFSET_HOURS`, без `zoneinfo`: на Windows ему нужен пакет `tzdata`). Окно — `services.feed_window()`, длина — `FEED_HORIZON_MONTHS`.
 - Станции — только те, на которые ссылается хотя бы один включённый trip.
 
 ### 0.2. Группировка маршрутов (routes)
@@ -90,7 +91,7 @@
   - `config.py` — константы: агентства, `SITE_URL`, `LANG_URL_PREFIX`, `STOP_TIMEZONES`;
   - `source.py` — загрузка данных, отбор маршрутов, поиск страниц направлений сайта;
   - `writer.py` — запись CSV (пустые опциональные колонки опускаются);
-  - `ids.py` — `stop_id`; `text.py` — HTML → текст; `services.py` — `service_id` и даты сервисов (общий для `trips`, `calendar`, `calendar_dates`);
+  - `ids.py` — `stop_id`; `text.py` — HTML → текст; `services.py` — окно фида, `service_id`, даты сервисов, отсев поездов без дней движения (общий для `trips`, `calendar`, `calendar_dates`);
   - по модулю на каждый GTFS-файл (`agency.py`, `stops.py`, `routes.py`, …) с `FILE_NAME`, `FIELDS` (порядок спецификации), `REQUIRED_FIELDS` и функцией `build_*`. `routes.py` также содержит группировку поездов в линии (`group_lines`, `Line`) — она понадобится и для `trips.txt`.
 - Тесты — `scripts/tests/test_gtfs_*.py`. `scripts/tests/conftest.py` добавляет `scripts/` в **конец** `sys.path`: в тестах `import utils` должен оставаться `tests/utils.py`, поэтому пакет `gtfs` не должен импортировать `scripts/utils`.
 
@@ -207,26 +208,38 @@
 
 **Тест-сверка:** длительность каждой поездки (последнее прибытие − первое отправление) совпадает с `travel_time`, который `make_routes_files` считает независимо.
 
-## 6. calendar.txt
+## 6. calendar.txt ✅ реализовано
 
-Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: `calendar.txt` — для недельных шаблонов, `calendar_dates.txt` — для «через день» и исключений.
+Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: `calendar.txt` — для недельных шаблонов (`daily`, `workdays`), `calendar_dates.txt` — для `esd`, `odd`, `even`. Логика дат — `gtfs/services.py`.
 
-Окно: `W_start = дата сборки`, `W_end = W_start + 6 мес`.
+Окно: `W_start = дата сборки (Тбилиси)`, `W_end = W_start + 6 мес` (включительно; день месяца ограничивается длиной месяца: 31 августа + 6 мес = 28 февраля).
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `service_id` | **Обязательно** | См. trips | 🔧 |
+| `service_id` | **Обязательно** | См. trips. Одна строка на `service_id` | 🔧 |
 | `monday` … `friday` | **Обязательно** | `daily` → `1`; `on workdays` → `1`; `every second day`, `on odd days`, `on even days` → строку в `calendar.txt` не создаём (§7) | ✅ |
 | `saturday`, `sunday` | **Обязательно** | `daily` → `1`; `on workdays` → `0` | ✅ |
 | `start_date` | **Обязательно** | `max(route.start_date, W_start)`, `YYYYMMDD` | ✅ 🔧 |
 | `end_date` | **Обязательно** | `min(route.end_date, W_end)`. `end_date` в Sheets — последний день движения включительно, как и в GTFS, поэтому без сдвига | ✅ 🔧 |
 
-Праздники для `on workdays`: в данных нет. ➕ Список праздничных дат Грузии в конфиге → `calendar_dates` с `exception_type=2` для сервиса `workdays` (если поезда в праздники действительно не ходят).
+Праздники для `on workdays`: в данных нет. ➕ Список праздничных дат Грузии в конфиге → `calendar_dates` с `exception_type=2` для сервиса `workdays` (если поезда в праздники действительно не ходят). Сейчас активных поездов `on workdays` нет.
 
-## 7. calendar_dates.txt
+## 7. calendar_dates.txt ✅ реализовано
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
+| `service_id` | **Обязательно** | См. trips | 🔧 |
+| `date` | **Обязательно** | `YYYYMMDD` | 🔧 |
+| `exception_type` | **Обязательно** | `1` — день добавлен (сейчас только он), `2` — день удалён | 🔧 |
+
+Что генерируем — только строки `exception_type=1` для каждого дня движения в пределах `[max(start_date, W_start); min(end_date, W_end)]`:
+- **`every second day` (`esd_*`):** дни, отстоящие от `start_date` на чётное число дней. Чётность всегда считается от `start_date`, а не от `W_start`. Совпадает с логикой JS в `layouts/partials/esd_calendar.html` (шаг 2 дня от `start_date`).
+- **`on odd days` / `on even days` (`odd_*` / `even_*`):** дни с нечётным / чётным числом месяца. Это не то же самое, что «через день»: 31-е и 1-е — оба нечётные, идут подряд.
+- ➕ **Исключения:** колонки в Sheets, например `cancelled_dates` / `extra_dates` (список дат) → `2` / `1`. Подходит для разовых отмен и праздников. Не реализовано.
+
+Пустая таблица (например, не осталось сервисов без недельного шаблона) не пишется вовсе, а старый файл удаляется: файл только с заголовком — предупреждение валидатора.
+
+---|---|---|---|
 | `service_id` | **Обязательно** | См. trips | 🔧 |
 | `date` | **Обязательно** | `YYYYMMDD` | 🔧 |
 | `exception_type` | **Обязательно** | `1` — день добавлен, `2` — день удалён | 🔧 |

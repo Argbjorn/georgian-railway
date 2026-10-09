@@ -2,6 +2,10 @@
 # Armenia are all UTC+4 without DST, so Asia/Tbilisi is used for every agency; the real time zones
 # of foreign stations are expressed via stops.stop_timezone.
 FEED_TIMEZONE = 'Asia/Tbilisi'
+# Fixed offset of FEED_TIMEZONE (no DST), used to get "today" without tzdata on Windows.
+FEED_UTC_OFFSET_HOURS = 4
+# The feed covers service from the build date for this many months.
+FEED_HORIZON_MONTHS = 6
 
 SITE_URL = 'https://georailway.com'
 # Site URL prefix per language; English pages live at the site root.
