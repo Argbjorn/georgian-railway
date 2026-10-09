@@ -59,6 +59,9 @@ ROUTE_SCHEMA = {
                 {"type": "null"}
         ]
     },
+    "operator": {
+      "type": ["string", "null"]
+    },
     "has_arrival_time": {
       "type": "boolean"
     },
@@ -231,6 +234,13 @@ class TestDataRoutesFile:
             if route['has_arrival_time'] == True:
                 for station in route['stations'][1:]:
                     assert station['arrival_time'] is not None and station['arrival_time'] != "-", f"У маршрута {route['ref']} (id: {route['id']}) нет arrival_time для станции {station['code']}"
+
+    def test_active_routes_have_known_operator(self, routes_data):
+        """Checks that every active route has an operator listed in the GTFS agencies config"""
+        from gtfs.config import AGENCIES
+        for route in routes_data:
+            if route.get('active'):
+                assert route.get('operator') in AGENCIES, f"Маршрут {route['ref']} (id: {route['id']}): неизвестный operator {route.get('operator')!r}"
 
     def test_routes_are_unique(self, routes_data):
         """Проверяет, что маршруты уникальны по ref"""

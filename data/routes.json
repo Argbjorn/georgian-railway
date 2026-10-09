@@ -14,6 +14,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was canceled in 2025. Now there is no direct railway connection between Kutaisi and Tbilisi. But there are several alternatives.<br>The easiest way to get to Tbilisi is from the station <a href=\"/en/stations/kutaisiinternationalairport/\">Kutaisi International Airport</a>. Although it is located 20 km from the city, many minibuses and the airport shuttle go in that direction.<br>Another option is the commuter train from the central station <a href=\"/en/stations/kutaisi1/\">Kutaisi-1</a>, which goes to <a href=\"/en/stations/rioni/\">Rioni</a>, where you can immediately transfer to the train <a href=\"/en/routes/853/\">Ozurgeti → Tbilisi</a>. This train runs every other day, detailed information is available on the train's page.",
       "description_ru": "Этот поезд был отменен в 2025 году. Теперь прямого железнодорожного сообщения между Кутаиси и Тбилиси нет. Но есть несколько альтернатив.<br>Проще всего добраться до Тбилиси со станции <a href=\"/ru/stations/kutaisiinternationalairport/\">Международный аэропорт Кутаиси</a>. Хотя она находится в 20 км от города, в ее сторону отправляется множество маршруток и шаттл аэропорта.<br>Еще один вариант: электричка с центральной станции <a href=\"/ru/stations/kutaisi1/\">Кутаиси-1</a>, которая идет до <a href=\"/ru/stations/rioni/\">Риони</a>, где можно сразу же пересесть на поезд <a href=\"/ru/routes/853/\">Озургети → Тбилиси</a>. Ходит этот поезд через день, подробная информация есть на странице поезда.",
@@ -40,6 +41,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was canceled in 2025. Now there is no direct railway connection between Tbilisi and Kutaisi. But there is an alternative.<br>The easiest way is to get to the station <a href=\"/en/stations/kutaisiinternationalairport/\">Kutaisi International Airport</a>. Although it is located 20 km from the city, many minibuses and the airport shuttle go towards Kutaisi.",
       "description_ru": "Этот поезд был отменен в 2025 году. Теперь прямого железнодорожного сообщения между Тбилиси и Кутаиси нет. Но есть альтернатива.<br>Проще всего добраться до станции <a href=\"/ru/stations/kutaisiinternationalairport/\">Международный аэропорт Кутаиси</a>. Хотя она находится в 20 км от города, в сторону Кутаиси отправляется множество маршруток и шаттл аэропорта.",
@@ -66,6 +68,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
       "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
@@ -153,6 +156,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
       "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
@@ -231,7 +235,7 @@
       "name:ka": "ბათუმი → ერევანი",
       "name:en": "Batumi → Yerevan",
       "name:ru": "Батуми → Ереван",
-      "active": true,
+      "active": false,
       "frequency": "every second day",
       "start_date": 1781481600000,
       "end_date": 1790726400000,
@@ -240,6 +244,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This train is the summer version of <a href=\"/routes/371/\">train #371 Tbilisi – Yerevan</a>. In 2026, it runs from June 15 to September 29. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online, but they can be bought at station ticket offices. Platzkart, coupe, and SV (first class sleeper) are available.",
       "description_ru": "Этот поезд - летняя версия поезда <a href=\"/ru/routes/371/\">№371 Тбилиси - Ереван</a>. В 2026 году он ходит с 15 июня по 29 сентября. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ.",
@@ -361,12 +366,9 @@
             "stop_time": null
          }
       ],
-      "travel_time": "18:04",
       "price": null,
       "analogue": [],
-      "reverse": [
-         202
-      ]
+      "reverse": []
    },
    {
       "id": 19197562,
@@ -374,7 +376,7 @@
       "name:ka": "ერევანი → ბათუმი",
       "name:en": "Yerevan → Batumi",
       "name:ru": "Ереван → Батуми",
-      "active": true,
+      "active": false,
       "frequency": "every second day",
       "start_date": 1781395200000,
       "end_date": 1790726400000,
@@ -383,6 +385,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This train is the summer version of <a href=\"/routes/372/\">train #372 Yerevan – Tbilisi</a>. In 2026, it runs from June 14 to September 30. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online, but they can be bought at station ticket offices. Platzkart, coupe, and SV (first class sleeper) are available.",
       "description_ru": "Этот поезд - летняя версия поезда <a href=\"/ru/routes/372/\">№372 Ереван - Тбилиси</a>. В 2026 году он ходит с 14 июня по 30 сентября. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ.",
@@ -497,12 +500,9 @@
             "stop_time": null
          }
       ],
-      "travel_time": "17:34",
       "price": null,
       "analogue": [],
-      "reverse": [
-         201
-      ]
+      "reverse": []
    },
    {
       "id": 15664273,
@@ -510,19 +510,20 @@
       "name:ka": "თბილისი → ერევანი",
       "name:en": "Tbilisi → Yerevan",
       "name:ru": "Тбилиси → Ереван",
-      "active": false,
-      "frequency": "every second day",
-      "start_date": 1779321600000,
-      "end_date": 1781308800000,
+      "active": true,
+      "frequency": "on odd days",
+      "start_date": 1790985600000,
+      "end_date": 1812844800000,
       "complete": true,
       "online": false,
       "online_tickets_current_site": true,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "SCR",
       "has_arrival_time": true,
-      "description_en": "This season, the train runs from October 2, 2025 to June 13, 2026. In summer, its route is <a href=\"/routes/201/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available. Prices for <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_eng_5.pdf\" target=\"_blank\">May</a>.",
-      "description_ru": "В этом сезоне поезд ходит со 2 октября 2025 года по 13 июня 2026 года. Летом его маршрут <a href=\"/ru/routes/201/\">продлевается до Батуми</a>. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ. Цены на <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_rus_5.pdf\" target=\"_blank\">май</a>.",
-      "description_ka": "ამ სეზონში მატარებელი მოძრაობს 2025 წლის 2 ოქტომბრიდან 2026 წლის 13 ივნისამდე. ზაფხულში მისი მარშრუტი <a href=\"/ka/routes/201/\">გრძელდება ბათუმამდე</a>. ბილეთების შეძენა შესაძლებელია ონლაინ სამხრეთ კავკასიის რკინიგზის ვებსაიტზე ქვემოთ მოცემული ბმულის საშუალებით. საქართველოს რკინიგზა ამ მატარებელზე ბილეთებს ონლაინ არ ყიდის, თუმცა მათი შეძენა შესაძლებელია სადგურების სალაროებში. ხელმისაწვდომია პლაცკარტი, კუპე და SV. ფასები <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_eng_5.pdf\" target=\"_blank\">მაისისთვის</a>.",
+      "description_en": "This season, the train runs from October 2, 2026 to June 13, 2027. In summer, its route is <a href=\"/routes/201/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available.",
+      "description_ru": "В этом сезоне поезд ходит со 2 октября 2026 года по 13 июня 2027 года. Летом его маршрут <a href=\"/ru/routes/201/\">продлевается до Батуми</a>. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ.",
+      "description_ka": "ამ სეზონში მატარებელი მოძრაობს 2026 წლის 2 ოქტომბრიდან 2027 წლის 13 ივნისამდე. ზაფხულში მისი მარშრუტი <a href=\"/ka/routes/201/\">გრძელდება ბათუმამდე</a>. ბილეთების შეძენა შესაძლებელია ონლაინ სამხრეთ კავკასიის რკინიგზის ვებსაიტზე ქვემოთ მოცემული ბმულის საშუალებით. საქართველოს რკინიგზა ამ მატარებელზე ბილეთებს ონლაინ არ ყიდის, თუმცა მათი შეძენა შესაძლებელია სადგურების სალაროებში. ხელმისაწვდომია პლაცკარტი, კუპე და SV.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -530,56 +531,59 @@
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "departure_time": "20:20",
+            "departure_time": "20:00",
             "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "sadakhlo",
             "role": "middle",
-            "departure_time": "23:15",
-            "arrival_time": "22:10",
-            "stop_time": 65
+            "departure_time": "22:55",
+            "arrival_time": "21:55",
+            "stop_time": 60
          },
          {
             "code": "ayrum",
             "role": "middle",
-            "departure_time": "00:40",
-            "arrival_time": "23:40",
+            "departure_time": "00:20",
+            "arrival_time": "23:20",
             "stop_time": 60
          },
          {
             "code": "vanadzor",
             "role": "middle",
-            "departure_time": "02:25",
-            "arrival_time": "02:20",
+            "departure_time": "02:05",
+            "arrival_time": "02:00",
             "stop_time": 5
          },
          {
             "code": "gyumri",
             "role": "middle",
-            "departure_time": "04:10",
-            "arrival_time": "03:50",
+            "departure_time": "03:50",
+            "arrival_time": "03:30",
             "stop_time": 20
          },
          {
             "code": "armavir",
             "role": "middle",
-            "departure_time": "06:06",
-            "arrival_time": "06:03",
+            "departure_time": "05:46",
+            "arrival_time": "05:43",
             "stop_time": 3
          },
          {
             "code": "yerevan",
             "role": "end",
             "departure_time": "-",
-            "arrival_time": "06:55",
+            "arrival_time": "06:35",
             "stop_time": null
          }
       ],
+      "travel_time": "10:35",
       "price": null,
       "analogue": [],
-      "reverse": []
+      "reverse": [
+         372
+      ]
    },
    {
       "id": 11149011,
@@ -587,19 +591,20 @@
       "name:ka": "ერევანი → თბილისი",
       "name:en": "Yerevan → Tbilisi",
       "name:ru": "Ереван → Тбилиси",
-      "active": false,
-      "frequency": "every second day",
-      "start_date": 1774137600000,
-      "end_date": 1781222400000,
+      "active": true,
+      "frequency": "on even days",
+      "start_date": 1790899200000,
+      "end_date": 1812758400000,
       "complete": true,
       "online": false,
       "online_tickets_current_site": true,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "SCR",
       "has_arrival_time": true,
-      "description_en": "This season, the train runs from October 2, 2025 to June 13, 2026. In summer, its route is <a href=\"/routes/202/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available. Prices for <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_eng_5.pdf\" target=\"_blank\">May</a>.",
-      "description_ru": "В этом сезоне поезд ходит со 2 октября 2025 года по 13 июня 2026 года. Летом его маршрут <a href=\"/ru/routes/202/\">продлевается до Батуми</a>. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ. Цены на <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_rus_5.pdf\" target=\"_blank\">май</a>.",
-      "description_ka": "ამ სეზონში მატარებელი მოძრაობს 2025 წლის 2 ოქტომბრიდან 2026 წლის 13 ივნისამდე. ზაფხულში მისი მარშრუტი <a href=\"/ka/routes/202/\">გრძელდება ბათუმამდე</a>. ბილეთების შეძენა შესაძლებელია ონლაინ სამხრეთ კავკასიის რკინიგზის ვებსაიტზე ქვემოთ მოცემული ბმულის საშუალებით. საქართველოს რკინიგზა ამ მატარებელზე ბილეთებს ონლაინ არ ყიდის, თუმცა მათი შეძენა შესაძლებელია სადგურების სალაროებში. ხელმისაწვდომია პლაცკარტი, კუპე და SV. ფასები <a href=\"https://www.railway.am/infodocs/price/Yer_tbilisi_price_eng_5.pdf\" target=\"_blank\">მაისისთვის</a>.",
+      "description_en": "This season, the train runs from October 2, 2026 to June 13, 2027. In summer, its route is <a href=\"/routes/201/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available.",
+      "description_ru": "В этом сезоне поезд ходит со 2 октября 2026 года по 13 июня 2027 года. Летом его маршрут <a href=\"/ru/routes/201/\">продлевается до Батуми</a>. Билеты можно купить онлайн на сайте ЮКЖД по ссылке ниже. Грузинская железная дорога не продает билеты на этот поезд онлайн, однако их можно приобрести в кассах вокзалов. Доступны плацкарт, купе и СВ.",
+      "description_ka": "ამ სეზონში მატარებელი მოძრაობს 2026 წლის 2 ოქტომბრიდან 2027 წლის 13 ივნისამდე. ზაფხულში მისი მარშრუტი <a href=\"/ka/routes/201/\">გრძელდება ბათუმამდე</a>. ბილეთების შეძენა შესაძლებელია ონლაინ სამხრეთ კავკასიის რკინიგზის ვებსაიტზე ქვემოთ მოცემული ბმულის საშუალებით. საქართველოს რკინიგზა ამ მატარებელზე ბილეთებს ონლაინ არ ყიდის, თუმცა მათი შეძენა შესაძლებელია სადგურების სალაროებში. ხელმისაწვდომია პლაცკარტი, კუპე და SV.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -607,56 +612,59 @@
          {
             "code": "yerevan",
             "role": "start",
-            "departure_time": "21:30",
+            "departure_time": "21:00",
             "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "armavir",
             "role": "middle",
-            "departure_time": "22:18",
-            "arrival_time": "22:16",
+            "departure_time": "21:48",
+            "arrival_time": "21:46",
             "stop_time": 2
          },
          {
             "code": "gyumri",
             "role": "middle",
-            "departure_time": "00:13",
-            "arrival_time": "23:59",
+            "departure_time": "23:43",
+            "arrival_time": "23:29",
             "stop_time": 14
          },
          {
             "code": "vanadzor",
             "role": "middle",
-            "departure_time": "01:38",
-            "arrival_time": "01:33",
+            "departure_time": "01:08",
+            "arrival_time": "01:03",
             "stop_time": 5
          },
          {
             "code": "ayrum",
             "role": "middle",
-            "departure_time": "04:15",
-            "arrival_time": "03:24",
+            "departure_time": "03:45",
+            "arrival_time": "02:54",
             "stop_time": 51
          },
          {
             "code": "sadakhlo",
             "role": "middle",
-            "departure_time": "05:40",
-            "arrival_time": "04:40",
+            "departure_time": "05:10",
+            "arrival_time": "04:10",
             "stop_time": 60
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
             "departure_time": "-",
-            "arrival_time": "07:35",
+            "arrival_time": "07:05",
             "stop_time": null
          }
       ],
+      "travel_time": "10:05",
       "price": null,
       "analogue": [],
-      "reverse": []
+      "reverse": [
+         371
+      ]
    },
    {
       "id": 15689521,
@@ -673,6 +681,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -684,117 +693,117 @@
          {
             "code": "borjomiparki",
             "role": "start",
-            "departure_time": "16:20",
+            "departure_time": "16:30",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "borjomi",
             "role": "middle",
-            "departure_time": "16:30",
+            "departure_time": "16:40",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvishkheti",
             "role": "middle",
-            "departure_time": "17:44",
+            "departure_time": "17:39",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "17:56",
+            "departure_time": "17:49",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gomi",
             "role": "middle",
-            "departure_time": "18:13",
+            "departure_time": "18:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "agara",
             "role": "middle",
-            "departure_time": "18:24",
+            "departure_time": "18:17",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "18:32",
+            "departure_time": "18:25",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "18:52",
+            "departure_time": "18:45",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "grakali",
             "role": "middle",
-            "departure_time": "19:11",
+            "departure_time": "19:04",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "19:26",
+            "departure_time": "19:19",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kavtiskhevi",
             "role": "middle",
-            "departure_time": "19:35",
+            "departure_time": "19:28",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ksani",
             "role": "middle",
-            "departure_time": "19:48",
+            "departure_time": "19:41",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "20:05",
+            "departure_time": "19:58",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zahesi",
             "role": "middle",
-            "departure_time": "20:13",
+            "departure_time": "20:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "avchala",
             "role": "middle",
-            "departure_time": "20:18",
+            "departure_time": "20:11",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "20:40",
+            "departure_time": "20:33",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:20",
+      "travel_time": "04:03",
       "price": {
          "price_type": "exact",
          "price": 2.0
@@ -822,6 +831,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -931,19 +941,19 @@
          {
             "code": "borjomi",
             "role": "middle",
-            "departure_time": "10:22",
+            "departure_time": "10:07",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "borjomiparki",
             "role": "end",
-            "departure_time": "10:37",
+            "departure_time": "10:22",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:02",
+      "travel_time": "03:47",
       "price": {
          "price_type": "exact",
          "price": 2.0
@@ -971,6 +981,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1075,6 +1086,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1179,6 +1191,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1342,6 +1355,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1505,6 +1519,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1668,6 +1683,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1831,6 +1847,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -1842,84 +1859,84 @@
          {
             "code": "borjomiparki",
             "role": "start",
-            "departure_time": "05:50",
+            "departure_time": "06:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "borjomi",
             "role": "middle",
-            "departure_time": "06:00",
+            "departure_time": "06:10",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvishkheti",
             "role": "middle",
-            "departure_time": "07:14",
+            "departure_time": "07:09",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "07:26",
+            "departure_time": "07:19",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gomi",
             "role": "middle",
-            "departure_time": "07:43",
+            "departure_time": "07:36",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "agara",
             "role": "middle",
-            "departure_time": "07:54",
+            "departure_time": "07:47",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "08:02",
+            "departure_time": "07:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "08:22",
+            "departure_time": "08:15",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "grakali",
             "role": "middle",
-            "departure_time": "08:41",
+            "departure_time": "08:34",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "08:56",
+            "departure_time": "08:49",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kavtiskhevi",
             "role": "middle",
-            "departure_time": "09:05",
+            "departure_time": "08:58",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ksani",
             "role": "middle",
-            "departure_time": "09:18",
+            "departure_time": "09:11",
             "arrival_time": null,
             "stop_time": null
          },
@@ -1933,40 +1950,40 @@
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "09:35",
+            "departure_time": "09:28",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zahesi",
             "role": "middle",
-            "departure_time": "09:43",
+            "departure_time": "09:36",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "avchala",
             "role": "middle",
-            "departure_time": "09:48",
+            "departure_time": "09:41",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicargo",
             "role": "middle",
-            "departure_time": "10:04",
+            "departure_time": "09:57",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "10:10",
+            "departure_time": "10:03",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:20",
+      "travel_time": "04:03",
       "price": {
          "price_type": "exact",
          "price": 2.0
@@ -1994,6 +2011,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2005,131 +2023,131 @@
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "departure_time": "18:45",
+            "departure_time": "18:35",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicargo",
             "role": "middle",
-            "departure_time": "18:49",
+            "departure_time": "18:39",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "avchala",
             "role": "middle",
-            "departure_time": "18:58",
+            "departure_time": "18:48",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zahesi",
             "role": "middle",
-            "departure_time": "19:03",
+            "departure_time": "18:53",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "19:11",
+            "departure_time": "19:01",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "dzegvi",
             "role": "middle",
-            "departure_time": "19:20",
+            "departure_time": "19:10",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ksani",
             "role": "middle",
-            "departure_time": "19:28",
+            "departure_time": "19:18",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kavtiskhevi",
             "role": "middle",
-            "departure_time": "19:41",
+            "departure_time": "19:31",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "19:49",
+            "departure_time": "19:39",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "grakali",
             "role": "middle",
-            "departure_time": "20:05",
+            "departure_time": "19:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "20:22",
+            "departure_time": "20:12",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "20:44",
+            "departure_time": "20:34",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "agara",
             "role": "middle",
-            "departure_time": "20:52",
+            "departure_time": "20:42",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gomi",
             "role": "middle",
-            "departure_time": "21:03",
+            "departure_time": "20:53",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "21:17",
+            "departure_time": "21:07",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvishkheti",
             "role": "middle",
-            "departure_time": "21:33",
+            "departure_time": "21:20",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "borjomi",
             "role": "middle",
-            "departure_time": "22:43",
+            "departure_time": "22:15",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "borjomiparki",
             "role": "end",
-            "departure_time": "22:58",
+            "departure_time": "22:30",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:13",
+      "travel_time": "03:55",
       "price": {
          "price_type": "exact",
          "price": 2.0
@@ -2157,6 +2175,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2208,16 +2227,12 @@
       },
       "analogue": [
          803,
-         805,
-         807,
-         811
+         807
       ],
       "reverse": [
          802,
          804,
-         806,
-         808,
-         812
+         808
       ]
    },
    {
@@ -2235,6 +2250,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2286,16 +2302,12 @@
       },
       "analogue": [
          804,
-         806,
-         808,
-         812
+         808
       ],
       "reverse": [
          801,
          803,
-         805,
-         807,
-         811
+         807
       ]
    },
    {
@@ -2313,6 +2325,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2364,16 +2377,12 @@
       },
       "analogue": [
          801,
-         805,
-         807,
-         811
+         807
       ],
       "reverse": [
          802,
          804,
-         806,
-         808,
-         812
+         808
       ]
    },
    {
@@ -2391,6 +2400,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2442,172 +2452,12 @@
       },
       "analogue": [
          802,
-         806,
-         808,
-         812
+         808
       ],
       "reverse": [
          801,
          803,
-         805,
-         807,
-         811
-      ]
-   },
-   {
-      "id": 17890099,
-      "ref": 805,
-      "name:ka": "ბათუმი → თბილისი",
-      "name:en": "Batumi → Tbilisi",
-      "name:ru": "Батуми → Тбилиси",
-      "active": true,
-      "frequency": "daily",
-      "start_date": null,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "batumicentral",
-            "role": "start",
-            "departure_time": "14:10",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "14:29",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "14:49",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "15:38",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "tbilisicentralstation",
-            "role": "end",
-            "departure_time": "18:13",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:03",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         801,
-         803,
-         807,
-         811
-      ],
-      "reverse": [
-         802,
-         804,
-         806,
-         808,
-         812
-      ]
-   },
-   {
-      "id": 17890097,
-      "ref": 806,
-      "name:ka": "თბილისი → ბათუმი",
-      "name:en": "Tbilisi → Batumi",
-      "name:ru": "Тбилиси → Батуми",
-      "active": true,
-      "frequency": "daily",
-      "start_date": null,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "tbilisicentralstation",
-            "role": "start",
-            "departure_time": "06:30",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "09:05",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "09:53",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "10:13",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "batumicentral",
-            "role": "end",
-            "departure_time": "10:31",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:01",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         802,
-         804,
-         808,
-         812
-      ],
-      "reverse": [
-         801,
-         803,
-         805,
-         807,
-         811
+         807
       ]
    },
    {
@@ -2625,6 +2475,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2676,16 +2527,12 @@
       },
       "analogue": [
          801,
-         803,
-         805,
-         811
+         803
       ],
       "reverse": [
          802,
          804,
-         806,
-         808,
-         812
+         808
       ]
    },
    {
@@ -2703,6 +2550,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "stadler",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2754,172 +2602,12 @@
       },
       "analogue": [
          802,
-         804,
-         806,
-         812
+         804
       ],
       "reverse": [
          801,
          803,
-         805,
-         807,
-         811
-      ]
-   },
-   {
-      "id": 17890098,
-      "ref": 811,
-      "name:ka": "ბათუმი → თბილისი",
-      "name:en": "Batumi → Tbilisi",
-      "name:ru": "Батуми → Тбилиси",
-      "active": true,
-      "frequency": "daily",
-      "start_date": 1781568000000,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "batumicentral",
-            "role": "start",
-            "departure_time": "00:35",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "00:51",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "01:11",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "02:06",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "tbilisicentralstation",
-            "role": "end",
-            "departure_time": "04:41",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:06",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         801,
-         803,
-         805,
          807
-      ],
-      "reverse": [
-         802,
-         804,
-         806,
-         808,
-         812
-      ]
-   },
-   {
-      "id": 17890096,
-      "ref": 812,
-      "name:ka": "თბილისი → ბათუმი",
-      "name:en": "Tbilisi → Batumi",
-      "name:ru": "Тбилиси → Батуми",
-      "active": true,
-      "frequency": "daily",
-      "start_date": 1781568000000,
-      "end_date": null,
-      "complete": true,
-      "online": true,
-      "online_tickets_current_site": false,
-      "online_tickets_new_site": true,
-      "train_type": "stadler",
-      "has_arrival_time": false,
-      "description_en": null,
-      "description_ru": null,
-      "description_ka": null,
-      "extended_description_en": null,
-      "extended_description_ru": null,
-      "extended_description_ka": null,
-      "stations": [
-         {
-            "code": "tbilisicentralstation",
-            "role": "start",
-            "departure_time": "00:30",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kutaisiinternationalairport",
-            "role": "middle",
-            "departure_time": "03:05",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "ureki",
-            "role": "middle",
-            "departure_time": "03:59",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "kobuleti",
-            "role": "middle",
-            "departure_time": "04:19",
-            "arrival_time": null,
-            "stop_time": null
-         },
-         {
-            "code": "batumicentral",
-            "role": "end",
-            "departure_time": "04:37",
-            "arrival_time": null,
-            "stop_time": null
-         }
-      ],
-      "travel_time": "04:07",
-      "price": {
-         "price_type": "from",
-         "price": 35.0
-      },
-      "analogue": [
-         802,
-         804,
-         806,
-         808
-      ],
-      "reverse": [
-         801,
-         803,
-         805,
-         807,
-         811
       ]
    },
    {
@@ -2937,6 +2625,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -2948,168 +2637,168 @@
          {
             "code": "ozurgeti",
             "role": "start",
-            "departure_time": "09:35",
+            "departure_time": "09:20",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "meria",
             "role": "middle",
-            "departure_time": "10:00",
+            "departure_time": "09:45",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "10:35",
+            "departure_time": "10:20",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "11:04",
+            "departure_time": "10:49",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "11:18",
+            "departure_time": "11:03",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "11:33",
+            "departure_time": "11:12",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "11:42",
+            "departure_time": "11:27",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "shukhuti",
             "role": "middle",
-            "departure_time": "11:51",
+            "departure_time": "11:36",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "11:55",
+            "departure_time": "11:40",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "12:20",
+            "departure_time": "11:59",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "12:34",
+            "departure_time": "12:16",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "12:48",
+            "departure_time": "12:30",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "sviri",
             "role": "middle",
-            "departure_time": "13:08",
+            "departure_time": "12:53",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "13:19",
+            "departure_time": "13:04",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "dzirula",
             "role": "middle",
-            "departure_time": "13:33",
+            "departure_time": "13:18",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "13:43",
+            "departure_time": "13:28",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "13:58",
+            "departure_time": "13:43",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "14:09",
+            "departure_time": "13:54",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "14:27",
+            "departure_time": "14:12",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "14:46",
+            "departure_time": "14:31",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "14:59",
+            "departure_time": "14:44",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "15:19",
+            "departure_time": "15:04",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "15:39",
+            "departure_time": "15:24",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "16:01",
+            "departure_time": "15:46",
             "arrival_time": null,
             "stop_time": null
          }
@@ -3139,6 +2828,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -3241,89 +2931,89 @@
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "11:45",
+            "departure_time": "11:48",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "11:57",
+            "departure_time": "12:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "12:19",
+            "departure_time": "12:21",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "shukhuti",
             "role": "middle",
-            "departure_time": "12:23",
+            "departure_time": "12:25",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "12:29",
+            "departure_time": "12:31",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "12:41",
+            "departure_time": "12:43",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "12:50",
+            "departure_time": "12:52",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "12:58",
+            "departure_time": "13:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "13:10",
+            "departure_time": "13:13",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "meria",
             "role": "middle",
-            "departure_time": "13:57",
+            "departure_time": "14:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kakhuri",
             "role": "middle",
-            "departure_time": "14:13",
+            "departure_time": "14:16",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ozurgeti",
             "role": "end",
-            "departure_time": "14:30",
+            "departure_time": "14:33",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "06:05",
+      "travel_time": "06:08",
       "price": {
          "price_type": "from",
          "price": 16.0
@@ -3348,6 +3038,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -3494,6 +3185,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -3640,6 +3332,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -3779,6 +3472,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -3918,6 +3612,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
       "description_ru": "Этот поезд был отменен весной 2026 года без предварительных уведомлений.",
@@ -3970,6 +3665,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
       "description_ru": "Этот поезд был отменен весной 2026 года без предварительных уведомлений.",
@@ -4022,6 +3718,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
       "description_ru": "Этот поезд был отменен весной 2026 года без предварительных уведомлений.",
@@ -4074,6 +3771,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
       "description_ru": "Этот поезд был отменен весной 2026 года без предварительных уведомлений.",
@@ -4126,6 +3824,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4219,6 +3918,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4312,6 +4012,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4405,6 +4106,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": "suburban",
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4498,6 +4200,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4577,6 +4280,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4588,42 +4292,42 @@
          {
             "code": "khashuri",
             "role": "start",
-            "departure_time": "17:00",
+            "departure_time": "16:50",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "17:33",
+            "departure_time": "17:23",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "17:49",
+            "departure_time": "17:39",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "18:11",
+            "departure_time": "18:01",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "dzirula",
             "role": "middle",
-            "departure_time": "18:37",
+            "departure_time": "18:27",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zestafoni",
             "role": "end",
-            "departure_time": "18:59",
+            "departure_time": "18:49",
             "arrival_time": null,
             "stop_time": null
          }
@@ -4656,6 +4360,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4735,6 +4440,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,
@@ -4814,6 +4520,7 @@
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
       "train_type": null,
+      "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
       "description_ru": null,

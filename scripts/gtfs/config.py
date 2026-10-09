@@ -4,6 +4,13 @@
 FEED_TIMEZONE = 'Asia/Tbilisi'
 
 SITE_URL = 'https://georailway.com'
+# Site URL prefix per language; English pages live at the site root.
+LANG_URL_PREFIX = {'en': '', 'ka': '/ka', 'ru': '/ru'}
+
+# City priority for naming lines: a line is named from the terminal city that comes first in this
+# list ("Tbilisi — Borjomi", not "Borjomi — Tbilisi"); the same city defines direction_id=0.
+# Matched against the city names in the trains' `name:en` ("Borjomi → Tbilisi").
+LINE_NAME_CITY_PRIORITY = ['Yerevan', 'Baku', 'Tbilisi', 'Batumi', 'Kutaisi']
 
 # stops.stop_timezone for stations outside Georgia, keyed by station code. Georgian stations are
 # omitted and inherit agency_timezone. Does not affect stop_times (always in agency_timezone).

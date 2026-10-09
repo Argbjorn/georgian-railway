@@ -2,7 +2,7 @@
 
 from urllib.parse import quote
 
-from .config import SITE_URL, STOP_TIMEZONES
+from .config import LANG_URL_PREFIX, SITE_URL, STOP_TIMEZONES
 from .ids import stop_id
 from .text import html_to_text
 
@@ -28,12 +28,9 @@ FIELDS = [
 # stop_name/stop_lat/stop_lon are conditionally required — required for location_type=0.
 REQUIRED_FIELDS = {'stop_id', 'stop_name', 'stop_lat', 'stop_lon'}
 
-# Site URL prefix per language; English pages live at the site root.
-_LANG_PREFIX = {'en': '', 'ka': '/ka', 'ru': '/ru'}
-
 
 def station_url(station_code, lang='en'):
-    return f'{SITE_URL}{_LANG_PREFIX[lang]}/stations/{quote(station_code)}/'
+    return f'{SITE_URL}{LANG_URL_PREFIX[lang]}/stations/{quote(station_code)}/'
 
 
 def station_description(station, lang='en'):

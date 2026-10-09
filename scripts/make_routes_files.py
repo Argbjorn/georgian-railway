@@ -131,6 +131,7 @@ def build_route(row, gr_workbook):
         "online_tickets_current_site": string_value_to_bool(row, "online_tickets_current_site"),
         "online_tickets_new_site": string_value_to_bool(row, "online_tickets_new_site"),
         "train_type": empty_to_none(row["train_type"]),
+        "operator": empty_to_none(row["operator"]),
         "has_arrival_time": string_value_to_bool(row, "has_arrival_time"),
         "description_en": empty_to_none(row["description_en"]),
         "description_ru": empty_to_none(row["description_ru"]),

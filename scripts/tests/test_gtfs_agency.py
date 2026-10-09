@@ -12,9 +12,16 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
+ALL_OPERATORS = [{'operator': agency_id} for agency_id in AGENCIES]
+
+
 class TestBuildAgency:
-    def test_all_agencies_when_routes_have_no_operator(self):
-        rows = agency.build_agency([{'ref': 1}])
+    def test_route_without_operator_fails(self):
+        with pytest.raises(ValueError, match='without operator'):
+            agency.build_agency([{'ref': 1, 'operator': 'GR'}, {'ref': 2, 'operator': None}])
+
+    def test_agencies_in_config_order(self):
+        rows = agency.build_agency(list(reversed(ALL_OPERATORS)))
         assert [row['agency_id'] for row in rows] == ['GR', 'AR', 'SCR']
 
     def test_only_referenced_agencies(self):
@@ -30,7 +37,7 @@ class TestBuildAgency:
         assert len({a['agency_timezone'] for a in AGENCIES.values()}) == 1
 
     def test_rows_have_required_fields_and_only_known_fields(self):
-        for row in agency.build_agency([]):
+        for row in agency.build_agency(ALL_OPERATORS):
             assert all(row.get(field) for field in agency.REQUIRED_FIELDS)
             assert set(row) <= set(agency.FIELDS)
 
@@ -38,7 +45,7 @@ class TestBuildAgency:
 class TestWriteTable:
     def test_omits_empty_optional_columns(self, tmp_path):
         path = tmp_path / 'agency.txt'
-        write_table(path, agency.FIELDS, agency.build_agency([]), agency.REQUIRED_FIELDS)
+        write_table(path, agency.FIELDS, agency.build_agency(ALL_OPERATORS), agency.REQUIRED_FIELDS)
 
         with open(path, encoding='utf-8') as f:
             header = f.readline().strip().split(',')
@@ -62,7 +69,7 @@ class TestWriteTable:
 
     def test_agency_roundtrip(self, tmp_path):
         path = tmp_path / 'agency.txt'
-        write_table(path, agency.FIELDS, agency.build_agency([]), agency.REQUIRED_FIELDS)
+        write_table(path, agency.FIELDS, agency.build_agency(ALL_OPERATORS), agency.REQUIRED_FIELDS)
         rows = read_csv(path)
         assert rows[0]['agency_id'] == 'GR'
         assert rows[0]['agency_phone'] == '1331'
