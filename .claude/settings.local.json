@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PowerShell.exe -NoProfile -Command \"Get-Content -Raw 'C:\\\\Users\\\\user\\\\georgian-railway-frontend-tests\\\\requirements.txt' | Format-Hex | Select-Object -First 3\")",
+      "Bash(pkill -f \"hugo server\")"
+    ]
+  }
+}

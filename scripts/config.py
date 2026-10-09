@@ -9,4 +9,5 @@ STATIONS_LIST_JS_PATH = os.path.join(PROJECT_ROOT, 'static', 'js', 'components',
 STATIONS_JSON_PATH = os.path.join(PROJECT_ROOT, 'data', 'stations.json')
 ROUTES_GEODATA_DIR = os.path.join(PROJECT_ROOT, 'static', 'data', 'routes_geodata')
 ROUTES_REFS_FOR_PARSING = []
-RAILWAY_NETWORK_JS_PATH = os.path.join(PROJECT_ROOT, 'static', 'js', 'components', 'railway-network', 'railway-network-data.js')
+GTFS_BUILD_DIR = os.path.join(PROJECT_ROOT, 'build', 'gtfs')
+RAILWAY_NETWORK_JS_PATH =os.path.join(PROJECT_ROOT, 'static', 'js', 'components', 'railway-network', 'railway-network-data.js')
