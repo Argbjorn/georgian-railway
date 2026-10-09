@@ -21,7 +21,7 @@ class TestGroupLines:
         trains = [train(804, 'tbilisi', 'batumi', 'stadler'), train(801, 'batumi', 'tbilisi', 'stadler'),
                   train(802, 'tbilisi', 'batumi', 'stadler'), train(803, 'batumi', 'tbilisi', 'stadler')]
         [line] = routes.group_lines(trains)
-        assert line.route_id == 'batumi-tbilisi-stadler'
+        assert line.route_id == 'tbilisi-batumi-stadler'
         assert [t['ref'] for t in line.trains] == [801, 802, 803, 804]
 
     def test_direction_id_follows_representative(self):
@@ -34,7 +34,7 @@ class TestGroupLines:
         assert [line.route_id for line in lines] == ['a-b-stadler', 'a-b-suburban']
 
     def test_route_id_without_train_type_and_ascii(self):
-        [line] = routes.group_lines([train(37, 'tbilisicentralstation', 'bakı')])
+        [line] = routes.group_lines([train(37, 'tbilisicentralstation', 'bakı', name='Tbilisi → Baku')])
         assert line.route_id == 'baki-tbilisicentralstation'
 
     def test_lines_ordered_by_lowest_ref(self):
@@ -50,6 +50,7 @@ class TestLineNaming:
     def test_priority_city_goes_first(self):
         [line] = routes.group_lines([train(617, 'borjomi', 'tbilisi'), train(618, 'tbilisi', 'borjomi')])
         assert routes.line_name(line) == 'Tbilisi — Borjomi'
+        assert line.route_id == 'tbilisi-borjomi'
         assert line.representative['ref'] == 618
         assert line.direction_id(line.representative) == 0
 
@@ -63,11 +64,13 @@ class TestLineNaming:
         # lowest-ref train
         [line] = routes.group_lines([train(1, 'borjomi', 'tbilisi')])
         assert routes.line_name(line) == 'Tbilisi — Borjomi'
+        assert line.route_id == 'tbilisi-borjomi'
         assert line.representative['ref'] == 1
 
     def test_no_priority_city_uses_lowest_ref(self):
         [line] = routes.group_lines([train(6418, 'khashuri', 'zestafoni'), train(6417, 'zestafoni', 'khashuri')])
         assert routes.line_name(line) == 'Zestafoni — Khashuri'
+        assert line.route_id == 'zestafoni-khashuri'
         assert line.representative['ref'] == 6417
 
     def test_translations_follow_english_order(self):

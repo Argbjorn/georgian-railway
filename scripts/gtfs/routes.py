@@ -56,19 +56,26 @@ def name_cities(train, lang='en'):
     return parts
 
 
-def _make_line(route_id, trains):
+def _grouping_key(train):
+    """Trains with the same terminal stations (in either direction) and train type form a line."""
+    return tuple(sorted(terminals(train))), train.get('train_type')
+
+
+def _make_line(trains):
     origin, destination = name_cities(trains[0])
     leading_city = next((city for city in LINE_NAME_CITY_PRIORITY if city in (origin, destination)), origin)
+    name_reversed = leading_city != origin
     representative = next((train for train in trains if name_cities(train)[0] == leading_city), trains[0])
-    return Line(route_id, trains, representative, name_reversed=leading_city != origin)
 
+    # route_id lists the terminal stations in the same order as the line name lists the cities
+    stations = list(terminals(trains[0]))
+    if name_reversed:
+        stations.reverse()
+    parts = [stop_id(code) for code in stations]
+    if trains[0].get('train_type'):
+        parts.append(trains[0]['train_type'])
 
-def line_route_id(train):
-    """Stable id from the terminal stations (order-independent) and the train type."""
-    parts = sorted(stop_id(code) for code in terminals(train))
-    if train.get('train_type'):
-        parts.append(train['train_type'])
-    return '-'.join(parts)
+    return Line('-'.join(parts), trains, representative, name_reversed)
 
 
 def group_lines(routes):
@@ -79,8 +86,8 @@ def group_lines(routes):
     """
     trains_by_line = {}
     for train in sorted(routes, key=lambda r: r['ref']):
-        trains_by_line.setdefault(line_route_id(train), []).append(train)
-    lines = [_make_line(route_id, trains) for route_id, trains in trains_by_line.items()]
+        trains_by_line.setdefault(_grouping_key(train), []).append(train)
+    lines = [_make_line(trains) for trains in trains_by_line.values()]
 
     for line in lines:
         operators = {train['operator'] for train in line.trains}

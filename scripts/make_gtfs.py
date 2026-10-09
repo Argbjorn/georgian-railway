@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from config import ROUTES_JSON_PATH, STATIONS_JSON_PATH, DIRECTIONS_CONTENT_DIR, GTFS_BUILD_DIR
-from gtfs import agency, routes as gtfs_routes, stops
+from gtfs import agency, routes as gtfs_routes, stops, trips
 from gtfs.source import load_direction_pages, load_json, select_routes
 from gtfs.writer import write_table
 
@@ -22,6 +22,7 @@ def make_gtfs(output_dir=GTFS_BUILD_DIR):
         (agency, agency.build_agency(routes)),
         (stops, stops.build_stops(routes, stations)),
         (gtfs_routes, gtfs_routes.build_routes(lines, direction_pages)),
+        (trips, trips.build_trips(lines)),
     ]
     for table, rows in tables:
         write_table(os.path.join(output_dir, table.FILE_NAME), table.FIELDS, rows, table.REQUIRED_FIELDS)

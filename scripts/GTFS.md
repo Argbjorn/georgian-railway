@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — `agency.txt`, `stops.txt`, `routes.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — `agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -37,14 +37,14 @@
 
 ### 0.2. Группировка маршрутов (routes)
 
-Линия (route) — все поезда с **одинаковой парой конечных станций (в любом направлении) и одинаковым `train_type`**. Ключ группировки и есть `route_id` (§3). Реализация — `gtfs/routes.py`, `group_lines()`.
+Линия (route) — все поезда с **одинаковой парой конечных станций (в любом направлении) и одинаковым `train_type`**. `route_id` (§3) строится из тех же станций и `train_type`, но в порядке названия линии. Реализация — `gtfs/routes.py`, `group_lines()`.
 
 Почему не через `analogue`/`reverse` из `routes.json`: они вычисляются в `make_routes_files` по тем же конечным станциям, но **без upcoming-поездов**, а в фид upcoming-поезда входят — новый поезд выпал бы из своей линии до даты старта.
 
 Текущие линии (11): `37/38`, `371/372`, `617/618/685/686`, `633/634`, `681–684`, `801–808` (Stadler), `853/854`, `869/870`, `873/874`, `6413–6416`, `6417/6418/6445/6446`.
 
 **Ведущий город и представитель линии.** Города берутся из `name:en` поездов («Borjomi → Tbilisi»). Ведущий город — тот из двух конечных, что выше в `LINE_NAME_CITY_PRIORITY` (`gtfs/config.py`): Yerevan, Baku, Tbilisi, Batumi, Kutaisi. Если ни одного нет — город отправления поезда с минимальным `ref`.
-- Название линии начинается с ведущего города: «Tbilisi — Borjomi», «Yerevan — Tbilisi», «Zestafoni — Khashuri» (fallback). Переводы — из `name:ka`/`name:ru` того же поезда в том же порядке.
+- Название линии и `route_id` начинаются с ведущего города / его станции: «Tbilisi — Borjomi» / `tbilisicentralstation-borjomiparki-suburban`, «Zestafoni — Khashuri» / `zestafoni-khashuri` (fallback). Переводы названия — из `name:ka`/`name:ru` того же поезда в том же порядке.
 - Представитель — поезд с минимальным `ref` среди отправляющихся из ведущего города (если таких нет — поезд с минимальным `ref`). `direction_id=0` — поезда с теми же начальной и конечной станцией, что у представителя, `1` — обратные. URL линии — от представителя.
 - `route_sort_order` — минимальный `ref` линии, независимо от представителя.
 - `name:en` поезда обязан иметь вид «A → B» — иначе ошибка сборки.
@@ -90,7 +90,7 @@
   - `config.py` — константы: агентства, `SITE_URL`, `LANG_URL_PREFIX`, `STOP_TIMEZONES`;
   - `source.py` — загрузка данных, отбор маршрутов, поиск страниц направлений сайта;
   - `writer.py` — запись CSV (пустые опциональные колонки опускаются);
-  - `ids.py` — `stop_id`; `text.py` — HTML → текст;
+  - `ids.py` — `stop_id`; `text.py` — HTML → текст; `services.py` — `service_id` и даты сервисов (общий для `trips`, `calendar`, `calendar_dates`);
   - по модулю на каждый GTFS-файл (`agency.py`, `stops.py`, `routes.py`, …) с `FILE_NAME`, `FIELDS` (порядок спецификации), `REQUIRED_FIELDS` и функцией `build_*`. `routes.py` также содержит группировку поездов в линии (`group_lines`, `Line`) — она понадобится и для `trips.txt`.
 - Тесты — `scripts/tests/test_gtfs_*.py`. `scripts/tests/conftest.py` добавляет `scripts/` в **конец** `sys.path`: в тестах `import utils` должен оставаться `tests/utils.py`, поэтому пакет `gtfs` не должен импортировать `scripts/utils`.
 
@@ -143,7 +143,7 @@
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `route_id` | **Обязательно** | Вариант Б (решено): отсортированные `stop_id` конечных станций + `train_type` через `-`, например `batumicentral-tbilisicentralstation-stadler`; без `train_type` — только станции (`baki-tbilisicentralstation`). **Меняется**, если у линии сменится конечная станция или `train_type` — для потребителей это будет новая линия | 🔧 |
+| `route_id` | **Обязательно** | Вариант Б (решено): `stop_id` конечных станций **в порядке названия линии** (сначала станция ведущего города, §0.2) + `train_type` через `-`: `tbilisicentralstation-batumicentral-stadler`, `baki-tbilisicentralstation`, `zestafoni-khashuri`. **Меняется**, если у линии сменится конечная станция, `train_type` или ведущий город (в т. ч. при правке `LINE_NAME_CITY_PRIORITY`) — для потребителей это будет новая линия | 🔧 |
 | `agency_id` | Условно обязательно (при нескольких агентствах — наш случай) | Колонка `operator` маршрута (`GR`/`AR`/`SCR`). Все поезда одной компоненты должны иметь одного оператора — иначе ошибка сборки | ➕ (добавлено в Sheets) |
 | `route_short_name` | Условно обязательно (если пуст long_name) | Не заполняем: номера поездов — это свойство trip (`trip_short_name`), а у линии публичного короткого имени нет. Если захочется — ➕ краткое имя ≤12 символов, например `Stadler` | — ➕ |
 | `route_long_name` | Условно обязательно (если пуст short_name) | «<ведущий город> — <другой город>» по городам из `name:en` (§0.2): `Tbilisi — Borjomi`, `Baku — Tbilisi`. Префикс «Train #N:» уже вырезан в `make_routes_files`. Переводы — из `name:ka` / `name:ru` в том же порядке через `translations.txt` | ✅ 🔧 |
@@ -158,23 +158,23 @@
 | `network_id` | Условно запрещено (если есть `networks.txt`) | Не заполняем. Понадобится только для тарифов Fares v2 (например, `intercity` / `suburban`) | — ➕ |
 | `cemv_support` | Опционально | Не заполняем (см. agency) | ➕ |
 
-## 4. trips.txt
+## 4. trips.txt ✅ реализовано
 
 Одна строка на поезд (`ref`).
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `route_id` | **Обязательно** | ID компоненты из §0.2 | 🔧 |
-| `service_id` | **Обязательно** | Общий для поездов с одинаковым расписанием дней. Схема ID: `daily`, `daily_from_YYYYMMDD`, `daily_YYYYMMDD_YYYYMMDD`, `workdays`, `esd_<start>_<end\|open>`, `odd_*` / `even_*`. Чётность «через день» задаётся `start_date`, поэтому у 853 и 854 (старты отличаются на день) сервисы разные. См. §5, §6 | 🔧 |
+| `route_id` | **Обязательно** | `route_id` линии (§0.2) | 🔧 |
+| `service_id` | **Обязательно** | `gtfs/services.py`, общий для поездов с одинаковыми `frequency`, `start_date`, `end_date`. Вид: `daily`, `workdays`, `esd` (`every second day`), `odd` / `even` (`on odd days` / `on even days`). Без дат — просто вид (`daily`); с хотя бы одной датой — `<вид>_<start\|open>_<end\|open>` (`daily_20260616_open`, `esd_20250602_open`, `odd_20261003_20270613`). Даты — даты поезда, а не окна фида, поэтому id не меняется со временем. У 853 и 854 старты отличаются на день — сервисы разные. `esd` без `start_date` и неизвестная `frequency` — ошибка сборки | 🔧 |
 | `trip_id` | **Обязательно** | `str(ref)`. Если когда-нибудь один номер будет жить в двух вариантах расписания — суффикс (`801_summer`) | ✅ |
-| `trip_headsign` | Опционально | Название конечной станции (`stop_name` последней станции), переводы через `translations.txt`. Альтернатива — правая часть `name:en` после `→` | 🔧 |
+| `trip_headsign` | Опционально | Правая часть `name:en` после `→` (решено). Переводы — правые части `name:ka` / `name:ru` | ✅ |
 | `trip_short_name` | Опционально | `str(ref)` — номер поезда. Спецификация прямо называет этот случай («train numbers»). Уникален в пределах сервисного дня | ✅ |
 | `direction_id` | Опционально | `0`/`1` по правилу §0.2 | 🔧 |
 | `block_id` | Опционально | Не заполняем. Если известно, что один состав последовательно делает несколько рейсов (типично для Stadler и пригородных) — ➕ колонка `block` в Sheets | ➕ |
-| `shape_id` | Условно обязательно (только при continuous pickup) | OSM relation ID маршрута = поле `id` в `routes.json` = имя файла в `static/data/routes_geodata/`. Заполняем, только если файл с геоданными есть | ✅ |
-| `wheelchair_accessible` | Опционально | ➕ Маппинг по `train_type` в конфиге (например, если Stadler доступен — `1`) или колонка в Sheets. До появления данных — пусто | ➕ |
-| `bikes_allowed` | Опционально | ➕ Аналогично — по `train_type` или колонкой | ➕ |
-| `cars_allowed` | Опционально | Не заполняем (автомобили не перевозятся; можно явно `2`) | — |
+| `shape_id` | Условно обязательно (только при continuous pickup) | Пока не заполняем: ссылка на несуществующий `shapes.txt` — ошибка валидатора. С `shapes.txt` (§9) — OSM relation ID (`routes.json → id`), если файл с геоданными есть | ✅ (этап 2) |
+| `wheelchair_accessible` | Опционально | `1` для `train_type=stadler`, `0` (нет информации) для остальных (решено; `WHEELCHAIR_ACCESSIBLE_TRAIN_TYPES` в `gtfs/trips.py`) | 📌 |
+| `bikes_allowed` | Опционально | `0` — нет информации (решено) | 📌 |
+| `cars_allowed` | Опционально | `2` — автомобили не перевозятся (решено) | 📌 |
 | `safe_duration_factor` | Опционально | Только для on-demand. Не выводим | — |
 | `safe_duration_offset` | Опционально | Только для on-demand. Не выводим | — |
 
@@ -302,7 +302,7 @@
 | `stops` | `stop_url` | 🔧 `https://georailway.com/ka/stations/<code>/`, `.../ru/stations/<code>/` |
 | `routes` | `route_long_name` | ✅ города из `name:ka` / `name:ru` в порядке английского названия (§0.2) |
 | `routes` | `route_url` | 🔧 языковые версии URL |
-| `trips` | `trip_headsign` | 🔧 название конечной на ka/ru |
+| `trips` | `trip_headsign` | ✅ правая часть `name:ka` / `name:ru` после `→` |
 | `feed_info` | `feed_publisher_name` | опционально |
 
 ## 11. attributions.txt
