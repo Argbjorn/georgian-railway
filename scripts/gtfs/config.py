@@ -3,6 +3,26 @@
 # of foreign stations are expressed via stops.stop_timezone.
 FEED_TIMEZONE = 'Asia/Tbilisi'
 
+SITE_URL = 'https://georailway.com'
+
+# stops.stop_timezone for stations outside Georgia, keyed by station code. Georgian stations are
+# omitted and inherit agency_timezone. Does not affect stop_times (always in agency_timezone).
+STOP_TIMEZONES = {
+    # Azerbaijan
+    'böyükkəsik': 'Asia/Baku',
+    'ağstafastansiyası': 'Asia/Baku',
+    'ganja': 'Asia/Baku',
+    'yevlaxstansiyası': 'Asia/Baku',
+    'biləcəri': 'Asia/Baku',
+    'bakı': 'Asia/Baku',
+    # Armenia
+    'ayrum': 'Asia/Yerevan',
+    'vanadzor': 'Asia/Yerevan',
+    'gyumri': 'Asia/Yerevan',
+    'armavir': 'Asia/Yerevan',
+    'yerevan': 'Asia/Yerevan',
+}
+
 # Keyed by agency_id, which matches the `operator` column of the routes sheet.
 AGENCIES = {
     'GR': {

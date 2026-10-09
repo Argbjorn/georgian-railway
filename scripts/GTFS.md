@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — `agency.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — `agency.txt`, `stops.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -71,7 +71,7 @@
 
 - Фид зависит от даты сборки (окно `сегодня + 6 мес`, даты «через день» от сегодня), поэтому ZIP меняется при каждой сборке. По этой причине он **не хранится в git**.
 - `make_gtfs.py` запускается в CI после `make_stations_files`. Вход — уже собранные `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/`; Google Sheets и Overpass он сам не читает.
-- Сейчас (без ZIP) txt-файлы пишутся в `build/gtfs/` (`config.GTFS_BUILD_DIR`, в `.gitignore`). Целевой выход — `static/gtfs/georgian-railway.zip`; папка `static/gtfs/` тоже будет в `.gitignore`. Hugo копирует её в `public/`, и фид публикуется вместе с сайтом: `https://georailways.com/gtfs/georgian-railway.zip`. URL постоянный.
+- Сейчас (без ZIP) txt-файлы пишутся в `build/gtfs/` (`config.GTFS_BUILD_DIR`, в `.gitignore`). Целевой выход — `static/gtfs/georgian-railway.zip`; папка `static/gtfs/` тоже будет в `.gitignore`. Hugo копирует её в `public/`, и фид публикуется вместе с сайтом: `https://georailway.com/gtfs/georgian-railway.zip`. URL постоянный.
 - После генерации — MobilityData GTFS Validator; ошибки (errors) валят сборку, warnings — только в лог.
 - Шаги генерации и валидации нужны **в обоих** workflow: `pages.yaml` и `pages-fast.yaml`. Pages при деплое целиком заменяет сайт содержимым `public/`, так что деплой без шага GTFS молча удалит фид.
 - В `pages.yaml` добавляется `schedule` (cron, раз в неделю), чтобы окно фида сдвигалось без пушей. При горизонте 6 месяцев этого с запасом хватает (валидаторы предупреждают при сроке < 7–30 дней).
@@ -80,7 +80,7 @@
 ### 0.7. Структура кода
 
 - `scripts/make_gtfs.py` — точка входа, собирает все файлы.
-- `scripts/gtfs/` — пакет: `config.py` (константы, в т. ч. агентства), `source.py` (загрузка и отбор маршрутов), `writer.py` (запись CSV, пустые опциональные колонки опускаются), по модулю на каждый GTFS-файл (`agency.py`, …) с `FILE_NAME`, `FIELDS` (порядок спецификации), `REQUIRED_FIELDS` и функцией `build_*`.
+- `scripts/gtfs/` — пакет: `config.py` (константы: агентства, `SITE_URL`, `STOP_TIMEZONES`), `source.py` (загрузка и отбор маршрутов), `writer.py` (запись CSV, пустые опциональные колонки опускаются), `ids.py` (`stop_id`), `text.py` (HTML → текст), по модулю на каждый GTFS-файл (`agency.py`, …) с `FILE_NAME`, `FIELDS` (порядок спецификации), `REQUIRED_FIELDS` и функцией `build_*`.
 - Тесты — `scripts/tests/test_gtfs_*.py`. `scripts/tests/conftest.py` добавляет `scripts/` в **конец** `sys.path`: в тестах `import utils` должен оставаться `tests/utils.py`, поэтому пакет `gtfs` не должен импортировать `scripts/utils`.
 
 
@@ -104,24 +104,24 @@
 | `agency_email` | Опционально | `callcenter@railway.ge` / `elaqe@ady.az` / `mail@railway.am` | 📌 |
 | `cemv_support` | Опционально | Не заполняем (колонка не выводится). Если известно, что в пригородных можно платить бесконтактной картой — `1` на уровне `routes.cemv_support` | ➕ |
 
-## 2. stops.txt
+## 2. stops.txt ✅ реализовано
 
 Одна строка на станцию из `stations.json`, на которую ссылается хотя бы один trip. Простая модель: все записи — `location_type=0`, без иерархии станция → платформа.
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `stop_id` | **Обязательно** | `code` станции, **приведённый к ASCII**: сейчас есть не-ASCII коды (`böyükkəsik`, `bakı`, `biləcəri`, `ağstafastansiyası`, `yevlaxstansiyası`). Транслитерация детерминированная (`ə→e`, `ı→i`, `ğ→g`, `ö→o`, `ü→u`, `ç→c`, `ş→s`), уникальность проверяется тестом. Если транслитерация когда-нибудь поменяется, ID сменится — поэтому таблицу замен фиксируем в коде | 🔧 |
+| `stop_id` | **Обязательно** | `code` станции, приведённый к ASCII явной таблицей замен в `gtfs/ids.py` (`ə→e`, `ı→i`, `ğ→g`, `ö→o`, `ü→u`, `ç→c`, `ş→s`): `böyükkəsik` → `boyukkesik`, `bakı` → `baki`. Новая не-ASCII буква валит сборку (а не транслитерируется молча), дубликат `stop_id` после замены — тоже. Та же функция используется в `stop_times` | 🔧 |
 | `stop_name` | Условно обязательно (обязательно для `location_type` 0/1/2) | `name_en`. Переводы `name_ka`, `name_ru` — в `translations.txt`. Проверить отсутствие сокращений | ✅ |
 | `stop_lat` | Условно обязательно (обязательно для 0/1/2) | `coords[0]` | ✅ |
 | `stop_lon` | Условно обязательно (обязательно для 0/1/2) | `coords[1]` | ✅ |
 | `parent_station` | Условно обязательно (для платформ, входов и т. д.) | Не заполняем: иерархии нет | — |
-| `stop_code` | Опционально | Не заполняем. `gr_code` (код станции в системе ГЖД, `56014` и т. п.) пассажиру не виден, а спецификация просит указывать только публичные коды. У иностранных станций он ещё и пустой или `00000` | — (✅ при желании) |
+| `stop_code` | Опционально | **Не заполняем** (решено). Это публичный код, который видит пассажир (номер на табличке, CRS-код на билете). Такого у ГЖД нет. `gr_code` — внутренний код ЕСР: пассажиру его не показывают, у 26 станций его нет (`00000`) | — |
 | `tts_stop_name` | Опционально | Не заполняем. Можно добавить, если английское название плохо читается синтезатором речи | ➕ |
-| `stop_desc` | Опционально | Не заполняем. `description` есть у 9 станций, но там HTML и длинный текст. Можно взять очищенный текст или добавить короткое поле | ➕ |
+| `stop_desc` | Опционально | `description.en`, очищенный от HTML: `<br>` → пробел (переводы строк запрещены), у `<a>` остаётся текст ссылки, HTML-сущности декодируются, пробелы схлопываются. Переводы `description.ka` / `description.ru` (так же очищенные) — в `translations.txt`. Описание есть у 9 станций, у остальных — пусто | ✅ 🔧 |
 | `zone_id` | Опционально | Не заполняем: тарифных зон нет. Понадобится только для `fare_rules.txt` с зонами | — |
-| `stop_url` | Опционально | `https://georailways.com/en/stations/<code>/`. Версии `ru`/`ka` — через `translations.txt` (`field_name=stop_url`). Проверить, что страницы есть у всех станций, включая иностранные | 🔧 |
+| `stop_url` | Опционально | `https://georailway.com/stations/<code>/` — английская версия сайта лежит в корне, **без `/en/`**. Не-ASCII `code` кодируется (`urllib.parse.quote`): `bakı` → `bak%C4%B1`. Версии `/ru/stations/<code>/`, `/ka/stations/<code>/` — через `translations.txt`. Ссылка на неофициальный сайт корректна: спецификация требует только «страницу о месте», а `feed_info` указывает издателем этот же сайт. Страницы генерируются для всех станций `stations.json`, включая иностранные | 🔧 |
 | `location_type` | Опционально | Не выводим (= `0`, остановка). Если появятся данные о платформах (у части станций в `id` несколько узлов OSM), можно перейти на станцию `1` + платформы `0` | — ➕ |
-| `stop_timezone` | Опционально | Для иностранных станций — `Asia/Baku` / `Asia/Yerevan`, для грузинских — пусто (наследуется от агентства). На время в `stop_times` не влияет. Страны в данных нет: ➕ поле `country` в станциях, либо 🔧 вычислять по координатам или по пустому `gr_code` (ненадёжно) | ➕ |
+| `stop_timezone` | Опционально | Ручной список `STOP_TIMEZONES` в `gtfs/config.py` (решено): 6 станций Азербайджана → `Asia/Baku`, 5 станций Армении → `Asia/Yerevan`. Садахло — грузинская. Грузинские станции — пусто (наследуют `agency_timezone`). На время в `stop_times` не влияет. Новую иностранную станцию нужно добавить в список вручную; тест проверяет только, что коды из списка существуют | 📌 |
 | `wheelchair_boarding` | Опционально | Не заполняем. Можно добавить данные о доступности станций | ➕ |
 | `level_id` | Опционально | Не заполняем: нет `levels.txt` | — |
 | `platform_code` | Опционально | Не заполняем: нет платформ в модели. Если поезд всегда уходит с одной платформы — это скорее `stop_headsign`/описание, а не stops | — |
@@ -139,7 +139,7 @@
 | `route_long_name` | Условно обязательно (если пуст short_name) | `name:en` представителя линии (поезд с минимальным `ref` среди `direction_id=0`) с заменой `→` на `—`: `Batumi → Tbilisi` → `Batumi — Tbilisi`. Префикс «Train #N:» уже вырезан в `make_routes_files`. Переводы — из `name:ka` / `name:ru` того же поезда через `translations.txt` | ✅ 🔧 |
 | `route_type` | **Обязательно** | Старт: `2` (Rail) для всех. Опционально — расширенные типы по `train_type`/признакам: `stadler`, `vmk-grt` → `102` Long Distance; международные 37/38, 201/202 → `102` (или `105` Sleeper для ночных); `suburban` → `106` Regional / `109` Suburban. Расширенные понимают Google и OTP, но не все потребители | 🔧 |
 | `route_desc` | Опционально | Не заполняем. Можно генерировать по `train_type` («Stadler double-deck train») или ➕ короткое описание без HTML. `description_*` не подходят (HTML, про поезд, а не про линию) | ➕ |
-| `route_url` | Опционально | Если есть страница направления (`content/directions/<slug>`) — её URL. Иначе страница поезда с `direction_id=0` и минимальным `ref`: `https://georailways.com/en/routes/<ref>/`. Языковые версии — через `translations.txt` | 🔧 |
+| `route_url` | Опционально | Если есть страница направления (`content/directions/<slug>`) — её URL. Иначе страница поезда с `direction_id=0` и минимальным `ref`: `https://georailway.com/routes/<ref>/` (английская версия — без `/en/`). Языковые версии — через `translations.txt` | 🔧 |
 | `route_color` | Опционально | Цвет линии на карте сайта, если он задан по `train_type` (hex без `#`). Иначе — ➕ | ➕ |
 | `route_text_color` | Опционально | Контрастный к `route_color` (`FFFFFF`/`000000`), только если задан `route_color` | 🔧 |
 | `route_sort_order` | Опционально | Международные → междугородние → пригородные, внутри групп — по минимальному `ref` | 🔧 |
@@ -234,7 +234,7 @@
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
 | `feed_publisher_name` | **Обязательно** | `Georgian Railway Map` (наш проект, не ГЖД) | 📌 |
-| `feed_publisher_url` | **Обязательно** | `https://georailways.com` | 📌 |
+| `feed_publisher_url` | **Обязательно** | `https://georailway.com` | 📌 |
 | `feed_lang` | **Обязательно** | `en` — основные тексты (`stop_name` и т. д.) на английском, `ka`/`ru` — переводы | 📌 |
 | `default_lang` | Опционально | `en` | 📌 |
 | `feed_start_date` | Рекомендуется | `W_start` | 🔧 |
@@ -287,7 +287,8 @@
 |---|---|---|
 | `agency` | `agency_name` | 📌 `საქართველოს რკინიგზა` / `Грузинская железная дорога` |
 | `stops` | `stop_name` | ✅ `name_ka`, `name_ru` |
-| `stops` | `stop_url` | 🔧 `/ka/stations/<code>/`, `/ru/stations/<code>/` |
+| `stops` | `stop_desc` | ✅ `description.ka`, `description.ru` (очищенные от HTML) |
+| `stops` | `stop_url` | 🔧 `https://georailway.com/ka/stations/<code>/`, `.../ru/stations/<code>/` |
 | `routes` | `route_long_name` | ✅ `name:ka` / `name:ru` представителя линии (`→` → `—`) |
 | `routes` | `route_url` | 🔧 языковые версии URL |
 | `trips` | `trip_headsign` | 🔧 название конечной на ka/ru |
@@ -307,7 +308,7 @@
 | `is_producer` | Опционально | `1` — для `Georgian Railway Map` и `OpenStreetMap contributors` (источник геоданных) | 📌 |
 | `is_operator` | Опционально | `1` — для трёх операторов (`Georgian Railway`, `Azerbaijan Railways`, `South Caucasus Railway`); можно привязать к `agency_id` | 📌 |
 | `is_authority` | Опционально | Не заполняем (или `1` для ГЖД — она же устанавливает расписание) | — |
-| `attribution_url` | Опционально | `https://www.openstreetmap.org/copyright`, официальный сайт ГЖД, `https://georailways.com` | 📌 |
+| `attribution_url` | Опционально | `https://www.openstreetmap.org/copyright`, официальный сайт ГЖД, `https://georailway.com` | 📌 |
 | `attribution_email` | Опционально | Не заполняем (у нас — `feed_contact_email`) | — |
 | `attribution_phone` | Опционально | Не заполняем | — |
 
