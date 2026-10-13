@@ -1,4 +1,5 @@
 from gtfs import agency, routes, translations
+from gtfs.config import AGENCY_NAME_TRANSLATIONS
 from gtfs.ids import stop_id
 from gtfs.stops import used_station_codes
 from gtfs.source import load_direction_pages, load_json, select_routes
@@ -40,8 +41,8 @@ def find(rows, table, field, lang, record_id):
 class TestBuildTranslations:
     def test_agency_name(self):
         rows = build()
-        assert find(rows, 'agency', 'agency_name', 'ka', 'GR') == 'საქართველოს რკინიგზა'
-        assert find(rows, 'agency', 'agency_name', 'ru', 'GR') == 'Грузинская железная дорога'
+        for lang in ('ka', 'ru'):
+            assert find(rows, 'agency', 'agency_name', lang, 'GR') == AGENCY_NAME_TRANSLATIONS['GR'][lang]
 
     def test_stop_fields(self):
         rows = build()

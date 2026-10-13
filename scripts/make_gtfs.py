@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from config import ROUTES_JSON_PATH, STATIONS_JSON_PATH, DIRECTIONS_CONTENT_DIR, ROUTES_GEODATA_DIR, GTFS_BUILD_DIR
-from gtfs import (agency, calendar, calendar_dates, feed_info, routes as gtfs_routes, shapes, stop_times,
+from gtfs import (agency, attributions, calendar, calendar_dates, feed_info, routes as gtfs_routes, shapes, stop_times,
                   stops, translations, trips)
 from gtfs.services import feed_window, split_by_service, unique_services
 from gtfs.source import load_direction_pages, load_json, select_routes
@@ -39,6 +39,7 @@ def make_gtfs(output_dir=GTFS_BUILD_DIR, today=None):
         (calendar_dates, calendar_dates.build_calendar_dates(services)),
         (shapes, shape_rows),
         (translations, translations.build_translations(agency_rows, routes, stations, lines, direction_pages)),
+        (attributions, attributions.build_attributions(agency_rows)),
     ]
     written = []
     for table, rows in tables:

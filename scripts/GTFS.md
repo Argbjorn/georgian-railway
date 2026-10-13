@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`, `translations.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`, `translations.txt`, `attributions.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -346,12 +346,25 @@
 
 Пустой перевод и перевод, совпадающий со значением в фиде, пропускаются. Сейчас так пропадают `name_ka`/`name_ru` пяти азербайджанских станций (Bakı, Ağstafa, Biləcəri, Böyük Kəsik, Yevlax): в `stations.json` у них латиница вместо перевода — вероятно, в OSM нет `name:ka`/`name:ru`. ➕ Добавить переводы в OSM или в данные станций.
 
-## 11. attributions.txt
+## 11. attributions.txt ✅ реализовано
 
-Нужен для атрибуции OSM (ODbL) и указания первоисточника расписания.
+Атрибуция OSM (ODbL: координаты станций и `shapes.txt` из OSM), операторов и издателя фида. Реализация — `gtfs/attributions.py`.
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
+| `organization_name` | **Обязательно** | `Georgian Railway Map`, `OpenStreetMap contributors`, названия операторов из `agency.txt` | 📌 |
+| `attribution_id` | Опционально | `site`, `osm`, `gr` / `ar` / `scr` (`agency_id` в нижнем регистре) | 📌 |
+| `agency_id` | Опционально | Для операторов — свой `agency_id` (атрибуция относится к их поездам); для `site` и `osm` — пусто (весь фид) | 📌 |
+| `route_id` | Опционально | Не заполняем | — |
+| `trip_id` | Опционально | Не заполняем | — |
+| `is_producer` | Опционально | `1` — `site` и `osm` | 📌 |
+| `is_operator` | Опционально | `1` — операторы. В файл попадают только операторы, которые есть в `agency.txt` | 📌 |
+| `is_authority` | Опционально | Не заполняем | — |
+| `attribution_url` | Опционально | `https://georailway.com`, `https://www.openstreetmap.org/copyright`, `agency_url` оператора | 📌 |
+| `attribution_email` | Опционально | Только у `site` — `FEED_CONTACT_EMAIL` | 📌 |
+| `attribution_phone` | Опционально | Не заполняем (телефоны операторов — в `agency.txt`) | — |
+
+---|---|---|---|
 | `organization_name` | **Обязательно** | Строки: `OpenStreetMap contributors`, `Georgian Railway`, `Georgian Railway Map` | 📌 |
 | `attribution_id` | Опционально | `osm`, `gr`, `grmap` | 📌 |
 | `agency_id` | Опционально | Пусто — атрибуция на весь фид | — |
