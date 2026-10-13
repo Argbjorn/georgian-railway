@@ -3,7 +3,7 @@ import csv
 import pytest
 
 from gtfs import agency
-from gtfs.config import AGENCIES
+from gtfs.config import AGENCIES, FEED_LANG
 from gtfs.writer import write_table
 
 
@@ -35,6 +35,9 @@ class TestBuildAgency:
     def test_agencies_share_timezone(self):
         # GTFS requires one agency_timezone for all agencies of a feed
         assert len({a['agency_timezone'] for a in AGENCIES.values()}) == 1
+
+    def test_agency_lang_matches_feed_lang(self):
+        assert {a['agency_lang'] for a in AGENCIES.values()} == {FEED_LANG}
 
     def test_rows_have_required_fields_and_only_known_fields(self):
         for row in agency.build_agency(ALL_OPERATORS):

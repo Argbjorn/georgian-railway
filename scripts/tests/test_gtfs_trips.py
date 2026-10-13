@@ -68,7 +68,6 @@ class TestBuildTrips:
                 'route_id': 'tbilisi-batumi-stadler',
                 'service_id': 'daily',
                 'trip_id': '801',
-                'trip_headsign': 'Tbilisi',
                 'trip_short_name': '801',
                 'direction_id': 1,
                 'shape_id': '',
@@ -80,7 +79,6 @@ class TestBuildTrips:
                 'route_id': 'tbilisi-batumi-stadler',
                 'service_id': 'daily',
                 'trip_id': '802',
-                'trip_headsign': 'Batumi',
                 'trip_short_name': '802',
                 'direction_id': 0,
                 'shape_id': '',
@@ -99,11 +97,6 @@ class TestBuildTrips:
         lines = routes.group_lines([train(617, 'borjomi', 'tbilisi', 'Borjomi → Tbilisi', 'suburban')])
         [row] = trips.build_trips(lines)
         assert row['wheelchair_accessible'] == 0
-
-    def test_headsign_translation(self):
-        t = train(617, 'borjomi', 'tbilisi', 'Borjomi → Tbilisi')
-        t['name:ru'] = 'Боржоми → Тбилиси'
-        assert trips.trip_headsign(t, 'ru') == 'Тбилиси'
 
 
 class TestRealData:

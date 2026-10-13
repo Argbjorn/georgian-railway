@@ -1,6 +1,5 @@
 """trips.txt — one trip per train (ref)."""
 
-from .routes import name_cities
 from .services import service_id
 
 FILE_NAME = 'trips.txt'
@@ -21,14 +20,14 @@ FIELDS = [
 ]
 REQUIRED_FIELDS = {'route_id', 'service_id', 'trip_id'}
 
+# trip_headsign is not written: consumers fall back to the last stop name, while the city from the
+# train name can be an intermediate stop (validator: trip_headsign_matches_intermediate_stop,
+# e.g. "Borjomi" for trains ending at Borjomi-Parki).
+
 # wheelchair_accessible: 1 — accessible, 0 — no information.
 WHEELCHAIR_ACCESSIBLE_TRAIN_TYPES = {'stadler'}
 BIKES_ALLOWED = 0  # no information
 CARS_ALLOWED = 2  # no cars are carried
-
-
-def trip_headsign(train, lang='en'):
-    return name_cities(train, lang)[1]
 
 
 def build_trips(lines, shape_ids=None):
@@ -41,7 +40,6 @@ def build_trips(lines, shape_ids=None):
                 'route_id': line.route_id,
                 'service_id': service_id(train),
                 'trip_id': str(train['ref']),
-                'trip_headsign': trip_headsign(train),
                 'trip_short_name': str(train['ref']),
                 'direction_id': line.direction_id(train),
                 'shape_id': shape_ids.get(train['ref'], ''),

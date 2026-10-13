@@ -109,7 +109,7 @@
 | `agency_name` | **Обязательно** | `Georgian Railway` / `Azerbaijan Railways` / `South Caucasus Railway`. Переводы `ka`/`ru` — в `translations.txt` | 📌 |
 | `agency_url` | **Обязательно** | `https://www.railway.ge/` / `https://ady.az/` / `https://www.railway.am/` | 📌 |
 | `agency_timezone` | **Обязательно** | `Asia/Tbilisi` **у всех трёх**: спецификация требует одинаковый `agency_timezone` для всех агентств фида (иначе error валидатора). GE/AZ/AM — UTC+4 без DST, поэтому это корректно. Реальные пояса иностранных станций — в `stops.stop_timezone` | 📌 |
-| `agency_lang` | Опционально | `ka` / `az` / `hy` — основной язык перевозчика | 📌 |
+| `agency_lang` | Опционально | `en` у всех (= `FEED_LANG`). Это язык текстов фида об агентстве, а не государственный язык перевозчика; должен совпадать с `feed_info.feed_lang`, иначе валидатор выдаёт `feed_info_lang_and_agency_lang_mismatch` (было `ka`/`az`/`hy`) | 📌 |
 | `agency_phone` | Опционально | `1331` / `1822` / `+37460463440` | 📌 |
 | `agency_fare_url` | Опционально | `https://gr.com.ge/` / `https://ticket.ady.az/` / `https://ticket.railway.am/` | 📌 |
 | `agency_email` | Опционально | `callcenter@railway.ge` / `elaqe@ady.az` / `mail@railway.am` | 📌 |
@@ -168,7 +168,7 @@
 | `route_id` | **Обязательно** | `route_id` линии (§0.2) | 🔧 |
 | `service_id` | **Обязательно** | `gtfs/services.py`, общий для поездов с одинаковыми `frequency`, `start_date`, `end_date`. Вид: `daily`, `workdays`, `esd` (`every second day`), `odd` / `even` (`on odd days` / `on even days`). Без дат — просто вид (`daily`); с хотя бы одной датой — `<вид>_<start\|open>_<end\|open>` (`daily_20260616_open`, `esd_20250602_open`, `odd_20261003_20270613`). Даты — даты поезда, а не окна фида, поэтому id не меняется со временем. У 853 и 854 старты отличаются на день — сервисы разные. `esd` без `start_date` и неизвестная `frequency` — ошибка сборки | 🔧 |
 | `trip_id` | **Обязательно** | `str(ref)`. Если когда-нибудь один номер будет жить в двух вариантах расписания — суффикс (`801_summer`) | ✅ |
-| `trip_headsign` | Опционально | Правая часть `name:en` после `→` (решено). Переводы — правые части `name:ka` / `name:ru` | ✅ |
+| `trip_headsign` | Опционально | **Не заполняем** (решено 2026-10-13). Было: правая часть `name:en` после `→`. Город из названия поезда может быть промежуточной станцией — 618/686 «→ Borjomi» идут через Borjomi до Borjomi-Parki, валидатор выдаёт `trip_headsign_matches_intermediate_stop`. Без поля потребители показывают название последней остановки | — |
 | `trip_short_name` | Опционально | `str(ref)` — номер поезда. Спецификация прямо называет этот случай («train numbers»). Уникален в пределах сервисного дня | ✅ |
 | `direction_id` | Опционально | `0`/`1` по правилу §0.2 | 🔧 |
 | `block_id` | Опционально | Не заполняем. Если известно, что один состав последовательно делает несколько рейсов (типично для Stadler и пригородных) — ➕ колонка `block` в Sheets | ➕ |
@@ -210,17 +210,17 @@
 
 ## 6. calendar.txt ✅ реализовано
 
-Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: в `calendar.txt` — строка на **каждый** сервис (недельный шаблон и диапазон дат), в `calendar_dates.txt` — конкретные даты `esd`, `odd`, `even`. Логика дат — `gtfs/services.py`.
+Обе таблицы календаря условно обязательны: нужна хотя бы одна. Используем обе: в `calendar.txt` — недельные шаблоны (`daily`, `workdays`), в `calendar_dates.txt` — конкретные даты `esd`, `odd`, `even`. Логика дат — `gtfs/services.py`.
 
-Сервисы без недельного шаблона (`esd`, `odd`, `even`) тоже получают строку в `calendar.txt` — со всеми днями недели `0` и диапазоном дат; сами даты добавляются через `calendar_dates.txt`. По спецификации строка не обязательна, но некоторые потребители берут диапазон сервиса только из `calendar.txt`: без неё gtfs-to-html пишет «No regular service days» и не показывает список дат.
+Сервисы `esd`, `odd`, `even` в `calendar.txt` **не попадают**. Строка со всеми днями недели `0` и диапазоном дат допустима по спецификации и нужна gtfs-to-html для вывода списка дат, но валидатор MobilityData выдаёт на неё `service_has_no_active_day_of_the_week`. Решено (2026-10-13): фид без предупреждений важнее отладочного просмотрщика — в gtfs-to-html у таких поездов «Specific dates» без списка дат. Вариант «ежедневно в `calendar.txt` + вычеркнуть лишние дни через `exception_type=2`» отклонён: ложный недельный шаблон («Daily») в приложениях.
 
 Окно: `W_start = дата сборки (Тбилиси)`, `W_end = W_start + 6 мес` (включительно; день месяца ограничивается длиной месяца: 31 августа + 6 мес = 28 февраля).
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
 | `service_id` | **Обязательно** | См. trips. Одна строка на `service_id` | 🔧 |
-| `monday` … `friday` | **Обязательно** | `daily` → `1`; `on workdays` → `1`; `every second day`, `on odd days`, `on even days` → `0` (даты — в §7) | ✅ |
-| `saturday`, `sunday` | **Обязательно** | `daily` → `1`; `on workdays`, `every second day`, `on odd days`, `on even days` → `0` | ✅ |
+| `monday` … `friday` | **Обязательно** | `daily` → `1`; `on workdays` → `1`. `every second day`, `on odd days`, `on even days` — строки нет (даты — в §7) | ✅ |
+| `saturday`, `sunday` | **Обязательно** | `daily` → `1`; `on workdays` → `0` | ✅ |
 | `start_date` | **Обязательно** | `max(route.start_date, W_start)`, `YYYYMMDD` | ✅ 🔧 |
 | `end_date` | **Обязательно** | `min(route.end_date, W_end)`. `end_date` в Sheets — последний день движения включительно, как и в GTFS, поэтому без сдвига | ✅ 🔧 |
 
@@ -322,11 +322,11 @@
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `table_name` | **Обязательно** | `agency`, `stops`, `routes`, `trips` | 🔧 |
+| `table_name` | **Обязательно** | `agency`, `stops`, `routes` | 🔧 |
 | `field_name` | **Обязательно** | см. ниже | 🔧 |
 | `language` | **Обязательно** | `ka`, `ru` | 📌 |
 | `translation` | **Обязательно** | Переведённое значение | ✅ |
-| `record_id` | Условно обязательно (если нет `field_value`; запрещено для `feed_info`) | Везде способ с `record_id` (однозначный): `agency_id` / `stop_id` / `route_id` / `trip_id` | 🔧 |
+| `record_id` | Условно обязательно (если нет `field_value`; запрещено для `feed_info`) | Везде способ с `record_id` (однозначный): `agency_id` / `stop_id` / `route_id` | 🔧 |
 | `record_sub_id` | Условно обязательно (только для `stop_times`) | Не используем: `stop_times` не переводим | — |
 | `field_value` | Условно обязательно (если нет `record_id`) | Не используем | — |
 
@@ -340,7 +340,6 @@
 | `stops` | `stop_url` | 🔧 `https://georailway.com/ka/stations/<code>/`, `.../ru/stations/<code>/` |
 | `routes` | `route_long_name` | ✅ города из `name:ka` / `name:ru` в порядке английского названия (§0.2) |
 | `routes` | `route_url` | 🔧 языковые версии URL |
-| `trips` | `trip_headsign` | ✅ правая часть `name:ka` / `name:ru` после `→` |
 
 `feed_info` не переводим: у сайта нет локализованных названий.
 

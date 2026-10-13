@@ -4,7 +4,6 @@ from .config import AGENCY_NAME_TRANSLATIONS, TRANSLATION_LANGS
 from .ids import stop_id
 from .routes import line_name, line_url
 from .stops import station_description, station_url, used_station_codes
-from .trips import trip_headsign
 
 FILE_NAME = 'translations.txt'
 FIELDS = ['table_name', 'field_name', 'language', 'translation', 'record_id', 'record_sub_id', 'field_value']
@@ -52,11 +51,5 @@ def build_translations(agency_rows, routes, stations, lines, direction_pages):
             'route_long_name': (line_name(line), lambda lang: line_name(line, lang)),
             'route_url': (line_url(line, direction_pages), lambda lang: line_url(line, direction_pages, lang)),
         })
-
-    for line in lines:
-        for train in line.trains:
-            rows += _rows('trips', str(train['ref']), {
-                'trip_headsign': (trip_headsign(train), lambda lang: trip_headsign(train, lang)),
-            })
 
     return rows

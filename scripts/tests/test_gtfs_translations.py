@@ -56,12 +56,11 @@ class TestBuildTranslations:
         assert find(rows, 'stops', 'stop_name', 'ru', 'tbilisi') is None  # same as English name
         assert find(rows, 'stops', 'stop_desc', 'ru', 'tbilisi') is None  # no description at all
 
-    def test_route_and_trip_fields(self):
+    def test_route_fields(self):
         rows = build()
         route_id = 'tbilisi-borjomi'
         assert find(rows, 'routes', 'route_long_name', 'ru', route_id) == 'Тбилиси — Боржоми'
         assert find(rows, 'routes', 'route_url', 'ru', route_id) == 'https://georailway.com/ru/routes/617/'
-        assert find(rows, 'trips', 'trip_headsign', 'ka', '617') == 'თბილისი'
 
     def test_rows_use_record_id_only(self):
         for row in build():
@@ -79,7 +78,6 @@ class TestRealData:
             'agency': {a['agency_id'] for a in agency.build_agency(trains)},
             'stops': {stop_id(code) for code in used_station_codes(trains)},
             'routes': {line.route_id for line in lines},
-            'trips': {str(t['ref']) for t in trains},
         }
         for row in rows:
             assert row['record_id'] in records[row['table_name']], row
