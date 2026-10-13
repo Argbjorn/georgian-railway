@@ -71,6 +71,7 @@ class TestBuildTrips:
                 'trip_headsign': 'Tbilisi',
                 'trip_short_name': '801',
                 'direction_id': 1,
+                'shape_id': '',
                 'wheelchair_accessible': 1,
                 'bikes_allowed': 0,
                 'cars_allowed': 2,
@@ -82,11 +83,17 @@ class TestBuildTrips:
                 'trip_headsign': 'Batumi',
                 'trip_short_name': '802',
                 'direction_id': 0,
+                'shape_id': '',
                 'wheelchair_accessible': 1,
                 'bikes_allowed': 0,
                 'cars_allowed': 2,
             },
         ]
+
+    def test_shape_id_from_mapping(self):
+        lines = routes.group_lines([train(801, 'batumi', 'tbilisi', 'Batumi → Tbilisi')])
+        [row] = trips.build_trips(lines, {801: '123'})
+        assert row['shape_id'] == '123'
 
     def test_non_stadler_has_no_wheelchair_info(self):
         lines = routes.group_lines([train(617, 'borjomi', 'tbilisi', 'Borjomi → Tbilisi', 'suburban')])

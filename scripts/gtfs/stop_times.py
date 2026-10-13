@@ -87,7 +87,8 @@ def unwrap_midnight(train, times):
     return result
 
 
-def build_trip_stop_times(train):
+def build_trip_stop_times(train, distances=None):
+    """`distances`: shape_dist_traveled per station (None where unknown), or None without a shape."""
     stations = train['stations']
     times = unwrap_midnight(train, [station_times(train, i) for i in range(len(stations))])
     for index in (0, len(stations) - 1):
@@ -105,10 +106,14 @@ def build_trip_stop_times(train):
             'stop_sequence': index + 1,
             'pickup_type': NO_PICKUP if index == len(stations) - 1 else '',
             'drop_off_type': NO_DROP_OFF if index == 0 else '',
+            'shape_dist_traveled': distances[index] if distances and distances[index] is not None else '',
             'timepoint': 1 if has_time else '',
         })
     return rows
 
 
-def build_stop_times(lines):
-    return [row for line in lines for train in line.trains for row in build_trip_stop_times(train)]
+def build_stop_times(lines, stop_distances=None):
+    """`stop_distances` maps train ref to shape_dist_traveled per station."""
+    stop_distances = stop_distances or {}
+    return [row for line in lines for train in line.trains
+            for row in build_trip_stop_times(train, stop_distances.get(train['ref']))]

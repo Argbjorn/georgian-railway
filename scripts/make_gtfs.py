@@ -5,8 +5,9 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from config import ROUTES_JSON_PATH, STATIONS_JSON_PATH, DIRECTIONS_CONTENT_DIR, GTFS_BUILD_DIR
-from gtfs import agency, calendar, calendar_dates, feed_info, routes as gtfs_routes, stop_times, stops, trips
+from config import ROUTES_JSON_PATH, STATIONS_JSON_PATH, DIRECTIONS_CONTENT_DIR, ROUTES_GEODATA_DIR, GTFS_BUILD_DIR
+from gtfs import (agency, calendar, calendar_dates, feed_info, routes as gtfs_routes, shapes, stop_times,
+                  stops, trips)
 from gtfs.services import feed_window, split_by_service, unique_services
 from gtfs.source import load_direction_pages, load_json, select_routes
 from gtfs.writer import write_table
@@ -21,16 +22,21 @@ def make_gtfs(output_dir=GTFS_BUILD_DIR, today=None):
     lines = gtfs_routes.group_lines(routes)
     services = unique_services(routes, window)
     direction_pages = load_direction_pages(DIRECTIONS_CONTENT_DIR)
+    shape_rows, shape_ids, shape_warnings = shapes.build_shapes(routes, stations, ROUTES_GEODATA_DIR)
+    stop_distances, distance_warnings = shapes.stop_distances(routes, stations, shape_rows, shape_ids)
+    for warning in shape_warnings + distance_warnings:
+        print(f'Warning: {warning}')
     os.makedirs(output_dir, exist_ok=True)
 
     tables = [
         (agency, agency.build_agency(routes)),
         (stops, stops.build_stops(routes, stations)),
         (gtfs_routes, gtfs_routes.build_routes(lines, direction_pages)),
-        (trips, trips.build_trips(lines)),
-        (stop_times, stop_times.build_stop_times(lines)),
+        (trips, trips.build_trips(lines, shape_ids)),
+        (stop_times, stop_times.build_stop_times(lines, stop_distances)),
         (calendar, calendar.build_calendar(services)),
         (calendar_dates, calendar_dates.build_calendar_dates(services)),
+        (shapes, shape_rows),
     ]
     written = []
     for table, rows in tables:

@@ -102,8 +102,13 @@ class TestRowFields:
             'stop_sequence': 2,
             'pickup_type': '',
             'drop_off_type': '',
+            'shape_dist_traveled': '',
             'timepoint': 1,
         }
+
+    def test_shape_dist_traveled(self):
+        rows = stop_times.build_trip_stop_times(single_time_train('10:00', '10:30', '11:00'), [0.0, None, 950.5])
+        assert [row['shape_dist_traveled'] for row in rows] == [0.0, '', 950.5]
 
     def test_no_drop_off_at_first_and_no_pickup_at_last(self):
         rows = stop_times.build_trip_stop_times(single_time_train('10:00', '10:30', '11:00'))
