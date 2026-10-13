@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`, `translations.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -316,32 +316,35 @@
 
 # Опциональные файлы, которые нам нужны
 
-## 10. translations.txt
+## 10. translations.txt ✅ реализовано
 
-Три языка — основная ценность наших данных. Делает `feed_info.txt` обязательным.
+Три языка — основная ценность наших данных. Делает `feed_info.txt` обязательным. Реализация — `gtfs/translations.py`, языки — `TRANSLATION_LANGS` (`ka`, `ru`).
 
 | Поле | Обязательность | Решение | Источник |
 |---|---|---|---|
-| `table_name` | **Обязательно** | `agency`, `stops`, `routes`, `trips`, `feed_info` | 🔧 |
+| `table_name` | **Обязательно** | `agency`, `stops`, `routes`, `trips` | 🔧 |
 | `field_name` | **Обязательно** | см. ниже | 🔧 |
 | `language` | **Обязательно** | `ka`, `ru` | 📌 |
 | `translation` | **Обязательно** | Переведённое значение | ✅ |
-| `record_id` | Условно обязательно (если нет `field_value`; запрещено для `feed_info`) | Используем способ с `record_id` (однозначный): `agency_id` / `stop_id` / `route_id` / `trip_id` | 🔧 |
+| `record_id` | Условно обязательно (если нет `field_value`; запрещено для `feed_info`) | Везде способ с `record_id` (однозначный): `agency_id` / `stop_id` / `route_id` / `trip_id` | 🔧 |
 | `record_sub_id` | Условно обязательно (только для `stop_times`) | Не используем: `stop_times` не переводим | — |
-| `field_value` | Условно обязательно (если нет `record_id`) | Не используем: везде `record_id`. Исключение — `feed_info`, где ни `record_id`, ни `field_value` не указываются | — |
+| `field_value` | Условно обязательно (если нет `record_id`) | Не используем | — |
 
 Что переводим:
 
 | table_name | field_name | Источник перевода |
 |---|---|---|
-| `agency` | `agency_name` | 📌 `საქართველოს რკინიგზა` / `Грузинская железная дорога` |
+| `agency` | `agency_name` | 📌 `AGENCY_NAME_TRANSLATIONS` в `gtfs/config.py` |
 | `stops` | `stop_name` | ✅ `name_ka`, `name_ru` |
 | `stops` | `stop_desc` | ✅ `description.ka`, `description.ru` (очищенные от HTML) |
 | `stops` | `stop_url` | 🔧 `https://georailway.com/ka/stations/<code>/`, `.../ru/stations/<code>/` |
 | `routes` | `route_long_name` | ✅ города из `name:ka` / `name:ru` в порядке английского названия (§0.2) |
 | `routes` | `route_url` | 🔧 языковые версии URL |
 | `trips` | `trip_headsign` | ✅ правая часть `name:ka` / `name:ru` после `→` |
-| `feed_info` | `feed_publisher_name` | опционально |
+
+`feed_info` не переводим: у сайта нет локализованных названий.
+
+Пустой перевод и перевод, совпадающий со значением в фиде, пропускаются. Сейчас так пропадают `name_ka`/`name_ru` пяти азербайджанских станций (Bakı, Ağstafa, Biləcəri, Böyük Kəsik, Yevlax): в `stations.json` у них латиница вместо перевода — вероятно, в OSM нет `name:ka`/`name:ru`. ➕ Добавить переводы в OSM или в данные станций.
 
 ## 11. attributions.txt
 

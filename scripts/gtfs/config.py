@@ -40,6 +40,16 @@ STOP_TIMEZONES = {
     'yerevan': 'Asia/Yerevan',
 }
 
+# Languages translated in translations.txt (the feed's own language is FEED_LANG).
+TRANSLATION_LANGS = ['ka', 'ru']
+
+# agency_name translations, keyed by agency_id.
+AGENCY_NAME_TRANSLATIONS = {
+    'GR': {'ka': 'სს საქართველოს რკინიგზა', 'ru': 'Грузинская железная дорога'},
+    'AR': {'ka': 'აზერბაიჯანის რკინიგზა', 'ru': 'Азербайджанские железные дороги'},
+    'SCR': {'ka': 'სამხრეთ კავკასიის რკინიგზა', 'ru': 'Южно-Кавказская железная дорога'},
+}
+
 # Keyed by agency_id, which matches the `operator` column of the routes sheet.
 AGENCIES = {
     'GR': {
