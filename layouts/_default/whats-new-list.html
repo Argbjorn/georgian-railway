@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="content-max-width" style="display: flex;">
+  {{ partial "sidebar.html" (dict
+        "context" .
+        "disableSidebar" true
+        "displayPlaceholder" false
+    ) }}
+  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-narrow">
+    <article class="hx:w-full">
+      <div class="content">
+        {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
+        {{ .Content }}
+      </div>
+      {{/* Entries have no pages of their own (render: never), the whole feed lives here.
+           The anchor is the file name, so it is the same in every language. */}}
+      {{ range .Pages.ByDate.Reverse }}
+        {{ $anchor := .File.ContentBaseName }}
+        <section id="{{ $anchor }}" class="whats-new-entry content">
+          <a class="whats-new-date" href="#{{ $anchor }}">{{ partial "utils/format-date" .Date }}</a>
+          {{ with .Title }}<h3>{{ . }}</h3>{{ end }}
+          {{ .Content }}
+        </section>
+      {{ end }}
+      {{ with .OutputFormats.Get "rss" }}
+        <p class="whats-new-rss"><a href="{{ .RelPermalink }}">RSS</a></p>
+      {{ end }}
+    </article>
+  </div>
+  </div>
+</div>
+<style>
+  .whats-new-entry { padding: 1.25rem 0; border-bottom: 1px solid #e5e7eb; scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+  .whats-new-entry > :first-child + * { margin-top: 0.25rem; }
+  .whats-new-entry p { margin-top: 0.5rem; }
+  .whats-new-date { font-size: 0.875rem; color: #6b7280; text-decoration: none; }
+  .whats-new-date:hover { text-decoration: underline; }
+  .whats-new-entry:target { background: #fffbe6; }
+  .whats-new-rss { margin-top: 1.5rem; font-size: 0.875rem; }
+</style>
+{{ end }}

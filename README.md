@@ -14,7 +14,7 @@ Available in English, Russian, and Georgian (ქართული).
 ## Project structure
 
 ```
-content/            Hugo content — routes, stations, directions, blog, about
+content/            Hugo content — routes, stations, directions, whats-new, about
 layouts/            Hugo templates and shortcodes (single-route, single-station, esd_calendar, ...)
 data/               Generated data files consumed by the templates (routes.json, stations.json, ...)
 static/             Static assets, including generated route geodata and the railway network layer

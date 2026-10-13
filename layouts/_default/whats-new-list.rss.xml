@@ -1,0 +1,28 @@
+{{- /* Entries have no own pages, so items link to their anchor on the feed page. */ -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Title }} – {{ .Title }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ .Description }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.Language.Lang }}</language>
+    {{- with .Pages.ByDate.Reverse }}{{ with index . 0 }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- end }}{{ end }}
+    {{- with .OutputFormats.Get "rss" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- $feed := .Permalink }}
+    {{- range first 50 .Pages.ByDate.Reverse }}
+    {{- $link := printf "%s#%s" $feed .File.ContentBaseName }}
+    <item>
+      <title>{{ .Title | default (.Content | plainify | truncate 80) }}</title>
+      <link>{{ $link }}</link>
+      <guid>{{ $link }}</guid>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <description>{{ .Content | html }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
