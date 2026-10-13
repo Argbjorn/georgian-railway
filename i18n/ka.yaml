@@ -11,6 +11,6 @@ blog: ბლოგი
 pageNotFound: გვერდი ვერ მოიძებნა
 pageNotFoundText: მოთხოვნილი გვერდი არ არსებობს ან გადატანილია.
 returnHome: მთავარ გვერდზე დაბრუნება
-supportPrompt: "🚂 მხარი დაუჭირეთ პროექტს: <a href=\"https://boosty.to/argbjorn\" onclick=\"trackSupportClick('boosty'); return true;\" target=\"_blank\">Boosty</a> ან <a href=\"https://buymeacoffee.com/konstantin_remnev\" onclick=\"trackSupportClick('buymeacoffee'); return true;\" target=\"_blank\">Buy Me a Coffee</a>."
+footerText: "🚂 საქართველოს მატარებლების განრიგი 2024 წლიდან"
 showMap: რუკის ჩვენება
 hideMap: რუკის დამალვა

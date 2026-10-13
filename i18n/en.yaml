@@ -11,6 +11,6 @@ blog: Blog
 pageNotFound: Page Not Found
 pageNotFoundText: The requested page doesn't exist or has been moved.
 returnHome: Return to Home 
-supportPrompt: "🚂 Support the project: <a href=\"https://boosty.to/argbjorn\" onclick=\"trackSupportClick('boosty'); return true;\" target=\"_blank\">Boosty</a> or <a href=\"https://buymeacoffee.com/konstantin_remnev\" onclick=\"trackSupportClick('buymeacoffee'); return true;\" target=\"_blank\">Buy Me a Coffee</a>."
+footerText: "🚂 Georgian train timetables since 2024"
 showMap: Show the map
 hideMap: Hide the map 

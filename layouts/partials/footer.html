@@ -19,27 +19,10 @@
 <footer class="hextra-footer {{ $footerWidth }} hx:mx-auto hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent">
     <div style="max-width: 1280px; margin-left: auto; margin-right: auto; margin-top: 1rem; text-align: center; padding: 2rem 1rem; display: flex; justify-content: center;border-top: 1px solid #e0e0e0;">
       <p>
-        {{ T "supportPrompt" | default "🚂 Поддержите проект: <a href=\"https://boosty.to/argbjorn\" onclick=\"trackSupportClick('boosty'); return true;\" target=\"_blank\">Boosty</a> или <a href=\"https://buymeacoffee.com/konstantin_remnev\" onclick=\"trackSupportClick('buymeacoffee'); return true;\" target=\"_blank\">Buy Me a Coffee</a>." | safeHTML }}
+        {{ T "footerText" | default "🚂 Georgian train timetables since 2024" }}
       </p>
     </div>
-    
-    <script>
-      function trackSupportClick(platform) {
-        // Яндекс Метрика
-        if (typeof ym !== 'undefined') {
-          ym({{ site.Params.analytics.yandexMetrikaId | default "99610233" }}, 'reachGoal', platform + '_support_click');
-        }
-        
-        // Google Analytics
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'support_click', {
-            'event_category': 'engagement',
-            'event_label': platform
-          });
-        }
-      }
-    </script>
-    
+
     <div
       class="hextra-custom-footer {{ $footerWidth }} hx:mx-auto hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"
     >
