@@ -1,6 +1,6 @@
 # GTFS — спецификация маппинга
 
-Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/` (реализуется пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`, `translations.txt`, `attributions.txt`).
+Рабочий документ: как из `data/routes.json` + `data/stations.json` (+ `static/data/routes_geodata/`) собрать GTFS Schedule фид. База для `scripts/make_gtfs.py` и пакета `scripts/gtfs/`; сборка и публикация в CI — §0.6 (реализовано пофайлово: готово — все обязательные файлы (`agency.txt`, `stops.txt`, `routes.txt`, `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`) и `feed_info.txt`, `shapes.txt`, `translations.txt`, `attributions.txt`).
 
 Спецификация сверена с [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/) (`google/transit`, master) на 2026-10-08. Перечислены **все** поля каждого файла: сначала обязательные/условно обязательные, затем опциональные.
 
@@ -74,19 +74,24 @@
 - Пустые опциональные колонки не выводим совсем. Колонку добавляем, только если в ней есть хотя бы одно значение.
 - Файлы лежат в корне ZIP, без подпапок.
 
-### 0.6. Сборка и публикация
+### 0.6. Сборка и публикация ✅ реализовано
 
 - Фид зависит от даты сборки (окно `сегодня + 6 мес`, даты «через день» от сегодня), поэтому ZIP меняется при каждой сборке. По этой причине он **не хранится в git**.
-- `make_gtfs.py` запускается в CI после `make_stations_files`. Вход — уже собранные `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/`; Google Sheets и Overpass он сам не читает.
-- Сейчас (без ZIP) txt-файлы пишутся в `build/gtfs/` (`config.GTFS_BUILD_DIR`, в `.gitignore`). Целевой выход — `static/gtfs/georgian-railway.zip`; папка `static/gtfs/` тоже будет в `.gitignore`. Hugo копирует её в `public/`, и фид публикуется вместе с сайтом: `https://georailway.com/gtfs/georgian-railway.zip`. URL постоянный.
-- После генерации — MobilityData GTFS Validator; ошибки (errors) валят сборку, warnings — только в лог.
-- Шаги генерации и валидации нужны **в обоих** workflow: `pages.yaml` и `pages-fast.yaml`. Pages при деплое целиком заменяет сайт содержимым `public/`, так что деплой без шага GTFS молча удалит фид.
-- В `pages.yaml` добавляется `schedule` (cron, раз в неделю), чтобы окно фида сдвигалось без пушей. При горизонте 6 месяцев этого с запасом хватает (валидаторы предупреждают при сроке < 7–30 дней).
-- Локально: `python scripts/make_gtfs.py`.
+- `make_gtfs.py` запускается после `make_stations_files`. Вход — уже собранные `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/`, `content/directions/`; Google Sheets и Overpass он сам не читает.
+- Выход:
+  - txt-файлы — в `build/gtfs/` (`config.GTFS_BUILD_DIR`), для отладки;
+  - ZIP — `static/gtfs/georgian-railway.zip` (`config.GTFS_ZIP_PATH`). В архив попадают только файлы текущей сборки, в корень (без подпапок). Hugo копирует `static/gtfs/` в `public/`, и фид публикуется вместе с сайтом: `https://georailway.com/gtfs/georgian-railway.zip`. URL постоянный.
+  - `build/` и `static/gtfs/` — в `.gitignore`.
+- CI: составное действие `.github/actions/gtfs-feed` (сборка → Java 17 → MobilityData GTFS Validator, версия закреплена в `inputs.validator-version` → `scripts/check_gtfs_report.py` → отчёт валидатора как artifact `gtfs-validation-report`). Вызывается **в обоих** workflow, `pages.yaml` и `pages-fast.yaml`, после тестов дата-файлов и до сборки Hugo: Pages при деплое целиком заменяет сайт содержимым `public/`, так что деплой без этого шага молча удалит фид.
+- Ошибки (ERROR) валидатора валят сборку — и деплой сайта целиком; предупреждения только печатаются. Код возврата самого валидатора не годится: он `0` даже при ошибках, поэтому отчёт разбирает `check_gtfs_report.py`.
+- Валидатор запускается **без `--country_code`**: с кодом страны (`ge`/`az`/`am`) он считает невалидными короткие номера `1331` и `1822` в `agency_phone` (`invalid_phone_number`, ERROR). Без кода страны номера без международного префикса не проверяются. На 2026-10-13 отчёт без кода страны — без единого замечания.
+- `pages.yaml`: `schedule` — каждый понедельник 03:00 UTC, чтобы окно фида сдвигалось без пушей. При горизонте 6 месяцев этого с запасом хватает (валидаторы предупреждают при сроке < 7–30 дней). GitHub отключает scheduled-workflows в публичных репозиториях после 60 дней без активности.
+- Локально: `python scripts/make_gtfs.py`; валидатор — `java -jar <gtfs-validator-cli.jar> -i static/gtfs/georgian-railway.zip -o build/validator/out -svu`, затем `python scripts/check_gtfs_report.py build/validator/out/report.json`. Просмотр расписаний — gtfs-to-html (`build/gtfs-to-html/`, не версионируется).
 
 ### 0.7. Структура кода
 
-- `scripts/make_gtfs.py` — точка входа, собирает все файлы.
+- `scripts/make_gtfs.py` — точка входа: собирает все файлы и ZIP.
+- `scripts/check_gtfs_report.py` — разбор `report.json` валидатора для CI.
 - `scripts/gtfs/` — пакет:
   - `config.py` — константы: агентства, `SITE_URL`, `LANG_URL_PREFIX`, `STOP_TIMEZONES`;
   - `source.py` — загрузка данных, отбор маршрутов, поиск страниц направлений сайта;

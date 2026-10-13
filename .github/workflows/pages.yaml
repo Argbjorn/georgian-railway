@@ -9,6 +9,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab (choose branch in UI)
   workflow_dispatch:
 
+  # Weekly rebuild on the default branch so that the GTFS feed's 6-month window keeps moving
+  # without pushes
+  schedule:
+    - cron: '0 3 * * 1'
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -83,6 +88,10 @@ jobs:
 
       - name: Run data file tests
         run: pytest scripts/tests/ -v --tb=short
+
+      # Must run in every deploy workflow: Pages replaces the whole site, a deploy without the feed removes it
+      - name: Build and validate GTFS feed
+        uses: ./.github/actions/gtfs-feed
 
       - name: Commit and push route data if changed
         run: |

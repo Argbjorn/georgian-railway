@@ -11,4 +11,5 @@ ROUTES_GEODATA_DIR = os.path.join(PROJECT_ROOT, 'static', 'data', 'routes_geodat
 ROUTES_REFS_FOR_PARSING = []
 DIRECTIONS_CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content', 'directions')
 GTFS_BUILD_DIR =os.path.join(PROJECT_ROOT, 'build', 'gtfs')
+GTFS_ZIP_PATH = os.path.join(PROJECT_ROOT, 'static', 'gtfs', 'georgian-railway.zip')
 RAILWAY_NETWORK_JS_PATH =os.path.join(PROJECT_ROOT, 'static', 'js', 'components', 'railway-network', 'railway-network-data.js')

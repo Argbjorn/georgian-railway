@@ -74,6 +74,10 @@ jobs:
       - name: Run data file tests
         run: pytest scripts/tests/ -v --tb=short
 
+      # Must run in every deploy workflow: Pages replaces the whole site, a deploy without the feed removes it
+      - name: Build and validate GTFS feed
+        uses: ./.github/actions/gtfs-feed
+
       - name: Commit and push route data if changed
         run: |
           git config user.name "github-actions[bot]"

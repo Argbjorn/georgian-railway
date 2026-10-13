@@ -1,0 +1,43 @@
+# Builds the GTFS feed into static/gtfs/ (published with the site by the Hugo build) and validates it
+# with the MobilityData GTFS validator; validation errors fail the job. Shared by pages.yaml and
+# pages-fast.yaml: a deploy without this step would drop the feed from the site.
+name: Build and validate GTFS feed
+description: Runs scripts/make_gtfs.py and the MobilityData GTFS validator
+
+inputs:
+  validator-version:
+    description: MobilityData gtfs-validator release
+    default: '8.0.1'
+
+runs:
+  using: composite
+  steps:
+    - name: Build GTFS feed
+      shell: bash
+      run: python scripts/make_gtfs.py
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+
+    - name: Validate GTFS feed
+      shell: bash
+      run: |
+        curl -sSfL -o "$RUNNER_TEMP/gtfs-validator.jar" \
+          "https://github.com/MobilityData/gtfs-validator/releases/download/v${{ inputs.validator-version }}/gtfs-validator-${{ inputs.validator-version }}-cli.jar"
+        # No --country_code: with it, the validator rejects short phone numbers such as 1331
+        java -jar "$RUNNER_TEMP/gtfs-validator.jar" \
+          --input static/gtfs/georgian-railway.zip \
+          --output_base "$RUNNER_TEMP/gtfs-validation" \
+          --skip_validator_update
+        python scripts/check_gtfs_report.py "$RUNNER_TEMP/gtfs-validation/report.json"
+
+    - name: Upload GTFS validation report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: gtfs-validation-report
+        path: ${{ runner.temp }}/gtfs-validation/
+        if-no-files-found: ignore

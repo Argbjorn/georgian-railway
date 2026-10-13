@@ -3,8 +3,9 @@ public/
 resources/
 .hugo_build.lock
 
-# GTFS build output (make_gtfs.py)
+# GTFS build output (make_gtfs.py): feed files and the published zip
 build/
+static/gtfs/
 
 # Editor
 .vscode/
