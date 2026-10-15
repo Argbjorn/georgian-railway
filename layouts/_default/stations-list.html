@@ -12,17 +12,17 @@
         {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
         {{ .Content }}
       </div>
-      {{ $cardClass := "hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:shadow-sm hx:transition-all hx:duration-200 hover:hx:border-gray-300 hover:hx:bg-slate-50 hover:hx:shadow-md dark:hx:border-neutral-800 dark:hover:hx:border-neutral-700 dark:hover:hx:bg-neutral-900" }}
-      {{ $iconClass := "hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hover:hx:text-gray-900 dark:hx:text-neutral-200 dark:hover:hx:text-neutral-50" }}
       {{ $nameKey := printf "name_%s" .Site.Language.Lang }}
 
-      <div class="hextra-cards hx:mt-8 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 1;">
+      <ul class="link-list hx:mt-8 not-prose">
         {{ range sort .Site.Data.stations $nameKey }}
-          <a class="{{ $cardClass }}" href="{{ (printf "/stations/%s/" (index . "code")) | absLangURL }}">
-            <span class="{{ $iconClass }}">{{ index . $nameKey }}</span>
-          </a>
+          <li>
+            <a class="link-list-item" href="{{ (printf "/stations/%s/" (index . "code")) | absLangURL }}">
+              <span class="link-list-text">{{ index . $nameKey }}</span>
+            </a>
+          </li>
         {{ end }}
-      </div>
+      </ul>
     </article>
   </div>
   </div>

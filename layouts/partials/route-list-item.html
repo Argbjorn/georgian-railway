@@ -1,0 +1,7 @@
+{{/* Compact route row for list pages. Context: route page. aria-label keeps the full title as the link name. */}}
+<li>
+  <a class="link-list-item" href="{{ .Permalink }}" aria-label="{{ .Title }}">
+    <span class="link-list-badge">{{ .Params.ref }}</span>
+    <span class="link-list-text">{{ replaceRE `^[^:]*:\s*` "" .Title }}</span>
+  </a>
+</li>

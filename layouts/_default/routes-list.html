@@ -13,44 +13,38 @@
         {{ .Content }}
       </div>
       {{ $pages := .Pages }}
-      {{ $cardClass := "hextra-card hx:group hx:flex hx:flex-col hx:justify-start hx:overflow-hidden hx:rounded-lg hx:border hx:border-gray-200 hx:text-current hx:no-underline hx:shadow-sm hx:transition-all hx:duration-200 hover:hx:border-gray-300 hover:hx:bg-slate-50 hover:hx:shadow-md dark:hx:border-neutral-800 dark:hover:hx:border-neutral-700 dark:hover:hx:bg-neutral-900" }}
-      {{ $iconClass := "hextra-card-icon hx:flex hx:font-semibold hx:items-start hx:gap-2 hx:p-4 hx:text-gray-700 hover:hx:text-gray-900 dark:hx:text-neutral-200 dark:hover:hx:text-neutral-50" }}
 
       <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesFromTbilisi" }}</h2>
       <div>{{ i18n "routesFromTbilisiDescription" }}</div>
-      <div class="hextra-cards hx:mt-2 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 1;">
+      <ul class="link-list not-prose">
         {{ range $pages }}
           {{ if and (ne .Params.active false) (not (and .Params.start_date (gt (int .Params.start_date) now.UnixMilli))) }}
           {{ $first := index .Params.stations 0 }}
           {{ if and $first (findRE "tbilisi" (lower (index $first "code" | default ""))) }}
-            <a class="{{ $cardClass }}" href="{{ .Permalink }}">
-              <span class="{{ $iconClass }}">{{ .Title }}</span>
-            </a>
+            {{ partial "route-list-item.html" . }}
           {{ end }}
           {{ end }}
         {{ end }}
-      </div>
+      </ul>
 
       <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesToTbilisi" }}</h2>
       <div>{{ i18n "routesToTbilisiDescription" }}</div>
-      <div class="hextra-cards hx:mt-2 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 1;">
+      <ul class="link-list not-prose">
         {{ range $pages }}
           {{ if and (ne .Params.active false) (not (and .Params.start_date (gt (int .Params.start_date) now.UnixMilli))) }}
           {{ $stations := .Params.stations }}
           {{ if and $stations (gt (len $stations) 0) }}
             {{ $last := index $stations (sub (len $stations) 1) }}
             {{ if and $last (findRE "tbilisi" (lower (index $last "code" | default ""))) }}
-              <a class="{{ $cardClass }}" href="{{ .Permalink }}">
-                <span class="{{ $iconClass }}">{{ .Title }}</span>
-              </a>
+              {{ partial "route-list-item.html" . }}
             {{ end }}
           {{ end }}
           {{ end }}
         {{ end }}
-      </div>
+      </ul>
 
       <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesOther" }}</h2>
-      <div class="hextra-cards hx:mt-2 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: 1;">
+      <ul class="link-list not-prose">
         {{ range $pages }}
           {{ if and (ne .Params.active false) (not (and .Params.start_date (gt (int .Params.start_date) now.UnixMilli))) }}
           {{ $first := index .Params.stations 0 }}
@@ -58,13 +52,11 @@
           {{ $fromTbilisi := and $first (findRE "tbilisi" (lower (index $first "code" | default ""))) }}
           {{ $toTbilisi := and $stations (gt (len $stations) 0) (findRE "tbilisi" (lower (index (index $stations (sub (len $stations) 1)) "code" | default ""))) }}
           {{ if and (not $fromTbilisi) (not $toTbilisi) }}
-            <a class="{{ $cardClass }}" href="{{ .Permalink }}">
-              <span class="{{ $iconClass }}">{{ .Title }}</span>
-            </a>
+            {{ partial "route-list-item.html" . }}
           {{ end }}
           {{ end }}
         {{ end }}
-      </div>
+      </ul>
     </article>
   </div>
   </div>

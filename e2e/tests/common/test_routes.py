@@ -11,7 +11,7 @@ def test_routes_page_has_correct_h1(page, site_base_url, language):
 
 def test_routes_page_has_routes_links(page, site_base_url):
     open_routes_page(page, site_base_url, "en")
-    assert page.locator(".hextra-card").count() > 0
+    assert page.locator(".link-list-item").count() > 0
 
 def test_routes_page_has_correct_routes_links(page, site_base_url):
     open_routes_page(page, site_base_url, "en")
