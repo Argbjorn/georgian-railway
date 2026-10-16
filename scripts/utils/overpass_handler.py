@@ -10,16 +10,24 @@ class OverpassHandler:
 
     def __init__(self):
         self.base_url = 'https://overpass-api.de/api/interpreter'
-        self.base_url_test = 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
+        self.base_url_reserve = 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
 
     def get_data(self, query):
+        # Fall back to the reserve instance only after all attempts on the main one have failed
+        try:
+            return self._get_data_from(self.base_url, query)
+        except Exception as error:
+            print(f"Main Overpass instance failed ({error}), switching to reserve: {self.base_url_reserve}")
+            return self._get_data_from(self.base_url_reserve, query)
+
+    def _get_data_from(self, url, query):
         headers = {
             "User-Agent": "georailway",
         }
         last_error = None
         for attempt in range(self.RETRY_COUNT + 1):
             try:
-                result = requests.get(self.base_url, data={"data": query}, headers=headers, timeout=25)
+                result = requests.get(url, data={"data": query}, headers=headers, timeout=25)
                 if result.status_code != 200:
                     raise Exception(f"Failed to get data from Overpass API: {result.status_code} {result.text}")
                 return result.json()
