@@ -29,6 +29,9 @@ REQUIRED_FIELDS = {'trip_id', 'arrival_time', 'departure_time', 'stop_id', 'stop
 
 NO_PICKUP = 1
 NO_DROP_OFF = 1
+# The train stops here, but its time is unknown: consumers estimate it from the neighbouring stops
+APPROXIMATE_TIME = 0
+EXACT_TIME = 1
 
 _TIME = re.compile(r'(\d{1,2}):(\d{2})')
 MINUTES_PER_DAY = 24 * 60
@@ -60,6 +63,18 @@ def station_times(train, index):
     arrival = parse_time(station.get('arrival_time')) if train.get('has_arrival_time') else departure
     return (arrival if arrival is not None else departure,
             departure if departure is not None else arrival)
+
+
+def has_terminal_times(train):
+    """GTFS requires times at the first and the last stop of a trip."""
+    return all(station_times(train, index)[0] is not None for index in (0, len(train['stations']) - 1))
+
+
+def split_by_terminal_times(routes):
+    """(trains with times at both terminal stations, refs of the other trains)."""
+    kept = [train for train in routes if has_terminal_times(train)]
+    skipped = [train['ref'] for train in routes if not has_terminal_times(train)]
+    return kept, skipped
 
 
 def unwrap_midnight(train, times):
@@ -107,7 +122,7 @@ def build_trip_stop_times(train, distances=None):
             'pickup_type': NO_PICKUP if index == len(stations) - 1 else '',
             'drop_off_type': NO_DROP_OFF if index == 0 else '',
             'shape_dist_traveled': distances[index] if distances and distances[index] is not None else '',
-            'timepoint': 1 if has_time else '',
+            'timepoint': EXACT_TIME if has_time else APPROXIMATE_TIME,
         })
     return rows
 

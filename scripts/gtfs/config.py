@@ -26,12 +26,12 @@ LINE_NAME_CITY_PRIORITY = ['Yerevan', 'Baku', 'Tbilisi', 'Batumi', 'Kutaisi']
 # omitted and inherit agency_timezone. Does not affect stop_times (always in agency_timezone).
 STOP_TIMEZONES = {
     # Azerbaijan
-    'böyükkəsik': 'Asia/Baku',
-    'ağstafastansiyası': 'Asia/Baku',
+    'boyukkasik': 'Asia/Baku',
+    'aghstafa': 'Asia/Baku',
     'ganja': 'Asia/Baku',
-    'yevlaxstansiyası': 'Asia/Baku',
-    'biləcəri': 'Asia/Baku',
-    'bakı': 'Asia/Baku',
+    'yevlakh': 'Asia/Baku',
+    'bilajari': 'Asia/Baku',
+    'baku': 'Asia/Baku',
     # Armenia
     'ayrum': 'Asia/Yerevan',
     'vanadzor': 'Asia/Yerevan',

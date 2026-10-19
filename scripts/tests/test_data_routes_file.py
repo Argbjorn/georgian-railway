@@ -1,9 +1,10 @@
 """Тесты для проверки data файла routes.json"""
 
 import json
+import re
 import pytest
 import fastjsonschema
-from utils import ROUTES_FILE, time_string_to_minutes
+from utils import ROUTES_FILE, STATIONS_FILE, time_string_to_minutes
 
 ROUTE_SCHEMA = {
   "$schema": "http://json-schema.org/schema#",
@@ -208,6 +209,9 @@ class TestDataRoutesFile:
                   if route['has_arrival_time'] == True and station['role'] == 'end':
                       current_station_time = time_string_to_minutes(station['arrival_time'])
                   else:
+                      if station['departure_time'] == '-':
+                          # The train stops here, but the time is unknown
+                          continue
                       current_station_time = time_string_to_minutes(station['departure_time'])
                   if current_station_time < prev_station_time % 1440:
                       current_day += 1
@@ -233,7 +237,20 @@ class TestDataRoutesFile:
         for route in routes_data:
             if route['has_arrival_time'] == True:
                 for station in route['stations'][1:]:
-                    assert station['arrival_time'] is not None and station['arrival_time'] != "-", f"У маршрута {route['ref']} (id: {route['id']}) нет arrival_time для станции {station['code']}"
+                    # Two dashes at a middle station: the train stops there, but the time is unknown
+                    unknown_stop = station['role'] == 'middle' and station['arrival_time'] == '-' and station['departure_time'] == '-'
+                    assert station['arrival_time'] is not None and (station['arrival_time'] != "-" or unknown_stop), f"У маршрута {route['ref']} (id: {route['id']}) нет arrival_time для станции {station['code']}"
+
+    def test_terminal_stations_have_time(self, routes_data):
+        """Checks that the first and the last stations have a known time: '-' is allowed only at middle stations"""
+        for route in routes_data:
+            stations = route.get('stations')
+            if not stations:
+                continue
+            start, end = stations[0], stations[-1]
+            end_time = end['arrival_time'] if route['has_arrival_time'] else end['departure_time']
+            for station, time in ((start, start['departure_time']), (end, end_time)):
+                assert time is not None and re.fullmatch(r'\d{1,2}:\d{2}', time), f"У маршрута {route['ref']} (id: {route['id']}) нет времени на конечной станции {station['code']}: {time!r}"
 
     def test_active_routes_have_known_operator(self, routes_data):
         """Checks that every active route has an operator listed in the GTFS agencies config"""
@@ -241,6 +258,17 @@ class TestDataRoutesFile:
         for route in routes_data:
             if route.get('active'):
                 assert route.get('operator') in AGENCIES, f"Маршрут {route['ref']} (id: {route['id']}): неизвестный operator {route.get('operator')!r}"
+
+    def test_route_stations_exist(self, routes_data):
+        """Checks that every station code in the routes exists in stations.json (codes come from OSM name:en)"""
+        with open(STATIONS_FILE, 'r', encoding='utf-8') as f:
+            station_codes = set(json.load(f))
+        missing = {}
+        for route in routes_data:
+            for station in route.get('stations') or []:
+                if station['code'] not in station_codes:
+                    missing.setdefault(station['code'], []).append(route['ref'])
+        assert not missing, f"Коды станций из маршрутов отсутствуют в stations.json (код → маршруты): {missing}"
 
     def test_routes_are_unique(self, routes_data):
         """Проверяет, что маршруты уникальны по ref"""

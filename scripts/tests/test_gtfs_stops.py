@@ -60,18 +60,23 @@ class TestBuildStops:
             stops.build_stops([route('bakı', 'baki')], stations)
 
     def test_row_fields(self):
-        stations = {'bakı': station('bakı', coords=[40.38, 49.85],
+        stations = {'baku': station('baku', coords=[40.38, 49.85],
                                     description={'en': 'Main <br>station'})}
-        [row] = stops.build_stops([route('bakı')], stations)
+        [row] = stops.build_stops([route('baku')], stations)
         assert row == {
-            'stop_id': 'baki',
-            'stop_name': 'Bakı',
+            'stop_id': 'baku',
+            'stop_name': 'Baku',
             'stop_desc': 'Main station',
             'stop_lat': 40.38,
             'stop_lon': 49.85,
-            'stop_url': 'https://georailway.com/stations/bak%C4%B1/',
+            'stop_url': 'https://georailway.com/stations/baku/',
             'stop_timezone': 'Asia/Baku',
         }
+
+    def test_non_ascii_code(self):
+        [row] = stops.build_stops([route('bakı')], {'bakı': station('bakı')})
+        assert row['stop_id'] == 'baki'
+        assert row['stop_url'] == 'https://georailway.com/stations/bak%C4%B1/'
 
     def test_georgian_station_has_no_timezone(self):
         [row] = stops.build_stops([route('rioni')], {'rioni': station('rioni')})

@@ -54,7 +54,7 @@ class TestSingleTimeTrains:
     def test_missing_middle_time_left_empty(self):
         rows = stop_times.build_trip_stop_times(single_time_train('10:00', '-', '11:00'))
         assert times(rows)[1] == ('', '')
-        assert rows[1]['timepoint'] == ''
+        assert rows[1]['timepoint'] == 0
         assert rows[0]['timepoint'] == 1
 
     def test_midnight_after_missing_time(self):
@@ -87,6 +87,26 @@ class TestArrivalDepartureTrains:
         rows = stop_times.build_trip_stop_times(arrival_departure_train(
             ('-', '10:00'), ('10:30', '-'), ('11:00', '-')))
         assert times(rows)[1] == ('10:30:00', '10:30:00')
+
+    def test_middle_station_without_times_left_empty(self):
+        # The train stops here, but neither time is known
+        rows = stop_times.build_trip_stop_times(arrival_departure_train(
+            ('-', '10:00'), ('-', '-'), ('11:00', '-')))
+        assert times(rows)[1] == ('', '')
+        assert rows[1]['timepoint'] == 0
+
+
+class TestTerminalTimes:
+    def test_split_by_terminal_times(self):
+        trains = [
+            single_time_train('10:00', '-', '11:00', ref=1),
+            single_time_train('-', '10:30', '11:00', ref=2),
+            arrival_departure_train(('-', '10:00'), ('10:30', '10:35'), ('-', '-'), ref=3),
+            arrival_departure_train(('-', '10:00'), ('-', '-'), ('11:00', '-'), ref=4),
+        ]
+        kept, skipped = stop_times.split_by_terminal_times(trains)
+        assert [train['ref'] for train in kept] == [1, 4]
+        assert skipped == [2, 3]
 
 
 class TestRowFields:

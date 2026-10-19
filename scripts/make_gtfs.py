@@ -27,7 +27,10 @@ def write_zip(zip_path, paths):
 
 def make_gtfs(output_dir=GTFS_BUILD_DIR, zip_path=GTFS_ZIP_PATH, today=None):
     window = feed_window(today)
-    routes, idle_refs = split_by_service(select_routes(load_json(ROUTES_JSON_PATH)), window)
+    routes, untimed_refs = stop_times.split_by_terminal_times(select_routes(load_json(ROUTES_JSON_PATH)))
+    if untimed_refs:
+        print(f'Trains without time at a terminal station, skipped: {untimed_refs}')
+    routes, idle_refs = split_by_service(routes, window)
     if idle_refs:
         print(f'Trains without service days in {window.start}..{window.end}, skipped: {idle_refs}')
     stations = load_json(STATIONS_JSON_PATH)
