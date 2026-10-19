@@ -259,6 +259,30 @@
                "arrival_time": null,
                "departure_time": "04:30",
                "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
             }
          ]
       }
@@ -573,6 +597,18 @@
                "arrival_time": null,
                "departure_time": "23:00",
                "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "09:10",
+               "stop_time": null
             }
          ],
          "arrival": [
@@ -586,6 +622,18 @@
                "end_date": null,
                "arrival_time": null,
                "departure_time": "06:32",
+               "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "20:26",
                "stop_time": null
             }
          ],
@@ -816,6 +864,30 @@
                "arrival_time": null,
                "departure_time": "23:21",
                "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
             }
          ]
       }
@@ -1010,6 +1082,30 @@
                "end_date": null,
                "arrival_time": null,
                "departure_time": "06:20",
+               "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
                "stop_time": null
             }
          ]
@@ -1599,6 +1695,30 @@
                "arrival_time": null,
                "departure_time": "03:11",
                "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
             }
          ]
       }
@@ -1694,6 +1814,30 @@
                "end_date": null,
                "arrival_time": null,
                "departure_time": "07:45",
+               "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
                "stop_time": null
             }
          ]
@@ -5561,6 +5705,18 @@
                "stop_time": null
             },
             {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "11:00",
+               "stop_time": null
+            },
+            {
                "ref": 371,
                "name_en": "Tbilisi → Yerevan",
                "name_ru": "Тбилиси → Ереван",
@@ -5692,6 +5848,18 @@
                "end_date": null,
                "arrival_time": null,
                "departure_time": "08:41",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "19:11",
                "stop_time": null
             },
             {
@@ -6312,6 +6480,30 @@
                "end_date": null,
                "arrival_time": null,
                "departure_time": "02:16",
+               "stop_time": null
+            },
+            {
+               "ref": 39,
+               "name_en": "Tbilisi → Baku",
+               "name_ru": "Тбилиси → Баку",
+               "name_ka": "თბილისი → ბაქო",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 40,
+               "name_en": "Baku → Tbilisi",
+               "name_ru": "Баку → Тбилиси",
+               "name_ka": "ბაქო → თბილისი",
+               "frequency": "daily",
+               "start_date": 1793491200000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
                "stop_time": null
             }
          ]

@@ -2,7 +2,6 @@
 # бэке в make_routes_files.py для названий станций на разных языках.
 import sys
 import os
-import time
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -17,34 +16,37 @@ file_path = Path(__file__).parent.parent / "data" / "station_gr_codes.json"
 gr_workbook = GeoRoutesExcelHandler()
 overpass = OverpassHandler()
 
+# Stations whose code cannot be matched to a name in the GR codes source
+EXCEPTIONAL_STATIONS = {'batumicentral': 'Batumi',
+                        'borjomiparki': 'Borjomi',
+                        'jumati': 'Djumati',
+                        'kutaisiinternationalairport': 'Kutaisi International Airport',
+                        'kutaisi1': 'Kutaisi I',
+                        'platform11km': 'Platform 11 km',
+                        'platform16km': 'Platform 16 km',
+                        'rustavicentral': 'Rustavi -pass.',
+                        'samtredia1': 'Samtredia',
+                        'samtredia2': 'Samtredia II',
+                        'tbilisicentralstation': 'Tbilisi-pass.',
+                        'navtlughi': 'Tbilisi-cross.',
+                        'tbilisimarshalling': 'Tbilisi-sort.',
+                        'rustavicargo': 'Rustavi-fr.'}
+
+_gr_codes_by_name = None
+
 
 def get_station_gr_code(station_name):
-    """По коду станции (английское название, пропущенное через lower и без пробелов) получает код ГЖД (GR).
-    Есть несколько станций, код которых нельзя сопоставить с источником кодов GR, поэтому создан словарь
-    exceptional_stations"""
-    exceptional_stations = {'batumicentral': 'Batumi',
-                            'borjomiparki': 'Borjomi',
-                            'jumati': 'Djumati',
-                            'kutaisiinternationalairport': 'Kutaisi International Airport',
-                            'kutaisi1': 'Kutaisi I',
-                            'platform11km': 'Platform 11 km',
-                            'platform16km': 'Platform 16 km',
-                            'rustavicentral': 'Rustavi -pass.',
-                            'samtredia1': 'Samtredia',
-                            'samtredia2': 'Samtredia II',
-                            'tbilisicentralstation': 'Tbilisi-pass.',
-                            'navtlughi': 'Tbilisi-cross.',
-                            'tbilisimarshalling': 'Tbilisi-sort.',
-                            'rustavicargo': 'Rustavi-fr.'}
-
-    with open(file_path, "r", encoding='utf-8') as station_codes_file:
-        station_codes = json.load(station_codes_file)
-    if station_name in exceptional_stations:
-        station_name = exceptional_stations[station_name]
-    for station in station_codes:
-        if station['Name'].lower() == station_name.lower():
-            return station['Code']
-    return '00000'
+    """Returns the Georgian Railway (GR) code by station code (English name, lowercased, without spaces).
+    The GR codes file is loaded once into a lowercase name -> code dict."""
+    global _gr_codes_by_name
+    if _gr_codes_by_name is None:
+        with open(file_path, "r", encoding='utf-8') as station_codes_file:
+            _gr_codes_by_name = {}
+            for station in json.load(station_codes_file):
+                # Keep the first match on duplicate names, as the former linear search did
+                _gr_codes_by_name.setdefault(station['Name'].lower(), station['Code'])
+    station_name = EXCEPTIONAL_STATIONS.get(station_name, station_name)
+    return _gr_codes_by_name.get(station_name.lower(), '00000')
 
 
 def get_existing_station_descriptions():
@@ -57,30 +59,18 @@ def get_existing_station_descriptions():
     return {code: data['description'] for code, data in stations.items() if 'description' in data}
 
 
+ROLE_TO_BUCKET = {'start': 'departure', 'end': 'arrival'}
+
+
 def add_route_to_stations_list(stations_list, station_code, route_data, role, arrival_time, departure_time, stop_time):
-    """Получает словарь станций и проходящих через них маршрутов и добавляет данный маршрут в соответствии с его
-    ролью"""
-    stations_list_updated = stations_list.copy()
-    route_data_updated = route_data.copy()
-    route_data_updated['arrival_time'] = arrival_time
-    route_data_updated['departure_time'] = departure_time
-    route_data_updated['stop_time'] = stop_time
-    if station_code not in stations_list:
-        stations_list_updated[station_code] = {'departure': [], 'arrival': [], 'via': [], }
-        if role == 'start':
-            stations_list_updated[station_code]['departure'] = [route_data_updated]
-        elif role == 'end':
-            stations_list_updated[station_code]['arrival'] = [route_data_updated]
-        else:
-            stations_list_updated[station_code]['via'] = [route_data_updated]
-    else:
-        if role == 'start':
-            stations_list_updated[station_code]['departure'].append(route_data_updated)
-        elif role == 'end':
-            stations_list_updated[station_code]['arrival'].append(route_data_updated)
-        else:
-            stations_list_updated[station_code]['via'].append(route_data_updated)
-    return stations_list_updated
+    """Adds the route to the station's departure/arrival/via list according to its role.
+    Mutates stations_list in place."""
+    route_data_updated = {**route_data,
+                          'arrival_time': arrival_time,
+                          'departure_time': departure_time,
+                          'stop_time': stop_time}
+    station_routes = stations_list.setdefault(station_code, {'departure': [], 'arrival': [], 'via': []})
+    station_routes[ROLE_TO_BUCKET.get(role, 'via')].append(route_data_updated)
 
 
 def get_routes_for_stations():
@@ -102,23 +92,19 @@ def get_routes_for_stations():
             }
         if r.get('stations'):
             for s in r['stations']:
-                stations_with_routes = add_route_to_stations_list(stations_with_routes, s['code'], route_data, s['role'], s['arrival_time'], s['departure_time'], s['stop_time'])
+                add_route_to_stations_list(stations_with_routes, s['code'], route_data, s['role'], s['arrival_time'], s['departure_time'], s['stop_time'])
     return stations_with_routes
 
 
 def make_stations_json():
     all_route_osm_ids = gr_workbook.get_all_routes_osm_id(show_on_site_only=True)
-    routes_data = overpass.get_routes_data(all_route_osm_ids)
-    station_ids = set()
-    for route in routes_data['elements']:
-        for member in route['members']:
-            if member['role'] == 'stop':
-                station_ids.add(member['ref'])
-    stations_data = overpass.get_stations_data(station_ids)
+    stops_data = overpass.get_route_stops_data(all_route_osm_ids)
     station_descriptions = get_existing_station_descriptions()
     stations_with_routes = get_routes_for_stations()
     stations_dict = {}
-    for station in stations_data['elements']:
+    for station in stops_data['elements']:
+        if station['type'] != 'node':
+            continue
         tags = station.get('tags', {})
         generic_name = tags.get('name', 'unknown station')
         name_en = tags.get('name:en', generic_name)
@@ -159,12 +145,5 @@ def make_stations_json():
 
 
 if __name__ == '__main__':
-    for attempt in range(1, 6):
-        try:
-            make_stations_json()
-            break
-        except Exception as e:
-            if attempt == 5:
-                raise
-            print(f"Attempt {attempt} failed: {e}. Retrying in 3s...")
-            time.sleep(3)
+    # Retries are handled by OverpassHandler
+    make_stations_json()

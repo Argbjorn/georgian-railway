@@ -1,88 +1,84 @@
+import re
 import time
 
 import requests
-from utils.string_utils import *
 
 
 class OverpassHandler:
-    RETRY_COUNT = 4
+    ATTEMPTS_PER_INSTANCE = 5
     RETRY_DELAY_SECONDS = 1
+    # Default declared [timeout] of the generated queries, in seconds
+    SERVER_TIMEOUT = 25
+    # The client waits longer than the query's declared timeout: time spent queued for a slot is not counted
+    # by the server
+    CLIENT_TIMEOUT_MARGIN = 30
+    # Declared [maxsize] in bytes: full route geometry is ~3 MB of output, stop lists are a few KB
+    MAXSIZE_ROUTES_GEOM = 64 * 1024 * 1024
+    MAXSIZE_SMALL = 16 * 1024 * 1024
 
     def __init__(self):
         self.base_url = 'https://overpass-api.de/api/interpreter'
         self.base_url_reserve = 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'
 
     def get_data(self, query):
-        # Fall back to the reserve instance only after all attempts on the main one have failed
-        try:
-            return self._get_data_from(self.base_url, query)
-        except Exception as error:
-            print(f"Main Overpass instance failed ({error}), switching to reserve: {self.base_url_reserve}")
-            return self._get_data_from(self.base_url_reserve, query)
-
-    def _get_data_from(self, url, query):
-        headers = {
-            "User-Agent": "georailway",
-        }
+        # Alternate between the main and the reserve instance, so neither is hit again right after a failure
+        urls = [self.base_url, self.base_url_reserve] * self.ATTEMPTS_PER_INSTANCE
         last_error = None
-        for attempt in range(self.RETRY_COUNT + 1):
+        for attempt, url in enumerate(urls, start=1):
             try:
-                result = requests.get(url, data={"data": query}, headers=headers, timeout=25)
-                if result.status_code != 200:
-                    raise Exception(f"Failed to get data from Overpass API: {result.status_code} {result.text}")
-                return result.json()
+                return self._request(url, query)
             except Exception as error:
                 last_error = error
-                if attempt < self.RETRY_COUNT:
+                print(f"Overpass attempt {attempt}/{len(urls)} failed ({url}): {error}")
+                if attempt < len(urls):
                     time.sleep(self.RETRY_DELAY_SECONDS)
         raise last_error
 
-    def get_route_stations_id(self, route_id):
-        stations = []
-        data = self.get_data(self.create_route_query(route_id))
-        for member in data['elements'][0]['members']:
-            if member['role'] == 'stop':
-                stations.append(member['ref'])
-        return stations
+    def _request(self, url, query):
+        headers = {
+            "User-Agent": "georailway",
+        }
+        timeout = self._client_timeout(query)
+        result = requests.post(url, data={"data": query}, headers=headers, timeout=timeout)
+        if result.status_code != 200:
+            raise Exception(f"Failed to get data from Overpass API: {result.status_code} {result.text[:300]}")
+        return result.json()
 
-    def get_stations_code(self, stations_id):
-        query = self._create_stations_query(stations_id)
-        data = self.get_data(query)
-        codes = []
-        for station_id in stations_id:
-            for i in range(len(stations_id)):
-                if station_id == data['elements'][i]['id']:
-                    if 'tags' in data['elements'][i]:
-                        station_name = data['elements'][i]['tags']['name:en']
-                        codes.append(make_station_code(station_name))
-                    else:
-                        codes.append("unknownstation" + " " + str(station_id))
-        return codes
+    def _client_timeout(self, query):
+        # Hand-written queries (e.g. make_railway_network_file) may declare their own [timeout:N];
+        # Overpass falls back to 180 s when none is declared
+        match = re.search(r"\[timeout:(\d+)\]", query)
+        server_timeout = int(match.group(1)) if match else 180
+        return server_timeout + self.CLIENT_TIMEOUT_MARGIN
 
     def get_routes_data(self, routes_id):
+        if not routes_id:
+            return {'elements': []}
         query = self._create_routes_query(routes_id)
         return self.get_data(query)
 
-    def get_stations_data(self, stations_id):
-        query = self._create_stations_query(stations_id)
+    def get_route_stops_data(self, routes_id):
+        """Route relations without geometry (members only) plus their stop nodes with tags and coordinates.
+        Much lighter than get_routes_data when only the stop list is needed."""
+        if not routes_id:
+            return {'elements': []}
+        query = self._create_route_stops_query(routes_id)
         return self.get_data(query)
 
-    def create_route_query(self, route_id):
-        return "[out:json][timeout:25];" + "relation(" + str(route_id) + ");" + "out geom;"
+    # The Overpass dispatcher admits a query based on its declared timeout and maxsize (default 512 MiB),
+    # so declaring a realistic maxsize makes the query much more likely to get a slot on a loaded server
+    def _header(self, maxsize):
+        return f"[out:json][timeout:{self.SERVER_TIMEOUT}][maxsize:{maxsize}];"
 
-    def create_station_query(self, station_id):
-        return "[out:json][timeout:25];" + "node(" + str(station_id) + ");" + "out geom;"
-
-    def _create_stations_query(self, station_ids):
-        query = "[out:json][timeout:25];("
-        for station_id in station_ids:
-            query += "node(" + str(station_id) + ");"
-        query += ");out geom;"
-        return query
+    @staticmethod
+    def _ids(ids):
+        return ",".join(str(i) for i in ids)
 
     def _create_routes_query(self, routes_id):
-        query = "[out:json][timeout:25];("
-        for route_id in routes_id:
-            query += "relation(" + str(route_id) + ");"
-        query += ");out geom;"
-        return query
+        return self._header(self.MAXSIZE_ROUTES_GEOM) + f"relation(id:{self._ids(routes_id)});out geom;"
+
+    def _create_route_stops_query(self, routes_id):
+        return (self._header(self.MAXSIZE_SMALL)
+                + f"relation(id:{self._ids(routes_id)})->.routes;"
+                + ".routes out body;"
+                + 'node(r.routes:"stop");out;')

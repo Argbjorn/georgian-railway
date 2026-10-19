@@ -11,18 +11,12 @@ overpass = OverpassHandler()
 
 
 def station_lists_diff(local_stations, osm_stations):
-    if set(local_stations) == set(osm_stations):
+    local_set, osm_set = set(local_stations), set(osm_stations)
+    if local_set == osm_set:
         return False, None, None
-    else:
-        osm_diff = []
-        local_diff = []
-        for local_station in local_stations:
-            if local_station not in osm_stations:
-                local_diff.append(local_station)
-        for osm_station in osm_stations:
-            if osm_station not in local_stations:
-                osm_diff.append(osm_station)
-        return True, local_diff, osm_diff
+    local_diff = [s for s in local_stations if s not in osm_set]
+    osm_diff = [s for s in osm_stations if s not in local_set]
+    return True, local_diff, osm_diff
 
 
 def check_all_routes():
@@ -33,18 +27,16 @@ def check_all_routes():
 
     osm_id_to_ref = {int(r['id']): r['ref'] for r in active_routes}
 
-    routes_data = overpass.get_routes_data(list(osm_id_to_ref.keys()))
+    stops_data = overpass.get_route_stops_data(list(osm_id_to_ref.keys()))
+    routes = [e for e in stops_data['elements'] if e['type'] == 'relation']
+    stops = [e for e in stops_data['elements'] if e['type'] == 'node']
 
     route_stop_ids = {}
-    all_stop_ids = set()
-    for route in routes_data['elements']:
-        stop_ids = [m['ref'] for m in route['members'] if m['role'] == 'stop']
-        route_stop_ids[route['id']] = stop_ids
-        all_stop_ids.update(stop_ids)
+    for route in routes:
+        route_stop_ids[route['id']] = [m['ref'] for m in route['members'] if m['type'] == 'node' and m['role'] == 'stop']
 
-    stations_data = overpass.get_stations_data(all_stop_ids)
     station_code_by_id = {}
-    for s in stations_data['elements']:
+    for s in stops:
         if 'tags' in s and 'name:en' in s['tags']:
             station_code_by_id[s['id']] = make_station_code(s['tags']['name:en'])
         else:

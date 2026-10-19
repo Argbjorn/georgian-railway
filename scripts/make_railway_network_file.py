@@ -8,58 +8,42 @@ from config import RAILWAY_NETWORK_JS_PATH
 from utils.overpass_handler import OverpassHandler
 
 QUERY = """[out:json][timeout:25];
-( area[name="საქართველო"]; )->.searchArea;
-nwr["railway"="rail"]["usage"!="industrial"]["service"!="spur"]["service"!="yard"]["service"!="siding"](area.searchArea);
-out geom;"""
+( area(id:3600028699); )->.searchArea;
+way["railway"="rail"]["usage"!="industrial"]["service"!="spur"]["service"!="yard"]["service"!="siding"](area.searchArea);
+out skel geom;"""
 
 OUTPUT_PATH = RAILWAY_NETWORK_JS_PATH
+# 5 decimal places is ~1 m
+COORD_PRECISION = 5
 
 overpass = OverpassHandler()
 
 
 def overpass_to_geojson(data):
-    features = []
+    # The frontend draws the whole network as one layer with one style and uses no properties,
+    # so all ways are packed into a single MultiLineString feature to keep the file small
+    lines = []
     for element in data.get('elements', []):
-        el_type = element.get('type')
-        el_id = element.get('id')
-        properties = {"@id": f"{el_type}/{el_id}"}
-        properties.update(element.get('tags', {}))
-
-        if el_type == 'node':
-            lat, lon = element.get('lat'), element.get('lon')
-            if lat is None or lon is None:
-                continue
-            geometry = {"type": "Point", "coordinates": [lon, lat]}
-
-        elif el_type == 'way':
-            geom = element.get('geometry', [])
-            if not geom:
-                continue
-            coords = [[p['lon'], p['lat']] for p in geom]
-            geometry = {"type": "LineString", "coordinates": coords}
-
-        elif el_type == 'relation':
-            lines = []
-            for member in element.get('members', []):
-                if member.get('type') == 'way' and 'geometry' in member:
-                    coords = [[p['lon'], p['lat']] for p in member['geometry']]
-                    if coords:
-                        lines.append(coords)
-            if not lines:
-                continue
-            geometry = {"type": "MultiLineString", "coordinates": lines}
-
-        else:
+        if element.get('type') != 'way':
             continue
+        geom = element.get('geometry', [])
+        if not geom:
+            continue
+        lines.append([[round(p['lon'], COORD_PRECISION), round(p['lat'], COORD_PRECISION)] for p in geom])
 
-        features.append({"type": "Feature", "properties": properties, "geometry": geometry})
-
-    return {"type": "FeatureCollection", "features": features}
+    return {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "properties": {},
+            "geometry": {"type": "MultiLineString", "coordinates": lines},
+        }],
+    }
 
 
 def update_file(data):
     geojson = overpass_to_geojson(data)
-    content = "export const railwayNetworkData = " + json.dumps(geojson, ensure_ascii=False, indent=2)
+    content = "export const railwayNetworkData = " + json.dumps(geojson, separators=(',', ':'))
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         f.write(content)
     print(f"railway-network-data.js updated")

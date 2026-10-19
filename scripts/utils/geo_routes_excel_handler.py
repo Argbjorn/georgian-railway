@@ -71,12 +71,6 @@ class GeoRoutesExcelHandler:
     def is_sheet_exists(self, sheet_name):
         return str(sheet_name) in self._sheet_cache
 
-    def get_route_osm_id(self, route_ref):
-        for route in self.routes_json:
-            if route.get("ref") == int(route_ref) or route.get("ref") == route_ref:
-                return route["id"]
-        raise ValueError(f"There's no route number {route_ref}")
-
     def get_all_routes_osm_id(self, show_on_site_only=False, active_only=False):
         routes = self.routes_json
         if show_on_site_only:
@@ -84,12 +78,6 @@ class GeoRoutesExcelHandler:
         if active_only:
             routes = [r for r in routes if r.get("active") == "y"]
         return [r["id"] for r in routes]
-
-    def get_all_routes_ref(self):
-        return [route["ref"] for route in self.routes_json]
-
-    def get_all_active_routes_ref(self):
-        return [route["ref"] for route in self.routes_json if route.get("active") == "y"]
 
     def get_route_stations(self, route_ref):
         if self.is_sheet_exists(route_ref):
