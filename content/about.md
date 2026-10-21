@@ -12,7 +12,7 @@ This website has been created to help you navigate Georgia's railway system. Use
 - Icons made by Freepik from [www.flaticon.com](https://www.flaticon.com)
 
 ### Author
-Konstantin Remnev. [Telegram](https://t.me/konstantin_remnev), [email](geo.railways.help@gmail.com)
+Konstantin Remnev. [Telegram](https://t.me/konstantin_remnev), [email](mailto:geo.railways.help@gmail.com)
 
 ### Other useful resources
 - An amazing guide to all aspects of rail travel in Georgia by Emily Lush: https://wander-lush.org/trains-in-georgia-country-tips-map/.

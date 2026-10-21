@@ -12,7 +12,7 @@ toc: false
 - Freepik-ის პიქტოგრამები [www.flaticon.com](https://www.flaticon.com)
 
 ### ავტორი
-კონსტანტინე რემნევი. [Telegram](https://t.me/konstantin_remnev), [email](geo.railways.help@gmail.com)
+კონსტანტინე რემნევი. [Telegram](https://t.me/konstantin_remnev), [email](mailto:geo.railways.help@gmail.com)
 
 ### სხვა სასარგებლო რესურსი
 - Emily Lush-ის უაღრესად დეტალური სტატია საქართველოს რკინიგზის შესახებ: https://wander-lush.org/trains-in-georgia-country-tips-map/.

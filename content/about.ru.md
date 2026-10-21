@@ -12,7 +12,7 @@ toc: false
 - Иконки от Freepik [www.flaticon.com](https://www.flaticon.com)
 
 ### Автор
-Константин Ремнев. [Telegram](https://t.me/konstantin_remnev), [email](geo.railways.help@gmail.com)
+Константин Ремнев. [Telegram](https://t.me/konstantin_remnev), [email](mailto:geo.railways.help@gmail.com)
 
 ### Другие полезные ресурсы
 - Подробнейшая статья об использовании железных дорог Грузии от Emily Lush: https://wander-lush.org/trains-in-georgia-country-tips-map/.

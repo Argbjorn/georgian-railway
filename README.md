@@ -97,17 +97,6 @@ E2E_BASE_URL=http://localhost:1313/ pytest e2e   # in another shell
 
 (use `localhost`, not `127.0.0.1` — Hugo's dev server links pages against `localhost` regardless of `--bind`.)
 
-### Pre-commit hook
-
-A git hook is included that runs both test suites (data pipeline against `.venv`, e2e against a throwaway local `hugo server`) before each commit. Since `.git/hooks/` isn't versioned, enable it once per clone:
-
-```bash
-cp scripts/git-hooks/pre-commit .git/hooks/pre-commit
-chmod +x .git/hooks/pre-commit
-```
-
-It requires both `.venv` and `e2e/.venv` to be set up (see above). Skip it for a single commit with `SKIP_TESTS=1 git commit ...` or `git commit --no-verify`.
-
 ## Deployment
 
 The site is built and deployed to GitHub Pages automatically via [GitHub Actions](.github/workflows/pages.yaml) on push to `main`. A [fast variant](.github/workflows/pages-fast.yaml) is available for manual deploys that skips route validation and geodata regeneration.
