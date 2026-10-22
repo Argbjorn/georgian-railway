@@ -362,7 +362,7 @@
     <h3>{{ $t.route_on_map }}</h3>
     {{ partial "route-map.html" .Page }}
 {{ end }}
-<p>🗺 <a href='/{{ $lang }}/'>{{ $t.back_to_map }}</a></p>
+<p>🗺 <a href='/{{ if ne $lang "en" }}{{ $lang }}/{{ end }}'>{{ $t.back_to_map }}</a></p>
 <br>
 <!-- Extended description -->
 {{ if eq $lang "ka" }}
