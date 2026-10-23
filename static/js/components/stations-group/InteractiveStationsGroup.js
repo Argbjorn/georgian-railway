@@ -11,6 +11,9 @@ export class InteractiveStationsGroup extends BaseStationsGroup {
         stateManager.subscribe((data) => {
             if (data.selectedRoute) {
                 this.showOnlyRouteStations(data.selectedRoute.routeData);
+            } else if (data.selectedLine) {
+                // Trains of one line may stop at different stations, so only the terminals are shown
+                this.showOnlyStations(data.selectedLine.terminals);
             } else {
                 this.show();
             }

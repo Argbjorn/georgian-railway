@@ -8,6 +8,9 @@ export class InteractiveStation extends BaseStation {
         stateManager.subscribe((data) => {
             if (data.selectedStation === this) {
               this.setActive();
+            } else if (!data.selectedRoute && data.selectedLine?.terminals.includes(this.code)) {
+              // The line's thread is framed by RouteLineLayer, so the terminals don't fly to themselves
+              this.marker.addClassName("active");
             } else {
               this.setDefault();
             }

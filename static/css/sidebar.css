@@ -32,6 +32,217 @@
     color: #333;
 }
 
+.sidebar-heading {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-back-slot:empty,
+.sidebar-subtitle:empty {
+    display: none;
+}
+
+.sidebar-back {
+    align-self: flex-start;
+    min-height: 36px;
+    margin-left: -6px;
+    padding: 0 6px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1B6EA8;
+    cursor: pointer;
+}
+
+.sidebar-subtitle-text {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #5B636D;
+}
+
+.route-link.station-train.has-meta {
+    align-items: flex-start;
+    padding: 8px 0;
+}
+
+.station-train-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: #5B636D;
+}
+
+.sidebar-subtitle-link {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B6EA8;
+}
+
+.train-number-badge {
+    flex-shrink: 0;
+    padding: 2px 7px;
+    border: 1.5px solid #3A8BC4;
+    border-radius: 4px;
+    background: #EEF6FC;
+    color: #1B6EA8;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.train-number-badge.is-small {
+    min-width: 44px;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.station-train-group + .station-train-group {
+    margin-top: 24px;
+}
+
+.station-train-group-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #15181C;
+}
+
+.station-trains {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.route-link.station-train {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: #15181C;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+
+.station-train-time {
+    width: 48px;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.station-train-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+}
+
+.route-stops {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.route-stop {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    min-height: 36px;
+    margin: 0 -8px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.route-stop.is-terminal,
+.route-stop.is-current {
+    font-weight: 700;
+}
+
+.route-stop.is-current {
+    background: #FDECEE;
+}
+
+.route-stop-time {
+    width: 44px;
+    flex-shrink: 0;
+    align-self: center;
+    text-align: right;
+}
+
+.route-stop-name {
+    align-self: center;
+    padding: 6px 0;
+}
+
+.route-stop-line {
+    position: relative;
+    width: 14px;
+    flex-shrink: 0;
+}
+
+.route-stop-line::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #22A022;
+}
+
+.route-stop:first-child .route-stop-line::before {
+    top: 50%;
+}
+
+.route-stop:last-child .route-stop-line::before {
+    bottom: 50%;
+}
+
+.route-stop-line::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    border: 2.5px solid #22A022;
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+.route-stop.is-terminal .route-stop-line::after,
+.route-stop.is-current .route-stop-line::after {
+    background: #22A022;
+}
+
 .sidebar-close {
     background: none;
     border: none;
@@ -184,10 +395,12 @@
         padding-right: 16px;
     }
 
-    .sidebar-title {
+    .sidebar-heading {
         min-height: 44px;
-        display: flex;
-        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-title {
         font-size: 19px;
         line-height: 1.25;
         font-weight: 700;
@@ -225,10 +438,17 @@
     }
 
     .route-line-card {
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 4px;
         padding: 10px 0 12px;
+        border: 0;
+        background: none;
+        font: inherit;
+        color: #15181C;
+        text-align: left;
+        cursor: pointer;
     }
 
     .route-line-card + .route-line-card {
@@ -322,7 +542,7 @@
         padding: 6px 0;
         font-size: 14px;
         font-weight: 600;
-        color: #15181C;
+        color: #1B6EA8;
     }
 
     .whats-new-card {
@@ -362,7 +582,7 @@
     }
 
     .whats-new-card-text a {
-        color: inherit;
+        color: #1B6EA8;
     }
 
     .poi-description {
@@ -383,6 +603,6 @@
 
     .sidebar-page-links a {
         padding: 6px 0;
-        color: #15181C;
+        color: #1B6EA8;
     }
 }

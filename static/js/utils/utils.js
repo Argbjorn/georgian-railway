@@ -4,7 +4,24 @@ import {
   MOBILE_BOUNDS_PADDING,
   MOBILE_SIDEBAR_HEIGHT_WINDOW_HEIGHT_RATIO,
   DESKTOP_SIDEBAR_WIDTH_IN_PIXELS,
+  ANIMATION_DURATION,
 } from "../constants.js";
+
+// fitBounds adds its padding to the map's own padding, which easeTo to a station leaves behind,
+// so only the difference to the target padding is passed
+export function fitBoundsClearOfSidebar(map, bounds) {
+  const target = getBoundsPadding();
+  const current = map.getPadding();
+  map.fitBounds(bounds, {
+    padding: {
+      top: target.top - current.top,
+      bottom: target.bottom - current.bottom,
+      left: target.left - current.left,
+      right: target.right - current.right,
+    },
+    duration: ANIMATION_DURATION,
+  });
+}
 
 // Padding that keeps a selected station or route clear of the sidebar on the main page.
 // A selected station or route always opens the sidebar (on mobile in its "half" position), so the

@@ -6,6 +6,7 @@ class MapStateManager {
             selectedRoute: null,
             selectedRouteStations: null,
             selectedPoi: null,
+            selectedLine: null,
             createdRoutes: []
         };
 
@@ -39,7 +40,8 @@ class MapStateManager {
             this.state = {
                 ...this.state,
                 selectedStation: station,
-                selectedPoi: null
+                selectedPoi: null,
+                selectedLine: null
             }
             this.emit(this.state);
         } catch (error) {
@@ -68,7 +70,8 @@ class MapStateManager {
             ...this.state,
             selectedRoute: null,
             selectedStation: null,
-            selectedPoi: null
+            selectedPoi: null,
+            selectedLine: null
         }
         this.emit(this.state);
     }
@@ -79,7 +82,21 @@ class MapStateManager {
             ...this.state,
             selectedRoute: null,
             selectedStation: null,
-            selectedPoi: poi
+            selectedPoi: poi,
+            selectedLine: null
+        }
+        this.emit(this.state);
+    }
+
+    // A line (all trains between the same terminal stations) from the mobile panel's route list.
+    // A train opened from the line keeps it selected, so "back" returns to the line
+    selectLine(line) {
+        this.state = {
+            ...this.state,
+            selectedRoute: null,
+            selectedStation: null,
+            selectedPoi: null,
+            selectedLine: line
         }
         this.emit(this.state);
     }
@@ -110,6 +127,10 @@ class MapStateManager {
 
     get selectedRoute() {
         return this.state.selectedRoute;
+    }
+
+    get selectedLine() {
+        return this.state.selectedLine;
     }
 
     get selectedPoi() {

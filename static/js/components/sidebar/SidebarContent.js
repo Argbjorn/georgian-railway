@@ -1,4 +1,5 @@
 import { LanguageService } from "../../services/LanguageService.js";
+import stateManager from "../../state/mapStateManager.js";
 import { fromCityForms } from "../../services/translations.js";
 import { stations } from "../station/stations-list.js";
 import { routes } from "../route/routes-list.js";
@@ -55,12 +56,140 @@ export class SidebarContent {
         if (this.type === 'poi') {
             return this.entity.title;
         }
+        if (this.type === 'line') {
+            return lineName(this.entity, this.currentLanguage);
+        }
         if (this.type === 'station') {
             return this.entity[`name_${this.currentLanguage}`];
         }
         if (this.type === 'route') {
-            return LanguageService.translate('train') + ' ' + this.entity.ref + ': ' + this.entity.routeData[`name:${this.currentLanguage}`];
+            return `
+                <span class="train-number-badge">${this.entity.ref}</span>
+                <span>${this.entity.routeData[`name:${this.currentLanguage}`]}</span>
+            `;
         }
+    }
+
+    // A train is opened from a station's or a line's train list, so "back" leads there
+    getBackButton() {
+        if (this.type !== 'route') return '';
+        const station = stateManager.selectedStation;
+        const line = stateManager.selectedLine;
+        let label = LanguageService.translate('back_to_train_list');
+        if (station) {
+            label = station[`name_${this.currentLanguage}`] || station.name_en;
+        } else if (line) {
+            label = lineName(line, this.currentLanguage);
+        }
+        return `
+            <button type="button" class="sidebar-back" data-action="back-to-train-list">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+                <span>${label}</span>
+            </button>
+        `;
+    }
+
+    getSubtitle() {
+        if (this.type === 'route') {
+            return `<a href="${this.generateRouteDetailsLink()}" class="sidebar-subtitle-link" target="_blank">${LanguageService.translate('view_route_details')}</a>`;
+        }
+        if (this.type === 'station') {
+            return `<a href="${this.generateStationDetailsLink()}" class="sidebar-subtitle-link" target="_blank">${LanguageService.translate('view_station_details')}</a>`;
+        }
+        if (this.type === 'line') {
+            const refs = formatRefs(this.entity.trains.map(train => train.ref));
+            return `<span class="sidebar-subtitle-text">${LanguageService.translate('train_number_sign')} ${refs}</span>`;
+        }
+        return '';
+    }
+
+    // "4 h 1 min" from travel_time "04:01"
+    formatDuration(travelTime) {
+        const match = /^(\d+):(\d+)$/.exec(travelTime || '');
+        if (!match) return '';
+        const hours = parseInt(match[1], 10);
+        const minutes = parseInt(match[2], 10);
+        const parts = [];
+        if (hours) parts.push(`${hours} ${LanguageService.translate('hours_short')}`);
+        if (minutes) parts.push(`${minutes} ${LanguageService.translate('minutes_short')}`);
+        return parts.join(' ');
+    }
+
+    formatArrivalAndDuration(arrival, travelTime) {
+        const parts = [];
+        if (arrival && arrival !== '-') {
+            parts.push(`${LanguageService.translate('arrival_at')} ${arrival}`);
+        }
+        const duration = this.formatDuration(travelTime);
+        if (duration) {
+            parts.push(`${LanguageService.translate('travel_time_label')} ${duration}`);
+        }
+        return parts.join(', ');
+    }
+
+    renderLineTrains() {
+        return lineDirections(this.entity, this.currentLanguage).map(direction => {
+            const rowsHTML = direction.trains.map(train => {
+                const last = train.stations.at(-1);
+                const arrival = last.arrival_time && last.arrival_time !== '-' ? last.arrival_time : last.departure_time;
+                return `
+                    <li>
+                        <button type="button" class="route-link station-train has-meta" data-route-ref="${train.ref}">
+                            <span class="station-train-time">${train.stations[0].departure_time}</span>
+                            <span class="train-number-badge is-small">${train.ref}</span>
+                            <span class="station-train-name">
+                                ${train[`name:${this.currentLanguage}`]}
+                                <span class="station-train-meta">${this.formatArrivalAndDuration(arrival, train.travel_time)}</span>
+                            </span>
+                        </button>
+                    </li>
+                `;
+            }).join('');
+            return `
+                <div class="station-train-group">
+                    <h3 class="station-train-group-title">${this.fromCityLabel(direction)}</h3>
+                    <ul class="station-trains">${rowsHTML}</ul>
+                </div>
+            `;
+        }).join('');
+    }
+
+    stationName(code) {
+        const station = stations[code] || {};
+        return station[`name_${this.currentLanguage}`] || station.name_en || code;
+    }
+
+    // Departure at the first station, arrival at the last one. Intermediate stations show arrival
+    // when the train has both times, otherwise the only time it has (stored as departure_time)
+    getStopTime(stop) {
+        const hasTime = time => time && time !== '-';
+        if (stop.role === 'start') {
+            return stop.departure_time;
+        }
+        if (stop.role === 'end') {
+            return hasTime(stop.arrival_time) ? stop.arrival_time : stop.departure_time;
+        }
+        if (this.entity.routeData.has_arrival_time && hasTime(stop.arrival_time)) {
+            return stop.arrival_time;
+        }
+        return stop.departure_time;
+    }
+
+    renderRouteStops() {
+        const currentCode = stateManager.selectedStation?.code;
+        const stopsHTML = (this.entity.routeData.stations || []).map(stop => {
+            const classes = ['route-stop'];
+            if (stop.role !== 'middle') classes.push('is-terminal');
+            if (stop.code === currentCode) classes.push('is-current');
+            return `
+                <li class="${classes.join(' ')}">
+                    <span class="route-stop-time">${this.getStopTime(stop) || ''}</span>
+                    <span class="route-stop-line" aria-hidden="true"></span>
+                    <span class="route-stop-name">${this.stationName(stop.code)}</span>
+                </li>
+            `;
+        }).join('');
+        return `<ol class="route-stops">${stopsHTML}</ol>`;
     }
 
     getBody() {
@@ -77,37 +206,26 @@ export class SidebarContent {
             return this.content;
         }
 
+        if (this.type === 'line') {
+            this.content.innerHTML = this.renderLineTrains();
+            return this.content;
+        }
+
         if (this.type === 'station') {
             this.content.innerHTML = '';
-            
-            // Generate station details link
-            const stationDetailsLink = this.generateStationDetailsLink();
-            
-            // Add station details link at the top
-            this.content.innerHTML += `
-                <div class="station-details-link-container">
-                    <a href="${stationDetailsLink}" class="station-details-link" target="_blank">
-                        ${LanguageService.translate('view_station_details')}
-                    </a>
-                </div>
-            `;
-            
-            // Group routes by categories
+
+            // A departure board: every train you can board here (starting or passing through) in one
+            // list, and trains that end their route here separately
             const routeGroups = [
                 {
                     key: 'departure',
                     titleKey: 'departures',
-                    routes: this.entity.routes.departure || []
+                    routes: [...(this.entity.routes.departure || []), ...(this.entity.routes.via || [])]
                 },
                 {
-                    key: 'arrival', 
+                    key: 'arrival',
                     titleKey: 'arrivals',
                     routes: this.entity.routes.arrival || []
-                },
-                {
-                    key: 'via',
-                    titleKey: 'passes_through', 
-                    routes: this.entity.routes.via || []
                 }
             ];
 
@@ -123,64 +241,7 @@ export class SidebarContent {
         }
 
         if (this.type === 'route') {
-            this.content.innerHTML = '';
-            
-            // Get start and end stations
-            const startStation = this.entity.routeData.stations.find(station => station.role === 'start');
-            const endStation = this.entity.routeData.stations.find(station => station.role === 'end');
-            
-            // Generate route details link
-            const routeDetailsLink = this.generateRouteDetailsLink();
-            
-            let routeHTML = `
-                <div class="back-to-train-list-container">
-                    <button class="back-to-train-list" data-action="back-to-train-list">
-                        ${LanguageService.translate('back_to_train_list')}
-                    </button>
-                </div>
-            `;
-            
-            // Add timeline with start and end stations
-            if (startStation || endStation) {
-                routeHTML += `<ul class="route-timeline">`;
-                
-                // Add start station
-                if (startStation) {
-                    const startTime = startStation.departure_time !== '-' ? startStation.departure_time : startStation.arrival_time;
-                    const startStationInfo = stations[startStation.code] || {};
-                    const startStationName = startStationInfo[`name_${this.currentLanguage}`] || startStationInfo.name_en || startStation.code;
-                    routeHTML += `
-                        <li class="terminal">
-                            <span class="station-time">${startTime || ''}</span>
-                            <span class="route-station-name">${startStationName}</span>
-                        </li>
-                    `;
-                }
-                
-                // Add end station  
-                if (endStation) {
-                    const endTime = endStation.arrival_time && endStation.arrival_time !== '-' ? endStation.arrival_time : endStation.departure_time;
-                    const endStationInfo = stations[endStation.code] || {};
-                    const endStationName = endStationInfo[`name_${this.currentLanguage}`] || endStationInfo.name_en || endStation.code;
-                    routeHTML += `
-                        <li class="terminal">
-                            <span class="station-time">${endTime || ''}</span>
-                            <span class="route-station-name">${endStationName}</span>
-                        </li>
-                    `;
-                }
-                
-                routeHTML += `</ul>`;
-            }
-            
-            this.content.innerHTML += routeHTML;
-            this.content.innerHTML += `
-                <div class="route-details-link-container">
-                    <a href="${routeDetailsLink}" class="route-details-link" target="_blank">
-                        ${LanguageService.translate('view_route_details')}
-                    </a>
-                </div>
-            `;
+            this.content.innerHTML = this.renderRouteStops();
             return this.content;
         }
     }
@@ -227,17 +288,17 @@ export class SidebarContent {
         const refs = formatRefs(line.trains.map(train => train.ref));
         const directionsHTML = lineDirections(line, this.currentLanguage).map(direction => `
             <span class="route-line-origin">${this.fromCityLabel(direction)}</span>
-            <span class="route-line-times">${direction.times.join(' · ')}</span>
+            <span class="route-line-times">${direction.times.join(', ')}</span>
         `).join('');
 
         return `
-            <div class="route-line-card">
-                <div class="route-line-card-header">
+            <button type="button" class="route-line-card" data-line-key="${line.key}">
+                <span class="route-line-card-header">
                     <span class="route-line-name">${lineName(line, this.currentLanguage)}</span>
                     <span class="route-line-refs">${LanguageService.translate('train_number_sign')} ${refs}</span>
-                </div>
-                <div class="route-line-directions">${directionsHTML}</div>
-            </div>
+                </span>
+                <span class="route-line-directions">${directionsHTML}</span>
+            </button>
         `;
     }
 
@@ -263,26 +324,20 @@ export class SidebarContent {
             const timeInfo = this.getTimeInfo(route, group.key);
             
             return `
-                <div class="route-line">
-                    <div class="route-link" data-route-ref="${route.ref}">
-                        <div class="route-header">
-                            ${timeInfo ? `<span class="route-time">${timeInfo}</span>` : ''}
-                            <div class="route-name">
-                                <span class="route-label">${route.ref}</span>
-                                <span class="route-destination">${routeName}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <li>
+                    <button type="button" class="route-link station-train" data-route-ref="${route.ref}">
+                        <span class="station-train-time">${timeInfo || ''}</span>
+                        <span class="train-number-badge is-small">${route.ref}</span>
+                        <span class="station-train-name">${routeName}</span>
+                    </button>
+                </li>
             `;
         }).join('');
 
         return `
-            <div class="route-group">
-                <h4 class="route-group-title">${groupTitle}</h4>
-                <div class="route-group-content">
-                    ${routesHTML}
-                </div>
+            <div class="station-train-group">
+                <h3 class="station-train-group-title">${groupTitle}</h3>
+                <ul class="station-trains">${routesHTML}</ul>
             </div>
         `;
     }
@@ -290,10 +345,8 @@ export class SidebarContent {
     getTimeInfo(route, groupType) {
         switch (groupType) {
             case 'departure':
-                return route.departure_time && route.departure_time !== '-' ? route.departure_time : null;
+                return route.departure_time && route.departure_time !== '-' ? route.departure_time : route.arrival_time;
             case 'arrival':
-                return route.arrival_time && route.arrival_time !== '-' ? route.arrival_time : route.departure_time;
-            case 'via':
                 return route.arrival_time && route.arrival_time !== '-' ? route.arrival_time : route.departure_time;
             default:
                 return null;

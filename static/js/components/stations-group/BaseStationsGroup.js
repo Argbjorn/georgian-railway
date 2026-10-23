@@ -13,9 +13,12 @@ export class BaseStationsGroup {
     }
 
     showOnlyRouteStations(route) {
-        const routeStations = route.stations.map(station => station.code);
+        this.showOnlyStations(route.stations.map(station => station.code));
+    }
+
+    showOnlyStations(codes) {
         this.stations.forEach(station => {
-            if (routeStations.includes(station.code)) {
+            if (codes.includes(station.code)) {
                 station.show();
             } else {
                 station.hide();

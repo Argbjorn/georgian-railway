@@ -6,6 +6,13 @@ export const GLOBAL_MAP_BOUNDS = [
     [53.273682, 44.150681]  // north-east corner [lon, lat]
 ];
 
+// On mobile the panel covers the lower part of the map, so to show the south (Yerevan, Baku) above it
+// the map has to be able to scroll further south: maxBounds limits the whole viewport, panel included
+export const MOBILE_GLOBAL_MAP_BOUNDS = [
+    [GLOBAL_MAP_BOUNDS[0][0], 34.0],
+    GLOBAL_MAP_BOUNDS[1]
+];
+
 export const DEFAULT_MAP_CENTER = [44.799748, 41.721700]; // [lon, lat]
 
 export const DEFAULT_MAP_ZOOM = 7;

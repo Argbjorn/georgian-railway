@@ -2,6 +2,8 @@ import stateManager from "../../state/mapStateManager.js";
 import { SidebarContent } from "./SidebarContent.js";
 import { InteractiveRoute } from "../route/InteractiveRoute.js";
 import { BottomSheet } from "./BottomSheet.js";
+import { routes } from "../route/routes-list.js";
+import { findLine } from "../route/routeLines.js";
 
 class Sidebar {
     constructor(map, container, stationsGroup) {
@@ -66,19 +68,24 @@ class Sidebar {
             sidebarContent = new SidebarContent(stateManager.selectedRoute, 'route');
         } else if (stateManager.selectedStation) {
             sidebarContent = new SidebarContent(stateManager.selectedStation, 'station');
+        } else if (stateManager.selectedLine) {
+            sidebarContent = new SidebarContent(stateManager.selectedLine, 'line');
         } else if (stateManager.selectedPoi) {
             sidebarContent = new SidebarContent(stateManager.selectedPoi, 'poi');
         } else {
             sidebarContent = new SidebarContent(null, 'default');
         }
         this.sidebar.classList.toggle('is-default', sidebarContent.type === 'default');
+        this.sidebar.querySelector('.sidebar-back-slot').innerHTML = sidebarContent.getBackButton();
         this.sidebar.querySelector('.sidebar-title').innerHTML = sidebarContent.getTitle();
+        this.sidebar.querySelector('.sidebar-subtitle').innerHTML = sidebarContent.getSubtitle();
         const body = this.sidebar.querySelector('.sidebar-body');
         body.innerHTML = '';
         body.appendChild(sidebarContent.getBody());
 
         // Content is re-rendered on every state change, so keep the scroll unless something else is shown
-        const shownEntity = stateManager.selectedRoute || stateManager.selectedStation || stateManager.selectedPoi;
+        const shownEntity = stateManager.selectedRoute || stateManager.selectedStation
+            || stateManager.selectedLine || stateManager.selectedPoi;
         if (shownEntity !== this.shownEntity) {
             this.shownEntity = shownEntity;
             body.scrollTop = 0;
@@ -103,7 +110,11 @@ class Sidebar {
                 <div class="sidebar-handle"></div>
             </div>
             <div class="sidebar-header">
-                <h3 class="sidebar-title"></h3>
+                <div class="sidebar-heading">
+                    <div class="sidebar-back-slot"></div>
+                    <h2 class="sidebar-title"></h2>
+                    <div class="sidebar-subtitle"></div>
+                </div>
                 <button class="sidebar-close" id="sidebar-close-btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -126,21 +137,31 @@ class Sidebar {
     // Setup event listeners
     setupEvents() {
         const sidebarBody = this.sidebar.querySelector('.sidebar-body');
+        const sidebarHeader = this.sidebar.querySelector('.sidebar-header');
         const closeButton = this.sidebar.querySelector('#sidebar-close-btn');
-        
+
         // Clearing the selection closes the sidebar on desktop and returns it to the default state on mobile
         closeButton.addEventListener('click', () => {
             stateManager.clearSelectedRouteAndStation();
         });
-        
+
+        sidebarHeader.addEventListener('click', (e) => {
+            if (e.target.closest('[data-action="back-to-train-list"]')) {
+                stateManager.clearSelectedRoute();
+            }
+        });
+
         // Route click handler
         sidebarBody.addEventListener('click', async (e) => {
-            // Handle back to train list button
-            if (e.target.getAttribute('data-action') === 'back-to-train-list') {
-                stateManager.clearSelectedRoute();
+            const lineCard = e.target.closest('.route-line-card');
+            if (lineCard) {
+                const line = findLine(routes, lineCard.dataset.lineKey);
+                if (line) {
+                    stateManager.selectLine(line);
+                }
                 return;
             }
-            
+
             const stationChip = e.target.closest('.station-chip');
             if (stationChip) {
                 const station = this.stationsGroup.stations.find(s => s.code === stationChip.dataset.stationCode);

@@ -14,11 +14,18 @@ function isRunning(train) {
     return train.active && train.stations && !(train.start_date && train.start_date > Date.now());
 }
 
+function terminalCodes(train) {
+    return [startCode(train), train.stations.at(-1).code];
+}
+
 function makeLine(trains) {
     const [origin, destination] = nameCities(trains[0], 'en');
     const priority = LINE_NAME_CITY_PRIORITY.findIndex(city => city === origin || city === destination);
     const leadingCity = priority === -1 ? origin : LINE_NAME_CITY_PRIORITY[priority];
+    const terminals = terminalCodes(trains[0]).sort();
     return {
+        key: terminals.join('-'),
+        terminals,
         trains,
         leadingCity,
         priority: priority === -1 ? LINE_NAME_CITY_PRIORITY.length : priority
@@ -34,7 +41,7 @@ export function groupRouteLines(routes) {
         .filter(isRunning)
         .sort((a, b) => a.ref - b.ref)
         .forEach(train => {
-            const key = [startCode(train), train.stations.at(-1).code].sort().join('|');
+            const key = terminalCodes(train).sort().join('-');
             if (!trainsByTerminals.has(key)) {
                 trainsByTerminals.set(key, []);
             }
@@ -58,7 +65,8 @@ export function lineName(line, lang) {
     return cities.join(' — ');
 }
 
-// Directions of the line, the one from the leading city first, each with sorted departure times
+// Directions of the line, the one from the leading city first, each with its trains and their
+// departure times sorted by departure
 export function lineDirections(line, lang) {
     const trainsByStart = new Map();
     const ordered = [...line.trains].sort((a, b) =>
@@ -71,11 +79,21 @@ export function lineDirections(line, lang) {
         trainsByStart.get(startCode(train)).push(train);
     });
 
-    return [...trainsByStart.values()].map(trains => ({
-        origin: nameCities(trains[0], lang)[0],
-        originEn: nameCities(trains[0], 'en')[0],
-        times: trains.map(train => train.stations[0].departure_time).sort()
-    }));
+    return [...trainsByStart.values()].map(trains => {
+        const sorted = [...trains].sort((a, b) =>
+            a.stations[0].departure_time.localeCompare(b.stations[0].departure_time)
+        );
+        return {
+            origin: nameCities(trains[0], lang)[0],
+            originEn: nameCities(trains[0], 'en')[0],
+            trains: sorted,
+            times: sorted.map(train => train.stations[0].departure_time)
+        };
+    });
+}
+
+export function findLine(routes, key) {
+    return groupRouteLines(routes).find(line => line.key === key);
 }
 
 // "801–804" for runs of three or more consecutive refs, "869, 870" otherwise

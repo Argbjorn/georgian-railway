@@ -153,7 +153,7 @@ export class BottomSheet {
         if (!d) return;
 
         if (!d.moved) {
-            if (e.type === 'pointerup' && d.fromHeader && !e.target.closest('.sidebar-close')) {
+            if (e.type === 'pointerup' && d.fromHeader && !e.target.closest('button, a')) {
                 this.toggle();
             }
             return;

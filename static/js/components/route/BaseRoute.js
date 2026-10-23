@@ -1,6 +1,12 @@
 import { routes } from "./routes-list.js";
-import { ANIMATION_DURATION } from "../../constants.js";
-import { getBoundsPadding } from "../../utils/utils.js";
+import { fitBoundsClearOfSidebar } from "../../utils/utils.js";
+
+// Line coordinates of the route's ways from a routes_geodata file (Overpass JSON)
+export function extractWayLines(routeJSONData) {
+    return routeJSONData.members
+        .filter(member => member.type === 'way' && member.geometry && member.geometry.length > 0)
+        .map(way => way.geometry.map(point => [point.lon, point.lat]));
+}
 
 export class BaseRoute {
     constructor(map, ref) {
@@ -49,13 +55,7 @@ export class BaseRoute {
 
     // Data files are in json format, directly from overpass-turbo, we should convert them to geojson
     createGeoJSON(routeJSONData) {
-        const lines = [];
-        const wayMembers = routeJSONData.members.filter(member => member.type === 'way');
-        wayMembers.forEach(way => {
-            if (way.geometry && way.geometry.length > 0) {
-                lines.push(way.geometry.map(point => [point.lon, point.lat])); // Original data is in format [lat, lon]
-            }
-        });
+        const lines = extractWayLines(routeJSONData);
 
         return {
             type: 'Feature',
@@ -84,19 +84,7 @@ export class BaseRoute {
 
     fitBounds() {
         if (this.bounds) {
-            // fitBounds adds its padding to the map's own padding, which easeTo to a station leaves
-            // behind, so only the difference to the target padding is passed
-            const target = getBoundsPadding();
-            const current = this.map.getPadding();
-            this.map.fitBounds(this.bounds, {
-                padding: {
-                    top: target.top - current.top,
-                    bottom: target.bottom - current.bottom,
-                    left: target.left - current.left,
-                    right: target.right - current.right
-                },
-                duration: ANIMATION_DURATION
-            });
+            fitBoundsClearOfSidebar(this.map, this.bounds);
         }
     }
 }
