@@ -1159,9 +1159,6 @@ body, html {
   color: #fff;
 }
 
-.poi-popup {
-    font-size: 15px;
-}
 
 /* Стили для контейнера карты маршрута */
 .route-map-container {

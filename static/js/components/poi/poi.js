@@ -91,10 +91,7 @@ export class Poi {
     markerEl.setAttribute("data-testid", `poi-${this.id}`);
     markerEl.innerHTML = `<div class="poi-icon">?</div>`;
 
-    // On mobile the description opens in the panel; on desktop the click reaches the map,
-    // which toggles the popup
     markerEl.addEventListener("click", (e) => {
-      if (stateManager.deviceType !== "mobile") return;
       e.stopPropagation();
       stateManager.selectPoi(this);
       this.map.easeTo({
@@ -106,15 +103,6 @@ export class Poi {
 
     this.marker = new maplibregl.Marker({ element: markerEl })
       .setLngLat([this.coords[1], this.coords[0]]);
-
-    this.popup = new maplibregl.Popup({
-      offset: 25,
-      closeButton: true,
-      closeOnClick: true,
-      className: "poi-popup",
-    }).setHTML(`<div style="max-width: 300px;">${this.description}</div>`);
-
-    this.marker.setPopup(this.popup);
   }
 
   show() {

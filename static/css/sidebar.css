@@ -1,49 +1,49 @@
-/* Sidebar Base Styles */
+/* Map panel on the main page: shared look and content first, then the desktop column on the left,
+   then the mobile bottom sheet (see BottomSheet.js) */
+
+/* ---------- Shell ---------- */
+
 .sidebar {
     position: fixed;
-    right: -100%;
-    top: 0;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
     z-index: 10;
     display: flex;
     flex-direction: column;
+    background: #FFFFFF;
+    color: #15181C;
 }
 
-.sidebar.active {
-    right: 0;
+.sidebar-handle-area {
+    display: none;
 }
 
 .sidebar-header {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #f8f9fa;
-}
-
-.sidebar-title {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+    gap: 8px;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E3E6EA;
 }
 
 .sidebar-heading {
     flex: 1;
     min-width: 0;
+    min-height: 44px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2px;
 }
 
 .sidebar-title {
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 19px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #15181C;
 }
 
 .sidebar-back-slot:empty,
@@ -68,25 +68,6 @@
     cursor: pointer;
 }
 
-.sidebar-subtitle-text {
-    display: inline-block;
-    padding: 4px 0;
-    font-size: 13px;
-    color: #5B636D;
-}
-
-.route-link.station-train.has-meta {
-    align-items: flex-start;
-    padding: 8px 0;
-}
-
-.station-train-meta {
-    display: block;
-    margin-top: 2px;
-    font-size: 13px;
-    color: #5B636D;
-}
-
 .sidebar-subtitle-link {
     display: inline-block;
     padding: 4px 0;
@@ -94,6 +75,229 @@
     font-weight: 600;
     color: #1B6EA8;
 }
+
+.sidebar-subtitle-text {
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #5B636D;
+}
+
+.sidebar-close {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: none;
+    color: #4A525B;
+    cursor: pointer;
+}
+
+.sidebar-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sidebar-close:hover {
+    color: #15181C;
+}
+
+.sidebar.is-default .sidebar-close {
+    display: none;
+}
+
+.sidebar-body {
+    flex: 1;
+}
+
+/* ---------- Default content: routes, stations, what's new ---------- */
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-section + .sidebar-section {
+    margin-top: 24px;
+}
+
+.sidebar-section-title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #15181C;
+}
+
+.sidebar-section-link {
+    align-self: flex-start;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B6EA8;
+}
+
+/* Cards stick out 8px on each side so the hover background doesn't touch the text; the separators
+   are drawn inset by the same 8px to stay aligned with the section title */
+.route-line-cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 -8px;
+}
+
+.route-line-cards::before,
+.route-line-cards::after,
+.route-line-card + .route-line-card::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    border-top: 1px solid #E3E6EA;
+}
+
+.route-line-cards::before,
+.route-line-card + .route-line-card::before {
+    top: 0;
+}
+
+.route-line-cards::after {
+    bottom: 0;
+}
+
+.route-line-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    font: inherit;
+    color: #15181C;
+    text-align: left;
+    cursor: pointer;
+}
+
+.route-line-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.route-line-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.route-line-refs {
+    font-size: 12px;
+    color: #5B636D;
+    white-space: nowrap;
+}
+
+.route-line-directions {
+    display: grid;
+    grid-template-columns: minmax(104px, auto) minmax(0, 1fr);
+    column-gap: 8px;
+    row-gap: 2px;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+html[lang="ka"] .route-line-directions {
+    grid-template-columns: minmax(120px, auto) minmax(0, 1fr);
+}
+
+.route-line-origin {
+    color: #4A525B;
+}
+
+.route-line-times {
+    font-weight: 600;
+}
+
+.station-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.station-chip {
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid #D5D9DE;
+    border-radius: 18px;
+    background: #FFFFFF;
+    font: inherit;
+    font-size: 14px;
+    color: #15181C;
+    cursor: pointer;
+}
+
+.whats-new-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    border: 1px solid #E3E6EA;
+    border-radius: 14px;
+    color: #15181C;
+}
+
+.whats-new-card-date {
+    font-size: 12px;
+    color: #5B636D;
+}
+
+.whats-new-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.whats-new-card-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2A3036;
+    overflow-wrap: anywhere;
+}
+
+.whats-new-card-text p {
+    margin: 0;
+}
+
+.whats-new-card-text p + p {
+    margin-top: 8px;
+}
+
+.whats-new-card-text a {
+    color: #1B6EA8;
+}
+
+.sidebar-page-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    padding-top: 12px;
+    border-top: 1px solid #E3E6EA;
+    font-size: 14px;
+}
+
+.sidebar-page-links a {
+    padding: 6px 0;
+    color: #1B6EA8;
+}
+
+/* ---------- Train lists: station, line ---------- */
 
 .train-number-badge {
     flex-shrink: 0;
@@ -148,6 +352,12 @@
     font-variant-numeric: tabular-nums;
 }
 
+.route-link.station-train.has-meta {
+    align-items: flex-start;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .station-train-time {
     width: 48px;
     flex-shrink: 0;
@@ -160,6 +370,15 @@
     min-width: 0;
     font-size: 15px;
 }
+
+.station-train-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: #5B636D;
+}
+
+/* ---------- Train: stops ---------- */
 
 .route-stops {
     list-style: none;
@@ -243,99 +462,102 @@
     background: #22A022;
 }
 
-.sidebar-close {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #666;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+/* ---------- POI ---------- */
+
+.poi-description {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #2A3036;
 }
 
-.sidebar-close:hover {
-    background: #e9ecef;
-    color: #333;
+/* ---------- Hover (mouse only, so it doesn't stick after a tap) ---------- */
+
+.route-line-card,
+.route-link.station-train {
+    transition: background-color 0.1s ease;
 }
 
-.sidebar-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+/* Train rows get side padding for the hover background, offset by negative margins to keep the text
+   aligned (route cards do the same, see .route-line-cards) */
+.route-link.station-train {
+    margin: 0 -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: calc(100% + 16px);
+    border-radius: 8px;
 }
 
-.sidebar-body {
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto;
+.station-chip {
+    transition: border-color 0.1s ease, background-color 0.1s ease;
 }
 
-.sidebar-handle-area {
-    display: none;
-}
-
-.test-route-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #007bff;
-    color: white;
+/* Standalone links are blue without underline, which appears on hover; links inside the news text
+   stay underlined so they stand out from the text */
+.sidebar-subtitle-link,
+.sidebar-section-link,
+.sidebar-page-links a {
     text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
 }
 
-.test-route-link:hover {
-    background: #0056b3;
+@media (hover: hover) {
+    .route-line-card:hover,
+    .route-link.station-train:hover {
+        background: #F2F4F6;
+    }
+
+    .station-chip:hover {
+        border-color: #8A9199;
+        background: #F7F8FA;
+    }
+
+    .sidebar-back:hover,
+    .sidebar-subtitle-link:hover,
+    .sidebar-section-link:hover,
+    .sidebar-page-links a:hover {
+        text-decoration: underline;
+    }
+
+    .whats-new-card-text a:hover {
+        color: #124E78;
+    }
 }
 
-/* Desktop and Tablet Styles */
+/* ---------- Desktop: a column on the left, always open ---------- */
+/* 768px matches DESKTOP_THRESHOLD in constants.js; the width matches DESKTOP_SIDEBAR_WIDTH_IN_PIXELS */
+
 @media (min-width: 768px) {
     .sidebar {
-        width: 400px;
-        right: -400px;
         top: 64px;
+        left: 0;
+        width: 420px;
         height: calc(100vh - 64px);
-        border-left: 1px solid #dee2e6;
+        height: calc(100dvh - 64px);
+        border-right: 1px solid #E3E6EA;
     }
-    
-    .sidebar.active {
-        right: 0;
-    }
-    
-    /* Улучшенные стили для десктопа и планшета */
+
     .sidebar-header {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-bottom: 2px solid #dee2e6;
+        padding: 12px 12px 12px 24px;
     }
-    
-    .sidebar-title {
-        font-size: 20px;
+
+    .sidebar.is-default .sidebar-header {
+        padding-right: 24px;
     }
-    
+
     .sidebar-body {
-        padding: 25px;
+        padding: 20px 24px 32px;
+        overflow-y: auto;
     }
 }
 
-/* Mobile Styles */
-/* 767px matches the JS check innerWidth < DESKTOP_THRESHOLD (768) */
+/* ---------- Mobile: bottom sheet ---------- */
+
 @media (max-width: 767px) {
     .sidebar {
         width: 100%;
         height: var(--sheet-height, 46dvh);
-        right: auto;
         left: 0;
         bottom: -100%;
-        top: auto;
-        color: #15181C;
         border-radius: 16px 16px 0 0;
         box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.14);
         overflow: hidden;
@@ -356,22 +578,6 @@
         transition: none;
     }
 
-    .sidebar-handle-area,
-    .sidebar-header {
-        touch-action: none;
-    }
-
-    .sidebar-body {
-        overflow-y: hidden;
-        touch-action: none;
-    }
-
-    .sidebar[data-snap="expanded"] .sidebar-body {
-        overflow-y: auto;
-        touch-action: pan-y;
-        overscroll-behavior: contain;
-    }
-
     .sidebar-handle-area {
         display: flex;
         justify-content: center;
@@ -386,228 +592,33 @@
         background: #C9CED4;
     }
 
+    .sidebar-handle-area,
+    .sidebar-header {
+        touch-action: none;
+    }
+
     .sidebar-header {
         padding: 0 4px 6px 16px;
-        align-items: center;
-        gap: 8px;
-        background: #FFFFFF;
-        border-bottom: 1px solid #E3E6EA;
-        flex-shrink: 0;
     }
 
     .sidebar.is-default .sidebar-header {
         padding-right: 16px;
     }
 
-    .sidebar-heading {
-        min-height: 44px;
-        justify-content: center;
-    }
-
-    .sidebar-title {
-        font-size: 19px;
-        line-height: 1.25;
-        font-weight: 700;
-        color: #15181C;
-    }
-
-    .sidebar-close {
-        flex-shrink: 0;
-        width: 44px;
-        height: 44px;
-        border-radius: 0;
-        color: #4A525B;
-    }
-
-    .sidebar-close svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .sidebar-close:hover {
-        background: none;
-        color: #15181C;
-    }
-
-    .sidebar.is-default .sidebar-close {
-        display: none;
-    }
-
     .sidebar-body {
         padding: 12px 16px 24px;
         padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+        overflow-y: hidden;
+        touch-action: none;
     }
 
     .sidebar.is-default .sidebar-body {
         padding-top: 16px;
     }
 
-    .route-line-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        padding: 10px 0 12px;
-        border: 0;
-        background: none;
-        font: inherit;
-        color: #15181C;
-        text-align: left;
-        cursor: pointer;
-    }
-
-    .route-line-card + .route-line-card {
-        border-top: 1px solid #E3E6EA;
-    }
-
-    .route-line-card-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 8px;
-    }
-
-    .route-line-name {
-        font-size: 16px;
-        font-weight: 600;
-    }
-
-    .route-line-refs {
-        font-size: 12px;
-        color: #5B636D;
-        white-space: nowrap;
-    }
-
-    .route-line-directions {
-        display: grid;
-        grid-template-columns: minmax(104px, auto) minmax(0, 1fr);
-        column-gap: 8px;
-        row-gap: 2px;
-        font-size: 14px;
-        font-variant-numeric: tabular-nums;
-    }
-
-    html[lang="ka"] .route-line-directions {
-        grid-template-columns: minmax(120px, auto) minmax(0, 1fr);
-    }
-
-    .route-line-origin {
-        color: #4A525B;
-    }
-
-    .route-line-times {
-        font-weight: 600;
-    }
-
-    .sidebar-section {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .sidebar-section + .sidebar-section {
-        margin-top: 24px;
-    }
-
-    .sidebar-section-title {
-        margin: 0;
-        font-size: 18px;
-        line-height: 1.25;
-        font-weight: 700;
-        color: #15181C;
-    }
-
-    .route-line-cards {
-        display: flex;
-        flex-direction: column;
-        border-top: 1px solid #E3E6EA;
-        border-bottom: 1px solid #E3E6EA;
-    }
-
-    .station-chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .station-chip {
-        min-height: 36px;
-        padding: 0 12px;
-        border: 1px solid #D5D9DE;
-        border-radius: 18px;
-        background: #FFFFFF;
-        font: inherit;
-        font-size: 14px;
-        color: #15181C;
-        cursor: pointer;
-    }
-
-    .sidebar-section-link {
-        align-self: flex-start;
-        padding: 6px 0;
-        font-size: 14px;
-        font-weight: 600;
-        color: #1B6EA8;
-    }
-
-    .whats-new-card {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        padding: 16px;
-        border: 1px solid #E3E6EA;
-        border-radius: 14px;
-        color: #15181C;
-    }
-
-    .whats-new-card-date {
-        font-size: 12px;
-        color: #5B636D;
-    }
-
-    .whats-new-card-title {
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 1.35;
-    }
-
-    .whats-new-card-text {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #2A3036;
-        overflow-wrap: anywhere;
-    }
-
-    .whats-new-card-text p {
-        margin: 0;
-    }
-
-    .whats-new-card-text p + p {
-        margin-top: 8px;
-    }
-
-    .whats-new-card-text a {
-        color: #1B6EA8;
-    }
-
-    .poi-description {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.5;
-        color: #2A3036;
-    }
-
-    .sidebar-page-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 4px 20px;
-        padding-top: 12px;
-        border-top: 1px solid #E3E6EA;
-        font-size: 14px;
-    }
-
-    .sidebar-page-links a {
-        padding: 6px 0;
-        color: #1B6EA8;
+    .sidebar[data-snap="expanded"] .sidebar-body {
+        overflow-y: auto;
+        touch-action: pan-y;
+        overscroll-behavior: contain;
     }
 }

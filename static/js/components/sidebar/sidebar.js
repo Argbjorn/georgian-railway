@@ -24,40 +24,25 @@ class Sidebar {
         this.onStateChange(stateManager.state);
     }
 
+    // The panel is always on screen: with nothing selected it shows the default content.
+    // On mobile it is a draggable bottom sheet, on desktop a column on the left
     onStateChange(state) {
-        // On mobile the panel is always on screen: with nothing selected it shows the default content
+        if (!state.deviceType) return;
+        this.show();
+        this.updateContent();
         if (state.deviceType === 'mobile') {
-            this.show();
-            this.updateContent();
             this.sheet.enable();
             this.sheet.refresh();
-        }
-
-        if (state.deviceType === 'desktop') {
-            this.sheet?.disable();
-            if (state.selectedRoute || state.selectedStation) {
-                this.show();
-                this.updateContent();
-            } else {
-                this.close();
-            }
+        } else {
+            this.sheet.disable();
         }
     }
 
-    // Show sidebar
     show() {
         if (!this.sidebar) {
             this.create();
         }
         this.sidebar.classList.add('active');
-        this.sidebar.classList.remove('collapsed-auto');
-    }
-
-    // Close sidebar
-    close() {
-        if (this.sidebar) {
-            this.sidebar.classList.remove('active', 'collapsed-auto');
-        }
     }
 
     // Update sidebar content
@@ -140,7 +125,7 @@ class Sidebar {
         const sidebarHeader = this.sidebar.querySelector('.sidebar-header');
         const closeButton = this.sidebar.querySelector('#sidebar-close-btn');
 
-        // Clearing the selection closes the sidebar on desktop and returns it to the default state on mobile
+        // Clearing the selection returns the panel to the default content
         closeButton.addEventListener('click', () => {
             stateManager.clearSelectedRouteAndStation();
         });

@@ -1,7 +1,7 @@
 import stateManager from "./mapStateManager.js";
 
-// Mirrors the panel's selection (station, train, line, POI) in the browser history on mobile, so the
-// system back button or gesture closes what is open instead of leaving the site.
+// Mirrors the panel's selection (station, train, line, POI) in the browser history, so the back
+// button or gesture closes what is open instead of leaving the site.
 // Selected objects can't be stored in history.state, so it holds only an index into `entries`.
 
 const SELECTION_KEYS = ['selectedRoute', 'selectedStation', 'selectedLine', 'selectedPoi'];
@@ -22,7 +22,7 @@ export function initHistorySync() {
     history.replaceState({ ...history.state, panelDepth: 0 }, '');
 
     stateManager.subscribe(() => {
-        if (restoring || stateManager.deviceType !== 'mobile') return;
+        if (restoring) return;
         const selection = stateManager.selection;
         if (sameSelection(selection, entries[depth])) return;
 

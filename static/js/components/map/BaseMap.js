@@ -13,10 +13,14 @@ export class BaseMap {
     }
 
     initialize() {
-        this.map.addControl(new maplibregl.NavigationControl(), 'top-left');
+        this.map.addControl(new maplibregl.NavigationControl(), this.getNavigationControlPosition());
         this.map.on('load', () => {
             this.onMapLoad();
         })
+    }
+
+    getNavigationControlPosition() {
+        return 'top-left';
     }
 
     onMapLoad() {

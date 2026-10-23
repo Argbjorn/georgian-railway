@@ -39,8 +39,8 @@ export function getBoundsPadding() {
     return {
       top: DESKTOP_BOUNDS_PADDING,
       bottom: DESKTOP_BOUNDS_PADDING,
-      left: DESKTOP_BOUNDS_PADDING,
-      right: DESKTOP_BOUNDS_PADDING + DESKTOP_SIDEBAR_WIDTH_IN_PIXELS,
+      left: DESKTOP_BOUNDS_PADDING + DESKTOP_SIDEBAR_WIDTH_IN_PIXELS,
+      right: DESKTOP_BOUNDS_PADDING,
     };
   }
   // Route and station pages have no sidebar and don't set the device type

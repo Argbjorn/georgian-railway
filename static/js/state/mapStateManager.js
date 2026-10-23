@@ -76,7 +76,7 @@ class MapStateManager {
         this.emit(this.state);
     }
 
-    // POI descriptions open in the mobile panel instead of the station or train
+    // POI descriptions open in the panel instead of the station or train
     selectPoi(poi) {
         this.state = {
             ...this.state,
