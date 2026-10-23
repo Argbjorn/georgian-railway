@@ -352,6 +352,10 @@
         user-select: none;
     }
 
+    .sidebar.is-instant {
+        transition: none;
+    }
+
     .sidebar-handle-area,
     .sidebar-header {
         touch-action: none;
@@ -431,6 +435,7 @@
 
     .sidebar-body {
         padding: 12px 16px 24px;
+        padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
     }
 
     .sidebar.is-default .sidebar-body {

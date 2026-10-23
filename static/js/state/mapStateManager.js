@@ -101,6 +101,28 @@ class MapStateManager {
         this.emit(this.state);
     }
 
+    // Snapshot of what the panel shows, used by the browser history (see historySync.js)
+    get selection() {
+        return {
+            selectedRoute: this.state.selectedRoute,
+            selectedStation: this.state.selectedStation,
+            selectedLine: this.state.selectedLine,
+            selectedPoi: this.state.selectedPoi
+        };
+    }
+
+    restoreSelection(selection) {
+        this.state = {
+            ...this.state,
+            selectedRoute: null,
+            selectedStation: null,
+            selectedLine: null,
+            selectedPoi: null,
+            ...selection
+        }
+        this.emit(this.state);
+    }
+
     createRoute(route) {
         this.state = {
             ...this.state,

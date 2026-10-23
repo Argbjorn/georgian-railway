@@ -19,6 +19,15 @@ module:
   imports:
   - path: github.com/imfing/hextra
 
+# hugo server only: JS modules and sidebar.css are linked without versions, so without this a phone
+# keeps old modules and mixes them with new ones between local builds. Production (GitHub Pages)
+# sends max-age=600 itself.
+server:
+  headers:
+    - for: /**
+      values:
+        Cache-Control: no-store
+
 markup:
   # allow raw html
   goldmark:

@@ -33,7 +33,13 @@ export class BottomSheet {
         // A drag that ends over a link must not open it
         this.el.addEventListener('click', this.onClickCapture, true);
         window.addEventListener('resize', this.refresh);
+
+        // Measuring the header in setSnap applies the height before the offset, so the first position
+        // would otherwise animate from fully expanded down to its place
+        this.el.classList.add('is-instant');
         this.setSnap(this.snap);
+        void this.el.offsetHeight;
+        this.el.classList.remove('is-instant');
     }
 
     disable() {
