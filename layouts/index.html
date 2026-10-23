@@ -4,4 +4,29 @@
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
     {{ partial "map.html" . }}
   </div>
+  {{/* Bottom of the default mobile map panel. Rendered here because the What's New entries and
+       page links live in Hugo; static/js/components/sidebar/SidebarContent.js copies it into the panel. */}}
+  <template id="sidebar-default-footer">
+    {{ with site.GetPage "/whats-new" }}
+      {{ $section := . }}
+      {{ with .Pages }}
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">{{ T "whats-new" }}</h3>
+          {{ range first 3 .ByDate.Reverse }}
+            <article class="whats-new-card">
+              <span class="whats-new-card-date">{{ partial "utils/format-date" .Date }}</span>
+              {{ with .Title }}<span class="whats-new-card-title">{{ . }}</span>{{ end }}
+              <div class="whats-new-card-text">{{ .Content }}</div>
+            </article>
+          {{ end }}
+          <a class="sidebar-section-link" href="{{ $section.RelPermalink }}">{{ T "allNews" }}</a>
+        </div>
+      {{ end }}
+    {{ end }}
+    {{ with site.GetPage "/about" }}
+      <div class="sidebar-section sidebar-page-links">
+        <a href="{{ .RelPermalink }}">{{ T "about" }}</a>
+      </div>
+    {{ end }}
+  </template>
 {{ end }}

@@ -1,3 +1,41 @@
+// "From <city>" forms keyed by the city name from the trains' `name:en`, for languages where the
+// city name changes. Temporary: to be replaced with data from the routes sheet (see TODO.md).
+// Cities missing here are shown as "<city> →".
+export const fromCityForms = {
+    ru: {
+        Baku: "Из Баку",
+        Batumi: "Из Батуми",
+        Borjomi: "Из Боржоми",
+        Gardabani: "Из Гардабани",
+        Khashuri: "Из Хашури",
+        Kutaisi: "Из Кутаиси",
+        Ozurgeti: "Из Озургети",
+        Poti: "Из Поти",
+        Rioni: "Из Риони",
+        Sachkhere: "Из Сачхере",
+        Tbilisi: "Из Тбилиси",
+        Yerevan: "Из Еревана",
+        Zestafoni: "Из Зестафони",
+        Zugdidi: "Из Зугдиди",
+    },
+    ka: {
+        Baku: "ბაქოდან",
+        Batumi: "ბათუმიდან",
+        Borjomi: "ბორჯომიდან",
+        Gardabani: "გარდაბნიდან",
+        Khashuri: "ხაშურიდან",
+        Kutaisi: "ქუთაისიდან",
+        Ozurgeti: "ოზურგეთიდან",
+        Poti: "ფოთიდან",
+        Rioni: "რიონიდან",
+        Sachkhere: "საჩხერიდან",
+        Tbilisi: "თბილისიდან",
+        Yerevan: "ერევნიდან",
+        Zestafoni: "ზესტაფონიდან",
+        Zugdidi: "ზუგდიდიდან",
+    },
+};
+
 export const translations = {
     en: {
         unknown_station: "unknown station",
@@ -17,6 +55,11 @@ export const translations = {
         layer_control_title: "Base Layers",
         train: "Train",
         back_to_train_list: "← Back to the train list",
+        default_panel_title: "Trains of Georgia",
+        train_number_sign: "No.",
+        routes_section_title: "Routes",
+        stations_section_title: "Stations",
+        all_stations: "All stations",
     },
 
     ru: {
@@ -37,6 +80,11 @@ export const translations = {
         layer_control_title: "Подложка",
         train: "Поезд",
         back_to_train_list: "← Назад к списку поездов",
+        default_panel_title: "Поезда Грузии",
+        train_number_sign: "№",
+        routes_section_title: "Маршруты",
+        stations_section_title: "Станции",
+        all_stations: "Все станции",
     },
 
     ka: {
@@ -57,5 +105,10 @@ export const translations = {
         layer_control_title: "ფენები",
         train: "მატარებელი",
         back_to_train_list: "← მატარებლების სიაზე დაბრუნება",
+        default_panel_title: "საქართველოს მატარებლები",
+        train_number_sign: "№",
+        routes_section_title: "მარშრუტები",
+        stations_section_title: "სადგურები",
+        all_stations: "ყველა სადგური",
     }
 };

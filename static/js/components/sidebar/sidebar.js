@@ -1,37 +1,45 @@
 import stateManager from "../../state/mapStateManager.js";
 import { SidebarContent } from "./SidebarContent.js";
 import { InteractiveRoute } from "../route/InteractiveRoute.js";
+import { BottomSheet } from "./BottomSheet.js";
 
 class Sidebar {
-    constructor(map, container) {
+    constructor(map, container, stationsGroup) {
         this.map = map;
         this.container = container;
+        this.stationsGroup = stationsGroup;
         this.sidebar = null;
 
-        stateManager.subscribe(state => {
-            if (state.deviceType === 'mobile') {
-                if (state.selectedRoute) {
-                    this.show();
-                    this.minimize();
-                    this.updateContent();
-                } else if (state.selectedStation) {
-                    this.show();
-                    this.maximize();
-                    this.updateContent();
-                } else {
-                    this.close();
-                }
-            }
-
-            if (state.deviceType === 'desktop') {
-                if (state.selectedRoute || state.selectedStation) {
-                    this.show();
-                    this.updateContent();
-                } else {
-                    this.close();
-                }
+        // Only user gestures have originalEvent; camera moves started by code (fitBounds, easeTo) don't
+        this.map.on('movestart', e => {
+            if (e.originalEvent) {
+                this.sheet?.collapse();
             }
         });
+
+        stateManager.subscribe(state => this.onStateChange(state));
+        // The device type is set before the map is created, so render the initial state explicitly
+        this.onStateChange(stateManager.state);
+    }
+
+    onStateChange(state) {
+        // On mobile the panel is always on screen: with nothing selected it shows the default content
+        if (state.deviceType === 'mobile') {
+            this.show();
+            this.updateContent();
+            this.sheet.enable();
+            this.sheet.refresh();
+        }
+
+        if (state.deviceType === 'desktop') {
+            this.sheet?.disable();
+            if (state.selectedRoute || state.selectedStation) {
+                this.show();
+                this.updateContent();
+            } else {
+                this.close();
+            }
+        }
     }
 
     // Show sidebar
@@ -50,45 +58,50 @@ class Sidebar {
         }
     }
 
-    // Minimize sidebar (but not close)
-    minimize() {
-        if (!this.sidebar) {
-            this.create();
-        }
-        this.sidebar.classList.add('minimized');
-    }
-
-    // Maximize sidebar (return to normal size)
-    maximize() {
-        if (!this.sidebar) {
-            this.create();
-        }
-        this.sidebar.classList.remove('minimized');
-    }
-
     // Update sidebar content
     updateContent() {
         if (!this.sidebar) return;
-        let sidebarContent = '';
+        let sidebarContent;
         if (stateManager.selectedRoute) {
             sidebarContent = new SidebarContent(stateManager.selectedRoute, 'route');
         } else if (stateManager.selectedStation) {
             sidebarContent = new SidebarContent(stateManager.selectedStation, 'station');
+        } else if (stateManager.selectedPoi) {
+            sidebarContent = new SidebarContent(stateManager.selectedPoi, 'poi');
+        } else {
+            sidebarContent = new SidebarContent(null, 'default');
         }
+        this.sidebar.classList.toggle('is-default', sidebarContent.type === 'default');
         this.sidebar.querySelector('.sidebar-title').innerHTML = sidebarContent.getTitle();
-        this.sidebar.querySelector('.sidebar-body').innerHTML = '';
-        this.sidebar.querySelector('.sidebar-body').appendChild(sidebarContent.getBody());
+        const body = this.sidebar.querySelector('.sidebar-body');
+        body.innerHTML = '';
+        body.appendChild(sidebarContent.getBody());
+
+        // Content is re-rendered on every state change, so keep the scroll unless something else is shown
+        const shownEntity = stateManager.selectedRoute || stateManager.selectedStation || stateManager.selectedPoi;
+        if (shownEntity !== this.shownEntity) {
+            this.shownEntity = shownEntity;
+            body.scrollTop = 0;
+            // The map padding for selected objects assumes this position (see getBoundsPadding)
+            if (shownEntity) {
+                this.sheet?.moveTo('half');
+            }
+        }
     }
 
     // Create sidebar
     create() {
         this.createDOM();
         this.setupEvents();
+        this.sheet = new BottomSheet(this.sidebar);
     }
 
     // Returns template for sidebar content
     getTemplate() {
         return `
+            <div class="sidebar-handle-area">
+                <div class="sidebar-handle"></div>
+            </div>
             <div class="sidebar-header">
                 <h3 class="sidebar-title"></h3>
                 <button class="sidebar-close" id="sidebar-close-btn">
@@ -115,9 +128,8 @@ class Sidebar {
         const sidebarBody = this.sidebar.querySelector('.sidebar-body');
         const closeButton = this.sidebar.querySelector('#sidebar-close-btn');
         
-        // Close sidebar handler
+        // Clearing the selection closes the sidebar on desktop and returns it to the default state on mobile
         closeButton.addEventListener('click', () => {
-            this.close();
             stateManager.clearSelectedRouteAndStation();
         });
         
@@ -129,6 +141,15 @@ class Sidebar {
                 return;
             }
             
+            const stationChip = e.target.closest('.station-chip');
+            if (stationChip) {
+                const station = this.stationsGroup.stations.find(s => s.code === stationChip.dataset.stationCode);
+                if (station) {
+                    stateManager.selectStation(station);
+                }
+                return;
+            }
+
             // Find the route-link element (could be the clicked element or a parent)
             const routeLink = e.target.closest('.route-link');
             if (routeLink) {

@@ -18,6 +18,7 @@ export const MOBILE_BOUNDS_PADDING = 30;
 
 export const ANIMATION_DURATION = 500;
 
-export const MOBILE_SIDEBAR_HEIGHT_WINDOW_HEIGHT_RATIO = 0.5;
+// Visible height of the mobile panel in its "half" position, which it takes when a station or a train is selected
+export const MOBILE_SIDEBAR_HEIGHT_WINDOW_HEIGHT_RATIO = 0.46;
 
 export const DESKTOP_SIDEBAR_WIDTH_IN_PIXELS = 400;

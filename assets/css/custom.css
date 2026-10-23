@@ -1139,6 +1139,26 @@ body, html {
   cursor: pointer;
 }
 
+.poi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #020887;
+  color: #020887;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.poi-marker.active .poi-icon {
+  background-color: #020887;
+  border-color: #fff;
+  color: #fff;
+}
+
 .poi-popup {
     font-size: 15px;
 }

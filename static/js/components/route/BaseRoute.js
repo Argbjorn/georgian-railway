@@ -84,8 +84,17 @@ export class BaseRoute {
 
     fitBounds() {
         if (this.bounds) {
+            // fitBounds adds its padding to the map's own padding, which easeTo to a station leaves
+            // behind, so only the difference to the target padding is passed
+            const target = getBoundsPadding();
+            const current = this.map.getPadding();
             this.map.fitBounds(this.bounds, {
-                padding: getBoundsPadding('route'),
+                padding: {
+                    top: target.top - current.top,
+                    bottom: target.bottom - current.bottom,
+                    left: target.left - current.left,
+                    right: target.right - current.right
+                },
                 duration: ANIMATION_DURATION
             });
         }

@@ -5,6 +5,7 @@ class MapStateManager {
             selectedStation: null,
             selectedRoute: null,
             selectedRouteStations: null,
+            selectedPoi: null,
             createdRoutes: []
         };
 
@@ -37,7 +38,8 @@ class MapStateManager {
         try {
             this.state = {
                 ...this.state,
-                selectedStation: station
+                selectedStation: station,
+                selectedPoi: null
             }
             this.emit(this.state);
         } catch (error) {
@@ -65,7 +67,19 @@ class MapStateManager {
         this.state = {
             ...this.state,
             selectedRoute: null,
-            selectedStation: null
+            selectedStation: null,
+            selectedPoi: null
+        }
+        this.emit(this.state);
+    }
+
+    // POI descriptions open in the mobile panel instead of the station or train
+    selectPoi(poi) {
+        this.state = {
+            ...this.state,
+            selectedRoute: null,
+            selectedStation: null,
+            selectedPoi: poi
         }
         this.emit(this.state);
     }
@@ -96,6 +110,10 @@ class MapStateManager {
 
     get selectedRoute() {
         return this.state.selectedRoute;
+    }
+
+    get selectedPoi() {
+        return this.state.selectedPoi;
     }
 
     get createdRoutes() {

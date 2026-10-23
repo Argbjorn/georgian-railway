@@ -10,7 +10,7 @@ export class MainPageMap extends BaseMap {
         this.railwayNetwork = new RailwayNetwork(this.map)
         this.stationsGroup = new InteractiveStationsGroup(this.map)
         this.poiGroup = new PoiGroup(this.map)
-        this.sidebar = new Sidebar(this.map, container)
+        this.sidebar = new Sidebar(this.map, container, this.stationsGroup)
     }
 
     onMapLoad() {

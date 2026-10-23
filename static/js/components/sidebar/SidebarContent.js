@@ -1,5 +1,22 @@
 import { LanguageService } from "../../services/LanguageService.js";
+import { fromCityForms } from "../../services/translations.js";
 import { stations } from "../station/stations-list.js";
+import { routes } from "../route/routes-list.js";
+import { groupRouteLines, lineName, lineDirections, formatRefs } from "../route/routeLines.js";
+
+const FEATURED_STATION_CODES = [
+    'tbilisicentralstation',
+    'batumicentral',
+    'kutaisi1',
+    'kutaisiinternationalairport',
+    'borjomiparki',
+    'zugdidi',
+    'poti',
+    'ozurgeti',
+    'gori',
+    'yerevan',
+    'baku',
+];
 
 export class SidebarContent {
     constructor(entity, type) {
@@ -32,6 +49,12 @@ export class SidebarContent {
     }
 
     getTitle() {
+        if (this.type === 'default') {
+            return LanguageService.translate('default_panel_title');
+        }
+        if (this.type === 'poi') {
+            return this.entity.title;
+        }
         if (this.type === 'station') {
             return this.entity[`name_${this.currentLanguage}`];
         }
@@ -41,6 +64,19 @@ export class SidebarContent {
     }
 
     getBody() {
+        if (this.type === 'default') {
+            const footer = document.getElementById('sidebar-default-footer');
+            this.content.innerHTML = this.renderRouteLines()
+                + this.renderFeaturedStations()
+                + (footer ? footer.innerHTML : '');
+            return this.content;
+        }
+
+        if (this.type === 'poi') {
+            this.content.innerHTML = `<p class="poi-description">${this.entity.description}</p>`;
+            return this.content;
+        }
+
         if (this.type === 'station') {
             this.content.innerHTML = '';
             
@@ -147,6 +183,62 @@ export class SidebarContent {
             `;
             return this.content;
         }
+    }
+
+    renderRouteLines() {
+        return `
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">${LanguageService.translate('routes_section_title')}</h3>
+                <div class="route-line-cards">
+                    ${groupRouteLines(routes).map(line => this.renderRouteLine(line)).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    renderFeaturedStations() {
+        const chipsHTML = FEATURED_STATION_CODES
+            .filter(code => stations[code])
+            .map(code => {
+                const station = stations[code];
+                const name = station[`name_${this.currentLanguage}`] || station.name_en;
+                return `<button type="button" class="station-chip" data-station-code="${code}">${name}</button>`;
+            })
+            .join('');
+        const stationsPageLink = this.currentLanguage === 'en' ? '/stations/' : `/${this.currentLanguage}/stations/`;
+
+        return `
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">${LanguageService.translate('stations_section_title')}</h3>
+                <div class="station-chips">${chipsHTML}</div>
+                <a href="${stationsPageLink}" class="sidebar-section-link">${LanguageService.translate('all_stations')}</a>
+            </div>
+        `;
+    }
+
+    fromCityLabel(direction) {
+        if (this.currentLanguage === 'en') {
+            return `From ${direction.origin}`;
+        }
+        return fromCityForms[this.currentLanguage]?.[direction.originEn] ?? `${direction.origin} →`;
+    }
+
+    renderRouteLine(line) {
+        const refs = formatRefs(line.trains.map(train => train.ref));
+        const directionsHTML = lineDirections(line, this.currentLanguage).map(direction => `
+            <span class="route-line-origin">${this.fromCityLabel(direction)}</span>
+            <span class="route-line-times">${direction.times.join(' · ')}</span>
+        `).join('');
+
+        return `
+            <div class="route-line-card">
+                <div class="route-line-card-header">
+                    <span class="route-line-name">${lineName(line, this.currentLanguage)}</span>
+                    <span class="route-line-refs">${LanguageService.translate('train_number_sign')} ${refs}</span>
+                </div>
+                <div class="route-line-directions">${directionsHTML}</div>
+            </div>
+        `;
     }
 
     renderRouteGroup(group) {

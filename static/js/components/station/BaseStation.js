@@ -72,7 +72,7 @@ export class BaseStation {
   flyToMarker() {
     this.map.easeTo({
       center: [this.coords[1], this.coords[0]],
-      padding: getBoundsPadding('station'),
+      padding: getBoundsPadding(),
       duration: ANIMATION_DURATION
     });
   }
