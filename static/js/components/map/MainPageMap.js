@@ -22,6 +22,7 @@ export class MainPageMap extends BaseMap {
         this.routeLineLayer = new RouteLineLayer(this.map)
         this.sidebar = new Sidebar(this.map, container, this.stationsGroup)
 
+        this.collapseAttributionOnInteraction()
         this.map.setMaxBounds(MAIN_PAGE_MAP_BOUNDS)
         // Keep the initial center in the part of the map not covered by the panel
         const isMobile = stateManager.deviceType === 'mobile'
@@ -40,6 +41,28 @@ export class MainPageMap extends BaseMap {
     // On desktop the panel covers the top left corner
     getNavigationControlPosition() {
         return stateManager.deviceType === 'mobile' ? 'top-left' : 'top-right'
+    }
+
+    // On mobile the panel covers the bottom of the map, and the attribution has to stay visible
+    getAttributionControlPosition() {
+        return stateManager.deviceType === 'mobile' ? 'top-right' : 'bottom-right'
+    }
+
+    // On a narrow map MapLibre shows the attribution expanded and collapses it into an icon on the
+    // first drag only; collapse it on any user gesture and on any selection too
+    collapseAttributionOnInteraction() {
+        const collapse = () => {
+            this.map.getContainer().querySelector('.maplibregl-ctrl-attrib')
+                ?.classList.remove('maplibregl-compact-show')
+        }
+        this.map.on('movestart', e => {
+            if (e.originalEvent) collapse()
+        })
+        stateManager.subscribe(state => {
+            if (state.selectedStation || state.selectedRoute || state.selectedLine || state.selectedPoi) {
+                collapse()
+            }
+        })
     }
 
     onMapLoad() {

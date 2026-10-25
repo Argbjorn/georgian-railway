@@ -557,6 +557,13 @@ body, html {
     background-color: #000 !important;
 }
 
+/* Main page on mobile: the expanded attribution in the top right corner leaves room for the zoom
+   controls in the top left one */
+.maplibregl-ctrl-top-right .maplibregl-ctrl-attrib.maplibregl-compact-show {
+  max-width: calc(100vw - 70px);
+  box-sizing: border-box;
+}
+
 /* Стили для POI маркеров */
 .poi-marker {
   cursor: pointer;

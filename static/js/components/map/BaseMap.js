@@ -8,8 +8,15 @@ export class BaseMap {
             style: this.selectTilesByLanguage(),
             center: DEFAULT_MAP_CENTER,
             zoom: DEFAULT_MAP_ZOOM,
-            maxBounds: GLOBAL_MAP_BOUNDS
+            maxBounds: GLOBAL_MAP_BOUNDS,
+            attributionControl: false
         })
+        // Same control as MapLibre's default one, added by hand so that subclasses can choose the corner
+        this.map.addControl(new maplibregl.AttributionControl(), this.getAttributionControlPosition())
+    }
+
+    getAttributionControlPosition() {
+        return 'bottom-right';
     }
 
     initialize() {
