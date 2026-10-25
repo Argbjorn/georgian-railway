@@ -3779,54 +3779,54 @@
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "20:32",
+            "departure_time": "20:34",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "20:44",
+            "departure_time": "20:46",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "21:05",
+            "departure_time": "21:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "21:22",
+            "departure_time": "21:21",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvaloni",
             "role": "middle",
-            "departure_time": "21:37",
+            "departure_time": "21:35",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "chaladidi",
             "role": "middle",
-            "departure_time": "21:51",
+            "departure_time": "21:47",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "poti",
             "role": "end",
-            "departure_time": "22:11",
+            "departure_time": "22:04",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:41",
+      "travel_time": "04:34",
       "price": {
          "price_type": "from",
          "price": 16.0

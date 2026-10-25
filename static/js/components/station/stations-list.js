@@ -412,7 +412,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "21:05",
+               "departure_time": "21:06",
                "stop_time": null
             }
          ]
@@ -1708,7 +1708,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "21:51",
+               "departure_time": "21:47",
                "stop_time": null
             }
          ]
@@ -3955,7 +3955,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "20:32",
+               "departure_time": "20:34",
                "stop_time": null
             }
          ]
@@ -4099,7 +4099,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "21:37",
+               "departure_time": "21:35",
                "stop_time": null
             }
          ]
@@ -5374,7 +5374,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "22:11",
+               "departure_time": "22:04",
                "stop_time": null
             }
          ],
@@ -6003,7 +6003,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "20:44",
+               "departure_time": "20:46",
                "stop_time": null
             }
          ]
@@ -6211,7 +6211,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "21:22",
+               "departure_time": "21:21",
                "stop_time": null
             }
          ]
