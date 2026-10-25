@@ -856,7 +856,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -881,6 +881,48 @@
             "code": "borjomi",
             "role": "middle",
             "departure_time": "16:40",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kvibisi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vardgineti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "besheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kortaneti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "akhaldaba",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "sarmanishviliskari",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -955,6 +997,13 @@
             "stop_time": null
          },
          {
+            "code": "dzegvi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "mtskheta",
             "role": "middle",
             "departure_time": "19:53",
@@ -972,6 +1021,13 @@
             "code": "avchala",
             "role": "middle",
             "departure_time": "20:06",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "tbilisicargo",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -1006,7 +1062,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -1028,6 +1084,13 @@
             "stop_time": null
          },
          {
+            "code": "tbilisicargo",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "avchala",
             "role": "middle",
             "departure_time": "06:47",
@@ -1045,6 +1108,13 @@
             "code": "mtskheta",
             "role": "middle",
             "departure_time": "07:00",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "dzegvi",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -1115,6 +1185,48 @@
             "code": "kvishkheti",
             "role": "middle",
             "departure_time": "09:12",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "sarmanishviliskari",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "akhaldaba",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kortaneti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "besheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vardgineti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kvibisi",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -2022,7 +2134,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -2047,6 +2159,48 @@
             "code": "borjomi",
             "role": "middle",
             "departure_time": "06:10",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kvibisi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vardgineti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "besheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kortaneti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "akhaldaba",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "sarmanishviliskari",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -2186,7 +2340,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -2309,6 +2463,48 @@
             "code": "kvishkheti",
             "role": "middle",
             "departure_time": "21:20",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "sarmanishviliskari",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "akhaldaba",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kortaneti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "besheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vardgineti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kvibisi",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -2642,7 +2838,7 @@
       "frequency": "every second day",
       "start_date": 1748822400000,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
@@ -2660,6 +2856,13 @@
             "code": "ozurgeti",
             "role": "start",
             "departure_time": "09:20",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "platform11km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -2845,7 +3048,7 @@
       "frequency": "every second day",
       "start_date": 1748736000000,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
@@ -3021,9 +3224,23 @@
             "stop_time": null
          },
          {
+            "code": "platform11km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "kakhuri",
             "role": "middle",
             "departure_time": "14:16",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "platform16km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -3841,7 +4058,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -3863,9 +4080,23 @@
             "stop_time": null
          },
          {
+            "code": "2508km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "navtlughi",
             "role": "middle",
             "departure_time": "07:00",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "2km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -3877,6 +4108,13 @@
             "stop_time": null
          },
          {
+            "code": "6km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "veli",
             "role": "middle",
             "departure_time": "07:18",
@@ -3884,9 +4122,23 @@
             "stop_time": null
          },
          {
+            "code": "13km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "gachiani",
             "role": "middle",
             "departure_time": "07:29",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "23km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -3935,7 +4187,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -3971,9 +4223,23 @@
             "stop_time": null
          },
          {
+            "code": "23km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "gachiani",
             "role": "middle",
             "departure_time": "08:49",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "13km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -3985,6 +4251,13 @@
             "stop_time": null
          },
          {
+            "code": "6km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "tbilisimarshalling",
             "role": "middle",
             "departure_time": "09:08",
@@ -3992,9 +4265,23 @@
             "stop_time": null
          },
          {
+            "code": "2km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "navtlughi",
             "role": "middle",
             "departure_time": "09:17",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "2508km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4029,7 +4316,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -4051,9 +4338,23 @@
             "stop_time": null
          },
          {
+            "code": "2508km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "navtlughi",
             "role": "middle",
             "departure_time": "19:00",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "2km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4065,6 +4366,13 @@
             "stop_time": null
          },
          {
+            "code": "6km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "veli",
             "role": "middle",
             "departure_time": "19:18",
@@ -4072,9 +4380,23 @@
             "stop_time": null
          },
          {
+            "code": "13km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "gachiani",
             "role": "middle",
             "departure_time": "19:29",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "23km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4123,7 +4445,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -4159,9 +4481,23 @@
             "stop_time": null
          },
          {
+            "code": "23km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "gachiani",
             "role": "middle",
             "departure_time": "20:49",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "13km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4173,6 +4509,13 @@
             "stop_time": null
          },
          {
+            "code": "6km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "tbilisimarshalling",
             "role": "middle",
             "departure_time": "21:08",
@@ -4180,9 +4523,23 @@
             "stop_time": null
          },
          {
+            "code": "2km",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "navtlughi",
             "role": "middle",
             "departure_time": "21:17",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "2508km",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4297,7 +4654,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -4319,6 +4676,13 @@
             "stop_time": null
          },
          {
+            "code": "kvishkheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "moliti",
             "role": "middle",
             "departure_time": "17:23",
@@ -4326,9 +4690,30 @@
             "stop_time": null
          },
          {
+            "code": "babi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vakhanistsqali",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "marelisi",
             "role": "middle",
             "departure_time": "17:39",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "didvake",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4377,7 +4762,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -4413,6 +4798,13 @@
             "stop_time": null
          },
          {
+            "code": "didvake",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "marelisi",
             "role": "middle",
             "departure_time": "18:07",
@@ -4420,9 +4812,30 @@
             "stop_time": null
          },
          {
+            "code": "vakhanistsqali",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "babi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "moliti",
             "role": "middle",
             "departure_time": "18:23",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "kvishkheti",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },
@@ -4457,7 +4870,7 @@
       "frequency": "daily",
       "start_date": null,
       "end_date": null,
-      "complete": true,
+      "complete": false,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
@@ -4479,6 +4892,13 @@
             "stop_time": null
          },
          {
+            "code": "kvishkheti",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "moliti",
             "role": "middle",
             "departure_time": "08:23",
@@ -4486,9 +4906,30 @@
             "stop_time": null
          },
          {
+            "code": "babi",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "vakhanistsqali",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
             "code": "marelisi",
             "role": "middle",
             "departure_time": "08:39",
+            "arrival_time": null,
+            "stop_time": null
+         },
+         {
+            "code": "didvake",
+            "role": "middle",
+            "departure_time": "-",
             "arrival_time": null,
             "stop_time": null
          },

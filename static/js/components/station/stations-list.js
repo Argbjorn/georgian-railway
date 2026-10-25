@@ -10,10 +10,64 @@ export const stations = {
       ],
       "code": "13km",
       "type": "secondary",
-      "name_en": "13 Km",
+      "name_en": "13 km",
       "name_ka": "13 კმ",
       "name_ru": "13 км",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6413,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6414,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6415,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6416,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "2km": {
       "id": [
@@ -28,8 +82,62 @@ export const stations = {
       "type": "secondary",
       "name_en": "2 km",
       "name_ka": "2 კმ",
-      "name_ru": "2 კმ",
-      "gr_code": "00000"
+      "name_ru": "2 км",
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6413,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6414,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6415,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6416,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "23km": {
       "id": [
@@ -42,10 +150,64 @@ export const stations = {
       ],
       "code": "23km",
       "type": "secondary",
-      "name_en": "23 Km",
+      "name_en": "23 km",
       "name_ka": "23 კმ",
       "name_ru": "23 км",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6413,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6414,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6415,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6416,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "2508km": {
       "id": [
@@ -60,8 +222,62 @@ export const stations = {
       "type": "secondary",
       "name_en": "2508 km",
       "name_ka": "2508 კმ",
-      "name_ru": "2508 კმ",
-      "gr_code": "00000"
+      "name_ru": "2508 км",
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6413,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6414,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6415,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6416,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "6km": {
       "id": [
@@ -76,8 +292,62 @@ export const stations = {
       "type": "secondary",
       "name_en": "6 km",
       "name_ka": "6 კმ",
-      "name_ru": "6 კმ",
-      "gr_code": "00000"
+      "name_ru": "6 км",
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6413,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6414,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6415,
+               "name_en": "Tbilisi → Gardabani",
+               "name_ru": "Тбилиси → Гардабани",
+               "name_ka": "თბილისი → გარდაბანი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6416,
+               "name_en": "Gardabani → Tbilisi",
+               "name_ru": "Гардабани → Тбилиси",
+               "name_ka": "გარდაბანი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "abasha": {
       "id": [
@@ -346,7 +616,61 @@ export const stations = {
       "name_en": "Akhaldaba",
       "name_ka": "ახალდაბა",
       "name_ru": "Ахалдаба",
-      "gr_code": 57750
+      "gr_code": 57750,
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "argveti": {
       "id": [
@@ -568,7 +892,49 @@ export const stations = {
       "name_en": "Babi",
       "name_ka": "ბაბი",
       "name_ru": "Баби",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6418,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6445,
+               "name_en": "Zestafoni → Khashuri",
+               "name_ru": "Зестафони → Хашури",
+               "name_ka": "ზესტაფონი → ხაშური",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6446,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "baku": {
       "id": [
@@ -821,7 +1187,61 @@ export const stations = {
       "name_en": "Besheti",
       "name_ka": "ბეშეთი",
       "name_ru": "Бешети",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "bilajari": {
       "id": [
@@ -1443,7 +1863,49 @@ export const stations = {
       "name_en": "Didvake",
       "name_ka": "დიდვაკე",
       "name_ru": "Дидваке",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6418,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6445,
+               "name_en": "Zestafoni → Khashuri",
+               "name_ru": "Зестафони → Хашури",
+               "name_ka": "ზესტაფონი → ხაშური",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6446,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "dzegvi": {
       "id": [
@@ -1464,6 +1926,30 @@ export const stations = {
          "departure": [],
          "arrival": [],
          "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
             {
                "ref": 685,
                "name_en": "Borjomi → Tbilisi",
@@ -3154,7 +3640,61 @@ export const stations = {
       "name_en": "Kortaneti",
       "name_ka": "კორტანეთი",
       "name_ru": "Кортанети",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "ksani": {
       "id": [
@@ -3578,7 +4118,61 @@ export const stations = {
       "name_en": "Kvibisi",
       "name_ka": "ყვიბისი",
       "name_ru": "Квибиси",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "kvishkheti": {
       "id": [
@@ -3645,6 +4239,42 @@ export const stations = {
                "end_date": null,
                "arrival_time": null,
                "departure_time": "21:20",
+               "stop_time": null
+            },
+            {
+               "ref": 6418,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6445,
+               "name_en": "Zestafoni → Khashuri",
+               "name_ru": "Зестафони → Хашури",
+               "name_ka": "ზესტაფონი → ხაშური",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6446,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
                "stop_time": null
             }
          ]
@@ -3981,7 +4611,7 @@ export const stations = {
       "type": "secondary",
       "name_en": "Meria",
       "name_ka": "მერია",
-      "name_ru": "Мэриа",
+      "name_ru": "Мериа",
       "gr_code": 57090,
       "routes": {
          "departure": [],
@@ -4635,7 +5265,37 @@ export const stations = {
       "name_en": "Platform 11 km",
       "name_ka": "ბაქანი 11 კმ",
       "name_ru": "Платформа 11 км",
-      "gr_code": 57091
+      "gr_code": 57091,
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 853,
+               "name_en": "Ozurgeti → Tbilisi",
+               "name_ru": "Озургети → Тбилиси",
+               "name_ka": "ოზურგეთი → თბილისი",
+               "frequency": "every second day",
+               "start_date": 1748822400000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 854,
+               "name_en": "Tbilisi → Ozurgeti",
+               "name_ru": "Тбилиси → Озургети",
+               "name_ka": "თბილისი → ოზურგეთი",
+               "frequency": "every second day",
+               "start_date": 1748736000000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "platform16km": {
       "id": [
@@ -4650,7 +5310,25 @@ export const stations = {
       "name_en": "Platform 16 km",
       "name_ka": "ბაქანი 16 კმ",
       "name_ru": "Платформа 16 км",
-      "gr_code": 57093
+      "gr_code": 57093,
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 854,
+               "name_en": "Tbilisi → Ozurgeti",
+               "name_ru": "Тбилиси → Озургети",
+               "name_ka": "თბილისი → ოზურგეთი",
+               "frequency": "every second day",
+               "start_date": 1748736000000,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "poti": {
       "id": [
@@ -5414,7 +6092,61 @@ export const stations = {
       "name_en": "Sarmanishviliskari",
       "name_ka": "სარმანიშვილისკარი",
       "name_ru": "Сарманишвилискари",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "senaki": {
       "id": [
@@ -6076,6 +6808,30 @@ export const stations = {
          "arrival": [],
          "via": [
             {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
                "ref": 685,
                "name_en": "Borjomi → Tbilisi",
                "name_ru": "Боржоми → Тбилиси",
@@ -6262,7 +7018,49 @@ export const stations = {
       "name_en": "Vakhanistsqali",
       "name_ka": "ვახანისწყალი",
       "name_ru": "Ваханисцкали",
-      "gr_code": "00000"
+      "gr_code": "00000",
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 6418,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6445,
+               "name_en": "Zestafoni → Khashuri",
+               "name_ru": "Зестафони → Хашури",
+               "name_ka": "ზესტაფონი → ხაშური",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 6446,
+               "name_en": "Khashuri → Zestafoni",
+               "name_ru": "Хашури → Зестафони",
+               "name_ka": "ხაშური → ზესტაფონი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "vanadzor": {
       "id": [
@@ -6322,7 +7120,61 @@ export const stations = {
       "name_en": "Vardgineti",
       "name_ka": "ვარდგინეთი",
       "name_ru": "Вардгинети",
-      "gr_code": 57752
+      "gr_code": 57752,
+      "routes": {
+         "departure": [],
+         "arrival": [],
+         "via": [
+            {
+               "ref": 617,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 618,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 685,
+               "name_en": "Borjomi → Tbilisi",
+               "name_ru": "Боржоми → Тбилиси",
+               "name_ka": "ბორჯომი → თბილისი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            },
+            {
+               "ref": 686,
+               "name_en": "Tbilisi → Borjomi",
+               "name_ru": "Тбилиси → Боржоми",
+               "name_ka": "თბილისი → ბორჯომი",
+               "frequency": "daily",
+               "start_date": null,
+               "end_date": null,
+               "arrival_time": null,
+               "departure_time": "-",
+               "stop_time": null
+            }
+         ]
+      }
    },
    "veli": {
       "id": [
