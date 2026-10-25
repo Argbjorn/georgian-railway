@@ -19,6 +19,18 @@ export class InteractiveStation extends BaseStation {
         this.addClickEvent();
     }
 
+    // On the main page a tap opens the station in the panel, so the name is shown on mouse hover only:
+    // a tap would emulate mouseenter and leave the tooltip hanging
+    addNameTooltip(markerEl, popup) {
+        markerEl.addEventListener('pointerenter', (e) => {
+            if (e.pointerType === 'touch') return;
+            popup.addTo(this.map);
+        });
+        markerEl.addEventListener('pointerleave', () => {
+            popup.remove();
+        });
+    }
+
     addClickEvent() {
         const markerEl = this.marker.getElement();
         markerEl.addEventListener('click', (e) => {

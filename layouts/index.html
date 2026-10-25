@@ -6,6 +6,8 @@
   </div>
   {{/* Bottom of the default mobile map panel. Rendered here because the What's New entries and
        page links live in Hugo; static/js/components/sidebar/SidebarContent.js copies it into the panel. */}}
+  {{/* Subtitle of the default panel: the build date, like "Last updated" on train pages */}}
+  <template id="sidebar-default-subtitle">{{ T "lastUpdated" }}: {{ now.Format "02.01.2006" }}</template>
   <template id="sidebar-default-footer">
     {{ with site.GetPage "/whats-new" }}
       {{ $section := . }}

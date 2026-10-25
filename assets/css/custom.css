@@ -9,7 +9,6 @@ a {
     text-decoration: underline;
 }
 
-
 /* Универсальный контейнер: ширина как у хэдера, без горизонтального скролла (routes, stations и др.) */
 .content-max-width {
   max-width: 72rem;
@@ -91,14 +90,6 @@ nav > a, li > a {
     text-decoration: inherit;
   }
 
-.hx-pt-4 {
-    padding-top: 0 !important;
-}
-
-.hx-pb-8 {
-    padding-bottom: 0 !important;
-}
-
 /* Общие стили для карты */
 #map {
     height: calc(100vh - 64px);
@@ -133,55 +124,6 @@ nav > a, li > a {
     margin-left: 5px;
 }
 
-.disclaimer {
-    font-size: .8em;
-    margin-top: 10px;
-}
-
-.last-update {
-    text-align: right;
-    font-weight: 300;
-    font-style: italic;
-    margin-top: 0px;
-}
-
-.route-label {
-    display: inline-block;
-    border: 1.5px solid #0078A8;
-    border-radius: 3px;
-    margin-right: 6px;
-    margin-top: 2px;
-    padding: 0 4px;
-    font-weight: 600;
-    color: #0078A8;
-    font-size: 0.9em;
-    background-color: #f0f7ff;
-    line-height: 1.4;
-    min-width: 38px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.route-line {
-    margin-bottom: 4px;
-    padding: 6px 8px;
-    border-radius: 4px;
-    transition: all 0.15s ease;
-    border-left: 3px solid transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.route-line:hover {
-    background-color: #f0f7ff;
-}
-
-.route-line.active {
-    background-color: #f0f7ff;
-    border-left: 3px solid #0078A8;
-}
-
 .route-link {
     cursor: pointer;
     color: inherit;
@@ -192,295 +134,6 @@ nav > a, li > a {
 .route-link.active {
     font-weight: 500;
     color: #0078A8;
-}
-
-.route-details {
-    margin-left: 21px;
-    display: none;
-}
-
-.route-details.active {
-    display: block;
-}
-
-.route-header {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    white-space: nowrap;
-}
-
-.route-time {
-    width: 47px;
-    padding-right: 6px;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 13px;
-    color: #333;
-    font-weight: 500;
-    flex-shrink: 0;
-    margin-top: 4px;
-}
-
-.route-name {
-    display: flex;
-    align-items: flex-start;
-    max-width: calc(100% - 47px);
-    min-width: 0;
-}
-
-.route-schedule {
-    display: none;
-    padding-left: 10px;
-    border: 1px solid #199900;
-    margin-left: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.route-schedule.active {
-    display: block;
-}
-
-.link-show {
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--link-color);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.link-show:hover {
-    color: var(--link-hover-color);
-}
-
-.station-routes-list {
-    margin-bottom: 16px;
-}
-
-.station-routes-list.hidden {
-    display: none;
-}
-
-.station-description {
-    color: #333;
-    margin-bottom: 16px;
-    line-height: 1.4;
-    font-size: 0.9em;
-}
-
-.route-loader {
-    position: fixed;
-    bottom: 12vh;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    z-index: 4000;
-    backdrop-filter: blur(4px);
-    font-weight: 500;
-    font-size: 0.9em;
-}
-
-.railway-network-loader {
-    position: fixed;
-    bottom: 12vh;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    z-index: 4000;
-    backdrop-filter: blur(4px);
-    font-weight: 500;
-    font-size: 0.9em;
-}
-
-.loading-text {
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.sidepanel-routes-content {
-    padding: 12px;
-}
-
-.sidepanel-routes-content h2 {
-    margin: 0 0 16px 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #000;
-}
-
-.sidepanel-routes-content h3 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 16px 0 8px 0;
-}
-
-.route-more-info {
-    display: none;
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 0.85em;
-    margin: 4px 0 0 40px;
-    font-weight: 500;
-    width: 100%;
-    padding-left: 7px;
-}
-
-.route-more-info.active {
-    display: block;
-}
-
-.route-show {
-    display: none;
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 0.85em;
-    margin: 4px 0 0 40px;
-    font-weight: 500;
-    width: 100%;
-    padding-left: 7px;
-    text-align: left;
-}
-
-.route-show.active {
-    display: block;
-}
-
-.route-more-info:hover {
-    color: var(--link-hover-color);
-}
-
-.route-destination {
-    color: #000;
-    font-weight: 400;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    flex: 1;
-    min-width: 0;
-}
-
-/* Стили для групп маршрутов в сайдбаре */
-.route-group {
-    margin-bottom: 20px;
-}
-
-.route-group-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 8px 0;
-    padding: 0;
-}
-
-.route-group-content {
-    margin-bottom: 0;
-}
-
-/* Стили для отображения маршрута в сайдбаре */
-.route-details-link-container {
-    margin-bottom: 16px;
-}
-
-.route-details-link {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9em;
-}
-
-.route-details-link:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
-
-/* Стили для ссылки на станцию в сайдбаре */
-.station-details-link-container {
-    margin-bottom: 16px;
-}
-
-.station-details-link {
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9em;
-}
-
-.station-details-link:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
-
-.route-station-line {
-    margin-bottom: 8px;
-    padding: 6px 8px;
-    border-radius: 4px;
-    border-left: 3px solid transparent;
-}
-
-.route-station-header {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.route-station-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-}
-
-.route-station-name {
-    font-weight: 400;
-    color: #333;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.route-station-role {
-    font-size: 0.8em;
-    color: #666;
-    font-style: italic;
-    margin-top: 2px;
-}
-
-/* Стили для кнопки "Назад к списку поездов" */
-.back-to-train-list-container {
-    margin-bottom: 16px;
-}
-
-.back-to-train-list {
-    background: none;
-    border: none;
-    color: var(--link-color);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 500;
-    padding: 0;
-    font-family: inherit;
-}
-
-.back-to-train-list:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
 }
 
 @keyframes sweep {
@@ -649,32 +302,6 @@ nav > a, li > a {
     position: relative;
 }
 
-.calendar-icon {
-    background: none;
-    border: none;
-    font-size: 1.1em;
-    cursor: pointer;
-    padding: 4px 6px;
-    margin-left: 8px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.7;
-    flex-shrink: 0;
-}
-
-.calendar-icon:hover {
-    background-color: #f0f7ff;
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.calendar-icon:active {
-    transform: scale(0.95);
-}
-
 .station-name {
     text-decoration: underline dotted #0078A8;
     text-decoration-thickness: 1px;
@@ -685,24 +312,6 @@ nav > a, li > a {
 .station-name:hover {
     color: var(--link-hover-color);
     text-decoration: underline solid var(--link-hover-color);
-}
-
-.station-more-info {
-    display: block;
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 0.85em;
-    margin: 4px 0 12px 0;
-    font-weight: 500;
-}
-
-.station-more-info:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
-
-.train-info-container {
-    display: inline;
 }
 
 .dashed-link {
@@ -826,58 +435,9 @@ body.lightbox-open {
     overflow: hidden;
 }
 
-/* Стили для подсказки о станциях */
-.station-hint {
-  position: absolute;
-  bottom: 15vh;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
-  z-index: 1000;
-  backdrop-filter: blur(4px);
-  font-weight: 500;
-  font-size: 0.9em;
-  animation: fade-in 0.3s ease-in-out;
-  width: 320px;
-  box-sizing: border-box;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.hint-content {
-  display: block;
-  padding-right: 20px;
-  box-sizing: border-box;
-}
-
-.hint-close-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2em;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  position: absolute;
-  top: 8px;
-  right: 12px;
-}
-
-.hint-close-btn:hover {
-  color: #ddd;
-}
-
 @keyframes fade-in {
   from { opacity: 0; transform: translate(-50%, 10px); }
   to { opacity: 1; transform: translate(-50%, 0); }
-}
-
-@media (max-width: 480px) {
-  .station-hint {
-    width: 280px;
-  }
 }
 
 /* Предотвращение прокрутки для карты */
@@ -997,143 +557,6 @@ body, html {
     background-color: #000 !important;
 }
 
-.route-modal {
-  display: none;
-  position: fixed;
-  left: 50%;
-  top: 85vh;
-  transform: translate(-50%, -50%);
-  z-index: 5000;
-  min-width: 320px;
-  max-width: 340px;
-  width: 90vw;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
-  font-size: 0.98em;
-}
-.route-modal.active {
-  display: block;
-}
-.route-modal-content {
-  background: rgba(24, 24, 24, 0.92);
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 18px 18px 12px 18px;
-  position: relative;
-}
-.route-modal-title {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.15rem;
-  margin: 0 0 12px 0;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-.route-modal-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.3em;
-  cursor: pointer;
-  opacity: 0.8;
-  z-index: 2;
-}
-.route-modal-close-btn:hover {
-  color: #ddd;
-  opacity: 1;
-}
-.route-modal-stations {
-  position: relative;
-  margin: 0 0 10px 7px;
-  padding: 0;
-  list-style: none;
-}
-.route-modal-station-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-  position: relative;
-}
-.route-modal-station-row:not(:last-child) .route-modal-station-point::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 22px;
-  background: #199900;
-  z-index: 0;
-}
-.route-modal-station-point {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid #199900;
-  background: #fff;
-  margin-right: 10px;
-  position: relative;
-  z-index: 1;
-}
-.route-modal-station-point.terminal {
-  background: #199900;
-  border-color: #199900;
-}
-.route-modal-station-time,
-.route-modal-station-name {
-  color: #fff;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.32);
-}
-.route-modal-station-time {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1em;
-  font-weight: 500;
-  margin-right: 8px;
-  min-width: 44px;
-  text-align: right;
-}
-.route-modal-station-name {
-  font-size: 1em;
-  font-weight: 400;
-  flex: 1;
-  min-width: 0;
-  word-break: break-word;
-  /* text-decoration: underline dotted #199900; */
-}
-.route-modal-details-link {
-  display: inline-block;
-  color: #4ec3ff;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.32);
-  font-weight: 600;
-  font-size: 0.98em;
-  margin: 10px 0 0 0;
-  cursor: pointer;
-}
-.route-modal-details-link:hover {
-  color: #fff;
-}
-@media (max-width: 480px) {
-  .route-modal {
-    min-width: 0;
-    width: 96vw;
-    max-width: 98vw;
-    left: 50%;
-    bottom: 10vh;
-    transform: translateX(-50%, 0);
-  }
-  .route-modal-content {
-    padding: 10px 4vw 8px 4vw;
-  }
-  .route-modal-title {
-    font-size: 1em;
-  }
-}
-
 /* Стили для POI маркеров */
 .poi-marker {
   cursor: pointer;
@@ -1158,7 +581,6 @@ body, html {
   border-color: #fff;
   color: #fff;
 }
-
 
 /* Стили для контейнера карты маршрута */
 .route-map-container {

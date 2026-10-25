@@ -10,6 +10,10 @@ const stationIcons = {
                 </svg>`,
 };
 
+// The station name tooltip opened by a tap (see addNameTooltip); one at a time on the page
+let tappedTooltip = null;
+const mapsClosingTappedTooltip = new WeakSet();
+
 export class BaseStation {
   constructor(map, stationData) {
     Object.assign(this, { ...stationData });
@@ -41,14 +45,35 @@ export class BaseStation {
     })
       .setLngLat([this.coords[1], this.coords[0]])
       .setHTML(`<div>${stationName}</div>`);
-    this.marker.setPopup(popup);
 
-    markerEl.addEventListener("mouseenter", () => {
-      popup.addTo(this.map);
+    this.addNameTooltip(markerEl, popup);
+  }
+
+  // The name shows on mouse hover; on touch screens a tap toggles it, a tap on another station moves it
+  // there, a tap on the map closes it. Hover and tap are told apart by pointerType: a tap also emulates
+  // mouseenter, and with marker.setPopup on top of that a tap used to open and close the tooltip at once
+  addNameTooltip(markerEl, popup) {
+    markerEl.addEventListener("pointerenter", (e) => {
+      if (e.pointerType !== "touch") popup.addTo(this.map);
     });
-    markerEl.addEventListener("mouseleave", () => {
-      popup.remove();
+    markerEl.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "touch") popup.remove();
     });
+    markerEl.addEventListener("pointerup", (e) => {
+      if (e.pointerType !== "touch") return;
+      const wasOpen = tappedTooltip === popup;
+      tappedTooltip?.remove();
+      tappedTooltip = wasOpen ? null : popup.addTo(this.map);
+    });
+
+    if (!mapsClosingTappedTooltip.has(this.map)) {
+      mapsClosingTappedTooltip.add(this.map);
+      this.map.on("click", (e) => {
+        if (e.originalEvent.target.closest(".station-marker")) return;
+        tappedTooltip?.remove();
+        tappedTooltip = null;
+      });
+    }
   }
 
   setActive() {

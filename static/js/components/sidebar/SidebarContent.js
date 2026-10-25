@@ -96,6 +96,10 @@ export class SidebarContent {
         if (this.type === 'station') {
             return `<a href="${this.generateStationDetailsLink()}" class="sidebar-subtitle-link" target="_blank">${LanguageService.translate('view_station_details')}</a>`;
         }
+        if (this.type === 'default') {
+            const subtitle = document.getElementById('sidebar-default-subtitle');
+            return subtitle ? `<span class="sidebar-subtitle-text">${subtitle.innerHTML.trim()}</span>` : '';
+        }
         if (this.type === 'line') {
             const refs = formatRefs(this.entity.trains.map(train => train.ref));
             return `<span class="sidebar-subtitle-text">${LanguageService.translate('train_number_sign')} ${refs}</span>`;

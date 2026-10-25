@@ -75,8 +75,10 @@
 
 - [ ] **10. Хвосты.**
   - [ ] На главной нет `h1`.
-  - [ ] Неиспользуемый перевод `passes_through` в `translations.js`.
-  - [ ] Мёртвые стили старой панели в `assets/css/custom.css` (`.route-line`, `.route-group`, `.route-label`, …) — проверить, что их не использует `single-route.html` и другие шаблоны.
+  - [x] Неиспользуемый перевод `passes_through` в `translations.js`.
+  - [x] Другие неиспользуемые ключи в `translations.js`: `default_greeting`, `frequency_daily`, `incomplete_route`, `layer_control_title`, `loading_railway_network`, `loading_route`, `no_schedule`, `no_schedule_yet`, `station_hint_text`, `train`, `unknown_station`.
+  - [x] Мёртвые стили старой панели в `assets/css/custom.css` (`.route-line`, `.route-group`, `.route-label`, …) — проверить, что их не использует `single-route.html` и другие шаблоны.
+    Удалено 81 правило (578 строк): старая панель, старая модалка маршрута `.route-modal*`, подсказка о станциях, лоадеры, `.hx-pt-4`/`.hx-pb-8` от старой версии Hextra и др. Класс считался мёртвым, если его нет ни в шаблонах, JS, контенте, данных, ни в шаблонах и JS темы Hextra. Классы MapLibre (`.maplibregl-*`) не трогали.
   - [ ] В развёрнутом положении панель нельзя стянуть вниз за список (только за шапку).
   - [ ] Ссылка «Подробнее о направлении» в панели маршрута (фронту нужна связка пар станций → страницы `/directions/`).
   - [ ] Грузинские подписи на проверку носителю: формы «из <города>», заголовки точек «?».
