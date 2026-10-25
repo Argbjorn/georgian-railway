@@ -557,6 +557,19 @@ body, html {
     background-color: #000 !important;
 }
 
+/* For screen readers and search engines only */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Main page on mobile: the expanded attribution in the top right corner leaves room for the zoom
    controls in the top left one */
 .maplibregl-ctrl-top-right .maplibregl-ctrl-attrib.maplibregl-compact-show {

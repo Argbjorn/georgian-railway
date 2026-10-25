@@ -114,7 +114,14 @@
     flex: 1;
 }
 
-/* ---------- Default content: routes, stations, what's new ---------- */
+/* ---------- Default content: intro, routes, stations, what's new ---------- */
+
+.sidebar-intro {
+    margin: 0 0 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #2A3036;
+}
 
 .sidebar-section {
     display: flex;

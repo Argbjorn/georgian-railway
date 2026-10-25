@@ -6,6 +6,9 @@
   </div>
   {{/* Bottom of the default mobile map panel. Rendered here because the What's New entries and
        page links live in Hugo; static/js/components/sidebar/SidebarContent.js copies it into the panel. */}}
+  {{/* The panel title changes with the selection, so the page heading is a separate, visually hidden h1 */}}
+  <h1 class="visually-hidden">{{ T "mainPageTitle" }}</h1>
+  <template id="sidebar-default-intro"><p class="sidebar-intro">{{ T "mainPageIntro" }}</p></template>
   {{/* Subtitle of the default panel: the build date, like "Last updated" on train pages */}}
   <template id="sidebar-default-subtitle">{{ T "lastUpdated" }}: {{ now.Format "02.01.2006" }}</template>
   <template id="sidebar-default-footer">

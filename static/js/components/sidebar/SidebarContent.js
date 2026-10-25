@@ -198,8 +198,10 @@ export class SidebarContent {
 
     getBody() {
         if (this.type === 'default') {
+            const intro = document.getElementById('sidebar-default-intro');
             const footer = document.getElementById('sidebar-default-footer');
-            this.content.innerHTML = this.renderRouteLines()
+            this.content.innerHTML = (intro ? intro.innerHTML : '')
+                + this.renderRouteLines()
                 + this.renderFeaturedStations()
                 + (footer ? footer.innerHTML : '');
             return this.content;
