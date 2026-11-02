@@ -73,72 +73,75 @@ export const routes = [
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
       "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
       "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
-      "extended_description_en": "<h3>Buying tickets</h3>Since the route is operated by Azerbaijan Railways, tickets can be purchased on <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">their website</a>. It is possible that, as with the <a href=\"/routes/371/\">Yerevan train</a>, tickets are also sold at the Tbilisi station ticket offices, but there is no official information or confirmation of this yet.<h3>Car types and prices</h3>The train has sleeping cars only. <b>Comfort</b> — a four-berth compartment, minimum price between terminal stations — 81 manat. <b>Lux</b> — a two-berth compartment with a private shower and toilet, minimum price — 180 manat. Prices are dynamic. At launch, there was information about Comfort+ compartments, but no such tickets could be found. The train also has a dining car.<h3>Border crossing</h3>Border control is carried out at the stations Böyük Kəsik and Gardabani, where 60-minute stops are scheduled. Passengers are not required to leave the train for border control.<h3>Useful links</h3>Emily Lush has compiled <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">detailed information</a> about this route — cars, food, border crossing, and much more.",
-      "extended_description_ru": "<h3>Покупка билетов</h3>Так как маршрут обслуживается Азербайджанскими железными дорогами, билеты можно купить на <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">их сайте</a>. Возможно, как и в случае с <a href=\"/ru/routes/371/\">ереванским поездом</a>, билеты продаются в кассах тбилисского вокзала, но пока официальной информации или подтверждения этому нет.<h3>Типы вагонов и цены</h3>В поезде только спальные вагоны. <b>Комфорт</b> — четырёхместное купе, минимальная цена между конечными станциями — 81 манат. <b>Люкс</b> — двухместное купе с собственным душем и туалетом, минимальная цена — 180 манат. Цены динамические. При запуске была информация о купе Комфорт+, но таких билетов в наличии обнаружить не удалось. В поезде также есть вагон-ресторан.<h3>Прохождение границы</h3>Пограничный контроль осуществляется на станциях Беюк-Кясик (Böyük Kəsik) и Гардабани, где предусмотрены остановки по 60 минут. Из поезда для прохождения границы выходить не нужно.<h3>Полезные ссылки</h3>Emily Lush собрала <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">подробную информацию</a> об этом маршруте — вагоны, питание, пограничный переход и многое другое (на английском языке).",
-      "extended_description_ka": "<h3>ბილეთების შეძენა</h3>ვინაიდან მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის მიერ, ბილეთების შეძენა შესაძლებელია <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">მათ ვებსაიტზე</a>. შესაძლებელია, <a href=\"/ka/routes/371/\">ერევნის მატარებლის</a> მსგავსად, ბილეთები იყიდება თბილისის სადგურის სალაროებშიც, თუმცა ამის შესახებ ჯერჯერობით ოფიციალური ინფორმაცია ან დადასტურება არ არსებობს.<h3>ვაგონების ტიპები და ფასები</h3>მატარებელში მხოლოდ სასძინებელი ვაგონებია. <b>კომფორტი</b> — ოთხადგილიანი კუპე, მინიმალური ფასი საბოლოო სადგურებს შორის — 81 მანათი. <b>ლუქსი</b> — ორადგილიანი კუპე საკუთარი შხაპით და ტუალეტით, მინიმალური ფასი — 180 მანათი. ფასები დინამიურია. გაშვებისას იყო ინფორმაცია კომფორტ+ კუპეების შესახებ, თუმცა ასეთი ბილეთები ხელმისაწვდომი არ აღმოჩნდა. მატარებელში ასევე არის რესტორნის ვაგონი.<h3>საზღვრის გადაკვეთა</h3>სასაზღვრო კონტროლი ხორციელდება ბიუქ-ქასიქის (Böyük Kəsik) და გარდაბნის სადგურებზე, სადაც გათვალისწინებულია 60-წუთიანი გაჩერებები. მატარებლიდან გასვლა საზღვრის გადასაკვეთად საჭირო არ არის.<h3>სასარგებლო ბმულები</h3>Emily Lush-მა შეკრიბა <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">დეტალური ინფორმაცია</a> ამ მარშრუტის შესახებ — ვაგონები, კვება, საზღვრის გადაკვეთა და სხვა (ინგლისურ ენაზე).",
+      "extended_description_en": null,
+      "extended_description_ru": null,
+      "extended_description_ka": null,
       "stations": [
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "departure_time": "21:00",
+            "departure_time": "11:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gardabani",
             "role": "middle",
-            "departure_time": "22:55",
+            "departure_time": "12:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "boyukkasik",
             "role": "middle",
-            "departure_time": "00:20",
+            "departure_time": "14:20",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "aghstafa",
             "role": "middle",
-            "departure_time": "01:12",
+            "departure_time": "15:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ganja",
             "role": "middle",
-            "departure_time": "02:34",
+            "departure_time": "16:25",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "yevlakh",
             "role": "middle",
-            "departure_time": "03:22",
+            "departure_time": "17:12",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "bilajari",
             "role": "middle",
-            "departure_time": "06:15",
+            "departure_time": "20:07",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "baku",
             "role": "end",
-            "departure_time": "06:32",
+            "departure_time": "20:26",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "09:32",
+      "travel_time": "09:26",
       "price": null,
-      "analogue": [],
+      "analogue": [
+         39
+      ],
       "reverse": [
-         38
+         38,
+         40
       ]
    },
    {
@@ -161,42 +164,42 @@ export const routes = [
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
       "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
       "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
-      "extended_description_en": "<h3>Buying tickets</h3>Since the route is operated by Azerbaijan Railways, tickets can be purchased on <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">their website</a>. It is possible that, as with the <a href=\"/routes/371/\">Yerevan train</a>, tickets are also sold at the Tbilisi station ticket offices, but there is no official information or confirmation of this yet.<h3>Car types and prices</h3>The train has sleeping cars only. <b>Comfort</b> — a four-berth compartment, minimum price between terminal stations — 81 manat. <b>Lux</b> — a two-berth compartment with a private shower and toilet, minimum price — 180 manat. Prices are dynamic. At launch, there was information about Comfort+ compartments, but no such tickets could be found. The train also has a dining car.<h3>Border crossing</h3>Border control is carried out at the stations Böyük Kəsik and Gardabani, where 60-minute stops are scheduled. Passengers are not required to leave the train for border control.<h3>Useful links</h3>Emily Lush has compiled <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">detailed information</a> about this route — cars, food, border crossing, and much more.",
-      "extended_description_ru": "<h3>Покупка билетов</h3>Так как маршрут обслуживается Азербайджанскими железными дорогами, билеты можно купить на <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">их сайте</a>. Возможно, как и в случае с <a href=\"/ru/routes/371/\">ереванским поездом</a>, билеты продаются в кассах тбилисского вокзала, но пока официальной информации или подтверждения этому нет.<h3>Типы вагонов и цены</h3>В поезде только спальные вагоны. <b>Комфорт</b> — четырёхместное купе, минимальная цена между конечными станциями — 81 манат. <b>Люкс</b> — двухместное купе с собственным душем и туалетом, минимальная цена — 180 манат. Цены динамические. При запуске была информация о купе Комфорт+, но таких билетов в наличии обнаружить не удалось. В поезде также есть вагон-ресторан.<h3>Прохождение границы</h3>Пограничный контроль осуществляется на станциях Беюк-Кясик (Böyük Kəsik) и Гардабани, где предусмотрены остановки по 60 минут. Из поезда для прохождения границы выходить не нужно.<h3>Полезные ссылки</h3>Emily Lush собрала <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">подробную информацию</a> об этом маршруте — вагоны, питание, пограничный переход и многое другое (на английском языке).",
-      "extended_description_ka": "<h3>ბილეთების შეძენა</h3>ვინაიდან მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის მიერ, ბილეთების შეძენა შესაძლებელია <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">მათ ვებსაიტზე</a>. შესაძლებელია, <a href=\"/ka/routes/371/\">ერევნის მატარებლის</a> მსგავსად, ბილეთები იყიდება თბილისის სადგურის სალაროებშიც, თუმცა ამის შესახებ ჯერჯერობით ოფიციალური ინფორმაცია ან დადასტურება არ არსებობს.<h3>ვაგონების ტიპები და ფასები</h3>მატარებელში მხოლოდ სასძინებელი ვაგონებია. <b>კომფორტი</b> — ოთხადგილიანი კუპე, მინიმალური ფასი საბოლოო სადგურებს შორის — 81 მანათი. <b>ლუქსი</b> — ორადგილიანი კუპე საკუთარი შხაპით და ტუალეტით, მინიმალური ფასი — 180 მანათი. ფასები დინამიურია. გაშვებისას იყო ინფორმაცია კომფორტ+ კუპეების შესახებ, თუმცა ასეთი ბილეთები ხელმისაწვდომი არ აღმოჩნდა. მატარებელში ასევე არის რესტორნის ვაგონი.<h3>საზღვრის გადაკვეთა</h3>სასაზღვრო კონტროლი ხორციელდება ბიუქ-ქასიქის (Böyük Kəsik) და გარდაბნის სადგურებზე, სადაც გათვალისწინებულია 60-წუთიანი გაჩერებები. მატარებლიდან გასვლა საზღვრის გადასაკვეთად საჭირო არ არის.<h3>სასარგებლო ბმულები</h3>Emily Lush-მა შეკრიბა <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">დეტალური ინფორმაცია</a> ამ მარშრუტის შესახებ — ვაგონები, კვება, საზღვრის გადაკვეთა და სხვა (ინგლისურ ენაზე).",
+      "extended_description_en": null,
+      "extended_description_ru": null,
+      "extended_description_ka": null,
       "stations": [
          {
             "code": "baku",
             "role": "start",
-            "departure_time": "23:00",
+            "departure_time": "23:10",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "bilajari",
             "role": "middle",
-            "departure_time": "23:21",
+            "departure_time": "23:32",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "yevlakh",
             "role": "middle",
-            "departure_time": "02:16",
+            "departure_time": "02:29",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ganja",
             "role": "middle",
-            "departure_time": "03:11",
+            "departure_time": "03:22",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "aghstafa",
             "role": "middle",
-            "departure_time": "04:30",
+            "departure_time": "04:38",
             "arrival_time": null,
             "stop_time": null
          },
@@ -222,11 +225,14 @@ export const routes = [
             "stop_time": null
          }
       ],
-      "travel_time": "09:41",
+      "travel_time": "09:31",
       "price": null,
-      "analogue": [],
+      "analogue": [
+         40
+      ],
       "reverse": [
-         37
+         37,
+         39
       ]
    },
    {
@@ -237,7 +243,7 @@ export const routes = [
       "name:ru": "Тбилиси → Баку",
       "active": true,
       "frequency": "daily",
-      "start_date": 1793491200000,
+      "start_date": null,
       "end_date": null,
       "complete": true,
       "online": false,
@@ -246,77 +252,78 @@ export const routes = [
       "train_type": null,
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The second Baku — Tbilisi — Baku service will launch on November 1, 2026. The route is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Второй рейс поезда Баку — Тбилиси — Баку будет запущен 1 ноября 2026 года. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მარშრუტის მეორე რეისი გაიხსნება 2026 წლის 1 ნოემბერს. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
-      "extended_description_en": "<h3>Buying tickets</h3>Since the route is operated by Azerbaijan Railways, tickets can be purchased on <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">their website</a>. It is possible that, as with the <a href=\"/routes/371/\">Yerevan train</a>, tickets are also sold at the Tbilisi station ticket offices, but there is no official information or confirmation of this yet.<h3>Car types and prices</h3>The train has sleeping cars only. <b>Comfort</b> — a four-berth compartment, minimum price between terminal stations — 81 manat. <b>Lux</b> — a two-berth compartment with a private shower and toilet, minimum price — 180 manat. Prices are dynamic. At launch, there was information about Comfort+ compartments, but no such tickets could be found. The train also has a dining car.<h3>Border crossing</h3>Border control is carried out at the stations Böyük Kəsik and Gardabani, where 60-minute stops are scheduled. Passengers are not required to leave the train for border control.<h3>Useful links</h3>Emily Lush has compiled <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">detailed information</a> about this route — cars, food, border crossing, and much more.",
-      "extended_description_ru": "<h3>Покупка билетов</h3>Так как маршрут обслуживается Азербайджанскими железными дорогами, билеты можно купить на <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">их сайте</a>. Возможно, как и в случае с <a href=\"/ru/routes/371/\">ереванским поездом</a>, билеты продаются в кассах тбилисского вокзала, но пока официальной информации или подтверждения этому нет.<h3>Типы вагонов и цены</h3>В поезде только спальные вагоны. <b>Комфорт</b> — четырёхместное купе, минимальная цена между конечными станциями — 81 манат. <b>Люкс</b> — двухместное купе с собственным душем и туалетом, минимальная цена — 180 манат. Цены динамические. При запуске была информация о купе Комфорт+, но таких билетов в наличии обнаружить не удалось. В поезде также есть вагон-ресторан.<h3>Прохождение границы</h3>Пограничный контроль осуществляется на станциях Беюк-Кясик (Böyük Kəsik) и Гардабани, где предусмотрены остановки по 60 минут. Из поезда для прохождения границы выходить не нужно.<h3>Полезные ссылки</h3>Emily Lush собрала <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">подробную информацию</a> об этом маршруте — вагоны, питание, пограничный переход и многое другое (на английском языке).",
-      "extended_description_ka": "<h3>ბილეთების შეძენა</h3>ვინაიდან მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის მიერ, ბილეთების შეძენა შესაძლებელია <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">მათ ვებსაიტზე</a>. შესაძლებელია, <a href=\"/ka/routes/371/\">ერევნის მატარებლის</a> მსგავსად, ბილეთები იყიდება თბილისის სადგურის სალაროებშიც, თუმცა ამის შესახებ ჯერჯერობით ოფიციალური ინფორმაცია ან დადასტურება არ არსებობს.<h3>ვაგონების ტიპები და ფასები</h3>მატარებელში მხოლოდ სასძინებელი ვაგონებია. <b>კომფორტი</b> — ოთხადგილიანი კუპე, მინიმალური ფასი საბოლოო სადგურებს შორის — 81 მანათი. <b>ლუქსი</b> — ორადგილიანი კუპე საკუთარი შხაპით და ტუალეტით, მინიმალური ფასი — 180 მანათი. ფასები დინამიურია. გაშვებისას იყო ინფორმაცია კომფორტ+ კუპეების შესახებ, თუმცა ასეთი ბილეთები ხელმისაწვდომი არ აღმოჩნდა. მატარებელში ასევე არის რესტორნის ვაგონი.<h3>საზღვრის გადაკვეთა</h3>სასაზღვრო კონტროლი ხორციელდება ბიუქ-ქასიქის (Böyük Kəsik) და გარდაბნის სადგურებზე, სადაც გათვალისწინებულია 60-წუთიანი გაჩერებები. მატარებლიდან გასვლა საზღვრის გადასაკვეთად საჭირო არ არის.<h3>სასარგებლო ბმულები</h3>Emily Lush-მა შეკრიბა <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">დეტალური ინფორმაცია</a> ამ მარშრუტის შესახებ — ვაგონები, კვება, საზღვრის გადაკვეთა და სხვა (ინგლისურ ენაზე).",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "extended_description_en": null,
+      "extended_description_ru": null,
+      "extended_description_ka": null,
       "stations": [
          {
             "code": "tbilisicentralstation",
             "role": "start",
-            "departure_time": "11:00",
+            "departure_time": "22:00",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gardabani",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "00:25",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "boyukkasik",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "01:50",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "aghstafa",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "02:36",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ganja",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "03:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "yevlakh",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "04:43",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "bilajari",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "07:38",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "baku",
             "role": "end",
-            "departure_time": "20:26",
+            "departure_time": "07:57",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "09:26",
+      "travel_time": "09:57",
       "price": null,
       "analogue": [
          37
       ],
       "reverse": [
-         38
+         38,
+         40
       ]
    },
    {
@@ -327,7 +334,7 @@ export const routes = [
       "name:ru": "Баку → Тбилиси",
       "active": true,
       "frequency": "daily",
-      "start_date": 1793491200000,
+      "start_date": null,
       "end_date": null,
       "complete": true,
       "online": false,
@@ -336,12 +343,12 @@ export const routes = [
       "train_type": null,
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The second Baku — Tbilisi — Baku service will launch on November 1, 2026. The route is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Второй рейс поезда Баку — Тбилиси — Баку будет запущен 1 ноября 2026 года. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მარშრუტის მეორე რეისი გაიხსნება 2026 წლის 1 ნოემბერს. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
-      "extended_description_en": "<h3>Buying tickets</h3>Since the route is operated by Azerbaijan Railways, tickets can be purchased on <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">their website</a>. It is possible that, as with the <a href=\"/routes/371/\">Yerevan train</a>, tickets are also sold at the Tbilisi station ticket offices, but there is no official information or confirmation of this yet.<h3>Car types and prices</h3>The train has sleeping cars only. <b>Comfort</b> — a four-berth compartment, minimum price between terminal stations — 81 manat. <b>Lux</b> — a two-berth compartment with a private shower and toilet, minimum price — 180 manat. Prices are dynamic. At launch, there was information about Comfort+ compartments, but no such tickets could be found. The train also has a dining car.<h3>Border crossing</h3>Border control is carried out at the stations Böyük Kəsik and Gardabani, where 60-minute stops are scheduled. Passengers are not required to leave the train for border control.<h3>Useful links</h3>Emily Lush has compiled <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">detailed information</a> about this route — cars, food, border crossing, and much more.",
-      "extended_description_ru": "<h3>Покупка билетов</h3>Так как маршрут обслуживается Азербайджанскими железными дорогами, билеты можно купить на <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">их сайте</a>. Возможно, как и в случае с <a href=\"/ru/routes/371/\">ереванским поездом</a>, билеты продаются в кассах тбилисского вокзала, но пока официальной информации или подтверждения этому нет.<h3>Типы вагонов и цены</h3>В поезде только спальные вагоны. <b>Комфорт</b> — четырёхместное купе, минимальная цена между конечными станциями — 81 манат. <b>Люкс</b> — двухместное купе с собственным душем и туалетом, минимальная цена — 180 манат. Цены динамические. При запуске была информация о купе Комфорт+, но таких билетов в наличии обнаружить не удалось. В поезде также есть вагон-ресторан.<h3>Прохождение границы</h3>Пограничный контроль осуществляется на станциях Беюк-Кясик (Böyük Kəsik) и Гардабани, где предусмотрены остановки по 60 минут. Из поезда для прохождения границы выходить не нужно.<h3>Полезные ссылки</h3>Emily Lush собрала <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">подробную информацию</a> об этом маршруте — вагоны, питание, пограничный переход и многое другое (на английском языке).",
-      "extended_description_ka": "<h3>ბილეთების შეძენა</h3>ვინაიდან მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის მიერ, ბილეთების შეძენა შესაძლებელია <a href=\"https://ticket.ady.az/en/\" target=\"_blank\">მათ ვებსაიტზე</a>. შესაძლებელია, <a href=\"/ka/routes/371/\">ერევნის მატარებლის</a> მსგავსად, ბილეთები იყიდება თბილისის სადგურის სალაროებშიც, თუმცა ამის შესახებ ჯერჯერობით ოფიციალური ინფორმაცია ან დადასტურება არ არსებობს.<h3>ვაგონების ტიპები და ფასები</h3>მატარებელში მხოლოდ სასძინებელი ვაგონებია. <b>კომფორტი</b> — ოთხადგილიანი კუპე, მინიმალური ფასი საბოლოო სადგურებს შორის — 81 მანათი. <b>ლუქსი</b> — ორადგილიანი კუპე საკუთარი შხაპით და ტუალეტით, მინიმალური ფასი — 180 მანათი. ფასები დინამიურია. გაშვებისას იყო ინფორმაცია კომფორტ+ კუპეების შესახებ, თუმცა ასეთი ბილეთები ხელმისაწვდომი არ აღმოჩნდა. მატარებელში ასევე არის რესტორნის ვაგონი.<h3>საზღვრის გადაკვეთა</h3>სასაზღვრო კონტროლი ხორციელდება ბიუქ-ქასიქის (Böyük Kəsik) და გარდაბნის სადგურებზე, სადაც გათვალისწინებულია 60-წუთიანი გაჩერებები. მატარებლიდან გასვლა საზღვრის გადასაკვეთად საჭირო არ არის.<h3>სასარგებლო ბმულები</h3>Emily Lush-მა შეკრიბა <a href=\"https://wander-lush.org/tbilisi-to-baku-train/\" target=\"_blank\">დეტალური ინფორმაცია</a> ამ მარშრუტის შესახებ — ვაგონები, კვება, საზღვრის გადაკვეთა და სხვა (ინგლისურ ენაზე).",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "extended_description_en": null,
+      "extended_description_ru": null,
+      "extended_description_ka": null,
       "stations": [
          {
             "code": "baku",
@@ -353,42 +360,42 @@ export const routes = [
          {
             "code": "bilajari",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "09:32",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "yevlakh",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "12:29",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ganja",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "13:22",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "aghstafa",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "14:38",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "boyukkasik",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "16:20",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gardabani",
             "role": "middle",
-            "departure_time": "-",
+            "departure_time": "18:15",
             "arrival_time": null,
             "stop_time": null
          },
@@ -406,7 +413,8 @@ export const routes = [
          38
       ],
       "reverse": [
-         37
+         37,
+         39
       ]
    },
    {
@@ -3583,110 +3591,110 @@ export const routes = [
          {
             "code": "poti",
             "role": "start",
-            "departure_time": "08:00",
+            "departure_time": "08:10",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "chaladidi",
             "role": "middle",
-            "departure_time": "08:18",
+            "departure_time": "08:25",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvaloni",
             "role": "middle",
-            "departure_time": "08:32",
+            "departure_time": "08:37",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "08:44",
+            "departure_time": "08:48",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "09:07",
+            "departure_time": "09:08",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "09:25",
+            "departure_time": "09:28",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "09:39",
+            "departure_time": "09:42",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "09:53",
+            "departure_time": "09:56",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "10:16",
+            "departure_time": "10:21",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "10:37",
+            "departure_time": "10:42",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "10:52",
+            "departure_time": "10:57",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "11:03",
+            "departure_time": "11:08",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "11:21",
+            "departure_time": "11:26",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "11:50",
+            "departure_time": "11:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "12:46",
+            "departure_time": "12:51",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:46",
+      "travel_time": "04:41",
       "price": {
          "price_type": "from",
          "price": 16.0
@@ -3779,54 +3787,54 @@ export const routes = [
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "20:32",
+            "departure_time": "20:34",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "20:44",
+            "departure_time": "20:46",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "21:05",
+            "departure_time": "21:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "21:22",
+            "departure_time": "21:21",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kvaloni",
             "role": "middle",
-            "departure_time": "21:37",
+            "departure_time": "21:35",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "chaladidi",
             "role": "middle",
-            "departure_time": "21:51",
+            "departure_time": "21:47",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "poti",
             "role": "end",
-            "departure_time": "22:11",
+            "departure_time": "22:04",
             "arrival_time": null,
             "stop_time": null
          }
       ],
-      "travel_time": "04:41",
+      "travel_time": "04:34",
       "price": {
          "price_type": "from",
          "price": 16.0
@@ -4578,7 +4586,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "suburban",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4658,7 +4666,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "suburban",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4766,7 +4774,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "suburban",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4874,7 +4882,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "suburban",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4982,7 +4990,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "suburban",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
