@@ -2571,35 +2571,35 @@
          {
             "code": "batumicentral",
             "role": "start",
-            "departure_time": "16:50",
+            "departure_time": "18:30",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "17:06",
+            "departure_time": "18:46",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "17:26",
+            "departure_time": "19:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "18:15",
+            "departure_time": "19:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "20:50",
+            "departure_time": "22:30",
             "arrival_time": null,
             "stop_time": null
          }
