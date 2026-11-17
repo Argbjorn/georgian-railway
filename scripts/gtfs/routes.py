@@ -1,9 +1,10 @@
-"""routes.txt — lines: trains with the same terminal stations (both directions) and train type."""
+"""routes.txt — lines: trains with the same terminal stations (in either direction)."""
 
+import re
+from collections import Counter
 from dataclasses import dataclass
 
 from .config import LANG_URL_PREFIX, LINE_NAME_CITY_PRIORITY, SITE_URL
-from .ids import stop_id
 
 FILE_NAME = 'routes.txt'
 FIELDS = [
@@ -31,7 +32,6 @@ ROUTE_TYPE_RAIL = 2
 
 @dataclass
 class Line:
-    route_id: str
     # Sorted by ref.
     trains: list
     # Train departing from the line's leading city (lowest ref among such trains); its direction
@@ -39,6 +39,11 @@ class Line:
     representative: dict
     # Whether the line name lists the cities in reverse order of the lowest-ref train's name.
     name_reversed: bool
+
+    @property
+    def route_id(self):
+        """Cities of the line name in its order: "Tbilisi — Borjomi" → tbilisi-borjomi."""
+        return re.sub(r'[^a-z0-9]+', '-', line_name(self).lower()).strip('-')
 
     def direction_id(self, train):
         return 0 if terminals(train) == terminals(self.representative) else 1
@@ -57,25 +62,15 @@ def name_cities(train, lang='en'):
 
 
 def _grouping_key(train):
-    """Trains with the same terminal stations (in either direction) and train type form a line."""
-    return tuple(sorted(terminals(train))), train.get('train_type')
+    """Trains with the same terminal stations (in either direction) form a line."""
+    return tuple(sorted(terminals(train)))
 
 
 def _make_line(trains):
     origin, destination = name_cities(trains[0])
     leading_city = next((city for city in LINE_NAME_CITY_PRIORITY if city in (origin, destination)), origin)
-    name_reversed = leading_city != origin
     representative = next((train for train in trains if name_cities(train)[0] == leading_city), trains[0])
-
-    # route_id lists the terminal stations in the same order as the line name lists the cities
-    stations = list(terminals(trains[0]))
-    if name_reversed:
-        stations.reverse()
-    parts = [stop_id(code) for code in stations]
-    if trains[0].get('train_type'):
-        parts.append(trains[0]['train_type'])
-
-    return Line('-'.join(parts), trains, representative, name_reversed)
+    return Line(trains, representative, name_reversed=leading_city != origin)
 
 
 def group_lines(routes):
@@ -94,6 +89,14 @@ def group_lines(routes):
         if len(operators) > 1:
             refs = [train['ref'] for train in line.trains]
             raise ValueError(f'Line {line.route_id} (trains {refs}) has several operators: {sorted(operators)}')
+        # A non-ASCII letter would silently drop out of route_id
+        if not all(city.isascii() for city in name_cities(line.trains[0])) or not line.route_id:
+            raise ValueError(f'Line {line_name(line)!r}: name:en must be ASCII to build route_id')
+
+    # Lines between the same cities but different stations would get the same route_id
+    duplicates = sorted(route_id for route_id, count in Counter(line.route_id for line in lines).items() if count > 1)
+    if duplicates:
+        raise ValueError(f'Lines with the same route_id: {duplicates}')
 
     return lines
 

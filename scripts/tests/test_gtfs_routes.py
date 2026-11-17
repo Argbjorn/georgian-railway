@@ -21,7 +21,7 @@ class TestGroupLines:
         trains = [train(804, 'tbilisi', 'batumi', 'stadler'), train(801, 'batumi', 'tbilisi', 'stadler'),
                   train(802, 'tbilisi', 'batumi', 'stadler'), train(803, 'batumi', 'tbilisi', 'stadler')]
         [line] = routes.group_lines(trains)
-        assert line.route_id == 'tbilisi-batumi-stadler'
+        assert line.route_id == 'tbilisi-batumi'
         assert [t['ref'] for t in line.trains] == [801, 802, 803, 804]
 
     def test_direction_id_follows_representative(self):
@@ -29,13 +29,26 @@ class TestGroupLines:
         directions = {t['ref']: line.direction_id(t) for t in line.trains}
         assert directions == {1: 0, 2: 1}
 
-    def test_different_train_types_are_different_lines(self):
-        lines = routes.group_lines([train(1, 'a', 'b', 'stadler'), train(2, 'a', 'b', 'suburban')])
-        assert [line.route_id for line in lines] == ['a-b-stadler', 'a-b-suburban']
+    def test_train_type_does_not_split_line(self):
+        [line] = routes.group_lines([train(1, 'a', 'b', 'stadler'), train(2, 'b', 'a', 'suburban')])
+        assert [t['ref'] for t in line.trains] == [1, 2]
 
-    def test_route_id_without_train_type_and_ascii(self):
+    def test_route_id_from_cities_not_stations(self):
         [line] = routes.group_lines([train(37, 'tbilisicentralstation', 'bakı', name='Tbilisi → Baku')])
-        assert line.route_id == 'baki-tbilisicentralstation'
+        assert line.route_id == 'baku-tbilisi'
+
+    def test_multi_word_city_in_route_id(self):
+        [line] = routes.group_lines([train(1, 'a', 'b', name='Zestafoni → Kutaisi Airport')])
+        assert line.route_id == 'zestafoni-kutaisi-airport'
+
+    def test_non_ascii_name_fails(self):
+        with pytest.raises(ValueError, match='must be ASCII'):
+            routes.group_lines([train(1, 'a', 'b', name='Zestafoni → Bakı')])
+
+    def test_same_cities_different_stations_fail(self):
+        with pytest.raises(ValueError, match='same route_id'):
+            routes.group_lines([train(1, 'tbilisicentralstation', 'batumi', name='Tbilisi → Batumi'),
+                                train(2, 'navtlughi', 'batumi', name='Tbilisi → Batumi')])
 
     def test_lines_ordered_by_lowest_ref(self):
         lines = routes.group_lines([train(6413, 'x', 'y'), train(37, 'a', 'b'), train(6414, 'y', 'x')])

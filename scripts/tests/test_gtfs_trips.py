@@ -65,7 +65,7 @@ class TestBuildTrips:
         ])
         assert trips.build_trips(lines) == [
             {
-                'route_id': 'tbilisi-batumi-stadler',
+                'route_id': 'tbilisi-batumi',
                 'service_id': 'daily',
                 'trip_id': '801',
                 'trip_short_name': '801',
@@ -76,7 +76,7 @@ class TestBuildTrips:
                 'cars_allowed': 2,
             },
             {
-                'route_id': 'tbilisi-batumi-stadler',
+                'route_id': 'tbilisi-batumi',
                 'service_id': 'daily',
                 'trip_id': '802',
                 'trip_short_name': '802',
