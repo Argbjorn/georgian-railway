@@ -44,6 +44,13 @@ galleries:
         ka: არამოდერნიზებული ელექტრომატარებელი ER2-631
       copyright: BVV
       copyright_link:
+    - src: exterior-7.jpg
+      alt:
+        ru: Электричка ЭС-006, отличается отсутствием передних тамбуров и дверей в головном вагоне
+        en: ES-006 electric train, which has no front vestibules or doors in the head car
+        ka: ელექტრომატარებელი ES-006, რომლის სათავო ვაგონს წინა ტამბურები და კარები არ აქვს
+      copyright: BVV
+      copyright_link:
   interior:
     - src: interior-1.jpg
       alt:

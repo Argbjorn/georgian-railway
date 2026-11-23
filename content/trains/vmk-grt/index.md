@@ -10,7 +10,7 @@ VMK and GRT are four-car electric trains built by the Chinese company CSR. Georg
 
 ## Amenities
 
-The cars have air conditioning and are mostly clean. There are vending machines with snacks, water and coffee. Power sockets are European type, and there are few of them. No Wi-Fi or USB ports. The toilet is an old-style one and is locked at stops.
+The cars have air conditioning and are mostly clean. There are vending machines with snacks, water and coffee. Power sockets are European type, and there are few of them. No Wi-Fi or USB ports. The toilet is an old-style one.
 
 ## Luggage
 

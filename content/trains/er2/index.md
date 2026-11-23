@@ -8,7 +8,7 @@ The ER2 is a Soviet electric train built by the Riga Carriage Works in the 1960s
 
 - **ER2**, not modernized;
 - **ER2M**, partly modernized, each unit in its own way;
-- **ES** ("Electric train Sakartvelo"), ER2s rebuilt in Tbilisi since 2007 with a new cab and a refurbished interior.
+- **ES**, ER2s rebuilt in Tbilisi since 2007 with a new cab and a refurbished interior.
 
 The condition of the units varies a lot, and you can't know in advance which one will come. It may be a refurbished ES with soft seats or an old ER2 with plastic benches.
 
@@ -26,4 +26,4 @@ There are toilets (usually in poor condition) and heating. There is no air condi
 
 ## Tickets
 
-Tickets are sold at the station ticket office, seats are not assigned. Some units have ticket machines in the cars: they accept 50 tetri, 1 and 2 lari coins and bank cards.
+Tickets are sold at the station ticket office, seats are not assigned. There is a conductor on board, who only accepts bank cards. The old ticket machines that took coins are gone.
