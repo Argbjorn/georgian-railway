@@ -584,9 +584,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "06:21",
-               "stop_time": null
+               "arrival_time": "06:21",
+               "departure_time": "06:22",
+               "stop_time": 1
             },
             {
                "ref": 634,
@@ -596,9 +596,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:51",
-               "stop_time": null
+               "arrival_time": "13:51",
+               "departure_time": "13:52",
+               "stop_time": 1
             }
          ]
       }
@@ -699,9 +699,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "06:40",
-               "stop_time": null
+               "arrival_time": "06:40",
+               "departure_time": "06:41",
+               "stop_time": 1
             },
             {
                "ref": 634,
@@ -711,9 +711,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:28",
-               "stop_time": null
+               "arrival_time": "13:28",
+               "departure_time": "13:30",
+               "stop_time": 2
             }
          ]
       }
@@ -1035,7 +1035,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "19:20",
                "stop_time": null
             },
@@ -1047,7 +1047,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "08:50",
                "stop_time": null
             },
@@ -1060,7 +1060,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "16:50",
+               "departure_time": "18:30",
                "stop_time": null
             },
             {
@@ -1085,8 +1085,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:25",
+               "arrival_time": "10:25",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -1097,8 +1097,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:56",
+               "arrival_time": "20:56",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -1155,9 +1155,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:43",
-               "stop_time": null
+               "arrival_time": "07:43",
+               "departure_time": "07:46",
+               "stop_time": 3
             },
             {
                "ref": 634,
@@ -1167,9 +1167,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:23",
-               "stop_time": null
+               "arrival_time": "12:23",
+               "departure_time": "12:26",
+               "stop_time": 3
             }
          ]
       }
@@ -1557,9 +1557,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:57",
-               "stop_time": null
+               "arrival_time": "22:57",
+               "departure_time": "22:58",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -1569,9 +1569,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:01",
-               "stop_time": null
+               "arrival_time": "07:01",
+               "departure_time": "07:02",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -1581,9 +1581,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:16",
-               "stop_time": null
+               "arrival_time": "12:16",
+               "departure_time": "12:17",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -1593,9 +1593,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "17:31",
-               "stop_time": null
+               "arrival_time": "17:31",
+               "departure_time": "17:32",
+               "stop_time": 1
             }
          ]
       }
@@ -1626,9 +1626,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:39",
-               "stop_time": null
+               "arrival_time": "19:39",
+               "departure_time": "19:40",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -1638,9 +1638,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:05",
-               "stop_time": null
+               "arrival_time": "10:05",
+               "departure_time": "10:06",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -1650,9 +1650,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:09",
-               "stop_time": null
+               "arrival_time": "09:09",
+               "departure_time": "09:10",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -1662,9 +1662,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:36",
-               "stop_time": null
+               "arrival_time": "20:36",
+               "departure_time": "20:37",
+               "stop_time": 1
             }
          ]
       }
@@ -1740,9 +1740,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:33",
-               "stop_time": null
+               "arrival_time": "08:33",
+               "departure_time": "08:38",
+               "stop_time": 5
             },
             {
                "ref": 634,
@@ -1752,9 +1752,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:31",
-               "stop_time": null
+               "arrival_time": "11:31",
+               "departure_time": "11:36",
+               "stop_time": 5
             }
          ]
       }
@@ -1785,9 +1785,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:50",
-               "stop_time": null
+               "arrival_time": "08:50",
+               "departure_time": "08:53",
+               "stop_time": 3
             },
             {
                "ref": 634,
@@ -1797,9 +1797,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:16",
-               "stop_time": null
+               "arrival_time": "11:16",
+               "departure_time": "11:19",
+               "stop_time": 3
             }
          ]
       }
@@ -1830,9 +1830,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:02",
-               "stop_time": null
+               "arrival_time": "09:02",
+               "departure_time": "09:04",
+               "stop_time": 2
             },
             {
                "ref": 634,
@@ -1842,9 +1842,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:05",
-               "stop_time": null
+               "arrival_time": "11:05",
+               "departure_time": "11:07",
+               "stop_time": 2
             }
          ]
       }
@@ -2003,9 +2003,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:18",
-               "stop_time": null
+               "arrival_time": "13:18",
+               "departure_time": "13:19",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -2015,9 +2015,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:48",
-               "stop_time": null
+               "arrival_time": "10:48",
+               "departure_time": "10:49",
+               "stop_time": 1
             },
             {
                "ref": 6417,
@@ -2474,9 +2474,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:44",
-               "stop_time": null
+               "arrival_time": "14:44",
+               "departure_time": "14:46",
+               "stop_time": 2
             },
             {
                "ref": 854,
@@ -2486,9 +2486,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:20",
-               "stop_time": null
+               "arrival_time": "09:20",
+               "departure_time": "09:22",
+               "stop_time": 2
             },
             {
                "ref": 869,
@@ -2728,9 +2728,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "21:18",
-               "stop_time": null
+               "arrival_time": "21:18",
+               "departure_time": "21:19",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -2740,9 +2740,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:44",
-               "stop_time": null
+               "arrival_time": "08:44",
+               "departure_time": "08:50",
+               "stop_time": 6
             },
             {
                "ref": 683,
@@ -2752,9 +2752,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:37",
-               "stop_time": null
+               "arrival_time": "10:37",
+               "departure_time": "10:38",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -2764,9 +2764,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:14",
-               "stop_time": null
+               "arrival_time": "19:14",
+               "departure_time": "19:20",
+               "stop_time": 6
             },
             {
                "ref": 853,
@@ -2776,9 +2776,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:12",
-               "stop_time": null
+               "arrival_time": "11:12",
+               "departure_time": "11:19",
+               "stop_time": 7
             },
             {
                "ref": 854,
@@ -2788,9 +2788,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:43",
-               "stop_time": null
+               "arrival_time": "12:43",
+               "departure_time": "12:44",
+               "stop_time": 1
             }
          ]
       }
@@ -2821,9 +2821,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:16",
-               "stop_time": null
+               "arrival_time": "14:16",
+               "departure_time": "14:17",
+               "stop_time": 1
             }
          ]
       }
@@ -2903,9 +2903,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:31",
-               "stop_time": null
+               "arrival_time": "14:31",
+               "departure_time": "14:32",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -2915,9 +2915,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:35",
-               "stop_time": null
+               "arrival_time": "09:35",
+               "departure_time": "09:36",
+               "stop_time": 1
             }
          ]
       }
@@ -2997,9 +2997,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "15:04",
-               "stop_time": null
+               "arrival_time": "15:04",
+               "departure_time": "15:05",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -3009,9 +3009,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:02",
-               "stop_time": null
+               "arrival_time": "09:02",
+               "departure_time": "09:03",
+               "stop_time": 1
             }
          ]
       }
@@ -3113,9 +3113,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:28",
-               "stop_time": null
+               "arrival_time": "13:28",
+               "departure_time": "13:30",
+               "stop_time": 2
             },
             {
                "ref": 854,
@@ -3125,9 +3125,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:37",
-               "stop_time": null
+               "arrival_time": "10:37",
+               "departure_time": "10:39",
+               "stop_time": 2
             },
             {
                "ref": 869,
@@ -3353,9 +3353,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:12",
-               "stop_time": null
+               "arrival_time": "14:12",
+               "departure_time": "14:15",
+               "stop_time": 3
             },
             {
                "ref": 854,
@@ -3365,9 +3365,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:52",
-               "stop_time": null
+               "arrival_time": "09:52",
+               "departure_time": "09:55",
+               "stop_time": 3
             },
             {
                "ref": 869,
@@ -3536,9 +3536,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:54",
-               "stop_time": null
+               "arrival_time": "19:54",
+               "departure_time": "19:56",
+               "stop_time": 2
             },
             {
                "ref": 682,
@@ -3548,9 +3548,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:49",
-               "stop_time": null
+               "arrival_time": "09:49",
+               "departure_time": "09:51",
+               "stop_time": 2
             },
             {
                "ref": 683,
@@ -3560,9 +3560,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:24",
-               "stop_time": null
+               "arrival_time": "09:24",
+               "departure_time": "09:26",
+               "stop_time": 2
             },
             {
                "ref": 684,
@@ -3572,9 +3572,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:20",
-               "stop_time": null
+               "arrival_time": "20:20",
+               "departure_time": "20:22",
+               "stop_time": 2
             },
             {
                "ref": 801,
@@ -3585,7 +3585,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "17:06",
+               "departure_time": "18:46",
                "stop_time": null
             },
             {
@@ -3798,9 +3798,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:38",
-               "stop_time": null
+               "arrival_time": "22:38",
+               "departure_time": "22:39",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -3810,9 +3810,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:21",
-               "stop_time": null
+               "arrival_time": "07:21",
+               "departure_time": "07:22",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -3822,9 +3822,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:57",
-               "stop_time": null
+               "arrival_time": "11:57",
+               "departure_time": "11:58",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -3834,9 +3834,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "17:51",
-               "stop_time": null
+               "arrival_time": "17:51",
+               "departure_time": "17:52",
+               "stop_time": 1
             },
             {
                "ref": 801,
@@ -3847,7 +3847,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "18:15",
+               "departure_time": "19:55",
                "stop_time": null
             },
             {
@@ -3894,9 +3894,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:16",
-               "stop_time": null
+               "arrival_time": "12:16",
+               "departure_time": "12:18",
+               "stop_time": 2
             },
             {
                "ref": 854,
@@ -3906,9 +3906,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:48",
-               "stop_time": null
+               "arrival_time": "11:48",
+               "departure_time": "11:50",
+               "stop_time": 2
             },
             {
                "ref": 869,
@@ -3990,7 +3990,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "05:50",
                "stop_time": null
             },
@@ -4002,7 +4002,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "06:25",
                "stop_time": null
             },
@@ -4014,7 +4014,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "16:55",
                "stop_time": null
             }
@@ -4028,8 +4028,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:27",
+               "arrival_time": "14:27",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -4040,8 +4040,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "23:33",
+               "arrival_time": "23:33",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -4052,8 +4052,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:52",
+               "arrival_time": "12:52",
+               "departure_time": "-",
                "stop_time": null
             }
          ],
@@ -4306,9 +4306,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "21:35",
-               "stop_time": null
+               "arrival_time": "21:35",
+               "departure_time": "21:37",
+               "stop_time": 2
             },
             {
                "ref": 682,
@@ -4318,9 +4318,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:26",
-               "stop_time": null
+               "arrival_time": "08:26",
+               "departure_time": "08:28",
+               "stop_time": 2
             },
             {
                "ref": 683,
@@ -4330,9 +4330,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:54",
-               "stop_time": null
+               "arrival_time": "10:54",
+               "departure_time": "10:55",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -4342,9 +4342,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:55",
-               "stop_time": null
+               "arrival_time": "18:55",
+               "departure_time": "18:58",
+               "stop_time": 3
             },
             {
                "ref": 853,
@@ -4354,9 +4354,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:27",
-               "stop_time": null
+               "arrival_time": "11:27",
+               "departure_time": "11:31",
+               "stop_time": 4
             },
             {
                "ref": 854,
@@ -4366,9 +4366,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:31",
-               "stop_time": null
+               "arrival_time": "12:31",
+               "departure_time": "12:35",
+               "stop_time": 4
             }
          ]
       }
@@ -4399,9 +4399,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:24",
-               "stop_time": null
+               "arrival_time": "19:24",
+               "departure_time": "19:25",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -4411,9 +4411,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:20",
-               "stop_time": null
+               "arrival_time": "10:20",
+               "departure_time": "10:21",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -4423,9 +4423,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:54",
-               "stop_time": null
+               "arrival_time": "08:54",
+               "departure_time": "08:55",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -4435,9 +4435,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:51",
-               "stop_time": null
+               "arrival_time": "20:51",
+               "departure_time": "20:52",
+               "stop_time": 1
             }
          ]
       }
@@ -4484,9 +4484,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:43",
-               "stop_time": null
+               "arrival_time": "13:43",
+               "departure_time": "13:44",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -4496,9 +4496,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:23",
-               "stop_time": null
+               "arrival_time": "10:23",
+               "departure_time": "10:24",
+               "stop_time": 1
             },
             {
                "ref": 869,
@@ -4625,9 +4625,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:45",
-               "stop_time": null
+               "arrival_time": "09:45",
+               "departure_time": "09:47",
+               "stop_time": 2
             },
             {
                "ref": 854,
@@ -4637,9 +4637,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:00",
-               "stop_time": null
+               "arrival_time": "14:00",
+               "departure_time": "14:02",
+               "stop_time": 2
             }
          ]
       }
@@ -4671,9 +4671,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:54",
-               "stop_time": null
+               "arrival_time": "13:54",
+               "departure_time": "13:55",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -4683,9 +4683,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:12",
-               "stop_time": null
+               "arrival_time": "10:12",
+               "departure_time": "10:13",
+               "stop_time": 1
             },
             {
                "ref": 869,
@@ -4861,9 +4861,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "15:24",
-               "stop_time": null
+               "arrival_time": "15:24",
+               "departure_time": "15:25",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -4873,9 +4873,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:42",
-               "stop_time": null
+               "arrival_time": "08:42",
+               "departure_time": "08:43",
+               "stop_time": 1
             }
          ]
       }
@@ -4907,9 +4907,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:21",
-               "stop_time": null
+               "arrival_time": "20:21",
+               "departure_time": "20:42",
+               "stop_time": 21
             },
             {
                "ref": 682,
@@ -4919,9 +4919,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:26",
-               "stop_time": null
+               "arrival_time": "09:26",
+               "departure_time": "09:27",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -4931,9 +4931,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:51",
-               "stop_time": null
+               "arrival_time": "09:51",
+               "departure_time": "10:02",
+               "stop_time": 11
             },
             {
                "ref": 684,
@@ -4943,9 +4943,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:56",
-               "stop_time": null
+               "arrival_time": "19:56",
+               "departure_time": "19:57",
+               "stop_time": 1
             },
             {
                "ref": 853,
@@ -4955,9 +4955,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:20",
-               "stop_time": null
+               "arrival_time": "10:20",
+               "departure_time": "10:40",
+               "stop_time": 20
             },
             {
                "ref": 854,
@@ -4967,9 +4967,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:13",
-               "stop_time": null
+               "arrival_time": "13:13",
+               "departure_time": "13:33",
+               "stop_time": 20
             }
          ]
       }
@@ -5070,9 +5070,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "21:47",
-               "stop_time": null
+               "arrival_time": "21:47",
+               "departure_time": "21:48",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -5082,9 +5082,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:15",
-               "stop_time": null
+               "arrival_time": "08:15",
+               "departure_time": "08:16",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -5094,9 +5094,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:05",
-               "stop_time": null
+               "arrival_time": "11:05",
+               "departure_time": "11:08",
+               "stop_time": 3
             },
             {
                "ref": 684,
@@ -5106,9 +5106,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:44",
-               "stop_time": null
+               "arrival_time": "18:44",
+               "departure_time": "18:45",
+               "stop_time": 1
             },
             {
                "ref": 853,
@@ -5118,9 +5118,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:40",
-               "stop_time": null
+               "arrival_time": "11:40",
+               "departure_time": "11:41",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -5130,9 +5130,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:21",
-               "stop_time": null
+               "arrival_time": "12:21",
+               "departure_time": "12:22",
+               "stop_time": 1
             }
          ]
       }
@@ -5163,9 +5163,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:06",
-               "stop_time": null
+               "arrival_time": "20:06",
+               "departure_time": "20:10",
+               "stop_time": 4
             },
             {
                "ref": 682,
@@ -5175,9 +5175,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:38",
-               "stop_time": null
+               "arrival_time": "09:38",
+               "departure_time": "09:39",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -5187,9 +5187,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:36",
-               "stop_time": null
+               "arrival_time": "09:36",
+               "departure_time": "09:40",
+               "stop_time": 4
             },
             {
                "ref": 684,
@@ -5199,9 +5199,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:08",
-               "stop_time": null
+               "arrival_time": "20:08",
+               "departure_time": "20:10",
+               "stop_time": 2
             }
          ]
       }
@@ -5230,7 +5230,7 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "09:20",
                "stop_time": null
             }
@@ -5244,8 +5244,8 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:33",
+               "arrival_time": "14:33",
+               "departure_time": "-",
                "stop_time": null
             }
          ],
@@ -5278,9 +5278,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "-",
-               "stop_time": null
+               "arrival_time": "09:35",
+               "departure_time": "09:36",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -5290,9 +5290,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "-",
-               "stop_time": null
+               "arrival_time": "14:08",
+               "departure_time": "14:09",
+               "stop_time": 1
             }
          ]
       }
@@ -5323,9 +5323,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "-",
-               "stop_time": null
+               "arrival_time": "14:24",
+               "departure_time": "14:25",
+               "stop_time": 1
             }
          ]
       }
@@ -5413,9 +5413,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "06:10",
-               "stop_time": null
+               "arrival_time": "06:10",
+               "departure_time": "06:12",
+               "stop_time": 2
             },
             {
                "ref": 634,
@@ -5425,9 +5425,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "14:02",
-               "stop_time": null
+               "arrival_time": "14:02",
+               "departure_time": "14:07",
+               "stop_time": 5
             },
             {
                "ref": 681,
@@ -5437,9 +5437,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "23:03",
-               "stop_time": null
+               "arrival_time": "23:03",
+               "departure_time": "23:13",
+               "stop_time": 10
             },
             {
                "ref": 682,
@@ -5449,9 +5449,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "06:45",
-               "stop_time": null
+               "arrival_time": "06:45",
+               "departure_time": "06:55",
+               "stop_time": 10
             },
             {
                "ref": 683,
@@ -5461,9 +5461,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:22",
-               "stop_time": null
+               "arrival_time": "12:22",
+               "departure_time": "12:32",
+               "stop_time": 10
             },
             {
                "ref": 684,
@@ -5473,9 +5473,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "17:15",
-               "stop_time": null
+               "arrival_time": "17:15",
+               "departure_time": "17:25",
+               "stop_time": 10
             },
             {
                "ref": 853,
@@ -5485,9 +5485,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:30",
-               "stop_time": null
+               "arrival_time": "12:30",
+               "departure_time": "12:40",
+               "stop_time": 10
             },
             {
                "ref": 854,
@@ -5497,9 +5497,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:29",
-               "stop_time": null
+               "arrival_time": "11:29",
+               "departure_time": "11:36",
+               "stop_time": 7
             },
             {
                "ref": 869,
@@ -5716,7 +5716,7 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "10:50",
                "stop_time": null
             }
@@ -5730,8 +5730,8 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:19",
+               "arrival_time": "09:19",
+               "departure_time": "-",
                "stop_time": null
             }
          ],
@@ -5809,9 +5809,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:07",
-               "stop_time": null
+               "arrival_time": "22:07",
+               "departure_time": "22:08",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -5821,9 +5821,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:55",
-               "stop_time": null
+               "arrival_time": "07:55",
+               "departure_time": "07:56",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -5833,9 +5833,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:27",
-               "stop_time": null
+               "arrival_time": "11:27",
+               "departure_time": "11:28",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -5845,9 +5845,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:24",
-               "stop_time": null
+               "arrival_time": "18:24",
+               "departure_time": "18:25",
+               "stop_time": 1
             }
          ]
       }
@@ -5894,9 +5894,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:18",
-               "stop_time": null
+               "arrival_time": "22:18",
+               "departure_time": "22:21",
+               "stop_time": 3
             },
             {
                "ref": 682,
@@ -5906,9 +5906,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:42",
-               "stop_time": null
+               "arrival_time": "07:42",
+               "departure_time": "07:45",
+               "stop_time": 3
             },
             {
                "ref": 683,
@@ -5918,9 +5918,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:38",
-               "stop_time": null
+               "arrival_time": "11:38",
+               "departure_time": "11:40",
+               "stop_time": 2
             },
             {
                "ref": 684,
@@ -5930,9 +5930,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:11",
-               "stop_time": null
+               "arrival_time": "18:11",
+               "departure_time": "18:14",
+               "stop_time": 3
             },
             {
                "ref": 853,
@@ -5942,9 +5942,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:59",
-               "stop_time": null
+               "arrival_time": "11:59",
+               "departure_time": "12:05",
+               "stop_time": 6
             },
             {
                "ref": 854,
@@ -5954,9 +5954,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:00",
-               "stop_time": null
+               "arrival_time": "12:00",
+               "departure_time": "12:03",
+               "stop_time": 3
             },
             {
                "ref": 869,
@@ -6036,9 +6036,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:26",
-               "stop_time": null
+               "arrival_time": "22:26",
+               "departure_time": "22:27",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -6048,9 +6048,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "07:34",
-               "stop_time": null
+               "arrival_time": "07:34",
+               "departure_time": "07:35",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -6060,9 +6060,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:45",
-               "stop_time": null
+               "arrival_time": "11:45",
+               "departure_time": "11:46",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -6072,9 +6072,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:04",
-               "stop_time": null
+               "arrival_time": "18:04",
+               "departure_time": "18:05",
+               "stop_time": 1
             }
          ]
       }
@@ -6243,9 +6243,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:36",
-               "stop_time": null
+               "arrival_time": "11:36",
+               "departure_time": "11:37",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -6255,9 +6255,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:25",
-               "stop_time": null
+               "arrival_time": "12:25",
+               "departure_time": "12:26",
+               "stop_time": 1
             }
          ]
       }
@@ -6288,9 +6288,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "21:03",
-               "stop_time": null
+               "arrival_time": "21:03",
+               "departure_time": "21:04",
+               "stop_time": 1
             },
             {
                "ref": 682,
@@ -6300,9 +6300,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:04",
-               "stop_time": null
+               "arrival_time": "09:04",
+               "departure_time": "09:05",
+               "stop_time": 1
             },
             {
                "ref": 683,
@@ -6312,9 +6312,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:22",
-               "stop_time": null
+               "arrival_time": "10:22",
+               "departure_time": "10:23",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -6324,9 +6324,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:34",
-               "stop_time": null
+               "arrival_time": "19:34",
+               "departure_time": "19:35",
+               "stop_time": 1
             },
             {
                "ref": 853,
@@ -6336,9 +6336,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:03",
-               "stop_time": null
+               "arrival_time": "11:03",
+               "departure_time": "11:04",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -6348,9 +6348,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:52",
-               "stop_time": null
+               "arrival_time": "12:52",
+               "departure_time": "12:53",
+               "stop_time": 1
             }
          ]
       }
@@ -6382,9 +6382,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:53",
-               "stop_time": null
+               "arrival_time": "12:53",
+               "departure_time": "12:54",
+               "stop_time": 1
             },
             {
                "ref": 854,
@@ -6394,9 +6394,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:15",
-               "stop_time": null
+               "arrival_time": "11:15",
+               "departure_time": "11:16",
+               "stop_time": 1
             }
          ]
       }
@@ -6516,7 +6516,7 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "08:25",
                "stop_time": null
             },
@@ -6639,7 +6639,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "20:50",
+               "departure_time": "22:30",
                "stop_time": null
             },
             {
@@ -6662,8 +6662,8 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "15:46",
+               "arrival_time": "15:46",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -6889,9 +6889,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:53",
-               "stop_time": null
+               "arrival_time": "20:53",
+               "departure_time": "20:55",
+               "stop_time": 2
             },
             {
                "ref": 682,
@@ -6901,9 +6901,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:13",
-               "stop_time": null
+               "arrival_time": "09:13",
+               "departure_time": "09:15",
+               "stop_time": 2
             },
             {
                "ref": 683,
@@ -6913,9 +6913,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:13",
-               "stop_time": null
+               "arrival_time": "10:13",
+               "departure_time": "10:14",
+               "stop_time": 1
             },
             {
                "ref": 684,
@@ -6925,9 +6925,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:43",
-               "stop_time": null
+               "arrival_time": "19:43",
+               "departure_time": "19:45",
+               "stop_time": 2
             },
             {
                "ref": 801,
@@ -6938,7 +6938,7 @@ export const stations = {
                "start_date": null,
                "end_date": null,
                "arrival_time": null,
-               "departure_time": "17:26",
+               "departure_time": "19:06",
                "stop_time": null
             },
             {
@@ -6985,9 +6985,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:49",
-               "stop_time": null
+               "arrival_time": "10:49",
+               "departure_time": "10:56",
+               "stop_time": 7
             },
             {
                "ref": 854,
@@ -6997,9 +6997,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:00",
-               "stop_time": null
+               "arrival_time": "13:00",
+               "departure_time": "13:04",
+               "stop_time": 4
             }
          ]
       }
@@ -7508,9 +7508,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "06:54",
-               "stop_time": null
+               "arrival_time": "06:54",
+               "departure_time": "06:59",
+               "stop_time": 5
             },
             {
                "ref": 634,
@@ -7520,9 +7520,9 @@ export const stations = {
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:10",
-               "stop_time": null
+               "arrival_time": "13:10",
+               "departure_time": "13:15",
+               "stop_time": 5
             },
             {
                "ref": 853,
@@ -7532,9 +7532,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748822400000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "13:04",
-               "stop_time": null
+               "arrival_time": "13:04",
+               "departure_time": "13:07",
+               "stop_time": 3
             },
             {
                "ref": 854,
@@ -7544,9 +7544,9 @@ export const stations = {
                "frequency": "every second day",
                "start_date": 1748736000000,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:00",
-               "stop_time": null
+               "arrival_time": "11:00",
+               "departure_time": "11:03",
+               "stop_time": 3
             },
             {
                "ref": 869,
