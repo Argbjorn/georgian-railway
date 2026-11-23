@@ -1,0 +1,11 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Электровоз ВЛ11 с пассажирским вагоном
+        en: VL11 electric locomotive with a passenger coach
+        ka: ელმავალი VL11 სამგზავრო ვაგონით
+      copyright: BVV
+      copyright_link:

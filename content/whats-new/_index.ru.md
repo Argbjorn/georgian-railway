@@ -5,7 +5,7 @@ description: "Изменения в расписании поездов Груз
 menu:
   main:
     identifier: whats-new
-    weight: 4
+    weight: 5
 toc: false
 cascade:
   - target:

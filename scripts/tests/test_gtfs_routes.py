@@ -18,8 +18,8 @@ def train(ref, start, end, train_type=None, operator='GR', name=None):
 
 class TestGroupLines:
     def test_pair_and_analogues_form_one_line(self):
-        trains = [train(804, 'tbilisi', 'batumi', 'stadler'), train(801, 'batumi', 'tbilisi', 'stadler'),
-                  train(802, 'tbilisi', 'batumi', 'stadler'), train(803, 'batumi', 'tbilisi', 'stadler')]
+        trains = [train(804, 'tbilisi', 'batumi', 'stadler-kiss'), train(801, 'batumi', 'tbilisi', 'stadler-kiss'),
+                  train(802, 'tbilisi', 'batumi', 'stadler-kiss'), train(803, 'batumi', 'tbilisi', 'stadler-kiss')]
         [line] = routes.group_lines(trains)
         assert line.route_id == 'tbilisi-batumi'
         assert [t['ref'] for t in line.trains] == [801, 802, 803, 804]
@@ -30,7 +30,7 @@ class TestGroupLines:
         assert directions == {1: 0, 2: 1}
 
     def test_train_type_does_not_split_line(self):
-        [line] = routes.group_lines([train(1, 'a', 'b', 'stadler'), train(2, 'b', 'a', 'suburban')])
+        [line] = routes.group_lines([train(1, 'a', 'b', 'stadler-kiss'), train(2, 'b', 'a', 'er2')])
         assert [t['ref'] for t in line.trains] == [1, 2]
 
     def test_route_id_from_cities_not_stations(self):
@@ -111,8 +111,8 @@ class TestBuildRoutes:
         }]
 
     def test_url_prefers_direction_page(self):
-        [line] = routes.group_lines([train(801, 'batumicentral', 'tbilisicentralstation', 'stadler', name='Batumi → Tbilisi'),
-                                     train(802, 'tbilisicentralstation', 'batumicentral', 'stadler', name='Tbilisi → Batumi')])
+        [line] = routes.group_lines([train(801, 'batumicentral', 'tbilisicentralstation', 'stadler-kiss', name='Batumi → Tbilisi'),
+                                     train(802, 'tbilisicentralstation', 'batumicentral', 'stadler-kiss', name='Tbilisi → Batumi')])
         pages = {('tbilisicentralstation', 'batumicentral'): 'tbilisi-batumi'}
         assert routes.line_url(line, pages) == 'https://georailway.com/directions/tbilisi-batumi/'
         assert routes.line_url(line, pages, 'ru') == 'https://georailway.com/ru/directions/tbilisi-batumi/'

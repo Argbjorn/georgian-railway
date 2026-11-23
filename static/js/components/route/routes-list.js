@@ -868,7 +868,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -1074,7 +1074,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -1280,9 +1280,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1294,70 +1294,70 @@ export const routes = [
             "code": "kutaisi1",
             "role": "start",
             "departure_time": "05:50",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "06:10",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "06:12",
+            "arrival_time": "06:10",
+            "stop_time": 2
          },
          {
             "code": "ajameti",
             "role": "middle",
-            "departure_time": "06:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "06:22",
+            "arrival_time": "06:21",
+            "stop_time": 1
          },
          {
             "code": "argveti",
             "role": "middle",
-            "departure_time": "06:40",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "06:41",
+            "arrival_time": "06:40",
+            "stop_time": 1
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "06:54",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "06:59",
+            "arrival_time": "06:54",
+            "stop_time": 5
          },
          {
             "code": "beghlevi",
             "role": "middle",
-            "departure_time": "07:43",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:46",
+            "arrival_time": "07:43",
+            "stop_time": 3
          },
          {
             "code": "chiatura",
             "role": "middle",
-            "departure_time": "08:33",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:38",
+            "arrival_time": "08:33",
+            "stop_time": 5
          },
          {
             "code": "chikauri",
             "role": "middle",
-            "departure_time": "08:50",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:53",
+            "arrival_time": "08:50",
+            "stop_time": 3
          },
          {
             "code": "darkveti",
             "role": "middle",
-            "departure_time": "09:02",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:04",
+            "arrival_time": "09:02",
+            "stop_time": 2
          },
          {
             "code": "sachkhere",
             "role": "end",
-            "departure_time": "09:19",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "09:19",
             "stop_time": null
          }
       ],
@@ -1385,9 +1385,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1399,70 +1399,70 @@ export const routes = [
             "code": "sachkhere",
             "role": "start",
             "departure_time": "10:50",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "darkveti",
             "role": "middle",
-            "departure_time": "11:05",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:07",
+            "arrival_time": "11:05",
+            "stop_time": 2
          },
          {
             "code": "chikauri",
             "role": "middle",
-            "departure_time": "11:16",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:19",
+            "arrival_time": "11:16",
+            "stop_time": 3
          },
          {
             "code": "chiatura",
             "role": "middle",
-            "departure_time": "11:31",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:36",
+            "arrival_time": "11:31",
+            "stop_time": 5
          },
          {
             "code": "beghlevi",
             "role": "middle",
-            "departure_time": "12:23",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:26",
+            "arrival_time": "12:23",
+            "stop_time": 3
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "13:10",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:15",
+            "arrival_time": "13:10",
+            "stop_time": 5
          },
          {
             "code": "argveti",
             "role": "middle",
-            "departure_time": "13:28",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:30",
+            "arrival_time": "13:28",
+            "stop_time": 2
          },
          {
             "code": "ajameti",
             "role": "middle",
-            "departure_time": "13:51",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:52",
+            "arrival_time": "13:51",
+            "stop_time": 1
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "14:02",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:07",
+            "arrival_time": "14:02",
+            "stop_time": 5
          },
          {
             "code": "kutaisi1",
             "role": "end",
-            "departure_time": "14:27",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "14:27",
             "stop_time": null
          }
       ],
@@ -1490,9 +1490,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1504,126 +1504,126 @@ export const routes = [
             "code": "batumicentral",
             "role": "start",
             "departure_time": "19:20",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "makhinjauri",
             "role": "middle",
-            "departure_time": "19:24",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:25",
+            "arrival_time": "19:24",
+            "stop_time": 1
          },
          {
             "code": "chakvi",
             "role": "middle",
-            "departure_time": "19:39",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:40",
+            "arrival_time": "19:39",
+            "stop_time": 1
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "19:54",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:56",
+            "arrival_time": "19:54",
+            "stop_time": 2
          },
          {
             "code": "ochkhamuri",
             "role": "middle",
-            "departure_time": "20:06",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:10",
+            "arrival_time": "20:06",
+            "stop_time": 4
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "20:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:42",
+            "arrival_time": "20:21",
+            "stop_time": 21
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "20:53",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:55",
+            "arrival_time": "20:53",
+            "stop_time": 2
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "21:03",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:04",
+            "arrival_time": "21:03",
+            "stop_time": 1
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "21:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:19",
+            "arrival_time": "21:18",
+            "stop_time": 1
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "21:35",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:37",
+            "arrival_time": "21:35",
+            "stop_time": 2
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "21:47",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:48",
+            "arrival_time": "21:47",
+            "stop_time": 1
          },
          {
             "code": "sajavakho",
             "role": "middle",
-            "departure_time": "22:07",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:08",
+            "arrival_time": "22:07",
+            "stop_time": 1
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "22:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:21",
+            "arrival_time": "22:18",
+            "stop_time": 3
          },
          {
             "code": "samtredia2",
             "role": "middle",
-            "departure_time": "22:26",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:27",
+            "arrival_time": "22:26",
+            "stop_time": 1
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "22:38",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:39",
+            "arrival_time": "22:38",
+            "stop_time": 1
          },
          {
             "code": "brotseula",
             "role": "middle",
-            "departure_time": "22:57",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:58",
+            "arrival_time": "22:57",
+            "stop_time": 1
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "23:03",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "23:13",
+            "arrival_time": "23:03",
+            "stop_time": 10
          },
          {
             "code": "kutaisi1",
             "role": "end",
-            "departure_time": "23:33",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "23:33",
             "stop_time": null
          }
       ],
@@ -1654,9 +1654,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1668,126 +1668,126 @@ export const routes = [
             "code": "kutaisi1",
             "role": "start",
             "departure_time": "06:25",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "06:45",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "06:55",
+            "arrival_time": "06:45",
+            "stop_time": 10
          },
          {
             "code": "brotseula",
             "role": "middle",
-            "departure_time": "07:01",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:02",
+            "arrival_time": "07:01",
+            "stop_time": 1
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "07:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:22",
+            "arrival_time": "07:21",
+            "stop_time": 1
          },
          {
             "code": "samtredia2",
             "role": "middle",
-            "departure_time": "07:34",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:35",
+            "arrival_time": "07:34",
+            "stop_time": 1
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "07:42",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:45",
+            "arrival_time": "07:42",
+            "stop_time": 3
          },
          {
             "code": "sajavakho",
             "role": "middle",
-            "departure_time": "07:55",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "07:56",
+            "arrival_time": "07:55",
+            "stop_time": 1
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "08:15",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:16",
+            "arrival_time": "08:15",
+            "stop_time": 1
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "08:26",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:28",
+            "arrival_time": "08:26",
+            "stop_time": 2
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "08:44",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:50",
+            "arrival_time": "08:44",
+            "stop_time": 6
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "09:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:05",
+            "arrival_time": "09:04",
+            "stop_time": 1
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "09:13",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:15",
+            "arrival_time": "09:13",
+            "stop_time": 2
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "09:26",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:27",
+            "arrival_time": "09:26",
+            "stop_time": 1
          },
          {
             "code": "ochkhamuri",
             "role": "middle",
-            "departure_time": "09:38",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:39",
+            "arrival_time": "09:38",
+            "stop_time": 1
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "09:49",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:51",
+            "arrival_time": "09:49",
+            "stop_time": 2
          },
          {
             "code": "chakvi",
             "role": "middle",
-            "departure_time": "10:05",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:06",
+            "arrival_time": "10:05",
+            "stop_time": 1
          },
          {
             "code": "makhinjauri",
             "role": "middle",
-            "departure_time": "10:20",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:21",
+            "arrival_time": "10:20",
+            "stop_time": 1
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "departure_time": "10:25",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "10:25",
             "stop_time": null
          }
       ],
@@ -1818,9 +1818,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1832,126 +1832,126 @@ export const routes = [
             "code": "batumicentral",
             "role": "start",
             "departure_time": "08:50",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "makhinjauri",
             "role": "middle",
-            "departure_time": "08:54",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:55",
+            "arrival_time": "08:54",
+            "stop_time": 1
          },
          {
             "code": "chakvi",
             "role": "middle",
-            "departure_time": "09:09",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:10",
+            "arrival_time": "09:09",
+            "stop_time": 1
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "09:24",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:26",
+            "arrival_time": "09:24",
+            "stop_time": 2
          },
          {
             "code": "ochkhamuri",
             "role": "middle",
-            "departure_time": "09:36",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:40",
+            "arrival_time": "09:36",
+            "stop_time": 4
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "09:51",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:02",
+            "arrival_time": "09:51",
+            "stop_time": 11
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "10:13",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:14",
+            "arrival_time": "10:13",
+            "stop_time": 1
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "10:22",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:23",
+            "arrival_time": "10:22",
+            "stop_time": 1
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "10:37",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:38",
+            "arrival_time": "10:37",
+            "stop_time": 1
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "10:54",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:55",
+            "arrival_time": "10:54",
+            "stop_time": 1
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "11:05",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:08",
+            "arrival_time": "11:05",
+            "stop_time": 3
          },
          {
             "code": "sajavakho",
             "role": "middle",
-            "departure_time": "11:27",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:28",
+            "arrival_time": "11:27",
+            "stop_time": 1
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "11:38",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:40",
+            "arrival_time": "11:38",
+            "stop_time": 2
          },
          {
             "code": "samtredia2",
             "role": "middle",
-            "departure_time": "11:45",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:46",
+            "arrival_time": "11:45",
+            "stop_time": 1
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "11:57",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:58",
+            "arrival_time": "11:57",
+            "stop_time": 1
          },
          {
             "code": "brotseula",
             "role": "middle",
-            "departure_time": "12:16",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:17",
+            "arrival_time": "12:16",
+            "stop_time": 1
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "12:22",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:32",
+            "arrival_time": "12:22",
+            "stop_time": 10
          },
          {
             "code": "kutaisi1",
             "role": "end",
-            "departure_time": "12:52",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "12:52",
             "stop_time": null
          }
       ],
@@ -1982,9 +1982,9 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -1996,126 +1996,126 @@ export const routes = [
             "code": "kutaisi1",
             "role": "start",
             "departure_time": "16:55",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "17:15",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "17:25",
+            "arrival_time": "17:15",
+            "stop_time": 10
          },
          {
             "code": "brotseula",
             "role": "middle",
-            "departure_time": "17:31",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "17:32",
+            "arrival_time": "17:31",
+            "stop_time": 1
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "17:51",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "17:52",
+            "arrival_time": "17:51",
+            "stop_time": 1
          },
          {
             "code": "samtredia2",
             "role": "middle",
-            "departure_time": "18:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:05",
+            "arrival_time": "18:04",
+            "stop_time": 1
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "18:11",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:14",
+            "arrival_time": "18:11",
+            "stop_time": 3
          },
          {
             "code": "sajavakho",
             "role": "middle",
-            "departure_time": "18:24",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:25",
+            "arrival_time": "18:24",
+            "stop_time": 1
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "18:44",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:45",
+            "arrival_time": "18:44",
+            "stop_time": 1
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "18:55",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:58",
+            "arrival_time": "18:55",
+            "stop_time": 3
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "19:14",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:20",
+            "arrival_time": "19:14",
+            "stop_time": 6
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "19:34",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:35",
+            "arrival_time": "19:34",
+            "stop_time": 1
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "19:43",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:45",
+            "arrival_time": "19:43",
+            "stop_time": 2
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "19:56",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:57",
+            "arrival_time": "19:56",
+            "stop_time": 1
          },
          {
             "code": "ochkhamuri",
             "role": "middle",
-            "departure_time": "20:08",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:10",
+            "arrival_time": "20:08",
+            "stop_time": 2
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "20:20",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:22",
+            "arrival_time": "20:20",
+            "stop_time": 2
          },
          {
             "code": "chakvi",
             "role": "middle",
-            "departure_time": "20:36",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:37",
+            "arrival_time": "20:36",
+            "stop_time": 1
          },
          {
             "code": "makhinjauri",
             "role": "middle",
-            "departure_time": "20:51",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:52",
+            "arrival_time": "20:51",
+            "stop_time": 1
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "departure_time": "20:56",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "20:56",
             "stop_time": null
          }
       ],
@@ -2146,7 +2146,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2352,7 +2352,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2558,7 +2558,7 @@ export const routes = [
       "online": true,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
-      "train_type": "stadler",
+      "train_type": "stadler-kiss",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2571,35 +2571,35 @@ export const routes = [
          {
             "code": "batumicentral",
             "role": "start",
-            "departure_time": "16:50",
+            "departure_time": "18:30",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "17:06",
+            "departure_time": "18:46",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "17:26",
+            "departure_time": "19:06",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "18:15",
+            "departure_time": "19:55",
             "arrival_time": null,
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "20:50",
+            "departure_time": "22:30",
             "arrival_time": null,
             "stop_time": null
          }
@@ -2631,7 +2631,7 @@ export const routes = [
       "online": true,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
-      "train_type": "stadler",
+      "train_type": "stadler-kiss",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2704,7 +2704,7 @@ export const routes = [
       "online": true,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
-      "train_type": "stadler",
+      "train_type": "stadler-kiss",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2777,7 +2777,7 @@ export const routes = [
       "online": true,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
-      "train_type": "stadler",
+      "train_type": "stadler-kiss",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -2846,13 +2846,13 @@ export const routes = [
       "frequency": "every second day",
       "start_date": 1748822400000,
       "end_date": null,
-      "complete": false,
+      "complete": true,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -2864,175 +2864,175 @@ export const routes = [
             "code": "ozurgeti",
             "role": "start",
             "departure_time": "09:20",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "platform11km",
             "role": "middle",
-            "departure_time": "-",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:36",
+            "arrival_time": "09:35",
+            "stop_time": 1
          },
          {
             "code": "meria",
             "role": "middle",
-            "departure_time": "09:45",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:47",
+            "arrival_time": "09:45",
+            "stop_time": 2
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "10:20",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:40",
+            "arrival_time": "10:20",
+            "stop_time": 20
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "10:49",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:56",
+            "arrival_time": "10:49",
+            "stop_time": 7
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "11:03",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:04",
+            "arrival_time": "11:03",
+            "stop_time": 1
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "11:12",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:19",
+            "arrival_time": "11:12",
+            "stop_time": 7
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "11:27",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:31",
+            "arrival_time": "11:27",
+            "stop_time": 4
          },
          {
             "code": "shukhuti",
             "role": "middle",
-            "departure_time": "11:36",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:37",
+            "arrival_time": "11:36",
+            "stop_time": 1
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "11:40",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:41",
+            "arrival_time": "11:40",
+            "stop_time": 1
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "11:59",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:05",
+            "arrival_time": "11:59",
+            "stop_time": 6
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "12:16",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:18",
+            "arrival_time": "12:16",
+            "stop_time": 2
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "12:30",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:40",
+            "arrival_time": "12:30",
+            "stop_time": 10
          },
          {
             "code": "sviri",
             "role": "middle",
-            "departure_time": "12:53",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:54",
+            "arrival_time": "12:53",
+            "stop_time": 1
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "13:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:07",
+            "arrival_time": "13:04",
+            "stop_time": 3
          },
          {
             "code": "dzirula",
             "role": "middle",
-            "departure_time": "13:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:19",
+            "arrival_time": "13:18",
+            "stop_time": 1
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "13:28",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:30",
+            "arrival_time": "13:28",
+            "stop_time": 2
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "13:43",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:44",
+            "arrival_time": "13:43",
+            "stop_time": 1
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "13:54",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:55",
+            "arrival_time": "13:54",
+            "stop_time": 1
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "14:12",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:15",
+            "arrival_time": "14:12",
+            "stop_time": 3
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "14:31",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:32",
+            "arrival_time": "14:31",
+            "stop_time": 1
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "14:44",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:46",
+            "arrival_time": "14:44",
+            "stop_time": 2
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "15:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "15:05",
+            "arrival_time": "15:04",
+            "stop_time": 1
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "15:24",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "15:25",
+            "arrival_time": "15:24",
+            "stop_time": 1
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "15:46",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "15:46",
             "stop_time": null
          }
       ],
@@ -3056,13 +3056,13 @@ export const routes = [
       "frequency": "every second day",
       "start_date": 1748736000000,
       "end_date": null,
-      "complete": false,
+      "complete": true,
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -3074,189 +3074,189 @@ export const routes = [
             "code": "tbilisicentralstation",
             "role": "start",
             "departure_time": "08:25",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "mtskheta",
             "role": "middle",
-            "departure_time": "08:42",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:43",
+            "arrival_time": "08:42",
+            "stop_time": 1
          },
          {
             "code": "kaspi",
             "role": "middle",
-            "departure_time": "09:02",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:03",
+            "arrival_time": "09:02",
+            "stop_time": 1
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "09:20",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:22",
+            "arrival_time": "09:20",
+            "stop_time": 2
          },
          {
             "code": "kareli",
             "role": "middle",
-            "departure_time": "09:35",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:36",
+            "arrival_time": "09:35",
+            "stop_time": 1
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "09:52",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:55",
+            "arrival_time": "09:52",
+            "stop_time": 3
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "10:12",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:13",
+            "arrival_time": "10:12",
+            "stop_time": 1
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "10:23",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:24",
+            "arrival_time": "10:23",
+            "stop_time": 1
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "10:37",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:39",
+            "arrival_time": "10:37",
+            "stop_time": 2
          },
          {
             "code": "dzirula",
             "role": "middle",
-            "departure_time": "10:48",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:49",
+            "arrival_time": "10:48",
+            "stop_time": 1
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "11:00",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:03",
+            "arrival_time": "11:00",
+            "stop_time": 3
          },
          {
             "code": "sviri",
             "role": "middle",
-            "departure_time": "11:15",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:16",
+            "arrival_time": "11:15",
+            "stop_time": 1
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "11:29",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:36",
+            "arrival_time": "11:29",
+            "stop_time": 7
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "11:48",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:50",
+            "arrival_time": "11:48",
+            "stop_time": 2
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "12:00",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:03",
+            "arrival_time": "12:00",
+            "stop_time": 3
          },
          {
             "code": "nigoiti",
             "role": "middle",
-            "departure_time": "12:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:22",
+            "arrival_time": "12:21",
+            "stop_time": 1
          },
          {
             "code": "shukhuti",
             "role": "middle",
-            "departure_time": "12:25",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:26",
+            "arrival_time": "12:25",
+            "stop_time": 1
          },
          {
             "code": "lanchkhuti",
             "role": "middle",
-            "departure_time": "12:31",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:35",
+            "arrival_time": "12:31",
+            "stop_time": 4
          },
          {
             "code": "jumati",
             "role": "middle",
-            "departure_time": "12:43",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:44",
+            "arrival_time": "12:43",
+            "stop_time": 1
          },
          {
             "code": "supsa",
             "role": "middle",
-            "departure_time": "12:52",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:53",
+            "arrival_time": "12:52",
+            "stop_time": 1
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "13:00",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:04",
+            "arrival_time": "13:00",
+            "stop_time": 4
          },
          {
             "code": "natanebi",
             "role": "middle",
-            "departure_time": "13:13",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:33",
+            "arrival_time": "13:13",
+            "stop_time": 20
          },
          {
             "code": "meria",
             "role": "middle",
-            "departure_time": "14:00",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:02",
+            "arrival_time": "14:00",
+            "stop_time": 2
          },
          {
             "code": "platform11km",
             "role": "middle",
-            "departure_time": "-",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:09",
+            "arrival_time": "14:08",
+            "stop_time": 1
          },
          {
             "code": "kakhuri",
             "role": "middle",
-            "departure_time": "14:16",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:17",
+            "arrival_time": "14:16",
+            "stop_time": 1
          },
          {
             "code": "platform16km",
             "role": "middle",
-            "departure_time": "-",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "14:25",
+            "arrival_time": "14:24",
+            "stop_time": 1
          },
          {
             "code": "ozurgeti",
             "role": "end",
-            "departure_time": "14:33",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "14:33",
             "stop_time": null
          }
       ],
@@ -3858,7 +3858,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
@@ -3911,7 +3911,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
@@ -3964,7 +3964,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
@@ -4017,7 +4017,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": "This train was cancelled in spring 2026 without prior notice.",
@@ -4070,7 +4070,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4199,7 +4199,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4328,7 +4328,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4457,7 +4457,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "er2",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4586,7 +4586,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "locomotive-coach",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4666,7 +4666,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "locomotive-coach",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4774,7 +4774,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "locomotive-coach",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4882,7 +4882,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "locomotive-coach",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,
@@ -4990,7 +4990,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": "suburban",
+      "train_type": "locomotive-coach",
       "operator": "GR",
       "has_arrival_time": false,
       "description_en": null,

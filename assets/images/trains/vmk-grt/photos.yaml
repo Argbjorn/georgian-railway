@@ -1,0 +1,36 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Электропоезд GRT на вокзале Тбилиси
+        en: GRT electric train at Tbilisi Central Station
+        ka: ელექტრომატარებელი GRT თბილისის ცენტრალურ სადგურზე
+      copyright: Superalbs
+      copyright_link: https://commons.wikimedia.org/wiki/File:Georgian_Railway_VMK_Class_at_Tbilisi_1.jpg
+    - src: exterior-2.jpg
+      alt:
+        ru: Электропоезд VMK-002
+        en: VMK-002 electric train
+        ka: ელექტრომატარებელი VMK-002
+      copyright: Babach
+      copyright_link: https://commons.wikimedia.org/wiki/File:Georgian_Railways_VMK-002_2.JPG
+    - src: exterior-3.jpg
+      alt:
+        ru: Электропоезд GRT-002
+        en: GRT-002 electric train
+        ka: ელექტრომატარებელი GRT-002
+      copyright: BVV
+      copyright_link:
+  first:
+    - src: first-1.jpg
+      alt:
+        ru: Салон первого класса VMK/GRT
+        en: VMK/GRT first-class interior
+        ka: VMK/GRT-ის პირველი კლასის სალონი
+      copyright:
+        ru: Телеграм-канал GRS-014
+        en: GRS-014 Telegram channel
+        ka: Telegram-არხი GRS-014
+      copyright_link: https://t.me/GRS_014

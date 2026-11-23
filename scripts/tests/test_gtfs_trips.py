@@ -60,8 +60,8 @@ class TestServiceId:
 class TestBuildTrips:
     def test_rows(self):
         lines = routes.group_lines([
-            train(801, 'batumi', 'tbilisi', 'Batumi → Tbilisi', 'stadler'),
-            train(802, 'tbilisi', 'batumi', 'Tbilisi → Batumi', 'stadler'),
+            train(801, 'batumi', 'tbilisi', 'Batumi → Tbilisi', 'stadler-kiss'),
+            train(802, 'tbilisi', 'batumi', 'Tbilisi → Batumi', 'stadler-kiss'),
         ])
         assert trips.build_trips(lines) == [
             {
@@ -94,7 +94,7 @@ class TestBuildTrips:
         assert row['shape_id'] == '123'
 
     def test_non_stadler_has_no_wheelchair_info(self):
-        lines = routes.group_lines([train(617, 'borjomi', 'tbilisi', 'Borjomi → Tbilisi', 'suburban')])
+        lines = routes.group_lines([train(617, 'borjomi', 'tbilisi', 'Borjomi → Tbilisi', 'er2')])
         [row] = trips.build_trips(lines)
         assert row['wheelchair_accessible'] == 0
 

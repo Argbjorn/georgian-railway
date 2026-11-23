@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="content-max-width" style="display: flex;">
+  {{ partial "sidebar.html" (dict
+        "context" .
+        "disableSidebar" true
+        "displayPlaceholder" false
+    ) }}
+  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-narrow">
+    <article class="hx:w-full">
+      <div class="content">
+        {{ if .Title }}<h1>{{ .Title }}</h1>{{ end }}
+        {{ .Content }}
+      </div>
+      {{- $cards := "" -}}
+      {{- range .Pages -}}
+        {{- $image := "" -}}
+        {{- $width := 0 -}}
+        {{- $height := 0 -}}
+        {{- $dir := printf "images/trains/%s" .File.ContentBaseName -}}
+        {{- with resources.Get (printf "%s/photos.yaml" $dir) -}}
+          {{- with (transform.Unmarshal .).cover -}}
+            {{- with resources.Get (printf "%s/%s" $dir .) -}}
+              {{- $processed := .Fill "800x450 webp q80" -}}
+              {{- $image = $processed.RelPermalink -}}
+              {{- $width = $processed.Width -}}
+              {{- $height = $processed.Height -}}
+            {{- else -}}
+              {{- warnf "trains-list: cover %s from assets/%s/photos.yaml not found" . $dir -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $cards = printf "%s%s" $cards (partial "shortcodes/card" (dict
+              "page"     .
+              "link"     .RelPermalink
+              "title"    .LinkTitle
+              "subtitle" (.Summary | plainify)
+              "image"    $image
+              "alt"      .LinkTitle
+              "width"    $width
+              "height"   $height
+            )) -}}
+      {{- end -}}
+      <div class="trains-cards">
+        {{ partial "shortcodes/cards" (dict "cols" 3 "content" ($cards | safeHTML)) }}
+      </div>
+    </article>
+  </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": "{{ urls.AbsLangURL "trains" }}",
+        "name": {{ i18n "trains" | jsonify }},
+        "url": "{{ urls.AbsLangURL "trains" }}"
+      }
+    ]
+  }
+</script>
+{{ end }}

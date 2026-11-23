@@ -9,6 +9,17 @@ a {
     text-decoration: underline;
 }
 
+/* The rule above is unlayered, so it beats Hextra's layered hx:no-underline / hx:text-current on cards. */
+.hextra-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hextra pins the card text to the bottom (mt-auto), so one-line subtitles sit lower than their neighbours. */
+.trains-cards .hextra-card > div {
+    margin-top: 0;
+}
+
 /* Универсальный контейнер: ширина как у хэдера, без горизонтального скролла (routes, stations и др.) */
 .content-max-width {
   max-width: 72rem;
@@ -24,6 +35,27 @@ a {
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Hextra's single.html frames the text with a TOC column and a sidebar placeholder of the same width
+   that balances it. With toc: false the TOC column is empty, so both go, and the text gets the same
+   column as our layouts: 1.5rem side padding (like their wrapper) and 48rem max (like .content-narrow). */
+.hextra-toc:not(:has(*)) {
+  display: none;
+}
+
+/* :has() cannot be nested, hence "has a TOC column, but nothing inside it" instead of :has(> .hextra-toc:not(:has(*))).
+   Requiring the TOC column keeps the rule off the home page, which has the same container without one. */
+@media (min-width: 1280px) {
+  .hextra-max-page-width:has(> .hextra-toc):not(:has(> .hextra-toc *)) > .hextra-sidebar-container {
+    display: none;
+  }
+}
+
+#content.hextra-max-content-width {
+  max-width: 51rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Compact link list for routes/stations/directions list pages */
@@ -314,124 +346,284 @@ nav > a, li > a {
     text-decoration: underline solid var(--link-hover-color);
 }
 
-.dashed-link {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    border-bottom: 1px dashed var(--link-color);
-    color: var(--link-color);
-    margin-left: 5px;
-    line-height: 1;
-}
-
-.dashed-link:hover {
-    color: var(--link-hover-color);
-    border-bottom-color: var(--link-hover-color);
-}
-
-.train-info-description {
-    display: none;
-    margin: 8px 0;
-    padding: 12px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-    font-size: 0.9em;
-    line-height: 1.4;
-    color: #333;
-}
-
+/* Train photo gallery: layouts/shortcodes/train-gallery.html, assets/js/train-gallery.js */
 .train-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 1rem 0;
+    container-type: inline-size;
+    margin: 1.5rem 0;
 }
 
-.train-gallery img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.train-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.lightbox-figure {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.lightbox-figure img {
-    max-width: 100vw;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    min-height: 300px;
-    margin: auto;
-    object-fit: contain;
-}
-
-#lightbox-caption {
-    color: white;
-    margin-top: 1rem;
-    font-size: 1rem;
-    text-align: center;
+/* Defined below the container so that cqw resolves against the gallery width. */
+.tg-viewport {
     position: relative;
+    --tg-frame-height: min(66.667cqw, 70vh, 560px);
 }
 
-.lightbox-copyright {
-    color: #999;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    text-align: center;
-    font-style: italic;
-    position: relative;
-}
-
-.lightbox-copyright a {
-    color: #999;
-    text-decoration: underline;
-}
-
-.lightbox-copyright a:hover {
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .lightbox-figure img {
-        width: 100vw;
-        height: auto;
-        min-height: 300px;
-        object-fit: contain;
+@container (max-width: 640px) {
+    .tg-viewport {
+        --tg-frame-height: 75cqw;
     }
 }
 
-body.lightbox-open {
+/* Secondary groups (classes etc.) sit between paragraphs, so they get a lower frame. */
+.train-gallery--compact .tg-viewport {
+    --tg-frame-height: min(56.25cqw, 60vh, 360px);
+}
+
+.train-gallery--compact .tg-thumb {
+    height: 44px;
+}
+
+.tg-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+}
+
+.tg-track::-webkit-scrollbar {
+    display: none;
+}
+
+.tg-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    margin: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.tg-frame {
+    position: relative;
+    height: var(--tg-frame-height);
+    overflow: hidden;
+    border-radius: 8px;
+    background: #1f2937;
+    cursor: zoom-in;
+}
+
+.tg-blur {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(24px) brightness(0.8);
+    transform: scale(1.2);
+}
+
+.tg-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tg-caption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    padding-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.dark .tg-caption {
+    color: #9ca3af;
+}
+
+.tg-credit,
+.tg-credit a {
+    color: inherit;
+    font-style: italic;
+}
+
+.tg-nav {
+    position: absolute;
+    top: calc(var(--tg-frame-height) / 2);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.15s, background-color 0.15s;
+}
+
+.tg-nav:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.tg-nav:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tg-prev {
+    left: 0.5rem;
+}
+
+.tg-next {
+    right: 0.5rem;
+}
+
+/* On touch screens the photos are swiped; the arrows would only cover them. */
+@media (hover: none) {
+    .train-gallery:not(.is-fullscreen) .tg-nav {
+        display: none;
+    }
+}
+
+.tg-counter {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.tg-close {
+    display: none;
+}
+
+.tg-thumbs {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tg-thumbs::-webkit-scrollbar {
+    display: none;
+}
+
+.tg-thumb {
+    flex: 0 0 auto;
+    height: 56px;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.tg-thumb:hover {
+    opacity: 0.85;
+}
+
+.tg-thumb[aria-current="true"] {
+    opacity: 1;
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+.tg-thumb img {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+/* Fullscreen: the same gallery pinned over the page. */
+.train-gallery.is-fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: #000;
+}
+
+.is-fullscreen .tg-viewport {
+    flex: 1;
+    min-height: 0;
+}
+
+.is-fullscreen .tg-track {
+    height: 100%;
+}
+
+.is-fullscreen .tg-slide {
+    display: flex;
+    flex-direction: column;
+}
+
+.is-fullscreen .tg-frame {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    cursor: default;
+}
+
+.is-fullscreen .tg-blur {
+    display: none;
+}
+
+.is-fullscreen .tg-caption {
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    color: #d1d5db;
+    text-align: center;
+}
+
+.is-fullscreen .tg-nav {
+    top: 50%;
+}
+
+.is-fullscreen .tg-counter {
+    top: calc(0.75rem + env(safe-area-inset-top));
+    right: auto;
+    left: 0.75rem;
+}
+
+.is-fullscreen .tg-close {
+    position: absolute;
+    top: calc(0.5rem + env(safe-area-inset-top));
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+}
+
+.is-fullscreen .tg-thumbs {
+    margin: 0;
+    padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+}
+
+/* Centers the strip while it fits, without clipping its start once it overflows. */
+.is-fullscreen .tg-thumb:first-child {
+    margin-left: auto;
+}
+
+.is-fullscreen .tg-thumb:last-child {
+    margin-right: auto;
+}
+
+html.tg-lock {
     overflow: hidden;
 }
 

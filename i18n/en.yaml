@@ -6,6 +6,7 @@ routesOther: Other routes
 routesToTbilisiDescription: Trains arriving to Tbilisi Central Station
 routesFromTbilisiDescription: Trains departing from Tbilisi Central Station
 stations: Stations
+trains: Trains
 about: About
 whats-new: "What's New"
 pageNotFound: Page Not Found
@@ -17,4 +18,7 @@ allNews: All news
 lastUpdated: Last updated
 mainPageTitle: Georgian trains on the map
 mainPageIntro: Timetables of all passenger trains in Georgia and international trains to Yerevan and Baku. Pick a route, a station or a point on the map.
-hideMap: Hide the map 
+hideMap: Hide the map
+galleryPrevious: Previous photo
+galleryNext: Next photo
+galleryClose: Close

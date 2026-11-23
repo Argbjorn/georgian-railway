@@ -25,7 +25,7 @@ REQUIRED_FIELDS = {'route_id', 'service_id', 'trip_id'}
 # e.g. "Borjomi" for trains ending at Borjomi-Parki).
 
 # wheelchair_accessible: 1 — accessible, 0 — no information.
-WHEELCHAIR_ACCESSIBLE_TRAIN_TYPES = {'stadler'}
+WHEELCHAIR_ACCESSIBLE_TRAIN_TYPES = {'stadler-kiss'}
 BIKES_ALLOWED = 0  # no information
 CARS_ALLOWED = 2  # no cars are carried
 

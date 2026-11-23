@@ -1,0 +1,82 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Электричка ЭС-008
+        en: ES-008 electric train
+        ka: ელექტრომატარებელი ES-008
+      copyright: BVV
+      copyright_link:
+    - src: exterior-2.jpg
+      alt:
+        ru: Электричка ЭС-007
+        en: ES-007 electric train
+        ka: ელექტრომატარებელი ES-007
+      copyright: BVV
+      copyright_link:
+    - src: exterior-3.jpg
+      alt:
+        ru: Электричка ЭС-001
+        en: ES-001 electric train
+        ka: ელექტრომატარებელი ES-001
+      copyright: BVV
+      copyright_link:
+    - src: exterior-4.jpg
+      alt:
+        ru: Модернизированная электричка ЭР2-1060 на маршруте Кутаиси — Сачхере
+        en: Modernized ER2-1060 electric train on the Kutaisi – Sachkhere route
+        ka: მოდერნიზებული ელექტრომატარებელი ER2-1060 მარშრუტზე ქუთაისი – საჩხერე
+      copyright: BVV
+      copyright_link:
+    - src: exterior-5.jpg
+      alt:
+        ru: Электричка ЭР2Т-7251
+        en: ER2T-7251 electric train
+        ka: ელექტრომატარებელი ER2T-7251
+      copyright: BVV
+      copyright_link:
+    - src: exterior-6.jpg
+      alt:
+        ru: Немодернизированная электричка ЭР2-631
+        en: Unmodernized ER2-631 electric train
+        ka: არამოდერნიზებული ელექტრომატარებელი ER2-631
+      copyright: BVV
+      copyright_link:
+  interior:
+    - src: interior-1.jpg
+      alt:
+        ru: Обновлённый салон электрички с синими мягкими креслами 2+2
+        en: Refurbished interior with blue padded 2+2 seats
+        ka: განახლებული სალონი ლურჯი რბილი სავარძლებით, 2+2
+      copyright: BVV
+      copyright_link:
+    - src: interior-2.jpg
+      alt:
+        ru: Салон электрички с чёрными тканевыми креслами 2+2
+        en: Interior with black fabric 2+2 seats
+        ka: სალონი შავი ქსოვილის სავარძლებით, 2+2
+      copyright: BVV
+      copyright_link:
+    - src: interior-3.jpg
+      alt:
+        ru: Салон электрички с серо-синими креслами
+        en: Interior with grey-blue seats
+        ka: სალონი ნაცრისფერ-ლურჯი სავარძლებით
+      copyright: BVV
+      copyright_link:
+    - src: interior-4.jpg
+      alt:
+        ru: Салон электрички с красно-серыми креслами
+        en: Interior with red-grey seats
+        ka: სალონი წითელ-ნაცრისფერი სავარძლებით
+      copyright: BVV
+      copyright_link:
+    - src: interior-5.jpg
+      alt:
+        ru: Салон немодернизированной ЭР2 с пластиковыми диванами
+        en: Interior of an unmodernized ER2 with plastic benches
+        ka: არამოდერნიზებული ER2-ის სალონი პლასტმასის სკამებით
+      copyright: BVV
+      copyright_link:

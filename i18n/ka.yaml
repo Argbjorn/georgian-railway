@@ -6,6 +6,7 @@ routesOther: სხვა მარშრუტები
 routesFromTbilisiDescription: თბილისიდან მარშრუტები
 routesToTbilisiDescription: თბილისში მარშრუტები
 stations: სადგურები
+trains: მატარებლის ტიპები
 about: პროექტის შესახებ
 pageNotFound: გვერდი ვერ მოიძებნა
 pageNotFoundText: მოთხოვნილი გვერდი არ არსებობს ან გადატანილია.
@@ -17,3 +18,6 @@ lastUpdated: ბოლო ცვლილებები
 mainPageTitle: საქართველოს მატარებლები რუკაზე
 mainPageIntro: საქართველოს ყველა სამგზავრო მატარებლისა და ერევნისა და ბაქოს საერთაშორისო მატარებლების განრიგი. აირჩიეთ მარშრუტი, სადგური ან წერტილი რუკაზე.
 hideMap: რუკის დამალვა
+galleryPrevious: წინა ფოტო
+galleryNext: შემდეგი ფოტო
+galleryClose: დახურვა

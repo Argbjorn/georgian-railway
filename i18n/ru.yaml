@@ -1,11 +1,12 @@
 directions: Направления
-routes: Поезда
+routes: Маршруты
 routesFromTbilisi: Из Тбилиси
 routesToTbilisi: В Тбилиси
 routesOther: Остальные маршруты
 routesFromTbilisiDescription: Поезда отправляющиеся c Центрального вокзала Тбилиси
 routesToTbilisiDescription: Поезда прибывающие на Центральный вокзал Тбилиси
 stations: Станции
+trains: Поезда
 about: О проекте
 whats-new: Что нового
 pageNotFound: Страница не найдена
@@ -18,3 +19,6 @@ lastUpdated: Последние изменения
 mainPageTitle: Поезда Грузии на карте
 mainPageIntro: Расписание всех пассажирских поездов Грузии и международных поездов в Ереван и Баку. Выберите маршрут, станцию или точку на карте.
 hideMap: Скрыть карту
+galleryPrevious: Предыдущее фото
+galleryNext: Следующее фото
+galleryClose: Закрыть

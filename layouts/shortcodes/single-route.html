@@ -19,7 +19,6 @@
         "hours_short" "ч"
         "minutes_short" "мин"
         "train_type" "Тип поезда"
-        "suburban_train" "электричка"
         "price" "Цена"
         "from" "от"
         "online_tickets" "Онлайн билеты"
@@ -54,7 +53,6 @@
         "hours_short" "h"
         "minutes_short" "min"
         "train_type" "Train type"
-        "suburban_train" "suburban"
         "price" "Price"
         "from" "from"
         "online_tickets" "Online tickets"
@@ -89,7 +87,6 @@
         "hours_short" "სთ"
         "minutes_short" "წთ"
         "train_type" "მატარებლის ტიპი"
-        "suburban_train" "საგარეუბნო მატარებელი"
         "price" "ფასი"
         "from" "დან"
         "online_tickets" "ონლაინ ბილეთები"
@@ -198,11 +195,14 @@
     <strong>{{ $t.travel_time }}:</strong> {{ index $travelTimeParts 0 }} {{ $t.hours_short }} {{ index $travelTimeParts 1 }} {{ $t.minutes_short }} <br>
 
     <!-- Train type -->
-    {{ if .Page.Params.train_type }}
-        <strong>{{ $t.train_type }}:</strong><button class="dashed-link" onclick="toggleTrainInfo('train-info-{{ .Page.Params.train_type }}')">{{ if eq .Page.Params.train_type "stadler" }}Stadler KISS{{ else if eq .Page.Params.train_type "vmk-grt" }}VMK/GRT{{ else if eq .Page.Params.train_type "suburban" }}{{ $t.suburban_train }}{{ end }}</button>
-        <div id="train-info-{{ .Page.Params.train_type }}" class="train-info-description">
-            {{ partial "shortcodes/train-description.html" (dict "lang" $lang "train_type" .Page.Params.train_type) }}
-        </div>
+    {{ with .Page.Params.train_type }}
+        <strong>{{ $t.train_type }}:</strong>
+        {{ with site.GetPage (printf "/trains/%s" .) }}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ with .Summary | plainify }} — {{ . }}{{ end }}
+        {{ else }}
+            {{ . }}
+            {{ warnidf "train-page-missing" "No page content/trains/%s for language %s" . site.Language.Lang }}
+        {{ end }}<br>
     {{ end }}
 
     <!-- Price -->
@@ -372,18 +372,6 @@
 {{ else }}
     {{ if .Page.Params.extended_description_en }}<p>{{ .Page.Params.extended_description_en | safeHTML }}</p>{{ end }}
 {{ end }}
-
-<script>
-function toggleTrainInfo(elementId) {
-    const description = document.getElementById(elementId);
-    if (!description) return;
-    if (description.style.display === 'block') {
-        description.style.display = 'none';
-    } else {
-        description.style.display = 'block';
-    }
-}
-</script>
 
 <script type="application/ld+json">
     {

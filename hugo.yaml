@@ -55,9 +55,9 @@ menu:
     - identifier: about
       name: About
       pageRef: /about
-      weight: 5
-    - name: Language
       weight: 6
+    - name: Language
+      weight: 7
       params:
         type: language-switch
         label: true

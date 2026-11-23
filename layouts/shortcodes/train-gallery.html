@@ -1,0 +1,106 @@
+{{- /* Photos live in assets/images/trains/<train_type>/, not in the page bundle: bundle files without a
+     language suffix belong to the default language (en), so a page that exists only in ru gets none of them.
+     photos.yaml there holds the card cover and named photo groups ("galleries"); each group lists files in
+     display order with their credits. alt and copyright are either plain text or a language map
+     ({ru: …, en: …, ka: …}, see partials/localized.html). Usage: {{< train-gallery >}} renders the "main" group,
+     {{< train-gallery "business" >}} another one in the compact frame.
+
+     Layout: a scroll-snap track of slides (swipe on touch, arrows/thumbnails on desktop); each slide is a
+     fixed-height frame with the photo fitted inside over a blurred copy of itself, so photos of any
+     orientation never shift the text below. Fullscreen reuses the same track (assets/js/train-gallery.js). */ -}}
+{{- $page := .Page -}}
+{{- $group := .Get 0 | default "main" -}}
+{{- $dir := printf "images/trains/%s" $page.File.ContentBaseName -}}
+{{- with resources.Get (printf "%s/photos.yaml" $dir) -}}
+  {{- $photos := slice -}}
+  {{- with index ((transform.Unmarshal .).galleries | default dict) $group -}}
+    {{- range . -}}
+      {{- $meta := . -}}
+      {{- with resources.Get (printf "%s/%s" $dir $meta.src) -}}
+        {{- $photos = $photos | append (dict
+            "img" .
+            "alt" (partial "localized.html" $meta.alt)
+            "copyright" (partial "localized.html" $meta.copyright)
+            "copyright_link" $meta.copyright_link
+          ) -}}
+      {{- else -}}
+        {{- warnf "train-gallery: %s is listed in assets/%s/photos.yaml but not found" $meta.src $dir -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnf "train-gallery: no group %q in assets/%s/photos.yaml" $group $dir -}}
+  {{- end -}}
+  {{- $count := len $photos -}}
+  {{- if $count -}}
+    <div class="train-gallery{{ if ne $group "main" }} train-gallery--compact{{ end }} not-prose" data-train-gallery>
+      <div class="tg-viewport">
+        <div class="tg-track" tabindex="0">
+          {{- range $i, $p := $photos -}}
+            {{- $img := $p.img -}}
+            {{- $srcset := slice -}}
+            {{- range $w := slice 640 1024 1600 -}}
+              {{- if lt $w $img.Width -}}
+                {{- $r := $img.Resize (printf "%dx webp q82" $w) -}}
+                {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $w) -}}
+              {{- end -}}
+            {{- end -}}
+            {{- if le $img.Width 1600 -}}
+              {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+            {{- end -}}
+            {{- $src := $img -}}
+            {{- if gt $img.Width 1024 }}{{ $src = $img.Resize "1024x webp q82" }}{{ end -}}
+            {{- $blur := $img.Resize "48x webp q50" -}}
+            <figure class="tg-slide">
+              <div class="tg-frame">
+                <img class="tg-blur" src="{{ $blur.RelPermalink }}" alt="" aria-hidden="true" loading="lazy">
+                <img class="tg-img"
+                  src="{{ $src.RelPermalink }}"
+                  srcset="{{ delimit $srcset ", " }}"
+                  sizes="(max-width: 1200px) 100vw, 1160px"
+                  width="{{ $img.Width }}" height="{{ $img.Height }}"
+                  alt="{{ $p.alt }}"
+                  {{ if $i }}loading="lazy"{{ end }}>
+              </div>
+              <figcaption class="tg-caption">
+                {{- with $p.alt }}<span>{{ . }}</span>{{ end -}}
+                {{- with $p.copyright -}}
+                  <span class="tg-credit">©&nbsp;
+                    {{- with $p.copyright_link -}}
+                      <a href="{{ . }}" target="_blank" rel="noopener">{{ $p.copyright }}</a>
+                    {{- else -}}
+                      {{ . }}
+                    {{- end -}}
+                  </span>
+                {{- end -}}
+              </figcaption>
+            </figure>
+          {{- end -}}
+        </div>
+        {{- if gt $count 1 }}
+          <button type="button" class="tg-nav tg-prev" aria-label="{{ T "galleryPrevious" }}" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" class="tg-nav tg-next" aria-label="{{ T "galleryNext" }}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+          <span class="tg-counter" aria-hidden="true">1 / {{ $count }}</span>
+        {{- end }}
+        <button type="button" class="tg-close" aria-label="{{ T "galleryClose" }}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      {{- if gt $count 1 }}
+        <div class="tg-thumbs">
+          {{- range $i, $p := $photos -}}
+            {{- $thumb := $p.img.Resize "x112 webp q75" -}}
+            <button type="button" class="tg-thumb" data-index="{{ $i }}" {{ if not $i }}aria-current="true"{{ end }}>
+              <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $p.alt }}" loading="lazy">
+            </button>
+          {{- end -}}
+        </div>
+      {{- end }}
+    </div>
+    {{- if not ($page.Store.Get "trainGalleryScript") -}}
+      {{- $page.Store.Set "trainGalleryScript" true -}}
+      {{- with resources.Get "js/train-gallery.js" | minify | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- warnf "train-gallery: no assets/%s/photos.yaml" $dir -}}
+{{- end -}}

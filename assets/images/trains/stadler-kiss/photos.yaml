@@ -1,0 +1,62 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Stadler KISS на вокзале Тбилиси
+        en: Stadler KISS at Tbilisi Central Station
+        ka: Stadler KISS თბილისის ცენტრალურ სადგურზე
+      copyright: Superalbs
+      copyright_link: https://commons.wikimedia.org/wiki/File:Georgian_Railway_GRS_Class_at_Tbilisi_4.jpg
+    - src: exterior-2.jpg
+      alt:
+        ru: Stadler KISS Грузинской железной дороги
+        en: Georgian Railway Stadler KISS
+        ka: საქართველოს რკინიგზის Stadler KISS
+      copyright: Nodara95
+      copyright_link: https://commons.wikimedia.org/wiki/File:Stadler_KISS_for_Georgian_Railways.jpg
+    - src: exterior-3.jpg
+      alt:
+        ru: Stadler KISS Батуми — Тбилиси на станции Аэропорт Кутаиси
+        en: Batumi – Tbilisi Stadler KISS at Kutaisi Airport station
+        ka: Stadler KISS ბათუმი – თბილისი ქუთაისის აეროპორტის სადგურზე
+      copyright:
+        ru: Александр Сапожников
+        en: Alexander Sapozhnikov
+        ka: ალექსანდრე საპოჟნიკოვი
+      copyright_link: https://commons.wikimedia.org/wiki/File:Stadler_train_at_Kutaisi_airport_station.jpg
+  second:
+    - src: second-1.jpg
+      alt:
+        ru: Салон второго класса Stadler KISS
+        en: Stadler KISS second-class interior
+        ka: Stadler KISS-ის მეორე კლასის სალონი
+      # Anchor: the other GRS-014 photos below reuse this credit as *grs014.
+      copyright: &grs014
+        ru: Телеграм-канал GRS-014
+        en: GRS-014 Telegram channel
+        ka: Telegram-არხი GRS-014
+      copyright_link: https://t.me/GRS_014
+  business:
+    - src: business-1.jpg
+      alt:
+        ru: Салон бизнес-класса с креслами 2+1
+        en: Business-class interior with 2+1 seats
+        ka: ბიზნეს კლასის სალონი სავარძლებით, 2+1
+      copyright: *grs014
+      copyright_link: https://t.me/GRS_014
+    - src: business-2.jpg
+      alt:
+        ru: Кожаное кресло бизнес-класса
+        en: Leather business-class seat
+        ka: ბიზნეს კლასის ტყავის სავარძელი
+      copyright: *grs014
+      copyright_link: https://t.me/GRS_014
+    - src: business-3.jpg
+      alt:
+        ru: Пульт электрической регулировки кресла в бизнес-классе
+        en: Electric seat adjustment controls in business class
+        ka: სავარძლის ელექტრორეგულირების პულტი ბიზნეს კლასში
+      copyright: *grs014
+      copyright_link: https://t.me/GRS_014

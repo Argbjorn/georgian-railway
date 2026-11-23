@@ -1,0 +1,14 @@
+{{- /* Returns the text for the current language from a data file value: a plain value as is,
+     a language map ({ru: …, en: …, ka: …}) by site language, falling back to en, then ru, with a warning.
+     Used for photo captions and credits in the photos.yaml files under assets/images/trains/. */ -}}
+{{- $value := . -}}
+{{- if reflect.IsMap $value -}}
+  {{- $lang := site.Language.Lang -}}
+  {{- $map := $value -}}
+  {{- $value = index $map $lang -}}
+  {{- if not $value -}}
+    {{- warnf "localized: no %q text in %v" $lang $map -}}
+    {{- $value = index $map "en" | default (index $map "ru") -}}
+  {{- end -}}
+{{- end -}}
+{{- return $value -}}
