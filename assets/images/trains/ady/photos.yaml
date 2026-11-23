@@ -1,0 +1,185 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Электровоз AZ4A-0004 с пассажирским поездом из вагонов Stadler. На данный момент используется AZ4A-0001.
+        en: AZ4A-0004 electric locomotive with a passenger train of Stadler cars. AZ4A-0001 is currently in use.
+        ka: ელმავალი AZ4A-0004 Stadler-ის ვაგონებისგან შემდგარი სამგზავრო მატარებლით. ამჟამად გამოიყენება AZ4A-0001.
+      copyright: evo.series
+      copyright_link: https://commons.wikimedia.org/wiki/File:AZ4A-0004_with_Stadler_train.jpg
+  comfort:
+    - src: comfort-1.jpg
+      alt:
+        ru: Купе класса «Комфорт»
+        en: Comfort class compartment
+        ka: კუპე, კლასი „კომფორტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-2
+    - src: comfort-2.jpg
+      alt:
+        ru: Купе класса «Комфорт»
+        en: Comfort class compartment
+        ka: კუპე, კლასი „კომფორტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-2
+    - src: comfort-3.jpg
+      alt:
+        ru: Купе класса «Комфорт»
+        en: Comfort class compartment
+        ka: კუპე, კლასი „კომფორტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-2
+    - src: comfort-4.jpg
+      alt:
+        ru: Купе класса «Комфорт»
+        en: Comfort class compartment
+        ka: კუპე, კლასი „კომფორტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-2
+  comfort-plus:
+    - src: comfort-plus-1.jpg
+      alt:
+        ru: Купе класса «Комфорт+»
+        en: Comfort+ class compartment
+        ka: კუპე, კლასი „კომფორტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-1
+    - src: comfort-plus-2.jpg
+      alt:
+        ru: Купе класса «Комфорт+»
+        en: Comfort+ class compartment
+        ka: კუპე, კლასი „კომფორტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-1
+    - src: comfort-plus-3.jpg
+      alt:
+        ru: Купе класса «Комфорт+»
+        en: Comfort+ class compartment
+        ka: კუპე, კლასი „კომფორტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-1
+    - src: comfort-plus-4.jpg
+      alt:
+        ru: Купе класса «Комфорт+»
+        en: Comfort+ class compartment
+        ka: კუპე, კლასი „კომფორტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-1
+    - src: comfort-plus-5.jpg
+      alt:
+        ru: Купе класса «Комфорт+»
+        en: Comfort+ class compartment
+        ka: კუპე, კლასი „კომფორტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/comfort-class-international-1
+  lux:
+    - src: lux-1.jpg
+      alt:
+        ru: Купе класса «Люкс»
+        en: Lux class compartment
+        ka: კუპე, კლასი „ლუქსი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/luxury-class-international
+    - src: lux-2.jpg
+      alt:
+        ru: Купе класса «Люкс»
+        en: Lux class compartment
+        ka: კუპე, კლასი „ლუქსი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/luxury-class-international
+    - src: lux-3.jpg
+      alt:
+        ru: Купе класса «Люкс»
+        en: Lux class compartment
+        ka: კუპე, კლასი „ლუქსი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/luxury-class-international
+  standard:
+    - src: standard-1.jpg
+      alt:
+        ru: Вагон класса «Стандарт»
+        en: Standard class car
+        ka: ვაგონი, კლასი „სტანდარტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class
+    - src: standard-2.jpg
+      alt:
+        ru: Вагон класса «Стандарт»
+        en: Standard class car
+        ka: ვაგონი, კლასი „სტანდარტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class
+    - src: standard-3.jpg
+      alt:
+        ru: Вагон класса «Стандарт»
+        en: Standard class car
+        ka: ვაგონი, კლასი „სტანდარტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class
+    - src: standard-4.jpg
+      alt:
+        ru: Вагон класса «Стандарт»
+        en: Standard class car
+        ka: ვაგონი, კლასი „სტანდარტი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class
+  standard-plus:
+    - src: standard-plus-1.jpg
+      alt:
+        ru: Купе класса «Стандарт+»
+        en: Standard+ class compartment
+        ka: კუპე, კლასი „სტანდარტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class-international
+    - src: standard-plus-2.jpg
+      alt:
+        ru: Купе класса «Стандарт+»
+        en: Standard+ class compartment
+        ka: კუპე, კლასი „სტანდარტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class-international
+    - src: standard-plus-3.jpg
+      alt:
+        ru: Купе класса «Стандарт+»
+        en: Standard+ class compartment
+        ka: კუპე, კლასი „სტანდარტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class-international
+    - src: standard-plus-4.jpg
+      alt:
+        ru: Купе класса «Стандарт+»
+        en: Standard+ class compartment
+        ka: კუპე, კლასი „სტანდარტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class-international
+    - src: standard-plus-5.jpg
+      alt:
+        ru: Купе класса «Стандарт+»
+        en: Standard+ class compartment
+        ka: კუპე, კლასი „სტანდარტი+“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/standard-class-international
+  business:
+    - src: business-1.jpg
+      alt:
+        ru: Купе класса «Бизнес»
+        en: Business class compartment
+        ka: კუპე, კლასი „ბიზნესი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/business-class
+    - src: business-2.jpg
+      alt:
+        ru: Купе класса «Бизнес»
+        en: Business class compartment
+        ka: კუპე, კლასი „ბიზნესი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/business-class
+    - src: business-3.jpg
+      alt:
+        ru: Купе класса «Бизнес»
+        en: Business class compartment
+        ka: კუპე, კლასი „ბიზნესი“
+      copyright: ADY
+      copyright_link: https://ticket.ady.az/en/travel-classes/international/business-class
