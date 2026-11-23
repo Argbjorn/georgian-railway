@@ -4645,7 +4645,8 @@
          "price": 0.5
       },
       "analogue": [
-         6445
+         6445,
+         6447
       ],
       "reverse": [
          6418,
@@ -4757,7 +4758,8 @@
       ],
       "reverse": [
          6417,
-         6445
+         6445,
+         6447
       ]
    },
    {
@@ -4861,7 +4863,8 @@
          "price": 0.5
       },
       "analogue": [
-         6417
+         6417,
+         6447
       ],
       "reverse": [
          6418,
@@ -4973,7 +4976,8 @@
       ],
       "reverse": [
          6417,
-         6445
+         6445,
+         6447
       ]
    },
    {
@@ -4982,7 +4986,7 @@
       "name:ka": "ზესტაფონი → ხაშური",
       "name:en": "Zestafoni → Khashuri",
       "name:ru": "Зестафони → Хашури",
-      "active": false,
+      "active": true,
       "frequency": "on workdays",
       "start_date": null,
       "end_date": null,
@@ -5043,6 +5047,7 @@
             "stop_time": null
          }
       ],
+      "travel_time": "01:56",
       "price": {
          "price_type": "exact",
          "price": 0.5
