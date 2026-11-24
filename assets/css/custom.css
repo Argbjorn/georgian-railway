@@ -195,11 +195,14 @@ nav > a, li > a {
 #map {
     position: fixed;
     inset: var(--navbar-height) 0 0;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
     z-index: 10;
+}
+
+/* All maps (home page, station and route pages, fullscreen) use the site font instead of MapLibre's
+   Helvetica/Arial. maplibre-gl.css is linked after this file (custom/head-end.html), so a plain
+   .maplibregl-map would lose to it. Labels on the map itself come from the map style, not from CSS. */
+body .maplibregl-map {
+    font-family: inherit;
 }
 
 .esd-calendar {
@@ -896,7 +899,9 @@ body, html {
     max-width: 350px !important;
 }
 
+/* Station name tooltips: the same size on every map, the rest of the map text stays at MapLibre's 12px */
 .maplibregl-popup-content {
+    font-size: 14px;
     padding-bottom: 12px !important;
     padding-top: 12px !important;
     padding-left: 20px !important;
@@ -949,13 +954,12 @@ body, html {
   color: #fff;
 }
 
-/* Стили для контейнера карты маршрута */
+/* Inline map on station and route pages */
 .route-map-container {
     position: relative;
     height: 400px;
     width: 100%;
     margin-top: 10px;
-    font-size: 14px;
 }
 
 /* Стили для оверлея карты */
@@ -1000,7 +1004,7 @@ body, html {
     flex-shrink: 0;
 }
 
-/* Стили для полноэкранного контейнера */
+/* Fullscreen map (expandableMap.js) */
 .fullscreen-container {
     position: fixed;
     top: 0;
@@ -1011,7 +1015,6 @@ body, html {
     z-index: 9999;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
 }
 
 .fullscreen-map-container {
