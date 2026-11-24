@@ -211,10 +211,6 @@ body .maplibregl-map {
     font-family: inherit;
 }
 
-.esd-calendar {
-    margin-left: 5px;
-}
-
 .route-link {
     cursor: pointer;
     color: inherit;
@@ -419,6 +415,59 @@ body .maplibregl-map {
 .station-name:hover {
     color: var(--link-color);
     text-decoration: underline;
+}
+
+/* Facts at the top of a route page (single-route.html): labels in one column, values in the other;
+   on narrow phones the label goes above its value */
+.route-facts {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    margin: 1.5rem 0 0;
+    line-height: 1.5rem;
+}
+
+.route-facts dt,
+.route-facts dd {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--gr-border);
+}
+
+.route-facts dt:first-of-type,
+.route-facts dt:first-of-type + dd {
+    border-top: 0;
+}
+
+.route-facts dt {
+    padding-right: 20px;
+    font-size: 15px;
+    color: var(--gr-muted);
+}
+
+.route-facts dd {
+    font-variant-numeric: tabular-nums;
+}
+
+.route-facts-note {
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+    color: var(--gr-muted);
+}
+
+@media (max-width: 420px) {
+    .route-facts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .route-facts dt {
+        padding-bottom: 0;
+    }
+
+    .route-facts dd {
+        padding-top: 2px;
+        border-top: 0;
+    }
 }
 
 /* Schedule table of trains with arrival times */

@@ -130,8 +130,10 @@
 {{ end }}
 
 {{ if .Page.Params.active }}
+    <dl class="route-facts not-prose">
     <!-- Frequency -->
-    <p><strong>{{ $t.frequency }}:</strong> 
+        <dt>{{ $t.frequency }}</dt>
+        <dd>
         {{ if eq .Page.Params.frequency "daily" }}
             {{ $t.frequency_daily }}
         {{ else if eq .Page.Params.frequency "every second day" }}
@@ -188,30 +190,37 @@
             {{ $frequency }}
         {{ else }}
             {{ .Page.Params.frequency }}
-        {{ end }} <br>
+        {{ end }}</dd>
 
     <!-- Travel time -->
+    {{- /* "04:01" -> "4 h 1 min" */}}
     {{ $travelTimeParts := split .Page.Params.travel_time ":" }}
-    <strong>{{ $t.travel_time }}:</strong> {{ index $travelTimeParts 0 }} {{ $t.hours_short }} {{ index $travelTimeParts 1 }} {{ $t.minutes_short }} <br>
+    {{ $hours := strings.TrimLeft "0" (index $travelTimeParts 0) | default "0" }}
+    {{ $minutes := strings.TrimLeft "0" (index $travelTimeParts 1) | default "0" }}
+        <dt>{{ $t.travel_time }}</dt>
+        <dd>{{ $hours }} {{ $t.hours_short }} {{ $minutes }} {{ $t.minutes_short }}</dd>
 
     <!-- Train type -->
     {{ with .Page.Params.train_type }}
-        <strong>{{ $t.train_type }}:</strong>
+        <dt>{{ $t.train_type }}</dt>
+        <dd>
         {{ with site.GetPage (printf "/trains/%s" .) }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ with .Summary | plainify }} — {{ . }}{{ end }}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ with .Summary | plainify }}<span class="route-facts-note">{{ . }}</span>{{ end }}
         {{ else }}
             {{ . }}
             {{ warnidf "train-page-missing" "No page content/trains/%s for language %s" . site.Language.Lang }}
-        {{ end }}<br>
+        {{ end }}</dd>
     {{ end }}
 
     <!-- Price -->
     {{ if .Page.Params.price }}
-        <strong>{{ $t.price }}:</strong> {{ if eq .Page.Params.price.price_type "from" }}{{ $t.from }} {{ end }}{{ .Page.Params.price.price }} ₾<br>
+        <dt>{{ $t.price }}</dt>
+        <dd>{{ if eq .Page.Params.price.price_type "from" }}{{ $t.from }} {{ end }}{{ .Page.Params.price.price }} ₾</dd>
     {{ end }}
 
     <!-- Online tickets -->
-    <strong>{{ $t.online_tickets }}:</strong> 
+        <dt>{{ $t.online_tickets }}</dt>
+        <dd>
     {{ if or (eq $online_tickets_current_site "true") (eq $online_tickets_new_site "true") (eq (int .Page.Params.ref) 201) (eq (int .Page.Params.ref) 202) (eq (int .Page.Params.ref) 37) (eq (int .Page.Params.ref) 38) }}
         {{ $t.available }}
         {{ if or (eq (int .Page.Params.ref) 201) (eq (int .Page.Params.ref) 202) (eq (int .Page.Params.ref) 371) (eq (int .Page.Params.ref) 372) }}
@@ -227,7 +236,8 @@
             {{ end }}
         {{ end }}
     {{ else }}{{ $t.not_available }}
-    {{ end }}</p>
+    {{ end }}</dd>
+    </dl>
 
     <!-- Schedule -->
     <h3 class="section-title not-prose">{{ $t.schedule }}</h3>
