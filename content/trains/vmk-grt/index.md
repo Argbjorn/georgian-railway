@@ -1,6 +1,7 @@
 ---
 title: "VMK/GRT"
 description: "Chinese VMK/GRT electric trains on the routes to Zugdidi, Poti and Ozurgeti: classes, amenities, luggage and photos."
+images: [/images/share/trains/vmk-grt.jpg]
 summary: "Chinese electric train with air conditioning, second, first and sometimes business class"
 weight: 2
 ---

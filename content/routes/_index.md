@@ -1,7 +1,8 @@
 ---
-title: "Train Routes"
+title: "Train routes in Georgia"
 layout: "routes-list"
-description: "A list of all the train routes in Georgia: from Tbilisi and to Tbilisi, international route to Armenia, other routes around the country."
+description: "All passenger trains in Georgia: to Batumi, Kutaisi, Zugdidi, Poti, Borjomi, plus Yerevan and Baku. Timetables, fares and routes on the map."
+images: [/images/share/routes-list.png]
 sidebar:
   hide: false
 toc: false

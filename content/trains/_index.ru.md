@@ -2,6 +2,7 @@
 title: "Поезда"
 layout: "trains-list"
 description: "Какие поезда ходят в Грузии: классы, удобства и фото."
+images: [/images/share/trains-list.jpg]
 menu:
   main:
     identifier: trains

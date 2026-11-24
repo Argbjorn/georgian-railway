@@ -1,7 +1,7 @@
 ---
 title: About
 type: about
-description: About the project.
+description: "An independent map of Georgia's trains: who makes it, where the data comes from and how to support the project."
 toc: false
 ---
 This website has been created to help you navigate Georgia's railway system. Use it in conjunction with other sources of information for a more complete picture.
@@ -12,7 +12,6 @@ Konstantin Remnev. [Telegram](https://t.me/konstantin_remnev), [email](mailto:ge
 ### Data sources
 - [Georgian Railways website](https://gr.com.ge/en/schedule) for general schedule.
 - [OpenStreetMap](https://www.openstreetmap.org) for routes and stations geodata. Great thanks to all the contributors to OpenStreetMap.
-- Icons made by Freepik from [www.flaticon.com](https://www.flaticon.com)
 
 ### Other useful resources
 - An amazing guide to all aspects of rail travel in Georgia by Emily Lush: https://wander-lush.org/trains-in-georgia-country-tips-map/.

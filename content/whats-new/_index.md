@@ -1,7 +1,7 @@
 ---
 title: "What's New"
 layout: "whats-new-list"
-description: "Georgian train schedule changes and site updates."
+description: "New trains, timetable changes and site updates."
 menu:
   main:
     identifier: whats-new

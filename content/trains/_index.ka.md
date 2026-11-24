@@ -2,6 +2,7 @@
 title: "მატარებლის ტიპები"
 layout: "trains-list"
 description: "რა მატარებლები დადის საქართველოში: კლასები, კეთილმოწყობა და ფოტოები."
+images: [/images/share/trains-list.jpg]
 menu:
   main:
     identifier: trains

@@ -3,16 +3,24 @@ title: Georgian Railway Map
 baseURL: https://georailway.com
 
 defaultContentLanguage: en
+# params.images: the default share-preview image (og:image) of the language, used by pages without
+# their own (routes and stations set theirs). Drawn by scripts/make_share_images.py.
 languages:
   en:
     languageName: English
     weight: 1
+    params:
+      images: [/images/share/home-en.png]
   ru:
     languageName: Русский
     weight: 3
+    params:
+      images: [/images/share/home-ru.png]
   ka:
     languageName: ქართული
     weight: 2
+    params:
+      images: [/images/share/home-ka.png]
 
 # import hextra as module
 module:
@@ -60,6 +68,8 @@ menu:
         icon: "translate"
 
 params:
+  # og:site_name (Hextra reads params.title, not the top-level title)
+  title: Georgian Railway Map
   description: Georgia's train routes on the map and the up-to-date schedule.
   footer:
     enable: true

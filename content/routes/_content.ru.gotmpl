@@ -23,9 +23,18 @@
         "extended_description_ru" .extended_description_ru
     }}
     {{ $name := index . "name:ru" }}
+    {{- /* Share-preview image (scripts/make_share_images.py), only if it was built */}}
+    {{ $image := printf "/images/share/routes/%v.png" .ref }}
+    {{ if fileExists (path.Join "static" $image) }}
+        {{ $params = merge $params (dict "images" (slice $image)) }}
+    {{ end }}
+    {{- /* No route number or direction: the title next to it in previews already has them.
+         Inactive covers both cancelled and seasonal (off-season) trains. */}}
+    {{ $description := "Расписание, цены на билеты, все остановки на карте и как купить билет." }}
+    {{ if not .active }}{{ $description = "Сейчас этот поезд не ходит. Подробности — на странице." }}{{ end }}
     {{ $page := dict
         "content" $content
-        "description" (printf "Поезд %v: %s грузинских железных дорог. Маршрут на карте, расписание, стоимость и другие детали." .ref $name)
+        "description" $description
         "kind" "page"
         "path" .ref
         "title" (printf "Поезд %v: %s" .ref $name)

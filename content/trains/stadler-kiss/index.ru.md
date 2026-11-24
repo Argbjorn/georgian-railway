@@ -1,6 +1,7 @@
 ---
 title: "Stadler KISS"
 description: "Двухэтажный электропоезд Stadler KISS на линии Тбилиси – Батуми: классы, удобства, два вида бизнес-класса."
+images: [/images/share/trains/stadler-kiss.jpg]
 summary: "современный двухэтажный состав, лучший поезд ГЖД"
 weight: 1
 ---

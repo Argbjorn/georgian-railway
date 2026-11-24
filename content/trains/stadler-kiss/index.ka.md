@@ -1,6 +1,7 @@
 ---
 title: "Stadler KISS"
 description: "ორსართულიანი ელექტრომატარებელი Stadler KISS ხაზზე თბილისი – ბათუმი: კლასები, კეთილმოწყობა, ბიზნეს კლასის ორი სახე."
+images: [/images/share/trains/stadler-kiss.jpg]
 summary: "თანამედროვე ორსართულიანი მატარებელი, საქართველოს რკინიგზის საუკეთესო მატარებელი"
 weight: 1
 ---

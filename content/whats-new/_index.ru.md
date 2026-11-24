@@ -1,7 +1,7 @@
 ---
 title: "Что нового"
 layout: "whats-new-list"
-description: "Изменения в расписании поездов Грузии и обновления сайта."
+description: "Новые поезда, изменения в расписании и обновления сайта."
 menu:
   main:
     identifier: whats-new

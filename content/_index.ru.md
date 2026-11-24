@@ -4,6 +4,8 @@ aliases:
   - /directions/
   - /directions/tbilisi-batumi/
   - /directions/batumi-tbilisi/
+# og:title: the browser tab still shows the site title on the home page
+title: "Поезда Грузии: карта и расписание"
 description: Железные дороги Грузии на карте и актуальное расписание.
 ---
 

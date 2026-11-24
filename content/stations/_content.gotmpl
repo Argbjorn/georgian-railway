@@ -16,9 +16,32 @@
         "routes" .routes
     }}
     {{ $name := index . "name:en" }}
+    {{- /* Share-preview image (scripts/make_share_images.py), only if it was built */}}
+    {{ $image := printf "/images/share/stations/%v.png" .code }}
+    {{ if fileExists (path.Join "static" $image) }}
+        {{ $params = merge $params (dict "images" (slice $image)) }}
+    {{ end }}
+    {{- /* Destinations: where the trains leaving or passing through go (the end of the route name).
+         Upcoming trains are skipped, as on the station page. */}}
+    {{ $destinations := slice }}
+    {{ with .routes }}
+        {{ $routes := . }}
+        {{ range $kind := slice "departure" "via" }}
+            {{ range index $routes $kind }}
+                {{ if not (and .start_date (gt (int .start_date) now.UnixMilli)) }}
+                    {{ $to := index (last 1 (split .name_en " → ")) 0 }}
+                    {{ if not (in $destinations $to) }}{{ $destinations = $destinations | append $to }}{{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $description := "Railway station: timetable of every train that stops here and the station on the map." }}
+    {{ with $destinations }}
+        {{ $description = printf "Railway station. Trains to %s: timetable and the station on the map." (delimit . ", " " and ") }}
+    {{ end }}
     {{ $page := dict
         "content" $content
-        "description" (printf "Station %s of Georgian railway. Description and timetable." .name_en)
+        "description" $description
         "kind" "page"
         "path" .code
         "title" .name_en

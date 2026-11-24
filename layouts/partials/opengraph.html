@@ -1,0 +1,119 @@
+{{/* Adapted from https://github.com/gohugoio/hugo/blob/v0.149.0/docs/layouts/_partials/opengraph/opengraph.html */}}
+{{- /* Project override: a copy of _partials/opengraph.html from Hextra v0.12.1. Changes, marked
+     "Project override" below: og:image:width/height (read from the file) and og:image:alt for
+     every image, og:locale from the language with og:locale:alternate for the translations.
+     When updating Hextra, copy the theme's file again and carry these changes over. */}}
+
+<meta property="og:title" content="{{ .Title }}">
+<meta
+  property="og:description"
+  content="{{ with .Description }}
+    {{ . }}
+  {{ else }}
+    {{ if .IsPage }}
+      {{ .Summary }}
+    {{ else }}
+      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    {{ end }}
+  {{ end }}">
+<meta
+  property="og:type"
+  content="{{ if .IsPage }}
+    article
+  {{ else }}
+    website
+  {{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+
+{{- /* Project override: one loop for the page's images and the site default (the theme had two
+     copies), plus size and alt. Facebook needs the size to show the image on the first share. */}}
+{{- $images := slice -}}
+{{- with $.Params.images -}}
+  {{- $images = first 6 . -}}
+{{- else -}}
+  {{- with $.Site.Params.images }}{{ $images = first 1 . }}{{ end -}}
+{{- end -}}
+{{- range $images }}
+  {{- with $.Resources.GetMatch . }}
+    <!-- If the string matches a page resource, use that -->
+    <meta property="og:image" content="{{ .Permalink }}">
+    {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }}
+    <meta property="og:image:width" content="{{ .Width }}">
+    <meta property="og:image:height" content="{{ .Height }}">
+    {{- end }}
+  {{- else }}
+    <!-- Otherwise treat it as a site/global path -->
+    {{- $image := . -}}
+    {{- if hasPrefix $image "/" -}}
+      {{- $image = relURL (strings.TrimPrefix "/" $image) -}}
+    {{- end -}}
+    <meta property="og:image" content="{{ $image | absURL }}">
+    {{- /* A site path is a file in static/ */}}
+    {{- $file := path.Join "static" . -}}
+    {{- if and (hasPrefix . "/") (fileExists $file) (not (strings.HasSuffix $file ".svg")) }}
+      {{- with images.Config $file }}
+    <meta property="og:image:width" content="{{ .Width }}">
+    <meta property="og:image:height" content="{{ .Height }}">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+    <meta property="og:image:alt" content="{{ $.Title }}">
+{{- end -}}
+
+
+{{- if .IsPage }}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<meta property="article:section" content="{{ .Section }}">
+{{ with .PublishDate }}
+<meta
+  property="article:published_time"
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+{{ end }}
+{{ with .Lastmod }}
+<meta
+  property="article:modified_time"
+  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+{{ end }}
+{{- end -}}
+
+{{- with .Params.audio }}<meta property="og:audio" content="{{ . }}">{{ end }}
+{{- /* Project override: og:locale from the language (the theme only used .Params.locale) and
+     og:locale:alternate for the languages the page is translated into. */}}
+{{- $locales := dict "en" "en_US" "ru" "ru_RU" "ka" "ka_GE" -}}
+{{- with .Params.locale | default (index $locales .Language.Lang) }}
+<meta property="og:locale" content="{{ . }}">
+{{ end }}
+{{- range .Translations }}
+  {{- with index $locales .Language.Lang }}
+<meta property="og:locale:alternate" content="{{ . }}">
+  {{- end }}
+{{- end }}
+{{- with .Site.Params.title }}
+<meta property="og:site_name" content="{{ . }}">
+{{ end }}
+{{- with .Params.videos }}
+{{- range . }}
+<meta property="og:video" content="{{ . | absURL }}">
+{{ end }}
+
+{{ end }}
+
+{{- /* If it is part of a series, link to related articles */}}
+{{- $permalink := .Permalink }}
+{{- $siteSeries := .Site.Taxonomies.series }}
+{{ with .Params.series }}
+{{- range $name := . }}
+{{- $series := index $siteSeries ($name | urlize) }}
+{{- range $page := first 6 $series.Pages }}
+{{- if ne $page.Permalink $permalink }}
+<meta property="og:see_also" content="{{ $page.Permalink }}">
+{{ end }}
+{{- end }}
+{{ end }}
+
+{{ end }}
+
+{{- /* Facebook Page Admin ID for Domain Insights */}}
+{{- with site.Params.social.facebook_admin }}
+<meta property="fb:admins" content="{{ . }}">
+{{ end }}

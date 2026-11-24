@@ -1,6 +1,7 @@
 ---
 title: "ADY trains"
 description: "Baku – Tbilisi trains of Azerbaijan Railways: Stadler sleeping cars and refurbished Soviet-type cars, classes and amenities."
+images: [/images/share/trains/ady.jpg]
 summary: "ADY sleeping cars: new Stadler or refurbished Soviet-type"
 weight: 5
 ---

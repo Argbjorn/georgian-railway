@@ -23,9 +23,18 @@
         "extended_description_en" .extended_description_en
     }}
     {{ $name := index . "name:en" }}
+    {{- /* Share-preview image (scripts/make_share_images.py), only if it was built */}}
+    {{ $image := printf "/images/share/routes/%v.png" .ref }}
+    {{ if fileExists (path.Join "static" $image) }}
+        {{ $params = merge $params (dict "images" (slice $image)) }}
+    {{ end }}
+    {{- /* No route number or direction: the title next to it in previews already has them.
+         Inactive covers both cancelled and seasonal (off-season) trains. */}}
+    {{ $description := "Timetable, ticket prices, every stop on the map and how to buy a ticket." }}
+    {{ if not .active }}{{ $description = "This train is not running at the moment. Details on the page." }}{{ end }}
     {{ $page := dict
         "content" $content
-        "description" (printf "Train %v %s: route map, schedule, ticket prices and more." .ref $name)
+        "description" $description
         "kind" "page"
         "path" .ref
         "title" (printf "Train %v: %s" .ref $name)

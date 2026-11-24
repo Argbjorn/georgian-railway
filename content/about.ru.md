@@ -1,7 +1,7 @@
 ---
 title: О проекте
 type: about
-description: О проекте.
+description: "Независимая карта поездов Грузии: кто её делает, откуда данные и как поддержать проект."
 toc: false
 ---
 Этот сайт был создан для того, чтобы помочь вам в навигации по железным дорогам Грузии. Используйте его вместе с другими источниками информации для получения более полной картины.
@@ -12,7 +12,6 @@ toc: false
 ### Источники данных
 - [Georgian Railways website](https://gr.com.ge/en/schedule) для расписания.
 - [OpenStreetMap](https://www.openstreetmap.org) для отрисовки маршрутов и станций. Большое спасибо всем участникам OpenStreetMap.
-- Иконки от Freepik [www.flaticon.com](https://www.flaticon.com)
 
 ### Другие полезные ресурсы
 - Подробнейшая статья об использовании железных дорог Грузии от Emily Lush: https://wander-lush.org/trains-in-georgia-country-tips-map/.

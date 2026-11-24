@@ -1,6 +1,7 @@
 ---
 title: "Locomotive with a coach"
 description: "Khashuri – Zestafoni train: a VL10 or VL11 electric locomotive with one or two old seated coaches."
+images: [/images/share/trains/locomotive-coach.jpg]
 summary: "one or two old seated coaches, toilet and heating, no air conditioning"
 weight: 4
 ---

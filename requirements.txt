@@ -7,3 +7,4 @@ openpyxl
 gspread
 google-auth
 python-dotenv
+pillow

@@ -16,9 +16,33 @@
         "routes" .routes
     }}
     {{ $name := index . "name:ka" }}
+    {{- /* Share-preview image (scripts/make_share_images.py), only if it was built */}}
+    {{ $image := printf "/images/share/stations/%v.png" .code }}
+    {{ if fileExists (path.Join "static" $image) }}
+        {{ $params = merge $params (dict "images" (slice $image)) }}
+    {{ end }}
+    {{- /* Destinations: where the trains leaving or passing through go (the end of the route name).
+         Upcoming trains are skipped, as on the station page.
+         Georgian would need the dative case after "to", so the names are only listed. */}}
+    {{ $destinations := slice }}
+    {{ with .routes }}
+        {{ $routes := . }}
+        {{ range $kind := slice "departure" "via" }}
+            {{ range index $routes $kind }}
+                {{ if not (and .start_date (gt (int .start_date) now.UnixMilli)) }}
+                    {{ $to := index (last 1 (split .name_ka " → ")) 0 }}
+                    {{ if not (in $destinations $to) }}{{ $destinations = $destinations | append $to }}{{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $description := "რკინიგზის სადგური: აქ გამჩერებელი ყველა მატარებლის განრიგი და სადგური რუკაზე." }}
+    {{ with $destinations }}
+        {{ $description = printf "რკინიგზის სადგური. მიმართულებები: %s. განრიგი და სადგური რუკაზე." (delimit . ", " ", ") }}
+    {{ end }}
     {{ $page := dict
         "content" $content
-        "description" (printf "სადგური %s საქართველოს რკინიგზის. განმარტება და განრიგი." .name_ka)
+        "description" $description
         "kind" "page"
         "path" .code
         "title" .name_ka

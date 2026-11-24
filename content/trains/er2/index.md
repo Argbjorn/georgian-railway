@@ -1,6 +1,7 @@
 ---
 title: "ER2 electric train"
 description: "ER2, ER2M and ES electric trains in Georgia: unit variants, amenities, tickets and photos."
+images: [/images/share/trains/er2.jpg]
 summary: "one class, toilet and heating, no air conditioning"
 weight: 3
 ---

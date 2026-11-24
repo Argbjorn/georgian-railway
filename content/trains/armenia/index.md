@@ -1,6 +1,7 @@
 ---
 title: "Armenia train"
 description: "The Armenia named train of South Caucasus Railway from Yerevan to Tbilisi and Batumi: classes, amenities, food and luggage."
+images: [/images/share/trains-list.jpg]
 summary: "South Caucasus Railway sleeping cars from 2021, platzkart, kupe and SV"
 weight: 6
 ---

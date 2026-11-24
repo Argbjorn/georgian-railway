@@ -23,9 +23,18 @@
         "extended_description_ka" .extended_description_ka
     }}
     {{ $name := index . "name:ka" }}
+    {{- /* Share-preview image (scripts/make_share_images.py), only if it was built */}}
+    {{ $image := printf "/images/share/routes/%v.png" .ref }}
+    {{ if fileExists (path.Join "static" $image) }}
+        {{ $params = merge $params (dict "images" (slice $image)) }}
+    {{ end }}
+    {{- /* No route number or direction: the title next to it in previews already has them.
+         Inactive covers both cancelled and seasonal (off-season) trains. */}}
+    {{ $description := "განრიგი, ბილეთების ფასები, ყველა გაჩერება რუკაზე და როგორ ვიყიდოთ ბილეთი." }}
+    {{ if not .active }}{{ $description = "ეს მატარებელი ახლა არ დადის. დეტალები — გვერდზე." }}{{ end }}
     {{ $page := dict
         "content" $content
-        "description" (printf "მატარებელი %v: %s საქართველოს რკინიგზის. მარშრუტი რუკაზე, განრიგი, ღირებულება და სხვა დეტალები." .ref $name)
+        "description" $description
         "kind" "page"
         "path" .ref
         "title" (printf "მატარებელი %v: %s" .ref $name)

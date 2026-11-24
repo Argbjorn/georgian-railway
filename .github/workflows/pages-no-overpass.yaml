@@ -52,6 +52,10 @@ jobs:
       - name: Build and validate GTFS feed
         uses: ./.github/actions/gtfs-feed
 
+      # Draws only missing share-preview images (a new route or station); the rest are committed
+      - name: Add missing share-preview images
+        run: python scripts/make_share_images.py
+
       - name: Setup Go
         uses: actions/setup-go@v5
         with:

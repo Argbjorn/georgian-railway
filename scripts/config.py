@@ -12,3 +12,6 @@ ROUTES_REFS_FOR_PARSING = []
 GTFS_BUILD_DIR =os.path.join(PROJECT_ROOT, 'build', 'gtfs')
 GTFS_ZIP_PATH = os.path.join(PROJECT_ROOT, 'static', 'gtfs', 'georgian-railway.zip')
 RAILWAY_NETWORK_JS_PATH =os.path.join(PROJECT_ROOT, 'static', 'js', 'components', 'railway-network', 'railway-network-data.js')
+SHARE_IMAGES_DIR = os.path.join(PROJECT_ROOT, 'static', 'images', 'share')
+TRAINS_PHOTOS_DIR = os.path.join(PROJECT_ROOT, 'assets', 'images', 'trains')
+TRAINS_CONTENT_DIR = os.path.join(PROJECT_ROOT, 'content', 'trains')

@@ -1,6 +1,7 @@
 ---
 title: "Stadler KISS"
 description: "Stadler KISS double-decker electric train on the Tbilisi – Batumi line: classes, amenities, two kinds of business class."
+images: [/images/share/trains/stadler-kiss.jpg]
 summary: "modern double-decker train, the best on Georgian Railway"
 weight: 1
 ---
