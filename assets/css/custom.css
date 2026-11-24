@@ -167,6 +167,11 @@ nav > a, li > a {
   src: url("/fonts/onest-800-latin-letters.woff2") format("woff2");
   unicode-range: U+20, U+41-5A, U+61-7A;
 }
+/* Set on the home page only (custom/head-end.html): the other pages reserve the scrollbar space
+   (scrollbar-gutter), and without this the home page header would be that much wider */
+.hextra-nav-container {
+  padding-right: var(--home-scrollbar-width, 0px);
+}
 .hextra-nav-container nav > a:first-child {
   min-width: 0;
 }

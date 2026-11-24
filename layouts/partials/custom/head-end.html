@@ -6,4 +6,22 @@
      Not on the home page: there is nothing to scroll, and the full-screen map would get an empty strip. */}}
 {{- if not .IsHome }}
 <style>html { scrollbar-gutter: stable; }</style>
+{{- else }}
+{{- /* The home page header gets the same width as on the other pages: its content is moved off the right
+     edge by the scrollbar width (--home-scrollbar-width, see custom.css). Overlay scrollbars give 0. */}}
+<script>
+(function () {
+  function measure() {
+    var probe = document.createElement("div");
+    probe.style.cssText = "position:absolute;top:-9999px;width:100px;height:100px;overflow:scroll";
+    document.documentElement.appendChild(probe);
+    var width = probe.offsetWidth - probe.clientWidth;
+    probe.remove();
+    document.documentElement.style.setProperty("--home-scrollbar-width", width + "px");
+  }
+  measure();
+  // Browser zoom changes the scrollbar width in CSS pixels and fires resize
+  window.addEventListener("resize", measure);
+})();
+</script>
 {{- end }}
