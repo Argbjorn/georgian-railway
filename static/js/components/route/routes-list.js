@@ -67,7 +67,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
@@ -158,7 +158,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
@@ -249,7 +249,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
@@ -340,7 +340,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
       "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
@@ -431,7 +431,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "armenia",
       "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This train is the summer version of <a href=\"/routes/371/\">train #371 Tbilisi – Yerevan</a>. In 2026, it runs from June 15 to September 29. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online, but they can be bought at station ticket offices. Platzkart, coupe, and SV (first class sleeper) are available.",
@@ -572,7 +572,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": false,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "armenia",
       "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This train is the summer version of <a href=\"/routes/372/\">train #372 Yerevan – Tbilisi</a>. In 2026, it runs from June 14 to September 30. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online, but they can be bought at station ticket offices. Platzkart, coupe, and SV (first class sleeper) are available.",
@@ -706,7 +706,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": true,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "armenia",
       "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This season, the train runs from October 2, 2026 to June 13, 2027. In summer, its route is <a href=\"/routes/201/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available.",
@@ -787,7 +787,7 @@ export const routes = [
       "online": false,
       "online_tickets_current_site": true,
       "online_tickets_new_site": false,
-      "train_type": null,
+      "train_type": "armenia",
       "operator": "SCR",
       "has_arrival_time": true,
       "description_en": "This season, the train runs from October 2, 2026 to June 13, 2027. In summer, its route is <a href=\"/routes/201/\">extended to Batumi</a>. Tickets can be purchased online on the South Caucasus Railway website via the link below. Georgian Railway does not sell tickets for this train online; however, they can be purchased at station ticket offices. Platzkart, compartment, and SV sleeping cars are available.",
@@ -2560,7 +2560,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "stadler-kiss",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -2572,35 +2572,35 @@ export const routes = [
             "code": "batumicentral",
             "role": "start",
             "departure_time": "18:30",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "18:46",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:48",
+            "arrival_time": "18:46",
+            "stop_time": 2
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "19:06",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:08",
+            "arrival_time": "19:06",
+            "stop_time": 2
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "19:55",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:57",
+            "arrival_time": "19:55",
+            "stop_time": 2
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "22:30",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "22:30",
             "stop_time": null
          }
       ],
@@ -2633,7 +2633,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "stadler-kiss",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -2645,35 +2645,35 @@ export const routes = [
             "code": "tbilisicentralstation",
             "role": "start",
             "departure_time": "08:05",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "10:40",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:42",
+            "arrival_time": "10:40",
+            "stop_time": 2
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "11:28",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:30",
+            "arrival_time": "11:28",
+            "stop_time": 2
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "11:48",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:50",
+            "arrival_time": "11:48",
+            "stop_time": 2
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "departure_time": "12:06",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "12:06",
             "stop_time": null
          }
       ],
@@ -2706,7 +2706,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "stadler-kiss",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -2718,35 +2718,35 @@ export const routes = [
             "code": "batumicentral",
             "role": "start",
             "departure_time": "08:00",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "08:16",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:18",
+            "arrival_time": "08:16",
+            "stop_time": 2
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "08:36",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:38",
+            "arrival_time": "08:36",
+            "stop_time": 2
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "09:25",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:27",
+            "arrival_time": "09:25",
+            "stop_time": 2
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "12:00",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "12:00",
             "stop_time": null
          }
       ],
@@ -2779,7 +2779,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "stadler-kiss",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -2791,35 +2791,35 @@ export const routes = [
             "code": "tbilisicentralstation",
             "role": "start",
             "departure_time": "17:10",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "19:45",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:47",
+            "arrival_time": "19:45",
+            "stop_time": 2
          },
          {
             "code": "ureki",
             "role": "middle",
-            "departure_time": "20:33",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:35",
+            "arrival_time": "20:33",
+            "stop_time": 2
          },
          {
             "code": "kobuleti",
             "role": "middle",
-            "departure_time": "20:53",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:55",
+            "arrival_time": "20:53",
+            "stop_time": 2
          },
          {
             "code": "batumicentral",
             "role": "end",
-            "departure_time": "21:11",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "21:11",
             "stop_time": null
          }
       ],

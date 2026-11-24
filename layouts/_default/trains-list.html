@@ -30,6 +30,14 @@
             {{- end -}}
           {{- end -}}
         {{- end -}}
+        {{- /* A card without a picture would stretch to its row's height with empty space, so trains
+             without photos get a stub of the same 16:9 size. Its background is set in custom.css
+             (.dark does not reach inside an <img>). */ -}}
+        {{- if not $image -}}
+          {{- $image = (resources.Get "images/trains/placeholder.svg").RelPermalink -}}
+          {{- $width = 800 -}}
+          {{- $height = 450 -}}
+        {{- end -}}
         {{- $cards = printf "%s%s" $cards (partial "shortcodes/card" (dict
               "page"     .
               "link"     .RelPermalink

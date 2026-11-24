@@ -20,6 +20,15 @@ a {
     margin-top: 0;
 }
 
+/* Stub cover for trains without photos (trains-list.html). */
+.trains-cards .hextra-card-image[src$="/placeholder.svg"] {
+    background: #e5e7eb;
+}
+
+.dark .trains-cards .hextra-card-image[src$="/placeholder.svg"] {
+    background: #404040;
+}
+
 /* Универсальный контейнер: ширина как у хэдера, без горизонтального скролла (routes, stations и др.) */
 .content-max-width {
   max-width: 72rem;

@@ -56,7 +56,7 @@ ROUTE_SCHEMA = {
     "train_type": {
         "anyOf": [
                 {"type": "string", 
-                 "enum": ["stadler-kiss", "vmk-grt", "er2", "locomotive-coach", "ady"]},
+                 "enum": ["stadler-kiss", "vmk-grt", "er2", "locomotive-coach", "ady", "armenia"]},
                 {"type": "null"}
         ]
     },
