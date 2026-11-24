@@ -778,10 +778,15 @@ body .maplibregl-map {
     opacity: 0.85;
 }
 
+/* Dark, not blue: a thumbnail is not a link. White over the black fullscreen background. */
 .tg-thumb[aria-current="true"] {
     opacity: 1;
-    outline: 2px solid var(--link-color);
+    outline: 2px solid var(--gr-text);
     outline-offset: 2px;
+}
+
+.is-fullscreen .tg-thumb[aria-current="true"] {
+    outline-color: #fff;
 }
 
 .tg-thumb img {
