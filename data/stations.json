@@ -1059,7 +1059,7 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "18:30",
                "stop_time": null
             },
@@ -1071,7 +1071,7 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "08:00",
                "stop_time": null
             }
@@ -1109,8 +1109,8 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:06",
+               "arrival_time": "12:06",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -1121,8 +1121,8 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "21:11",
+               "arrival_time": "21:11",
+               "departure_time": "-",
                "stop_time": null
             }
          ],
@@ -3620,9 +3620,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "18:46",
-               "stop_time": null
+               "arrival_time": "18:46",
+               "departure_time": "18:48",
+               "stop_time": 2
             },
             {
                "ref": 802,
@@ -3632,9 +3632,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:48",
-               "stop_time": null
+               "arrival_time": "11:48",
+               "departure_time": "11:50",
+               "stop_time": 2
             },
             {
                "ref": 803,
@@ -3644,9 +3644,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:16",
-               "stop_time": null
+               "arrival_time": "08:16",
+               "departure_time": "08:18",
+               "stop_time": 2
             },
             {
                "ref": 804,
@@ -3656,9 +3656,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:53",
-               "stop_time": null
+               "arrival_time": "20:53",
+               "departure_time": "20:55",
+               "stop_time": 2
             }
          ]
       }
@@ -3882,9 +3882,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:55",
-               "stop_time": null
+               "arrival_time": "19:55",
+               "departure_time": "19:57",
+               "stop_time": 2
             },
             {
                "ref": 802,
@@ -3894,9 +3894,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "10:40",
-               "stop_time": null
+               "arrival_time": "10:40",
+               "departure_time": "10:42",
+               "stop_time": 2
             },
             {
                "ref": 803,
@@ -3906,9 +3906,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "09:25",
-               "stop_time": null
+               "arrival_time": "09:25",
+               "departure_time": "09:27",
+               "stop_time": 2
             },
             {
                "ref": 804,
@@ -3918,9 +3918,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:45",
-               "stop_time": null
+               "arrival_time": "19:45",
+               "departure_time": "19:47",
+               "stop_time": 2
             },
             {
                "ref": 853,
@@ -6552,7 +6552,7 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "08:05",
                "stop_time": null
             },
@@ -6564,7 +6564,7 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
+               "arrival_time": "-",
                "departure_time": "17:10",
                "stop_time": null
             },
@@ -6698,8 +6698,8 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "22:30",
+               "arrival_time": "22:30",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -6710,8 +6710,8 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "12:00",
+               "arrival_time": "12:00",
+               "departure_time": "-",
                "stop_time": null
             },
             {
@@ -6997,9 +6997,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "19:06",
-               "stop_time": null
+               "arrival_time": "19:06",
+               "departure_time": "19:08",
+               "stop_time": 2
             },
             {
                "ref": 802,
@@ -7009,9 +7009,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "11:28",
-               "stop_time": null
+               "arrival_time": "11:28",
+               "departure_time": "11:30",
+               "stop_time": 2
             },
             {
                "ref": 803,
@@ -7021,9 +7021,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "08:36",
-               "stop_time": null
+               "arrival_time": "08:36",
+               "departure_time": "08:38",
+               "stop_time": 2
             },
             {
                "ref": 804,
@@ -7033,9 +7033,9 @@
                "frequency": "daily",
                "start_date": null,
                "end_date": null,
-               "arrival_time": null,
-               "departure_time": "20:33",
-               "stop_time": null
+               "arrival_time": "20:33",
+               "departure_time": "20:35",
+               "stop_time": 2
             },
             {
                "ref": 853,
