@@ -1,18 +1,34 @@
-{{- /* Train row in a <ul class="station-trains not-prose">, the same row as in the home page panel (styles in custom.css) */ -}}
+{{- /* Train row in a <ul class="station-trains not-prose">, the same row as in the home page panel (styles in custom.css).
+     A train that does not run daily gets its frequency in the meta line under the name. */ -}}
 {{ $url := printf "%s/routes/%v/" (cond (eq .lang "ru") "/ru" (cond (eq .lang "ka") "/ka" "")) .ref }}
 
+{{ $frequencyKeys := dict
+    "every second day" "frequencyEverySecondDay"
+    "on even days" "frequencyOnEvenDays"
+    "on odd days" "frequencyOnOddDays"
+    "on workdays" "frequencyOnWorkdays"
+}}
+{{ $meta := slice }}
+{{ with .frequency }}
+    {{ if ne . "daily" }}
+        {{ with index $frequencyKeys . }}
+            {{ $meta = $meta | append (T .) }}
+        {{ else }}
+            {{ $meta = $meta | append . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ with .stop_time }}
+    {{ $meta = $meta | append (printf "%s %v %s" (cond (eq $.lang "ru") "остановка" (cond (eq $.lang "ka") "გაჩერება" "stop for")) . (cond (eq $.lang "ru") "мин" (cond (eq $.lang "ka") "წთ" "min"))) }}
+{{ end }}
+
 <li>
-    <a href="{{ $url }}" class="station-train{{ if .stop_time }} has-meta{{ end }}">
+    <a href="{{ $url }}" class="station-train{{ if $meta }} has-meta{{ end }}">
         <span class="station-train-time">{{ .time }}</span>
         <span class="train-number-badge is-small">{{ .ref }}</span>
         <span class="station-train-name">
             <span class="station-train-label">{{ if eq .lang "ru" }}{{ .name_ru }}{{ else if eq .lang "ka" }}{{ .name_ka }}{{ else }}{{ .name_en }}{{ end }}</span>
-            {{ if .stop_time }}
-            <span class="station-train-meta">{{ if eq .lang "ru" }}остановка {{ else if eq .lang "ka" }}გაჩერება{{ else }}stop for{{ end }} {{ .stop_time }} {{ if eq .lang "ru" }}мин{{ else if eq .lang "ka" }}წთ{{ else }}min{{ end }}</span>
-            {{ end }}
+            {{ with $meta }}<span class="station-train-meta">{{ delimit . ", " }}</span>{{ end }}
         </span>
     </a>
-    {{ if and .start_date (eq .frequency "every second day") }}
-    <button class="esd-calendar-popup" data-timestamp="{{ .start_date }}" {{ if .end_date }}data-end-date="{{ .end_date }}"{{ end }} data-lang="{{ .lang }}">🗓</button>
-    {{ end }}
 </li>

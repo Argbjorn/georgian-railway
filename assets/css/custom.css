@@ -259,11 +259,9 @@ body .maplibregl-map {
     padding: 0;
 }
 
-/* The calendar button of an every-second-day train sits next to the row */
+/* Flex so that the row (a button in the panel) stretches to the full width */
 .station-trains > li {
     display: flex;
-    align-items: center;
-    gap: 4px;
 }
 
 /* Time, number and name differ in size, so they line up by the text baseline; the padding makes

@@ -322,7 +322,7 @@
                             {{ $departureTime = .departure_time }}
                         {{ end }}
                     {{ end }}
-                    {{ $routeData := dict "time" $departureTime "ref" $route.ref "lang" $lang "name_ru" $routeNameRu "name_ka" $routeNameKa "name_en" $routeNameEn "start_date" $route.start_date "end_date" $route.end_date}}
+                    {{ $routeData := dict "time" $departureTime "ref" $route.ref "lang" $lang "name_ru" $routeNameRu "name_ka" $routeNameKa "name_en" $routeNameEn "start_date" $route.start_date "end_date" $route.end_date "frequency" $route.frequency }}
                     {{ $analogueRoutes = $analogueRoutes | append $routeData }}
                 {{ end }}
             {{ end }}
@@ -352,7 +352,7 @@
                             {{ $departureTime = .departure_time }}
                         {{ end }}
                     {{ end }}
-                    {{ $routeData := dict "time" $departureTime "ref" $route.ref "lang" $lang "name_ru" $routeNameRu "name_ka" $routeNameKa "name_en" $routeNameEn "start_date" $route.start_date "end_date" $route.end_date }}
+                    {{ $routeData := dict "time" $departureTime "ref" $route.ref "lang" $lang "name_ru" $routeNameRu "name_ka" $routeNameKa "name_en" $routeNameEn "start_date" $route.start_date "end_date" $route.end_date "frequency" $route.frequency }}
                     {{ $reverseRoutes = $reverseRoutes | append $routeData }}
                 {{ end }}
             {{ end }}
@@ -403,4 +403,4 @@
     }
   </script>
 
-{{ partial "esd_calendar.html" (dict "Page" .Page "className" "esd-calendar" "inline" true) }}
+{{ partial "esd_calendar.html" (dict "Page" .Page "className" "esd-calendar") }}

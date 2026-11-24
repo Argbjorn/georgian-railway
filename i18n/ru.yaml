@@ -24,3 +24,7 @@ stationsRegular: Остальные станции
 stationsHalts: Остановочные платформы
 stationsHaltsDescription: Поезда здесь останавливаются, но Грузинская железная дорога не публикует время остановки.
 expandMap: Развернуть карту
+frequencyEverySecondDay: через день
+frequencyOnEvenDays: по чётным числам
+frequencyOnOddDays: по нечётным числам
+frequencyOnWorkdays: по рабочим дням

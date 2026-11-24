@@ -24,3 +24,7 @@ stationsRegular: Other stations
 stationsHalts: Halts
 stationsHaltsDescription: Trains stop here, but Georgian Railways does not publish the stop times.
 expandMap: Expand map
+frequencyEverySecondDay: every second day
+frequencyOnEvenDays: on even days
+frequencyOnOddDays: on odd days
+frequencyOnWorkdays: on workdays

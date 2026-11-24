@@ -51,10 +51,6 @@
     color: #bbb !important;
 }
 
-.esd-calendar-popup {
-    cursor: pointer;
-}
-
 .esd-calendar-container {
     display: block;
     margin-top: 8px;
@@ -64,7 +60,6 @@
 <script>
 (function() {
     const calendarName = "{{ .className }}";
-    const isInline = "{{ if .inline }}true{{ end }}" === "true";
 
     function buildTrainDates(timestampStr, endDateStr) {
         let timestamp = Number(timestampStr);
@@ -127,23 +122,10 @@
                 onDayCreate: onDayCreate.bind(null, trainDates)
             };
 
-            if (isInline) {
-                const container = document.createElement('div');
-                container.className = 'esd-calendar-container';
-                trigger.parentNode.insertBefore(container, trigger.nextSibling);
-                flatpickr(container, Object.assign({}, commonOptions, { inline: true }));
-            } else {
-                const hiddenInput = document.createElement('input');
-                hiddenInput.type = 'text';
-                hiddenInput.style.display = 'none';
-                trigger.parentNode.insertBefore(hiddenInput, trigger.nextSibling);
-                const fp = flatpickr(hiddenInput, Object.assign({}, commonOptions, {
-                    inline: false,
-                    closeOnSelect: false,
-                    positionElement: trigger
-                }));
-                trigger.addEventListener('click', function() { fp.open(); });
-            }
+            const container = document.createElement('div');
+            container.className = 'esd-calendar-container';
+            trigger.parentNode.insertBefore(container, trigger.nextSibling);
+            flatpickr(container, Object.assign({}, commonOptions, { inline: true }));
         });
     });
 })();

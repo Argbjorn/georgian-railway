@@ -52,6 +52,11 @@ export const translations = {
         minutes_short: "min",
         stations_section_title: "Stations",
         all_stations: "All stations",
+        frequency_every_second_day: "every second day",
+        frequency_on_even_days: "on even days",
+        frequency_on_odd_days: "on odd days",
+        frequency_on_workdays: "on workdays",
+        stop_for: "stop for",
     },
 
     ru: {
@@ -69,6 +74,11 @@ export const translations = {
         minutes_short: "мин",
         stations_section_title: "Станции",
         all_stations: "Все станции",
+        frequency_every_second_day: "через день",
+        frequency_on_even_days: "по чётным числам",
+        frequency_on_odd_days: "по нечётным числам",
+        frequency_on_workdays: "по рабочим дням",
+        stop_for: "остановка",
     },
 
     ka: {
@@ -86,5 +96,10 @@ export const translations = {
         minutes_short: "წთ",
         stations_section_title: "სადგურები",
         all_stations: "ყველა სადგური",
+        frequency_every_second_day: "თითოეული მეორე დღისთვის",
+        frequency_on_even_days: "ზუთ დღეებში",
+        frequency_on_odd_days: "კენტ დღეებში",
+        frequency_on_workdays: "სამუშაო დღეებში",
+        stop_for: "გაჩერება",
     }
 };

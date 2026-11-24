@@ -23,3 +23,7 @@ stationsRegular: სხვა სადგურები
 stationsHalts: გაჩერების პუნქტები
 stationsHaltsDescription: მატარებლები აქ ჩერდება, მაგრამ საქართველოს რკინიგზა გაჩერების დროს არ აქვეყნებს.
 expandMap: რუკის გაშლა
+frequencyEverySecondDay: თითოეული მეორე დღისთვის
+frequencyOnEvenDays: ზუთ დღეებში
+frequencyOnOddDays: კენტ დღეებში
+frequencyOnWorkdays: სამუშაო დღეებში

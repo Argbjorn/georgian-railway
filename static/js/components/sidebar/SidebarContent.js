@@ -5,6 +5,14 @@ import { stations } from "../station/stations-list.js";
 import { routes } from "../route/routes-list.js";
 import { groupRouteLines, lineName, lineDirections, formatRefs } from "../route/routeLines.js";
 
+// Daily trains get no frequency in their meta line
+const FREQUENCY_KEYS = {
+    'every second day': 'frequency_every_second_day',
+    'on even days': 'frequency_on_even_days',
+    'on odd days': 'frequency_on_odd_days',
+    'on workdays': 'frequency_on_workdays',
+};
+
 const FEATURED_STATION_CODES = [
     'tbilisicentralstation',
     'batumicentral',
@@ -119,8 +127,18 @@ export class SidebarContent {
         return parts.join(' ');
     }
 
-    formatArrivalAndDuration(arrival, travelTime) {
+    // A train that does not run daily: its frequency, as in the meta line on station pages (route-link.html)
+    formatFrequency(frequency) {
+        const key = FREQUENCY_KEYS[frequency];
+        return key ? LanguageService.translate(key) : '';
+    }
+
+    formatArrivalAndDuration(arrival, travelTime, frequency) {
         const parts = [];
+        const frequencyText = this.formatFrequency(frequency);
+        if (frequencyText) {
+            parts.push(frequencyText);
+        }
         if (arrival && arrival !== '-') {
             parts.push(`${LanguageService.translate('arrival_at')} ${arrival}`);
         }
@@ -143,7 +161,7 @@ export class SidebarContent {
                             <span class="train-number-badge is-small">${train.ref}</span>
                             <span class="station-train-name">
                                 ${train[`name:${this.currentLanguage}`]}
-                                <span class="station-train-meta">${this.formatArrivalAndDuration(arrival, train.travel_time)}</span>
+                                <span class="station-train-meta">${this.formatArrivalAndDuration(arrival, train.travel_time, train.frequency)}</span>
                             </span>
                         </button>
                     </li>
@@ -328,13 +346,21 @@ export class SidebarContent {
         const routesHTML = sortedRoutes.map(route => {
             const routeName = route[`name_${this.currentLanguage}`] || route.name_en;
             const timeInfo = this.getTimeInfo(route, group.key);
-            
+            const meta = [this.formatFrequency(route.frequency)];
+            if (route.stop_time) {
+                meta.push(`${LanguageService.translate('stop_for')} ${route.stop_time} ${LanguageService.translate('minutes_short')}`);
+            }
+            const metaText = meta.filter(Boolean).join(', ');
+
             return `
                 <li>
-                    <button type="button" class="route-link station-train" data-route-ref="${route.ref}">
+                    <button type="button" class="route-link station-train${metaText ? ' has-meta' : ''}" data-route-ref="${route.ref}">
                         <span class="station-train-time">${timeInfo || ''}</span>
                         <span class="train-number-badge is-small">${route.ref}</span>
-                        <span class="station-train-name">${routeName}</span>
+                        <span class="station-train-name">
+                            ${routeName}
+                            ${metaText ? `<span class="station-train-meta">${metaText}</span>` : ''}
+                        </span>
                     </button>
                 </li>
             `;
