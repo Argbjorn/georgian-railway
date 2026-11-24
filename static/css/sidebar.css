@@ -535,11 +535,11 @@ html[lang="ka"] .route-line-directions {
 
 @media (min-width: 768px) {
     .sidebar {
-        top: 64px;
+        top: var(--navbar-height);
         left: 0;
         width: 420px;
-        height: calc(100vh - 64px);
-        height: calc(100dvh - 64px);
+        height: calc(100vh - var(--navbar-height));
+        height: calc(100dvh - var(--navbar-height));
         border-right: 1px solid #E3E6EA;
     }
 

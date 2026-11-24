@@ -216,34 +216,15 @@ nav > a, li > a {
   }
 }
 
-/* Общие стили для карты */
+/* Main page map: the whole screen below the header, the panel (sidebar.css) lies over it */
 #map {
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    width: 100vw;
-    position: relative;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    position: fixed;
+    inset: var(--navbar-height) 0 0;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
     z-index: 10;
-}
-
-/* Стили для экранов меньше 1280px */
-@media (max-width: 1279px) {
-    #map {
-        left: 50%;
-    }
-}
-
-/* Стили для экранов 1280px и больше */
-@media (min-width: 1280px) {
-    #map {
-        left: 30%;
-    }
 }
 
 .esd-calendar {
@@ -341,8 +322,8 @@ nav > a, li > a {
     background: #fff !important;
 }
 
-/* Стили для мобильных устройств */
-@media (max-width: 768px) {
+/* Mobile, same breakpoint as the main page panel (sidebar.css) */
+@media (max-width: 767px) {
     .route-schedule-table {
         font-size: 0.9em;
     }
