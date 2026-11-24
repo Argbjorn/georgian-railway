@@ -126,6 +126,58 @@ a {
   color: #e5e5e5;
 }
 
+/* Mobile menu (layouts/partials/sidebar.html) */
+.mobile-menu {
+  gap: 2px;
+}
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  color: #1f2937;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s;
+}
+.mobile-menu-title {
+  flex-grow: 1;
+  min-width: 0;
+}
+.mobile-menu-chevron {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: #9ca3af;
+}
+.mobile-menu-link:active {
+  background-color: #f2f4f6;
+}
+.mobile-menu-link.is-active {
+  background-color: #eef6fc;
+  color: #1b6ea8;
+  font-weight: 600;
+}
+.mobile-menu-link.is-active .mobile-menu-chevron {
+  color: #1b6ea8;
+}
+.dark .mobile-menu-link {
+  color: #e5e5e5;
+}
+.dark .mobile-menu-link:active {
+  background-color: #171717;
+}
+.dark .mobile-menu-link.is-active {
+  background-color: rgb(27 110 168 / 0.2);
+  color: #7ab8e6;
+}
+.dark .mobile-menu-link.is-active .mobile-menu-chevron {
+  color: #7ab8e6;
+}
+
 nav > a, li > a {
     color: inherit;
     text-decoration: inherit;
