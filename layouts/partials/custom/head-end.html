@@ -1,6 +1,7 @@
 <link href="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.css" rel="stylesheet" />
 <script src="https://unpkg.com/maplibre-gl@4.1.1/dist/maplibre-gl.js"></script>
 {{ partial "clicky-counter.html" . }}
+<link rel="preload" href="{{ "fonts/onest-800-latin-letters.woff2" | relURL }}" as="font" type="font/woff2" crossorigin />
 {{- /* Reserves the scrollbar space so the header does not shift between short and long pages.
      Not on the home page: there is nothing to scroll, and the full-screen map would get an empty strip. */}}
 {{- if not .IsHome }}

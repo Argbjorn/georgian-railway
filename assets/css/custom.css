@@ -183,6 +183,39 @@ nav > a, li > a {
     text-decoration: inherit;
   }
 
+/* Site title in the header. The font file holds Latin letters and space only, enough for the title. */
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/onest-800-latin-letters.woff2") format("woff2");
+  unicode-range: U+20, U+41-5A, U+61-7A;
+}
+.hextra-nav-container nav > a:first-child {
+  min-width: 0;
+}
+.hextra-nav-container nav > a:first-child:hover {
+  opacity: 1;
+}
+.hextra-nav-container nav > a:first-child > img {
+  flex-shrink: 0;
+}
+/* One line always: on the narrowest phones the title is cut with an ellipsis instead of wrapping. */
+.hextra-nav-container nav > a:first-child > span {
+  font-family: "Onest", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* The language name does not fit next to the title on phones; the icon alone is left. */
+@media (max-width: 479.98px) {
+  .hextra-nav-container .hextra-language-switcher span {
+    display: none;
+  }
+}
+
 /* Общие стили для карты */
 #map {
     height: calc(100vh - 64px);
