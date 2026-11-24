@@ -31,14 +31,12 @@ export function makeMapExpandable(mapContainer, map) {
         fullscreenContainer.id = 'fullscreen-container';
         fullscreenContainer.className = 'fullscreen-container';
 
+        // The same button as in the fullscreen gallery (layouts/shortcodes/train-gallery.html)
         const closeBtn = document.createElement('button');
-        closeBtn.className = 'fullscreen-close-button';
-        closeBtn.innerHTML = `
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 6L6 18"/>
-                <path d="M6 6l12 12"/>
-            </svg>
-        `;
+        closeBtn.type = 'button';
+        closeBtn.className = 'fullscreen-close';
+        closeBtn.setAttribute('aria-label', expandBtn.dataset.closeLabel);
+        closeBtn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
         closeBtn.onclick = exitFullscreen;
 
         mapContainer.className = 'fullscreen-map-container';

@@ -744,7 +744,7 @@ body .maplibregl-map {
     pointer-events: none;
 }
 
-.tg-close {
+.train-gallery:not(.is-fullscreen) .tg-close {
     display: none;
 }
 
@@ -843,22 +843,6 @@ body .maplibregl-map {
     top: calc(0.75rem + env(safe-area-inset-top));
     right: auto;
     left: 0.75rem;
-}
-
-.is-fullscreen .tg-close {
-    position: absolute;
-    top: calc(0.5rem + env(safe-area-inset-top));
-    right: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
-    cursor: pointer;
 }
 
 .is-fullscreen .tg-thumbs {
@@ -1078,37 +1062,29 @@ body, html {
     margin-top: 0;
 }
 
-/* Стили для кнопки закрытия полноэкранного режима */
-.fullscreen-close-button {
+/* Close button of the fullscreen gallery and map: a white cross on a dark translucent circle reads both
+   over photos and over the light map, and matches the gallery arrows (.tg-nav) */
+.fullscreen-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 10000;
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #666;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    top: calc(0.75rem + env(safe-area-inset-top));
+    right: calc(0.75rem + env(safe-area-inset-right));
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
-    backdrop-filter: blur(4px);
-    transition: all 0.2s ease;
+    width: 2.5rem;
+    height: 2.5rem;
     padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.15s;
 }
 
-.fullscreen-close-button:hover {
-    background: rgba(255, 255, 255, 1);
-    border-color: #333;
-    color: #333;
-    transform: scale(1.05);
-}
-
-.fullscreen-close-button svg {
-    flex-shrink: 0;
+.fullscreen-close:hover {
+    background: rgba(0, 0, 0, 0.75);
 }
 
 /* Предотвращаем прокрутку страницы в полноэкранном режиме */
