@@ -1,7 +1,6 @@
 /* Определяем переменные с цветами для ссылок */
 :root {
     --link-color: hsl(212 100% 45%);
-    --link-hover-color: hsl(212 100% 45%);
 }
 
 a {
@@ -23,10 +22,6 @@ a {
 /* Stub cover for trains without photos (trains-list.html). */
 .trains-cards .hextra-card-image[src$="/placeholder.svg"] {
     background: #e5e7eb;
-}
-
-.dark .trains-cards .hextra-card-image[src$="/placeholder.svg"] {
-    background: #404040;
 }
 
 /* Универсальный контейнер: ширина как у хэдера, без горизонтального скролла (routes, stations и др.) */
@@ -114,17 +109,6 @@ a {
   font-variant-numeric: tabular-nums;
   text-align: center;
 }
-.dark .link-list,
-.dark .link-list > li + li {
-  border-color: #262626;
-}
-.dark .link-list-item:hover {
-  background-color: #171717;
-}
-.dark .link-list-badge {
-  background-color: #262626;
-  color: #e5e5e5;
-}
 
 /* Mobile menu (layouts/partials/sidebar.html) */
 .mobile-menu {
@@ -163,19 +147,6 @@ a {
 }
 .mobile-menu-link.is-active .mobile-menu-chevron {
   color: #1b6ea8;
-}
-.dark .mobile-menu-link {
-  color: #e5e5e5;
-}
-.dark .mobile-menu-link:active {
-  background-color: #171717;
-}
-.dark .mobile-menu-link.is-active {
-  background-color: rgb(27 110 168 / 0.2);
-  color: #7ab8e6;
-}
-.dark .mobile-menu-link.is-active .mobile-menu-chevron {
-  color: #7ab8e6;
 }
 
 nav > a, li > a {
@@ -236,16 +207,6 @@ nav > a, li > a {
     color: inherit;
     text-decoration: none;
     display: block;
-}
-
-.route-link.active {
-    font-weight: 500;
-    color: #0078A8;
-}
-
-@keyframes sweep {
-    0%    {opacity: 0;}
-    100%  {opacity: 1;}
 }
 
 .route-timeline {
@@ -359,11 +320,6 @@ nav > a, li > a {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    border-left: 1px dotted transparent;
-}
-
-.station-route:hover {
-    background-color: transparent;
 }
 
 .station-route-ref {
@@ -388,8 +344,8 @@ nav > a, li > a {
 }
 
 .station-route:hover .station-route-name {
-    color: var(--link-hover-color);
-    text-decoration: underline solid var(--link-hover-color);
+    color: var(--link-color);
+    text-decoration: underline solid var(--link-color);
 }
 
 .station-route-time {
@@ -417,8 +373,8 @@ nav > a, li > a {
 }
 
 .station-name:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline solid var(--link-hover-color);
+    color: var(--link-color);
+    text-decoration: underline solid var(--link-color);
 }
 
 /* Train photo gallery: layouts/shortcodes/train-gallery.html, assets/js/train-gallery.js */
@@ -501,10 +457,6 @@ nav > a, li > a {
     padding-top: 0.5rem;
     font-size: 0.875rem;
     color: #6b7280;
-}
-
-.dark .tg-caption {
-    color: #9ca3af;
 }
 
 .tg-credit,
@@ -702,11 +654,6 @@ html.tg-lock {
     overflow: hidden;
 }
 
-@keyframes fade-in {
-  from { opacity: 0; transform: translate(-50%, 10px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
-}
-
 /* Предотвращение прокрутки для карты */
 body, html {
   overflow-x: hidden;
@@ -775,11 +722,6 @@ body, html {
     fill: #C8102E;
 }
 
-.station-icon.active {
-    color: #fff;
-    fill: #fff;
-}
-
 .station-marker.active .station-icon {
     color: #fff;
     fill: #fff;
@@ -795,58 +737,6 @@ body, html {
     padding-left: 20px !important;
     padding-right: 20px !important;
     border-radius: 12px !important;
-}
-
-/* Стилизация кнопки закрытия попапа MapLibre */
-.maplibregl-popup-close-button {
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-    width: 20px !important;
-    height: 20px !important;
-    background: none !important;
-    color: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    font-size: 0 !important;
-    text-indent: -9999px !important;
-    outline: none !important;
-    margin-top: 5px !important;
-    margin-right: 5px !important;
-}
-
-.maplibregl-popup-close-button:hover {
-    color: transparent !important;
-}
-
-.maplibregl-popup-close-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.maplibregl-popup-close-button::before,
-.maplibregl-popup-close-button::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    width: 16px !important;
-    height: 2px !important;
-    background-color: #838383 !important;
-    transform: translate(-50%, -50%) rotate(45deg) !important;
-}
-
-.maplibregl-popup-close-button::after {
-    transform: translate(-50%, -50%) rotate(-45deg) !important;
-}
-
-.maplibregl-popup-close-button:hover::before,
-.maplibregl-popup-close-button:hover::after {
-    background-color: #000 !important;
 }
 
 /* For screen readers and search engines only */
@@ -999,13 +889,6 @@ body, html {
 
 .fullscreen-close-button svg {
     flex-shrink: 0;
-}
-
-.fullscreen-close-button:hover {
-    background: rgba(255, 255, 255, 1);
-    border-color: #333;
-    color: #333;
-    transform: scale(1.05);
 }
 
 /* Предотвращаем прокрутку страницы в полноэкранном режиме */

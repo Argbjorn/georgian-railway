@@ -60,15 +60,15 @@
 
 ## 3. Мёртвый код
 
-- [ ] `static/css/leaflet-beautify-marker-icon.css` и `static/js/leaflet-beautify-marker-icon.js` — остатки Leaflet, нигде не подключены.
-- [ ] `@keyframes sweep` (`custom.css:265`) и `@keyframes fade-in` (`custom.css:724`) — не используются.
-- [ ] `.route-link.active` (`custom.css:260`) — класс `active` на `.route-link` никто не ставит.
-- [ ] `.station-icon.active` (`custom.css:797`) — `active` ставится на маркер, не на значок; работает `.station-marker.active .station-icon`.
-- [ ] `.fullscreen-close-button:hover` записано дважды (`custom.css:1012` и `1023`).
-- [ ] `.station-route:hover { background-color: transparent }` и `border-left: 1px dotted transparent` у `.station-route` — ничего не делают.
-- [ ] `--link-hover-color` равен `--link-color`.
-- [ ] Все правила `.dark …` (`.link-list`, `.mobile-menu-link`, `.tg-caption`, заглушка обложки поезда): в `hugo.yaml` `theme.displayToggle: false`, `theme.default: light` — тёмная тема не включается. В панели тёмной темы нет, таблица расписания жёстко ставит `#fff !important`. Сейчас поддержка наполовину — либо удалить, либо доделать.
-- [ ] Стили крестика попапа MapLibre (~50 строк с `!important`, `custom.css:819-869`): единственный попап (`BaseStation.js`) создаётся с `closeButton: false`.
+- [x] `static/css/leaflet-beautify-marker-icon.css` и `static/js/leaflet-beautify-marker-icon.js` — остатки Leaflet, нигде не подключены.
+- [x] `@keyframes sweep` (`custom.css:265`) и `@keyframes fade-in` (`custom.css:724`) — не используются.
+- [x] `.route-link.active` (`custom.css:260`) — класс `active` на `.route-link` никто не ставит.
+- [x] `.station-icon.active` (`custom.css:797`) — `active` ставится на маркер, не на значок; работает `.station-marker.active .station-icon`.
+- [x] `.fullscreen-close-button:hover` записано дважды (`custom.css:1012` и `1023`).
+- [x] `.station-route:hover { background-color: transparent }` и `border-left: 1px dotted transparent` у `.station-route` — ничего не делают.
+- [x] `--link-hover-color` равен `--link-color`.
+- [x] Все правила `.dark …` (`.link-list`, `.mobile-menu-link`, `.tg-caption`, заглушка обложки поезда): в `hugo.yaml` `theme.displayToggle: false`, `theme.default: light` — тёмная тема не включается. В панели тёмной темы нет, таблица расписания жёстко ставит `#fff !important`. Удалены.
+- [x] Стили крестика попапа MapLibre (~50 строк с `!important`, `custom.css:819-869`): единственный попап (`BaseStation.js`) создаётся с `closeButton: false`.
 
 ## 4. Структура
 
@@ -82,7 +82,7 @@
 
 ## План
 
-1. [ ] Удалить мёртвый код (раздел 3). Риск нулевой.
+1. [x] Удалить мёртвый код (раздел 3).
 2. [x] Исправить ошибки из раздела 2.
 3. [ ] Завести общие CSS-переменные в `:root` в `custom.css` (грузится и на главной): акцент, зелёный линии, текст, вторичный текст, рамки, фон при наведении. Перевести на них `sidebar.css` и остальные страницы. Предложение — взять палитру панели: синий `#1B6EA8`, зелёный `#22A022`.
 4. [ ] Свести к одному виду: бейдж номера поезда, список остановок, строку поезда на станции.
