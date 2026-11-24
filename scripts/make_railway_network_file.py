@@ -7,10 +7,19 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import RAILWAY_NETWORK_JS_PATH
 from utils.overpass_handler import OverpassHandler
 
-QUERY = """[out:json][timeout:25];
+KUKUSHKA_WIKIDATA = 'Q3650431'
+
+# The Kukushka set is subtracted from the main network so a way matching both is drawn once.
+# The main network is output without tags, the Kukushka with them: ways are told apart by the wikidata tag
+QUERY = f"""[out:json][timeout:25];
 ( area(id:3600028699); )->.searchArea;
-way["railway"="rail"]["usage"!="industrial"]["service"!="spur"]["service"!="yard"]["service"!="siding"](area.searchArea);
-out skel geom;"""
+way["railway"]["wikidata"="{KUKUSHKA_WIKIDATA}"](area.searchArea)->.kukushka;
+(
+  way["railway"="rail"]["usage"!="industrial"]["service"!="spur"]["service"!="yard"]["service"!="siding"](area.searchArea);
+  - .kukushka;
+);
+out skel geom;
+.kukushka out geom;"""
 
 OUTPUT_PATH = RAILWAY_NETWORK_JS_PATH
 # 5 decimal places is ~1 m
@@ -19,26 +28,39 @@ COORD_PRECISION = 5
 overpass = OverpassHandler()
 
 
+def multiline_feature(lines, properties):
+    return {
+        "type": "Feature",
+        "properties": properties,
+        "geometry": {"type": "MultiLineString", "coordinates": lines},
+    }
+
+
 def overpass_to_geojson(data):
-    # The frontend draws the whole network as one layer with one style and uses no properties,
-    # so all ways are packed into a single MultiLineString feature to keep the file small
-    lines = []
+    # To keep the file small, ways are packed into one MultiLineString feature per style:
+    # the main network and the Kukushka line (drawn in its own colour, marked by the "kind" property)
+    network_lines = []
+    kukushka_lines = []
     for element in data.get('elements', []):
         if element.get('type') != 'way':
             continue
         geom = element.get('geometry', [])
         if not geom:
             continue
-        lines.append([[round(p['lon'], COORD_PRECISION), round(p['lat'], COORD_PRECISION)] for p in geom])
+        line = [[round(p['lon'], COORD_PRECISION), round(p['lat'], COORD_PRECISION)] for p in geom]
+        if element.get('tags', {}).get('wikidata') == KUKUSHKA_WIKIDATA:
+            kukushka_lines.append(line)
+        else:
+            network_lines.append(line)
 
-    return {
-        "type": "FeatureCollection",
-        "features": [{
-            "type": "Feature",
-            "properties": {},
-            "geometry": {"type": "MultiLineString", "coordinates": lines},
-        }],
-    }
+    if not kukushka_lines:
+        print("WARNING: no Kukushka ways returned by Overpass")
+
+    # The Kukushka feature goes last so it is drawn on top of the main network
+    features = [multiline_feature(network_lines, {})]
+    if kukushka_lines:
+        features.append(multiline_feature(kukushka_lines, {"kind": "kukushka"}))
+    return {"type": "FeatureCollection", "features": features}
 
 
 def update_file(data):

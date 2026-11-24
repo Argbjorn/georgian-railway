@@ -1,17 +1,17 @@
 import { railwayNetworkData } from "./railway-network-data.js"
 import stateManager from "../../state/mapStateManager.js"
 
+const NETWORK_COLOR = '#32373B';
+const KUKUSHKA_COLOR = '#1F5FBF';
+const SHADOW_COLOR = '#808080';
+
 export class RailwayNetwork {
     constructor(map) {
         this.map = map;
-        this.brightPaint = {
-            'line-color': '#32373B',
-            'line-width': 3
-        }
-        this.shadowPaint = {
-            'line-color': '#808080',
-            'line-width': 3
-        }
+        // The Kukushka line is a separate feature with kind=kukushka (see make_railway_network_file.py);
+        // in the shadow state it is greyed out together with the rest of the network
+        this.brightColor = ['case', ['==', ['get', 'kind'], 'kukushka'], KUKUSHKA_COLOR, NETWORK_COLOR];
+        this.isShadow = false;
 
         stateManager.subscribe((data) => {
             if (data.selectedRoute) {
@@ -31,23 +31,28 @@ export class RailwayNetwork {
                   id: 'railwayNetwork',
                   type: 'line',
                   source: 'railwayNetwork',
-                  paint: this.brightPaint
+                  paint: {
+                      'line-color': this.isShadow ? SHADOW_COLOR : this.brightColor,
+                      'line-width': 3
+                  }
               });
     }
 
     showBright() {
-        const currentPaint = this.map.getPaintProperty('railwayNetwork', 'line-color');
-        if (currentPaint == this.brightPaint["line-color"]) {
-            return
-        }
-        this.map.setPaintProperty('railwayNetwork', 'line-color', this.brightPaint["line-color"])
+        this.setShadow(false);
     }
 
     showShadow() {
-        const currentPaint = this.map.getPaintProperty('railwayNetwork', 'line-color');
-        if (currentPaint == this.shadowPaint["line-color"]) {
+        this.setShadow(true);
+    }
+
+    setShadow(isShadow) {
+        if (this.isShadow === isShadow) {
             return
         }
-        this.map.setPaintProperty('railwayNetwork', 'line-color', this.shadowPaint["line-color"])
+        this.isShadow = isShadow;
+        if (this.map.getLayer('railwayNetwork')) {
+            this.map.setPaintProperty('railwayNetwork', 'line-color', isShadow ? SHADOW_COLOR : this.brightColor);
+        }
     }
 }

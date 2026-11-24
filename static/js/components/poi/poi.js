@@ -44,9 +44,9 @@ export const poiInfo = [
       title_ru: "Боржоми — Бакуриани («Кукушка»)",
       title_en: "Borjomi — Bakuriani («Kukushka»)",
       title_ka: "ბორჯომი — ბაკურიანი („კუკუშკა“)",
-      description_ru: "Здесь должна быть информация об узкоколейном маршруте Боржоми - Бакуриани («Кукушка»), но он был отменен в 2020. СМИ пишут, что поезду и инфраструктуре требуется ремонт и реконструкция. В мае 2026 года руководство Грузинских железных дорог сообщило о возобновлении маршрута в январе 2027 года.",
-      description_en: "Here should be information about the narrow-gauge route Borjomi - Bakuriani («Kukushka»), but it was canceled in 2020. The media write that the train and infrastructure need repair and reconstruction. In May 2026, Georgian Railway management announced the resumption of the route in January 2027.",
-      description_ka: "აქ უნდა იყოს ინფორმაცია ბორჯომი - ბაკურიანის ვიწროლიანდაგიანი მარშრუტის შესახებ («კუკუშკა»), მაგრამ ის 2020 წელს გაუქმდა. მედია წერს, რომ მატარებელსა და ინფრასტრუქტურას სჭირდება შეკეთება და რეკონსტრუქცია. 2026 წლის მაისში საქართველოს რკინიგზის ხელმძღვანელობამ განაცხადა მარშრუტის 2027 წლის იანვარში განახლების შესახებ.",
+      description_ru: "Синим цветом на карте обозначена узкоколейная железная дорога, которая использовалась поездом Боржоми - Бакуриани («Кукушка»). Маршрут был отменен в 2020 году. В мае 2026 года руководство Грузинских железных дорог сообщило о возобновлении маршрута в январе 2027 года. В интернете уже опубликованы фотографии отреставрированного локомотива и вагонов, а также есть свидетельства ремонта путей и инфраструктуры.",
+      description_en: "The narrow-gauge railway marked in blue on the map was used by the Borjomi - Bakuriani train («Kukushka»). The route was cancelled in 2020. In May 2026, Georgian Railway management announced the resumption of the route in January 2027. Photos of the restored locomotive and carriages have already been published online, and there is also evidence of repairs to the track and infrastructure.",
+      description_ka: "რუკაზე ლურჯი ფერით აღნიშნულია ვიწროლიანდაგიანი რკინიგზა, რომელზეც მოძრაობდა მატარებელი ბორჯომი - ბაკურიანი («კუკუშკა»). მარშრუტი 2020 წელს გაუქმდა. 2026 წლის მაისში საქართველოს რკინიგზის ხელმძღვანელობამ განაცხადა მარშრუტის 2027 წლის იანვარში განახლების შესახებ. ინტერნეტში უკვე გამოქვეყნებულია აღდგენილი ლოკომოტივისა და ვაგონების ფოტოები, ასევე არსებობს ცნობები ლიანდაგისა და ინფრასტრუქტურის შეკეთების შესახებ.",
       coords: [41.78172, 43.46672],
     },
     {
