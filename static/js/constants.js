@@ -41,3 +41,5 @@ export const MOBILE_SIDEBAR_HEIGHT_WINDOW_HEIGHT_RATIO = 0.46;
 
 // Width of the panel column on the left of the main page map (see sidebar.css)
 export const DESKTOP_SIDEBAR_WIDTH_IN_PIXELS = 420;
+// Selected train or line on the map: the same red as the station markers (.station-marker in custom.css)
+export const ROUTE_LINE_COLOR = '#C8102E';

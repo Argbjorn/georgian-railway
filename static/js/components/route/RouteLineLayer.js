@@ -1,6 +1,7 @@
 import stateManager from "../../state/mapStateManager.js";
 import { extractWayLines } from "./BaseRoute.js";
 import { fitBoundsClearOfSidebar } from "../../utils/utils.js";
+import { ROUTE_LINE_COLOR } from "../../constants.js";
 
 // Draws the selected line (all trains between the same terminal stations) as one thread on the map.
 // The geometry is the union of all the line's trains: they may take different tracks.
@@ -65,7 +66,7 @@ export class RouteLineLayer {
                 }
             },
             paint: {
-                'line-color': '#ff0000',
+                'line-color': ROUTE_LINE_COLOR,
                 'line-width': 3,
             },
             layout: {

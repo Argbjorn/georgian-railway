@@ -884,6 +884,7 @@ body, html {
   overflow-x: hidden;
 }
 
+/* The marker red is repeated for the selected route line: ROUTE_LINE_COLOR in static/js/constants.js */
 .station-marker {
     display: flex;
     align-items: center;

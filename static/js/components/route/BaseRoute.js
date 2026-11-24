@@ -1,5 +1,6 @@
 import { routes } from "./routes-list.js";
 import { fitBoundsClearOfSidebar } from "../../utils/utils.js";
+import { ROUTE_LINE_COLOR } from "../../constants.js";
 
 // Line coordinates of the route's ways from a routes_geodata file (Overpass JSON)
 export function extractWayLines(routeJSONData) {
@@ -41,7 +42,7 @@ export class BaseRoute {
                     data: geojson
                 },
                 paint: {
-                    'line-color': '#ff0000',
+                    'line-color': ROUTE_LINE_COLOR,
                     'line-width': 3,
                 },
                 layout: {
