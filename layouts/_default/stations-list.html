@@ -1,11 +1,11 @@
 {{ define "main" }}
-<div class="content-max-width" style="display: flex;">
+<div class="content-max-width">
   {{ partial "sidebar.html" (dict
         "context" .
         "disableSidebar" true
         "displayPlaceholder" false
     ) }}
-  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-column">
   <div class="content-narrow">
     <article class="hx:w-full">
       <div class="content">
@@ -21,7 +21,7 @@
           (dict "tier" "regular" "title" "stationsRegular")
           (dict "tier" "halt" "title" "stationsHalts" "description" "stationsHaltsDescription") }}
         {{ with where $stations "tier" $group.tier }}
-          <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n $group.title }}</h2>
+          <h2 class="section-title">{{ i18n $group.title }}</h2>
           {{ with $group.description }}<div>{{ i18n . }}</div>{{ end }}
           <ul class="link-list not-prose">
             {{ range . }}

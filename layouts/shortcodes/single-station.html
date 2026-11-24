@@ -35,16 +35,19 @@
 <noindex><p data-nosnippet>{{ $t.halt_note }}</p></noindex>
 {{ end }}
 {{ if .Page.Params.routes.departure }}
-<h2>{{ $t.departures }}</h2>
+<h2 class="section-title not-prose">{{ $t.departures }}</h2>
+<ul class="station-trains not-prose">
     {{ range sort .Page.Params.routes.departure "departure_time" }}
     {{ if not (and .start_date (gt (int .start_date) now.UnixMilli)) }}
     {{ partial "route-link.html" (dict "time" .departure_time "ref" .ref "lang" $lang "name_ru" .name_ru "name_ka" .name_ka "name_en" .name_en "frequency" .frequency "start_date" .start_date "end_date" .end_date "stop_time" .stop_time) }}
     {{ end }}
     {{ end }}
+</ul>
 {{ end }}
 
 {{ if .Page.Params.routes.arrival }}
-<h2>{{ $t.arrivals }}</h2>
+<h2 class="section-title not-prose">{{ $t.arrivals }}</h2>
+<ul class="station-trains not-prose">
     {{ $routes := slice }}
     {{ range .Page.Params.routes.arrival }}
         {{ $time := .arrival_time }}
@@ -59,10 +62,12 @@
         {{ partial "route-link.html" (dict "time" .time "ref" .ref "lang" $lang "name_ru" .name_ru "name_ka" .name_ka "name_en" .name_en "frequency" .frequency "start_date" .start_date "end_date" .end_date "stop_time" .stop_time) }}
         {{ end }}
     {{ end }}
+</ul>
 {{ end }}
 
 {{ if .Page.Params.routes.via }}
-<h2>{{ $t.stops }}</h2>
+<h2 class="section-title not-prose">{{ $t.stops }}</h2>
+<ul class="station-trains not-prose">
     {{ range sort .Page.Params.routes.via "departure_time" }}
     {{ if not (and .start_date (gt (int .start_date) now.UnixMilli)) }}
     {{ $time := .departure_time }}
@@ -72,6 +77,7 @@
     {{ partial "route-link.html" (dict "time" $time "ref" .ref "lang" $lang "name_ru" .name_ru "name_ka" .name_ka "name_en" .name_en "frequency" .frequency "start_date" .start_date "end_date" .end_date "stop_time" .stop_time) }}
     {{ end }}
     {{ end }}
+</ul>
 {{ end }}
 </div>
 

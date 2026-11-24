@@ -1,6 +1,18 @@
-/* Определяем переменные с цветами для ссылок */
+/* Site palette, shared with sidebar.css (this file is loaded on every page, the home page included).
+   Links take --link-color; --gr-accent is for everything blue that is not a link: the active menu
+   item, buttons. Train numbers are kept off blue so they do not compete with the links next to them. */
 :root {
     --link-color: hsl(212 100% 45%);
+    --gr-accent: #1B6EA8;
+    --gr-accent-hover: #124E78;
+    --gr-accent-soft: #EEF6FC;
+    --gr-line: #22A022;
+    --gr-text: #15181C;
+    --gr-text-2: #2A3036;
+    --gr-muted: #5B636D;
+    --gr-border: #E3E6EA;
+    --gr-border-strong: #D5D9DE;
+    --gr-hover: #F2F4F6;
 }
 
 a {
@@ -21,17 +33,25 @@ a {
 
 /* Stub cover for trains without photos (trains-list.html). */
 .trains-cards .hextra-card-image[src$="/placeholder.svg"] {
-    background: #e5e7eb;
+    background: var(--gr-border);
 }
 
-/* Универсальный контейнер: ширина как у хэдера, без горизонтального скролла (routes, stations и др.) */
+/* Page frame of our own layouts (layouts/_default/*, 404.html): as wide as the header, no horizontal
+   scroll. It holds Hextra's sidebar partial (the mobile menu) and .content-column side by side. */
 .content-max-width {
+  display: flex;
   max-width: 72rem;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+}
+
+.content-column {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 1.5rem;
 }
 
 /* Узкая контентная колонка (уже хэдера), можно использовать на любой странице */
@@ -66,14 +86,14 @@ a {
 .link-list {
   max-width: 32rem;
   margin-top: 0.5rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--gr-border);
   border-radius: 0.5rem;
   overflow: hidden;
   list-style: none;
   padding: 0;
 }
 .link-list > li + li {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--gr-border);
 }
 .link-list-item {
   display: flex;
@@ -82,32 +102,16 @@ a {
   padding: 0.55rem 0.9rem;
   color: inherit;
   text-decoration: none;
-  transition: background-color 0.15s;
 }
 .link-list-item::after {
   content: "›";
   margin-left: auto;
-  color: #9ca3af;
+  color: var(--gr-muted);
   font-size: 1.25rem;
   line-height: 1;
 }
-.link-list-item:hover {
-  background-color: #f8fafc;
-}
 .link-list-item:hover .link-list-text {
   color: var(--link-color);
-}
-.link-list-badge {
-  flex-shrink: 0;
-  min-width: 2.75rem;
-  padding: 0.1rem 0.4rem;
-  border-radius: 0.375rem;
-  background-color: #f1f5f9;
-  color: #334155;
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  text-align: center;
 }
 
 /* Mobile menu (layouts/partials/sidebar.html) */
@@ -120,7 +124,7 @@ a {
   gap: 0.75rem;
   padding: 0.75rem;
   border-radius: 0.75rem;
-  color: #1f2937;
+  color: var(--gr-text);
   font-size: 1.0625rem;
   font-weight: 500;
   text-decoration: none;
@@ -135,18 +139,18 @@ a {
   flex-shrink: 0;
   width: 1.125rem;
   height: 1.125rem;
-  color: #9ca3af;
+  color: var(--gr-muted);
 }
 .mobile-menu-link:active {
-  background-color: #f2f4f6;
+  background-color: var(--gr-hover);
 }
 .mobile-menu-link.is-active {
-  background-color: #eef6fc;
-  color: #1b6ea8;
+  background-color: var(--gr-accent-soft);
+  color: var(--gr-accent);
   font-weight: 600;
 }
 .mobile-menu-link.is-active .mobile-menu-chevron {
-  color: #1b6ea8;
+  color: var(--gr-accent);
 }
 
 nav > a, li > a {
@@ -209,55 +213,206 @@ nav > a, li > a {
     display: block;
 }
 
-.route-timeline {
+/* Section heading in our own templates (station, route and list pages). It goes with not-prose,
+   which keeps Hextra's heading styles off it. */
+.section-title {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--gr-text);
+}
+
+/* ---------- Components shared by the pages and the home page panel ---------- */
+
+.train-number-badge {
+    flex-shrink: 0;
+    padding: 2px 7px;
+    border: 1.5px solid var(--gr-text);
+    border-radius: 4px;
+    background: #FFFFFF;
+    color: var(--gr-text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+}
+
+.train-number-badge.is-small {
+    min-width: 44px;
+    box-sizing: border-box;
+    padding: 1px 6px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Train rows: buttons in the panel, links on station and route pages. The list sticks out 8px on each
+   side so the hover background does not touch the text. */
+.station-trains {
     list-style: none;
-    padding-left: 6rem;
-    position: relative;
+    margin: 0 -8px;
+    padding: 0;
 }
 
-.route-timeline::before {
-    content: '';
-    position: absolute;
-    left: 4.45rem;
-    top: 15px;
-    bottom: 25px;
-    width: 2px;
-    background: #199900;
-}
-
-.route-timeline li {
-    position: relative;
-    padding: 0.5rem 0;
-    margin: 0.5rem 0;
+/* The calendar button of an every-second-day train sits next to the row */
+.station-trains > li {
     display: flex;
     align-items: center;
+    gap: 4px;
 }
 
-.route-timeline li::before {
-    content: '';
-    position: absolute;
-    left: -2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border: 2px solid #199900;
-    border-radius: 50%;
-    background: white;
+/* Time, number and name differ in size, so they line up by the text baseline; the padding makes
+   a 44px row for a single line */
+.station-train {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 8px;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    font: inherit;
+    line-height: 1.5;
+    color: var(--gr-text);
+    text-align: left;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
 }
 
-.route-timeline li.terminal::before {
-    background: #199900;
+.station-train.has-meta {
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
-.station-time {
-    position: absolute;
-    right: calc(100% + 2.5rem);
-    min-width: 4rem;
+.station-train-time {
+    width: 48px;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.station-train-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 15px;
+}
+
+.station-train-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    color: var(--gr-muted);
+}
+
+/* Train and station names are plain text until hovered. The name is a separate span, so that the
+   hover underline does not reach the meta line below it. */
+@media (hover: hover) {
+    a.station-train:hover .station-train-label {
+        color: var(--link-color);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
+/* Stops of a train: route page and the panel */
+.route-stops {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.route-stop {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    min-height: 36px;
+    margin: 0 -8px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.route-stop.is-terminal,
+.route-stop.is-current {
+    font-weight: 700;
+}
+
+.route-stop.is-current {
+    background: #FDECEE;
+}
+
+.route-stop-time {
+    width: 44px;
+    flex-shrink: 0;
+    align-self: center;
     text-align: right;
 }
 
-/* Стили для таблицы расписания */
+.route-stop-name {
+    align-self: center;
+    padding: 6px 0;
+}
+
+.route-stop-line {
+    position: relative;
+    width: 14px;
+    flex-shrink: 0;
+}
+
+.route-stop-line::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gr-line);
+}
+
+.route-stop:first-child .route-stop-line::before {
+    top: 50%;
+}
+
+.route-stop:last-child .route-stop-line::before {
+    bottom: 50%;
+}
+
+.route-stop-line::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    border: 2.5px solid var(--gr-line);
+    border-radius: 50%;
+    background: #FFFFFF;
+}
+
+.route-stop.is-terminal .route-stop-line::after,
+.route-stop.is-current .route-stop-line::after {
+    background: var(--gr-line);
+}
+
+/* Station names in the route page stops and schedule table */
+.station-name {
+    color: var(--gr-text);
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+.station-name:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+/* Schedule table of trains with arrival times */
 .route-schedule-table {
     width: 100%;
     border-collapse: collapse;
@@ -268,16 +423,20 @@ nav > a, li > a {
     text-align: left;
     padding: 0.5rem;
     font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid #199900;
+    color: var(--gr-text);
+    border-bottom: 2px solid var(--gr-line);
 }
 
 .route-schedule-table td {
     padding: 0.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--gr-border);
 }
 
-/* Убираем зебру для таблицы расписания */
+.route-schedule-table tr:last-child td {
+    border-bottom: 2px solid var(--gr-line);
+}
+
+/* Removes Hextra's zebra stripes */
 .route-schedule-table tr,
 .route-schedule-table td {
     background: #fff !important;
@@ -288,93 +447,103 @@ nav > a, li > a {
     .route-schedule-table {
         font-size: 0.9em;
     }
-    
+
     .route-schedule-table th,
     .route-schedule-table td {
         padding: 0.4rem;
     }
 }
 
-/* Styles specific to station pages */
 .station-page-description {
     margin-bottom: 20px;
     line-height: 1.5;
-    color: #333;
 }
 
 .station-page-content {
     margin-top: 20px;
 }
 
-.station-page-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.station-route {
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-}
-
-.station-route-ref {
+.button-primary {
     display: inline-block;
-    padding: 2px 8px;
-    margin-right: 10px;
-    background-color: #f0f7ff;
-    border: 1.5px solid #0078A8;
-    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--gr-accent);
+    color: #FFFFFF;
     font-weight: 600;
-    min-width: 53px;
+    text-decoration: none;
+}
+
+.button-primary:hover {
+    background: var(--gr-accent-hover);
+}
+
+/* 404 page (layouts/404.html) */
+.not-found {
     text-align: center;
-    color: #0078A8;
 }
 
-.station-route-name {
-    text-decoration: underline dotted #0078A8;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    color: #333;
-    display: inline;
+.not-found h1 {
+    margin-top: 2.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
 }
 
-.station-route:hover .station-route-name {
-    color: var(--link-color);
-    text-decoration: underline solid var(--link-color);
+.not-found h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
-.station-route-time {
-    display: inline-block;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9em;
-    color: #333;
-    font-weight: 500;
-    width: 45px;
-    margin-right: 10px;
+.not-found p {
+    margin-top: 1.5rem;
 }
 
-.station-route-container {
+.not-found .button-primary {
+    margin-top: 2rem;
+}
+
+/* Line above the footer (layouts/partials/footer.html) */
+.footer-note {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    position: relative;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 1rem auto 0;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--gr-border);
+    text-align: center;
 }
 
-.station-name {
-    text-decoration: underline dotted #0078A8;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    color: #333;
+/* What's New feed (layouts/_default/whats-new-list.html) */
+.whats-new-entry {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--gr-border);
+    scroll-margin-top: calc(var(--navbar-height) + 1rem);
 }
 
-.station-name:hover {
-    color: var(--link-color);
-    text-decoration: underline solid var(--link-color);
+.whats-new-entry > :first-child + * {
+    margin-top: 0.25rem;
+}
+
+.whats-new-entry p {
+    margin-top: 0.5rem;
+}
+
+.whats-new-date {
+    font-size: 0.875rem;
+    color: var(--gr-muted);
+    text-decoration: none;
+}
+
+.whats-new-date:hover {
+    text-decoration: underline;
+}
+
+.whats-new-entry:target {
+    background: #fffbe6;
+}
+
+.whats-new-rss {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
 }
 
 /* Train photo gallery: layouts/shortcodes/train-gallery.html, assets/js/train-gallery.js */
@@ -456,7 +625,7 @@ nav > a, li > a {
     gap: 0.25rem 0.75rem;
     padding-top: 0.5rem;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--gr-muted);
 }
 
 .tg-credit,
@@ -659,10 +828,6 @@ body, html {
   overflow-x: hidden;
 }
 
-.route-schedule-table tr:last-child td {
-    border-bottom: 2px solid #199900;
-}
-
 .station-marker {
     display: flex;
     align-items: center;
@@ -803,7 +968,7 @@ body, html {
     z-index: 1000;
 }
 
-/* Стили для кнопки разворачивания карты */
+/* "Expand map" button over the inline maps, neutral like the station chips in the panel */
 .map-expand-button {
     position: absolute;
     bottom: 10px;
@@ -814,23 +979,21 @@ body, html {
     align-items: center;
     gap: 6px;
     background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #199900;
-    border-radius: 6px;
+    border: 1px solid var(--gr-border-strong);
+    border-radius: 8px;
     padding: 8px 12px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: #199900;
+    color: var(--gr-text);
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(4px);
-    transition: all 0.2s ease;
+    transition: border-color 0.1s ease, background-color 0.1s ease;
 }
 
 .map-expand-button:hover {
-    background: rgba(255, 255, 255, 1);
-    border-color: #137000;
-    color: #137000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: #8A9199;
+    background: #F7F8FA;
 }
 
 .map-expand-button svg {

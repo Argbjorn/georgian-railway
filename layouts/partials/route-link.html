@@ -1,15 +1,18 @@
+{{- /* Train row in a <ul class="station-trains not-prose">, the same row as in the home page panel (styles in custom.css) */ -}}
 {{ $url := printf "%s/routes/%v/" (cond (eq .lang "ru") "/ru" (cond (eq .lang "ka") "/ka" "")) .ref }}
 
-<div class="station-route-container">
-    <a href="{{ $url }}" class="station-route">
-        <span class="station-route-time">{{ .time }}</span>
-        <span class="station-route-ref">{{ .ref }}</span>
-        <span class="station-route-name">{{ if eq .lang "ru" }}{{ .name_ru }}{{ else if eq .lang "ka" }}{{ .name_ka }}{{ else }}{{ .name_en }}{{ end }}</span>
+<li>
+    <a href="{{ $url }}" class="station-train{{ if .stop_time }} has-meta{{ end }}">
+        <span class="station-train-time">{{ .time }}</span>
+        <span class="train-number-badge is-small">{{ .ref }}</span>
+        <span class="station-train-name">
+            <span class="station-train-label">{{ if eq .lang "ru" }}{{ .name_ru }}{{ else if eq .lang "ka" }}{{ .name_ka }}{{ else }}{{ .name_en }}{{ end }}</span>
+            {{ if .stop_time }}
+            <span class="station-train-meta">{{ if eq .lang "ru" }}остановка {{ else if eq .lang "ka" }}გაჩერება{{ else }}stop for{{ end }} {{ .stop_time }} {{ if eq .lang "ru" }}мин{{ else if eq .lang "ka" }}წთ{{ else }}min{{ end }}</span>
+            {{ end }}
+        </span>
     </a>
-    {{ if .stop_time }}
-    <span class="station-route-stop-time">({{ if eq .lang "ru" }}остановка {{ else if eq .lang "ka" }}გაჩერება{{ else }}stop for{{ end }} {{ .stop_time }} {{ if eq .lang "ru" }}мин{{ else if eq .lang "ka" }}წთ{{ else }}min{{ end }})</span>
-    {{ end }}
     {{ if and .start_date (eq .frequency "every second day") }}
     <button class="esd-calendar-popup" data-timestamp="{{ .start_date }}" {{ if .end_date }}data-end-date="{{ .end_date }}"{{ end }} data-lang="{{ .lang }}">🗓</button>
     {{ end }}
-</div>
+</li>

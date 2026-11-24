@@ -1,18 +1,18 @@
 {{ define "main" }}
-<div class="content-max-width" style="display: flex;">
+<div class="content-max-width">
   {{ partial "sidebar.html" (dict
         "context" .
         "disableSidebar" true
         "displayPlaceholder" false
     ) }}
-  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-column">
   <div class="content-narrow">
     <article class="hx:w-full">
-      <div class="content" style="text-align: center;">
-        <h1 style="font-size: 2.25rem; font-weight: 700; margin-top: 2.5rem;">404</h1>
-        <h2 style="font-size: 1.5rem; margin-top: 1rem;">{{ i18n "pageNotFound" | default "Страница не найдена" }}</h2>
-        <p style="margin-top: 1.5rem;">{{ i18n "pageNotFoundText" | default "Запрошенная страница не существует или была перемещена." }}</p>
-        <a href="{{ "" | absLangURL }}" style="margin-top: 2rem; display: inline-block; padding: 0.5rem 1rem; background: #3b82f6; color: white; border-radius: 0.375rem; text-decoration: none;">
+      <div class="content not-found">
+        <h1>404</h1>
+        <h2>{{ i18n "pageNotFound" | default "Страница не найдена" }}</h2>
+        <p>{{ i18n "pageNotFoundText" | default "Запрошенная страница не существует или была перемещена." }}</p>
+        <a href="{{ "" | absLangURL }}" class="button-primary not-prose">
           {{ i18n "returnHome" | default "Вернуться на главную" }}
         </a>
       </div>

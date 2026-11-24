@@ -230,30 +230,23 @@
     {{ end }}</p>
 
     <!-- Schedule -->
-    <h3>{{ $t.schedule }}</h3>
+    <h3 class="section-title not-prose">{{ $t.schedule }}</h3>
     {{ if not .Page.Params.complete }}
     <p>{{ $t.uncomplete_disclaimer }}</p>
     {{ end }}
 
     <!-- Stations -->
     {{ if not .Page.Params.has_arrival_time }}
-    <ul class="route-timeline">
+    <ol class="route-stops not-prose">
         {{ range $index, $station := $stations }}
         {{ $stationInfo := index $.Site.Data.stations .code }}
-        <li class="{{ if or (eq $index 0) (eq $index (sub (len $stations) 1)) }}terminal{{ else }}intermediate{{ end }}">
-            <span class="station-time">{{ .departure_time }}</span>
-            <a href="/{{ if eq $lang "ru" }}ru/{{ else if eq $lang "ka" }}ka/{{ end }}stations/{{ .code }}/" class="station-name">
-                {{ if eq $lang "ru" }}
-                    {{ $stationInfo.name_ru }}
-                {{ else if eq $lang "ka" }}
-                    {{ $stationInfo.name_ka }}
-                {{ else }}
-                    {{ $stationInfo.name_en }}
-                {{ end }}
-            </a>
+        <li class="route-stop{{ if or (eq $index 0) (eq $index (sub (len $stations) 1)) }} is-terminal{{ end }}">
+            <span class="route-stop-time">{{ with .departure_time }}{{ if ne . "-" }}{{ . }}{{ end }}{{ end }}</span>
+            <span class="route-stop-line" aria-hidden="true"></span>
+            <span class="route-stop-name"><a href="/{{ if eq $lang "ru" }}ru/{{ else if eq $lang "ka" }}ka/{{ end }}stations/{{ .code }}/" class="station-name">{{ if eq $lang "ru" }}{{ $stationInfo.name_ru }}{{ else if eq $lang "ka" }}{{ $stationInfo.name_ka }}{{ else }}{{ $stationInfo.name_en }}{{ end }}</a></span>
         </li>
         {{ end }}
-    </ul>
+    </ol>
     {{ else }}
     <table class="route-schedule-table">
         <tr>
@@ -304,7 +297,7 @@
 
     <!-- Analogues -->
     {{ if .Page.Params.analogue }}
-        <h3>{{ $t.analogue }}</h3>
+        <h3 class="section-title not-prose">{{ $t.analogue }}</h3>
         {{ $analogueRoutes := slice }}
         {{ range .Page.Params.analogue }}
             {{ $analogueRef := . }}
@@ -325,14 +318,16 @@
             {{ end }}
         {{ end }}
         {{ $sortedRoutes := sort $analogueRoutes "time" }}
+        <ul class="station-trains not-prose">
         {{ range $sortedRoutes }}
             {{ partial "route-link.html" . }}
         {{ end }}
+        </ul>
     {{ end }}
 
     <!-- Reverse -->
     {{ if .Page.Params.reverse }}
-        <h3>{{ $t.reverse }}</h3>
+        <h3 class="section-title not-prose">{{ $t.reverse }}</h3>
         {{ $reverseRoutes := slice }}
         {{ range .Page.Params.reverse }}
             {{ $reverseRef := . }}
@@ -353,13 +348,15 @@
             {{ end }}
         {{ end }}
         {{ $sortedRoutes := sort $reverseRoutes "time" }}
+        <ul class="station-trains not-prose">
         {{ range $sortedRoutes }}
             {{ partial "route-link.html" . }}
         {{ end }}
+        </ul>
     {{ end }}
 
     <!-- Route map -->
-    <h3>{{ $t.route_on_map }}</h3>
+    <h3 class="section-title not-prose">{{ $t.route_on_map }}</h3>
     {{ partial "route-map.html" .Page }}
 {{ end }}
 <p>🗺 <a href='/{{ if ne $lang "en" }}{{ $lang }}/{{ end }}'>{{ $t.back_to_map }}</a></p>

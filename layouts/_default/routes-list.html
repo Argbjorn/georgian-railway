@@ -1,11 +1,11 @@
 {{ define "main" }}
-<div class="content-max-width" style="display: flex;">
+<div class="content-max-width">
   {{ partial "sidebar.html" (dict
         "context" .
         "disableSidebar" true
         "displayPlaceholder" false
     ) }}
-  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-column">
   <div class="content-narrow">
     <article class="hx:w-full">
       <div class="content">
@@ -14,7 +14,7 @@
       </div>
       {{ $pages := .Pages }}
 
-      <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesFromTbilisi" }}</h2>
+      <h2 class="section-title">{{ i18n "routesFromTbilisi" }}</h2>
       <div>{{ i18n "routesFromTbilisiDescription" }}</div>
       <ul class="link-list not-prose">
         {{ range $pages }}
@@ -27,7 +27,7 @@
         {{ end }}
       </ul>
 
-      <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesToTbilisi" }}</h2>
+      <h2 class="section-title">{{ i18n "routesToTbilisi" }}</h2>
       <div>{{ i18n "routesToTbilisiDescription" }}</div>
       <ul class="link-list not-prose">
         {{ range $pages }}
@@ -43,7 +43,7 @@
         {{ end }}
       </ul>
 
-      <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n "routesOther" }}</h2>
+      <h2 class="section-title">{{ i18n "routesOther" }}</h2>
       <ul class="link-list not-prose">
         {{ range $pages }}
           {{ if and (ne .Params.active false) (not (and .Params.start_date (gt (int .Params.start_date) now.UnixMilli))) }}

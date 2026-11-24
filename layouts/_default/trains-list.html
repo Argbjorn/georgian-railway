@@ -1,11 +1,11 @@
 {{ define "main" }}
-<div class="content-max-width" style="display: flex;">
+<div class="content-max-width">
   {{ partial "sidebar.html" (dict
         "context" .
         "disableSidebar" true
         "displayPlaceholder" false
     ) }}
-  <div style="min-width: 0; flex: 1; padding: 2rem 1.5rem;">
+  <div class="content-column">
   <div class="content-narrow">
     <article class="hx:w-full">
       <div class="content">
