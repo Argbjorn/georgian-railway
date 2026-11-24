@@ -108,19 +108,17 @@ def line_name(line, lang='en'):
     return ' — '.join(cities)
 
 
-def line_url(line, direction_pages, lang='en'):
-    """The site's direction page for the representative train's direction, else the train's page."""
-    slug = direction_pages.get(terminals(line.representative))
-    path = f'directions/{slug}' if slug else f'routes/{line.representative["ref"]}'
-    return f'{SITE_URL}{LANG_URL_PREFIX[lang]}/{path}/'
+def line_url(line, lang='en'):
+    """The site's page of the representative train."""
+    return f'{SITE_URL}{LANG_URL_PREFIX[lang]}/routes/{line.representative["ref"]}/'
 
 
-def build_routes(lines, direction_pages):
+def build_routes(lines):
     return [{
         'route_id': line.route_id,
         'agency_id': line.representative['operator'],
         'route_long_name': line_name(line),
         'route_type': ROUTE_TYPE_RAIL,
-        'route_url': line_url(line, direction_pages),
+        'route_url': line_url(line),
         'route_sort_order': line.trains[0]['ref'],
     } for line in lines]

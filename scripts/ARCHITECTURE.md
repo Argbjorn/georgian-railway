@@ -189,7 +189,7 @@
 
 **Что производит:** GTFS-фид — txt-файлы в `build/gtfs/` и архив `static/gtfs/georgian-railway.zip`, который публикуется вместе с сайтом. Ни то, ни другое не коммитится: фид зависит от даты сборки (окно «сегодня + 6 месяцев»).
 
-**Источники данных:** `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/` (геометрия для `shapes.txt`), `content/directions/` (ссылки на страницы направлений). Google Sheets и Overpass не читает.
+**Источники данных:** `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/` (геометрия для `shapes.txt`). Google Sheets и Overpass не читает.
 
 **Порядок запуска:** после `make_routes_files`, `make_stations_files` и (для актуальных форм) `make_routes_geo_files`. В CI — через `.github/actions/gtfs-feed` вместе с валидатором.
 

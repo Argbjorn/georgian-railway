@@ -1,4 +1,9 @@
 ---
+# Redirects from the removed directions section
+aliases:
+  - /directions/
+  - /directions/tbilisi-batumi/
+  - /directions/batumi-tbilisi/
 description: Georgia's train routes on the map and the up-to-date schedule.
 ---
 

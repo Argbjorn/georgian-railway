@@ -40,10 +40,6 @@ markup:
 
 menu:
   main:
-    - identifier: directions
-      name: Directions
-      pageRef: /directions
-      weight: 1
     - identifier: routes
       name: Routes
       pageRef: /routes

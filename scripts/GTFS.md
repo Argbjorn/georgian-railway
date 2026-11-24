@@ -78,7 +78,7 @@
 ### 0.6. Сборка и публикация ✅ реализовано
 
 - Фид зависит от даты сборки (окно `сегодня + 6 мес`, даты «через день» от сегодня), поэтому ZIP меняется при каждой сборке. По этой причине он **не хранится в git**.
-- `make_gtfs.py` запускается после `make_stations_files`. Вход — уже собранные `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/`, `content/directions/`; Google Sheets и Overpass он сам не читает.
+- `make_gtfs.py` запускается после `make_stations_files`. Вход — уже собранные `data/routes.json`, `data/stations.json`, `static/data/routes_geodata/`; Google Sheets и Overpass он сам не читает.
 - Выход:
   - txt-файлы — в `build/gtfs/` (`config.GTFS_BUILD_DIR`), для отладки;
   - ZIP — `static/gtfs/georgian-railway.zip` (`config.GTFS_ZIP_PATH`). В архив попадают только файлы текущей сборки, в корень (без подпапок). Hugo копирует `static/gtfs/` в `public/`, и фид публикуется вместе с сайтом: `https://georailway.com/gtfs/georgian-railway.zip`. URL постоянный.
@@ -95,7 +95,7 @@
 - `scripts/check_gtfs_report.py` — разбор `report.json` валидатора для CI.
 - `scripts/gtfs/` — пакет:
   - `config.py` — константы: агентства, `SITE_URL`, `LANG_URL_PREFIX`, `STOP_TIMEZONES`;
-  - `source.py` — загрузка данных, отбор маршрутов, поиск страниц направлений сайта;
+  - `source.py` — загрузка данных, отбор маршрутов;
   - `writer.py` — запись CSV (пустые опциональные колонки опускаются);
   - `ids.py` — `stop_id`; `text.py` — HTML → текст; `services.py` — окно фида, `service_id`, даты сервисов, отсев поездов без дней движения (общий для `trips`, `calendar`, `calendar_dates`);
   - по модулю на каждый GTFS-файл (`agency.py`, `stops.py`, `routes.py`, `shapes.py`, …) с `FILE_NAME`, `FIELDS` (порядок спецификации), `REQUIRED_FIELDS` и функцией `build_*`. `routes.py` также содержит группировку поездов в линии (`group_lines`, `Line`) — она понадобится и для `trips.txt`.
@@ -156,7 +156,7 @@
 | `route_long_name` | Условно обязательно (если пуст short_name) | «<ведущий город> — <другой город>» по городам из `name:en` (§0.2): `Tbilisi — Borjomi`, `Baku — Tbilisi`. Префикс «Train #N:» уже вырезан в `make_routes_files`. Переводы — из `name:ka` / `name:ru` в том же порядке через `translations.txt` | ✅ 🔧 |
 | `route_type` | **Обязательно** | `2` (Rail) для всех. Расширенные типы (`102` Long Distance, `105` Sleeper, `106`/`109` Regional/Suburban) — возможное развитие, не делаем | 📌 |
 | `route_desc` | Опционально | Не заполняем. `description_*` не подходят (HTML, про поезд, а не про линию) | — ➕ |
-| `route_url` | Опционально | Страница направления сайта для направления представителя (§0.2), если есть: `https://georailway.com/directions/<slug>/` (у Stadler — `tbilisi-batumi`). Страницы направлений находятся автоматически по шорткоду `{{< direction "<start>" "<end>" >}}` в `content/directions/<slug>/_index.md` (`source.load_direction_pages`). Иначе — страница поезда-представителя `https://georailway.com/routes/<ref>/`. Языковые версии — через `translations.txt` | 🔧 |
+| `route_url` | Опционально | Страница поезда-представителя (§0.2): `https://georailway.com/routes/<ref>/`. Раньше у линий со страницей направления (Stadler) ссылка вела на `/directions/<slug>/`; раздел направлений удалён 2026-11-24, старые адреса редиректят на главную. Языковые версии — через `translations.txt` | 🔧 |
 | `route_color` | Опционально | Не заполняем (решено) | — |
 | `route_text_color` | Опционально | Не заполняем (без `route_color` не имеет смысла) | — |
 | `route_sort_order` | Опционально | Минимальный `ref` линии. Нумерация поездов ГЖД уже группирует их: международные (37, 371) → региональные (6xx) → дальние (8xx) → пригородные (64xx). Значение стабильно, не нужно перенумеровывать при добавлении линий | ✅ |

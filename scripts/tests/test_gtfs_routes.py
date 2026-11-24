@@ -1,9 +1,8 @@
 import pytest
 
 from gtfs import routes
-from gtfs.source import load_direction_pages, load_json, select_routes
+from gtfs.source import load_json, select_routes
 from utils import ROUTES_FILE
-from config import DIRECTIONS_CONTENT_DIR
 
 
 def train(ref, start, end, train_type=None, operator='GR', name=None):
@@ -101,7 +100,7 @@ class TestBuildRoutes:
     def test_row(self):
         lines = routes.group_lines([train(38, 'baku', 'tbilisi', operator='AR'),
                                     train(37, 'tbilisi', 'baku', operator='AR')])
-        assert routes.build_routes(lines, {}) == [{
+        assert routes.build_routes(lines) == [{
             'route_id': 'baku-tbilisi',
             'agency_id': 'AR',
             'route_long_name': 'Baku — Tbilisi',
@@ -110,25 +109,19 @@ class TestBuildRoutes:
             'route_sort_order': 37,
         }]
 
-    def test_url_prefers_direction_page(self):
+    def test_url_is_representative_train_page(self):
         [line] = routes.group_lines([train(801, 'batumicentral', 'tbilisicentralstation', 'stadler-kiss', name='Batumi → Tbilisi'),
                                      train(802, 'tbilisicentralstation', 'batumicentral', 'stadler-kiss', name='Tbilisi → Batumi')])
-        pages = {('tbilisicentralstation', 'batumicentral'): 'tbilisi-batumi'}
-        assert routes.line_url(line, pages) == 'https://georailway.com/directions/tbilisi-batumi/'
-        assert routes.line_url(line, pages, 'ru') == 'https://georailway.com/ru/directions/tbilisi-batumi/'
+        assert routes.line_url(line) == 'https://georailway.com/routes/802/'
+        assert routes.line_url(line, 'ru') == 'https://georailway.com/ru/routes/802/'
 
 
 class TestRealData:
-    """Checks the generator against the current data files and site content."""
-
-    def test_direction_pages_found(self):
-        pages = load_direction_pages(DIRECTIONS_CONTENT_DIR)
-        assert pages[('batumicentral', 'tbilisicentralstation')] == 'batumi-tbilisi'
-        assert pages[('tbilisicentralstation', 'batumicentral')] == 'tbilisi-batumi'
+    """Checks the generator against the current data files."""
 
     def test_builds_from_current_data(self):
         lines = routes.group_lines(select_routes(load_json(ROUTES_FILE)))
-        rows = routes.build_routes(lines, load_direction_pages(DIRECTIONS_CONTENT_DIR))
+        rows = routes.build_routes(lines)
         ids = [row['route_id'] for row in rows]
         assert len(ids) == len(set(ids))
         assert all(route_id.isascii() for route_id in ids)

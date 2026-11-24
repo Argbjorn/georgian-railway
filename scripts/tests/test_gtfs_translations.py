@@ -2,8 +2,7 @@ from gtfs import agency, routes, translations
 from gtfs.config import AGENCY_NAME_TRANSLATIONS
 from gtfs.ids import stop_id
 from gtfs.stops import used_station_codes
-from gtfs.source import load_direction_pages, load_json, select_routes
-from config import DIRECTIONS_CONTENT_DIR
+from gtfs.source import load_json, select_routes
 from utils import ROUTES_FILE, STATIONS_FILE
 
 
@@ -27,9 +26,9 @@ STATIONS = {
 TRAINS = [train(617, 'borjomi', 'tbilisi', {'en': 'Borjomi → Tbilisi', 'ka': 'ბორჯომი → თბილისი', 'ru': 'Боржоми → Тбилиси'})]
 
 
-def build(trains=TRAINS, stations=STATIONS, pages=None):
+def build(trains=TRAINS, stations=STATIONS):
     lines = routes.group_lines(trains)
-    return translations.build_translations(agency.build_agency(trains), trains, stations, lines, pages or {})
+    return translations.build_translations(agency.build_agency(trains), trains, stations, lines)
 
 
 def find(rows, table, field, lang, record_id):
@@ -72,8 +71,7 @@ class TestRealData:
         trains = select_routes(load_json(ROUTES_FILE))
         stations = load_json(STATIONS_FILE)
         lines = routes.group_lines(trains)
-        rows = translations.build_translations(agency.build_agency(trains), trains, stations, lines,
-                                               load_direction_pages(DIRECTIONS_CONTENT_DIR))
+        rows = translations.build_translations(agency.build_agency(trains), trains, stations, lines)
         records = {
             'agency': {a['agency_id'] for a in agency.build_agency(trains)},
             'stops': {stop_id(code) for code in used_station_codes(trains)},

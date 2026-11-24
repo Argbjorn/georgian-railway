@@ -31,7 +31,7 @@ def _rows(table_name, record_id, fields):
     return rows
 
 
-def build_translations(agency_rows, routes, stations, lines, direction_pages):
+def build_translations(agency_rows, routes, stations, lines):
     rows = []
 
     for agency in agency_rows:
@@ -49,7 +49,7 @@ def build_translations(agency_rows, routes, stations, lines, direction_pages):
     for line in lines:
         rows += _rows('routes', line.route_id, {
             'route_long_name': (line_name(line), lambda lang: line_name(line, lang)),
-            'route_url': (line_url(line, direction_pages), lambda lang: line_url(line, direction_pages, lang)),
+            'route_url': (line_url(line), lambda lang: line_url(line, lang)),
         })
 
     return rows
