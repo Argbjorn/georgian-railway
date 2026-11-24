@@ -6,6 +6,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import json
+import re
 from config import STATIONS_LIST_JS_PATH, STATIONS_JSON_PATH, ROUTES_JSON_PATH
 from utils.geo_routes_excel_handler import GeoRoutesExcelHandler
 from utils.overpass_handler import OverpassHandler
@@ -13,6 +14,7 @@ from utils.string_utils import *
 from pathlib import Path
 
 file_path = Path(__file__).parent.parent / "data" / "station_gr_codes.json"
+station_meta_path = Path(__file__).parent.parent / "data" / "station_meta.json"
 gr_workbook = GeoRoutesExcelHandler()
 overpass = OverpassHandler()
 
@@ -59,6 +61,25 @@ def get_existing_station_descriptions():
     return {code: data['description'] for code, data in stations.items() if 'description' in data}
 
 
+TIME_RE = re.compile(r'^\d{1,2}:\d{2}$')
+
+
+def load_station_meta():
+    with open(station_meta_path, 'r', encoding='utf-8') as file:
+        return json.load(file)
+
+
+def get_station_tier(station_routes, meta):
+    """main comes only from station_meta.json. halt is a stop where GR publishes no time on any route
+    (station_meta.json can override it). A station without active routes stays regular."""
+    if 'tier' in meta:
+        return meta['tier']
+    all_routes = [r for bucket in (station_routes or {}).values() for r in bucket]
+    has_time = any(TIME_RE.match(r.get(field) or '')
+                   for r in all_routes for field in ('arrival_time', 'departure_time'))
+    return 'halt' if all_routes and not has_time else 'regular'
+
+
 ROLE_TO_BUCKET = {'start': 'departure', 'end': 'arrival'}
 
 
@@ -101,6 +122,7 @@ def make_stations_json():
     stops_data = overpass.get_route_stops_data(all_route_osm_ids)
     station_descriptions = get_existing_station_descriptions()
     stations_with_routes = get_routes_for_stations()
+    station_meta = load_station_meta()
     stations_dict = {}
     for station in stops_data['elements']:
         if station['type'] != 'node':
@@ -114,22 +136,18 @@ def make_stations_json():
         if code in stations_dict:
             stations_dict[code]['id'].append(station['id'])
         else:
-            station_type = 'secondary'
-            if code == 'batumicentral':
-                station_type = 'beach'
-            elif code == 'kutaisiinternationalairport':
-                station_type = 'airport'
-            elif code == 'tbilisicentralstation':
-                station_type = 'main'
+            meta = station_meta.get(code, {})
             station_data = {"id": [station['id']],
                             "coords": [station['lat'], station['lon']],
                             "code": code,
-                            "type": station_type,
+                            "tier": get_station_tier(stations_with_routes.get(code), meta),
                             "name_en": name_en,
                             "name_ka": name_ka,
                             "name_ru": name_ru,
                             "gr_code": get_station_gr_code(code)
                             }
+            if 'icon' in meta:
+                station_data['icon'] = meta['icon']
             if code in station_descriptions:
                 station_data['description'] = station_descriptions[code]
             if code in stations_with_routes:

@@ -13,16 +13,27 @@
         {{ .Content }}
       </div>
       {{ $nameKey := printf "name_%s" .Site.Language.Lang }}
+      {{ $stations := sort .Site.Data.stations $nameKey }}
 
-      <ul class="link-list hx:mt-8 not-prose">
-        {{ range sort .Site.Data.stations $nameKey }}
-          <li>
-            <a class="link-list-item" href="{{ (printf "/stations/%s/" (index . "code")) | absLangURL }}">
-              <span class="link-list-text">{{ index . $nameKey }}</span>
-            </a>
-          </li>
+      {{- /* Tiers come from scripts/make_stations_files.py (see data/station_meta.json) */}}
+      {{ range $group := slice
+          (dict "tier" "main" "title" "stationsMain")
+          (dict "tier" "regular" "title" "stationsRegular")
+          (dict "tier" "halt" "title" "stationsHalts" "description" "stationsHaltsDescription") }}
+        {{ with where $stations "tier" $group.tier }}
+          <h2 class="hx:mt-8 hx:mb-3 hx:text-xl hx:font-semibold">{{ i18n $group.title }}</h2>
+          {{ with $group.description }}<div>{{ i18n . }}</div>{{ end }}
+          <ul class="link-list not-prose">
+            {{ range . }}
+              <li>
+                <a class="link-list-item" href="{{ (printf "/stations/%s/" (index . "code")) | absLangURL }}">
+                  <span class="link-list-text">{{ index . $nameKey }}</span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
         {{ end }}
-      </ul>
+      {{ end }}
     </article>
   </div>
   </div>

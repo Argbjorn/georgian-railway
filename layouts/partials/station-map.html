@@ -1,68 +1,22 @@
-{{ $lang := .lang }}
 {{ $coords := .coords }}
 {{ $lat := index $coords 0 }}
 {{ $lng := index $coords 1 }}
 
-<div class="station-map-container">
-    <button class="station-map-toggle" 
-            data-show-text="{{ i18n "showMap" . }}" 
-            data-hide-text="{{ i18n "hideMap" . }}"
-            onclick="toggleMap()">{{ i18n "showMap" . }}</button>
-    <div id="station-map" data-station-lat="{{ $lat }}" data-station-lng="{{ $lng }}" style="height: 400px; width: 100%; margin-top: 10px; display: none;"></div>
+<div class="route-map-container">
+    <div id="station-map" data-station-lat="{{ $lat }}" data-station-lng="{{ $lng }}" class="route-map-container">
+        {{ partial "map-expand-controls.html" . }}
+    </div>
 </div>
 
-<style>
-    .station-map-container {
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        margin: 16px 0;
-        padding: 16px;
-        transition: background-color 0.2s ease;
-    }
-    
-    .station-map-toggle {
-        background: none;
-        border: none;
-        padding: 8px 16px;
-        color: #0078A8;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-    }
-    
-    .station-map-toggle:hover {
-        background-color: #e9ecef;
-        color: #005580;
-    }
-</style>
+<script type="module">
+    import SimpleStationMap from '/js/components/map/SimpleStationMap.js';
+    import { makeMapExpandable } from '/js/components/map/expandableMap.js';
 
-<script>
-    function toggleMap() {
-        const mapDiv = document.getElementById('station-map');
-        const button = document.querySelector('.station-map-toggle');
-        
-        if (mapDiv.style.display === 'none') {
-            mapDiv.style.display = 'block';
-            button.textContent = button.dataset.hideText;
-            
-            // Initialize the map only when it is first shown
-            if (!window.stationMapInitialized) {
-                import('/js/components/map/SimpleStationMap.js').then(module => {
-                    const SimpleStationMap = module.default;
-                    const stationCoords = [
-                        parseFloat(mapDiv.dataset.stationLat),
-                        parseFloat(mapDiv.dataset.stationLng),
-                    ];
-                    const map = new SimpleStationMap('station-map', stationCoords);
-                    map.initialize();
-                    window.stationMapInitialized = true;
-                });
-            }
-        } else {
-            mapDiv.style.display = 'none';
-            button.textContent = button.dataset.showText;
-        }
-    }
+    const mapContainer = document.getElementById('station-map');
+    const map = new SimpleStationMap('station-map', [
+        parseFloat(mapContainer.dataset.stationLat),
+        parseFloat(mapContainer.dataset.stationLng),
+    ]);
+    map.initialize();
+    makeMapExpandable(mapContainer, map.map);
 </script>

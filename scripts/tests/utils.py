@@ -5,6 +5,7 @@ _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 
 ROUTES_FILE = os.path.join(_PROJECT_ROOT, 'data', 'routes.json')
 STATIONS_FILE = os.path.join(_PROJECT_ROOT, 'data', 'stations.json')
+STATION_META_FILE = os.path.join(_PROJECT_ROOT, 'data', 'station_meta.json')
 
 REQUIRED_FILES = [
     ROUTES_FILE,

@@ -9,7 +9,7 @@
          44.9685973
       ],
       "code": "13km",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "13 km",
       "name_ka": "13 კმ",
       "name_ru": "13 км",
@@ -79,7 +79,7 @@
          44.8796319
       ],
       "code": "2km",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "2 km",
       "name_ka": "2 კმ",
       "name_ru": "2 км",
@@ -149,7 +149,7 @@
          45.0089307
       ],
       "code": "23km",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "23 km",
       "name_ka": "23 კმ",
       "name_ru": "23 км",
@@ -219,7 +219,7 @@
          44.8377441
       ],
       "code": "2508km",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "2508 km",
       "name_ka": "2508 კმ",
       "name_ru": "2508 км",
@@ -289,7 +289,7 @@
          44.9170306
       ],
       "code": "6km",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "6 km",
       "name_ka": "6 კმ",
       "name_ru": "6 км",
@@ -358,7 +358,7 @@
          42.2020914
       ],
       "code": "abasha",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Abasha",
       "name_ka": "აბაშა",
       "name_ru": "Абаша",
@@ -428,7 +428,7 @@
          43.8308734
       ],
       "code": "agara",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Agara",
       "name_ka": "აგარა",
       "name_ru": "Агара",
@@ -497,7 +497,7 @@
          45.4514404
       ],
       "code": "aghstafa",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Aghstafa",
       "name_ka": "Ağstafa Stansiyası",
       "name_ru": "Агстафа",
@@ -567,7 +567,7 @@
          42.7948404
       ],
       "code": "ajameti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ajameti",
       "name_ka": "აჯამეთი",
       "name_ru": "Аджамети",
@@ -612,7 +612,7 @@
          43.4916128
       ],
       "code": "akhaldaba",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Akhaldaba",
       "name_ka": "ახალდაბა",
       "name_ru": "Ахалдаба",
@@ -682,7 +682,7 @@
          42.9662456
       ],
       "code": "argveti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Argveti",
       "name_ka": "არგვეთი",
       "name_ru": "Аргвети",
@@ -727,7 +727,7 @@
          44.031846
       ],
       "code": "armavir",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Armavir",
       "name_ka": "არმავირი",
       "name_ru": "Армавир",
@@ -773,7 +773,7 @@
          44.7941069
       ],
       "code": "avchala",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Avchala",
       "name_ka": "ავჭალა",
       "name_ru": "Авчала",
@@ -842,7 +842,7 @@
          44.8937791
       ],
       "code": "ayrum",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ayrum",
       "name_ka": "აირუმი",
       "name_ru": "Айрум",
@@ -888,7 +888,7 @@
          43.3306648
       ],
       "code": "babi",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Babi",
       "name_ka": "ბაბი",
       "name_ru": "Баби",
@@ -945,7 +945,7 @@
          49.8506295
       ],
       "code": "baku",
-      "type": "secondary",
+      "tier": "main",
       "name_en": "Baku",
       "name_ka": "Bakı",
       "name_ru": "Баку",
@@ -1015,11 +1015,12 @@
          41.6776873
       ],
       "code": "batumicentral",
-      "type": "beach",
+      "tier": "main",
       "name_en": "Batumi-Central",
       "name_ka": "ბათუმი-ცენტრალი",
       "name_ru": "Батуми-Пассажирская",
       "gr_code": 57151,
+      "icon": "beach",
       "description": {
          "en": "This is the main station in Batumi. It's a bit off the main part of the city, but there are no other stations closer.",
          "ru": "Это главный вокзал в Батуми. Он находится немного в стороне от основной части города, но других станций ближе нет.",
@@ -1138,7 +1139,7 @@
          43.1615332
       ],
       "code": "beghlevi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Beghlevi",
       "name_ka": "ბეღლევი",
       "name_ru": "Беглеви",
@@ -1183,7 +1184,7 @@
          43.4368958
       ],
       "code": "besheti",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Besheti",
       "name_ka": "ბეშეთი",
       "name_ru": "Бешети",
@@ -1252,7 +1253,7 @@
          49.8035372
       ],
       "code": "bilajari",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Bilajari",
       "name_ka": "Biləcəri",
       "name_ru": "Баладжары",
@@ -1321,7 +1322,7 @@
          43.4076577
       ],
       "code": "borjomi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Borjomi",
       "name_ka": "ბორჯომი",
       "name_ru": "Боржоми",
@@ -1395,7 +1396,7 @@
          43.3851251
       ],
       "code": "borjomiparki",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Borjomi-Parki",
       "name_ka": "ბორჯომი-პარკი",
       "name_ru": "Боржоми-Парк",
@@ -1471,7 +1472,7 @@
          45.1839156
       ],
       "code": "boyukkasik",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Boyuk Kasik",
       "name_ka": "Böyük Kəsik",
       "name_ru": "Бёюк Кясик",
@@ -1540,7 +1541,7 @@
          42.6597418
       ],
       "code": "brotseula",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Brotseula",
       "name_ka": "ბროწეულა",
       "name_ru": "Броцеула",
@@ -1609,7 +1610,7 @@
          41.7324893
       ],
       "code": "chakvi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Chakvi",
       "name_ka": "ჩაქვი",
       "name_ru": "Чакви",
@@ -1678,7 +1679,7 @@
          41.793889
       ],
       "code": "chaladidi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Chaladidi",
       "name_ka": "ჭალადიდი",
       "name_ru": "Чаладиди",
@@ -1723,7 +1724,7 @@
          43.2834489
       ],
       "code": "chiatura",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Chiatura",
       "name_ka": "ჭიათურა",
       "name_ru": "Чиатура",
@@ -1768,7 +1769,7 @@
          43.3081534
       ],
       "code": "chikauri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Chikauri",
       "name_ka": "ჭიქაური",
       "name_ru": "Чикаури",
@@ -1813,7 +1814,7 @@
          43.337815
       ],
       "code": "darkveti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Darkveti",
       "name_ka": "დარკვეთი",
       "name_ru": "Дарквети",
@@ -1859,7 +1860,7 @@
          43.27011
       ],
       "code": "didvake",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Didvake",
       "name_ka": "დიდვაკე",
       "name_ru": "Дидваке",
@@ -1917,7 +1918,7 @@
          44.6245231
       ],
       "code": "dzegvi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Dzegvi",
       "name_ka": "ძეგვი",
       "name_ru": "Дзегви",
@@ -1986,7 +1987,7 @@
          43.1583121
       ],
       "code": "dzirula",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Dzirula",
       "name_ka": "ძირულა",
       "name_ru": "Дзирула",
@@ -2092,7 +2093,7 @@
          44.9897291
       ],
       "code": "gachiani",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Gachiani",
       "name_ka": "გაჩიანი",
       "name_ru": "Гачиани",
@@ -2161,7 +2162,7 @@
          46.366326
       ],
       "code": "ganja",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ganja",
       "name_ka": "Gəncə",
       "name_ru": "Гянджа",
@@ -2231,7 +2232,7 @@
          45.0980262
       ],
       "code": "gardabani",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Gardabani",
       "name_ka": "გარდაბანი",
       "name_ru": "Гардабани",
@@ -2351,7 +2352,7 @@
          43.726763
       ],
       "code": "gomi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Gomi",
       "name_ka": "გომი",
       "name_ru": "Гоми",
@@ -2421,7 +2422,7 @@
          44.1089031
       ],
       "code": "gori",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Gori",
       "name_ka": "გორი",
       "name_ru": "Гори",
@@ -2563,7 +2564,7 @@
          44.2761361
       ],
       "code": "grakali",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Grakali",
       "name_ka": "გრაკალი",
       "name_ru": "Гракали",
@@ -2632,7 +2633,7 @@
          43.860237
       ],
       "code": "gyumri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Gyumri",
       "name_ka": "გიუმრი",
       "name_ru": "Гюмри",
@@ -2677,7 +2678,7 @@
          41.8099566
       ],
       "code": "ingiri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ingiri",
       "name_ka": "ინგირი",
       "name_ru": "Ингири",
@@ -2723,7 +2724,7 @@
          41.9074541
       ],
       "code": "jumati",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Jumati",
       "name_ka": "ჯუმათი",
       "name_ru": "Джумати",
@@ -2816,7 +2817,7 @@
          41.953907
       ],
       "code": "kakhuri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kakhuri",
       "name_ka": "კახური",
       "name_ru": "Кахури",
@@ -2850,7 +2851,7 @@
          43.9034501
       ],
       "code": "kareli",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kareli",
       "name_ka": "ქარელი",
       "name_ru": "Карели",
@@ -2944,7 +2945,7 @@
          44.4182664
       ],
       "code": "kaspi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kaspi",
       "name_ka": "კასპი",
       "name_ru": "Каспи",
@@ -3038,7 +3039,7 @@
          44.4781203
       ],
       "code": "kavtiskhevi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kavtiskhevi",
       "name_ka": "კავთისხევი",
       "name_ru": "Кавтисхеви",
@@ -3108,7 +3109,7 @@
          43.2100621
       ],
       "code": "kharagauli",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kharagauli",
       "name_ka": "ხარაგაული",
       "name_ru": "Харагаули",
@@ -3262,7 +3263,7 @@
          43.6012787
       ],
       "code": "khashuri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Khashuri",
       "name_ka": "ხაშური",
       "name_ru": "Хашури",
@@ -3465,7 +3466,7 @@
          41.8359509
       ],
       "code": "kheta",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kheta",
       "name_ka": "ხეთა",
       "name_ru": "Хета",
@@ -3510,7 +3511,7 @@
          41.9217663
       ],
       "code": "khobi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Khobi",
       "name_ka": "ხობი",
       "name_ru": "Хоби",
@@ -3555,7 +3556,7 @@
          41.7809772
       ],
       "code": "kobuleti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kobuleti",
       "name_ka": "ქობულეთი",
       "name_ru": "Кобулети",
@@ -3672,7 +3673,7 @@
          43.4437726
       ],
       "code": "kortaneti",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Kortaneti",
       "name_ka": "კორტანეთი",
       "name_ru": "Кортанети",
@@ -3742,7 +3743,7 @@
          44.5770264
       ],
       "code": "ksani",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ksani",
       "name_ka": "ქსანი",
       "name_ru": "Ксани",
@@ -3812,11 +3813,12 @@
          42.488545
       ],
       "code": "kutaisiinternationalairport",
-      "type": "airport",
+      "tier": "regular",
       "name_en": "Kutaisi International Airport",
       "name_ka": "ქუთაისის საერთაშორისო აეროპორტი",
       "name_ru": "Международный аэропорт Кутаиси",
       "gr_code": 57450,
+      "icon": "airport",
       "description": {
          "en": "Kutaisi International Airport Station, also known as Kopitnari, is located next to the airport of the same name. It's about 20 km southwest of the Kutaisi center and the railway station <a href='/stations/kutaisi1/'>Kutaisi-1</a>.<br>A free shuttle runs between the station and the airport.",
          "ru": "Станция Международный аэропорт Кутаиси, она же Копитнари, расположена рядом с одноименным аэропортом. Она находится примерно в 20 км к юго-западу от центра Кутаиси и железнодорожной станции <a href='/ru/stations/kutaisi1/'>Кутаиси-1</a>.<br>Между станцией и аэропортом ходит бесплатный шаттл.",
@@ -4006,7 +4008,7 @@
          42.7129589
       ],
       "code": "kutaisi1",
-      "type": "secondary",
+      "tier": "main",
       "name_en": "Kutaisi-1",
       "name_ka": "ქუთაისი-1",
       "name_ru": "Кутаиси-1",
@@ -4105,7 +4107,7 @@
          41.9497187
       ],
       "code": "kvaloni",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kvaloni",
       "name_ka": "ქვალონი",
       "name_ru": "Квалони",
@@ -4150,7 +4152,7 @@
          43.416572
       ],
       "code": "kvibisi",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Kvibisi",
       "name_ka": "ყვიბისი",
       "name_ru": "Квибиси",
@@ -4220,7 +4222,7 @@
          43.5335549
       ],
       "code": "kvishkheti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Kvishkheti",
       "name_ka": "ქვიშხეთი",
       "name_ru": "Квишхети",
@@ -4325,7 +4327,7 @@
          42.0429566
       ],
       "code": "lanchkhuti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Lanchkhuti",
       "name_ka": "ლანჩხუთი",
       "name_ru": "Ланчхути",
@@ -4418,7 +4420,7 @@
          41.6963963
       ],
       "code": "makhinjauri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Makhinjauri",
       "name_ka": "მახინჯაური",
       "name_ru": "Махинджаури",
@@ -4487,7 +4489,7 @@
          44.8031892
       ],
       "code": "marabda",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Marabda",
       "name_ka": "მარაბდა",
       "name_ru": "Марабда",
@@ -4503,7 +4505,7 @@
          43.2970712
       ],
       "code": "marelisi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Marelisi",
       "name_ka": "მარელისი",
       "name_ru": "Марелиси",
@@ -4656,7 +4658,7 @@
          41.8942196
       ],
       "code": "meria",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Meria",
       "name_ka": "მერია",
       "name_ru": "Мериа",
@@ -4702,7 +4704,7 @@
          43.3690838
       ],
       "code": "moliti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Moliti",
       "name_ka": "მოლითი",
       "name_ru": "Молити",
@@ -4856,7 +4858,7 @@
          44.7006683
       ],
       "code": "mtskheta",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Mtskheta",
       "name_ka": "მცხეთა",
       "name_ru": "Мцхета",
@@ -4950,7 +4952,7 @@
          41.802362
       ],
       "code": "natanebi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Natanebi",
       "name_ka": "ნატანები",
       "name_ru": "Натанеби",
@@ -5044,7 +5046,7 @@
          44.8546095
       ],
       "code": "navtlughi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Navtlughi",
       "name_ka": "ნავთლუღი",
       "name_ru": "Навтлуги",
@@ -5113,7 +5115,7 @@
          42.1222468
       ],
       "code": "nigoiti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Nigoiti",
       "name_ka": "ნიგოითი",
       "name_ru": "Нигоити",
@@ -5206,7 +5208,7 @@
          41.8295925
       ],
       "code": "ochkhamuri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ochkhamuri",
       "name_ka": "ოჩხამური",
       "name_ru": "Очхамури",
@@ -5275,7 +5277,7 @@
          42.0052627
       ],
       "code": "ozurgeti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ozurgeti",
       "name_ka": "ოზურგეთი",
       "name_ru": "Озургети",
@@ -5321,7 +5323,7 @@
          41.9192453
       ],
       "code": "platform11km",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Platform 11 km",
       "name_ka": "ბაქანი 11 კმ",
       "name_ru": "Платформа 11 км",
@@ -5366,7 +5368,7 @@
          41.9718319
       ],
       "code": "platform16km",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Platform 16 km",
       "name_ka": "ბაქანი 16 კმ",
       "name_ru": "Платформа 16 км",
@@ -5399,7 +5401,7 @@
          41.6791564
       ],
       "code": "poti",
-      "type": "secondary",
+      "tier": "main",
       "name_en": "Poti",
       "name_ka": "ფოთი",
       "name_ru": "Поти",
@@ -5451,7 +5453,7 @@
          42.7095432
       ],
       "code": "rioni",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Rioni",
       "name_ka": "რიონი",
       "name_ru": "Риони",
@@ -5622,7 +5624,7 @@
          45.0196703
       ],
       "code": "rustavicentral",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Rustavi Central",
       "name_ka": "რუსთავი ცენტრალი",
       "name_ru": "Рустави Центральная",
@@ -5692,7 +5694,7 @@
          45.0419414
       ],
       "code": "rustavicargo",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Rustavi-Cargo",
       "name_ka": "რუსთავი-სატვირთო",
       "name_ru": "Рустави-Грузовая",
@@ -5761,7 +5763,7 @@
          43.3996142
       ],
       "code": "sachkhere",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Sachkhere",
       "name_ka": "საჩხერე",
       "name_ru": "Сачхере",
@@ -5807,7 +5809,7 @@
          44.8078289
       ],
       "code": "sadakhlo",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Sadakhlo",
       "name_ka": "სადახლო",
       "name_ru": "Садахло",
@@ -5852,7 +5854,7 @@
          42.2919089
       ],
       "code": "sajavakho",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Sajavakho",
       "name_ka": "საჯავახო",
       "name_ru": "Саджавахо",
@@ -5921,7 +5923,7 @@
          42.7079609
       ],
       "code": "samtoteknikumi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Samtoteknikumi",
       "name_ka": "სამთოტექნიკუმი",
       "name_ru": "Самтотекникуми",
@@ -5937,7 +5939,7 @@
          42.3434633
       ],
       "code": "samtredia1",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Samtredia-1",
       "name_ka": "სამტრედია-1",
       "name_ru": "Самтредиа-1",
@@ -6079,7 +6081,7 @@
          42.3943393
       ],
       "code": "samtredia2",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Samtredia-2",
       "name_ka": "სამტრედია-2",
       "name_ru": "Самтредиа-2",
@@ -6148,7 +6150,7 @@
          43.5077892
       ],
       "code": "sarmanishviliskari",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Sarmanishviliskari",
       "name_ka": "სარმანიშვილისკარი",
       "name_ru": "Сарманишвилискари",
@@ -6217,7 +6219,7 @@
          42.0647648
       ],
       "code": "senaki",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Senaki",
       "name_ka": "სენაკი",
       "name_ru": "Сенаки",
@@ -6286,7 +6288,7 @@
          42.0807232
       ],
       "code": "shukhuti",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Shukhuti",
       "name_ka": "შუხუთი",
       "name_ru": "Шухути",
@@ -6331,7 +6333,7 @@
          41.8135659
       ],
       "code": "supsa",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Supsa",
       "name_ka": "სუფსა",
       "name_ru": "Супса",
@@ -6425,7 +6427,7 @@
          42.9033918
       ],
       "code": "sviri",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Sviri",
       "name_ka": "სვირი",
       "name_ru": "Свири",
@@ -6472,11 +6474,12 @@
          44.7995883
       ],
       "code": "tbilisicentralstation",
-      "type": "main",
+      "tier": "main",
       "name_en": "Tbilisi Central Station",
       "name_ka": "თბილისის ცენტრალური სადგური",
       "name_ru": "Центральный вокзал Тбилиси",
       "gr_code": 56014,
+      "icon": "star",
       "description": {
          "en": "This is the main station in Tbilisi. All railway journeys in Georgia start here.",
          "ru": "Это главный вокзал в Тбилиси. Здесь начинаются все железнодорожные путешествия по Грузии.",
@@ -6788,7 +6791,7 @@
          44.9002098
       ],
       "code": "tbilisimarshalling",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Tbilisi Marshalling",
       "name_ka": "თბილისი დახარისხება",
       "name_ru": "Тбилиси-Сортировочная",
@@ -6858,7 +6861,7 @@
          44.7859009
       ],
       "code": "tbilisicargo",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Tbilisi-Cargo",
       "name_ka": "თბილისი სატვირთო",
       "name_ru": "Тбилиси-Грузовая",
@@ -6927,7 +6930,7 @@
          41.7798188
       ],
       "code": "ureki",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Ureki",
       "name_ka": "ურეკი",
       "name_ru": "Уреки",
@@ -7074,7 +7077,7 @@
          43.314668
       ],
       "code": "vakhanistsqali",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Vakhanistsqali",
       "name_ka": "ვახანისწყალი",
       "name_ru": "Ваханисцкали",
@@ -7131,7 +7134,7 @@
          44.486681
       ],
       "code": "vanadzor",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Vanadzor",
       "name_ka": "ვანაძორი",
       "name_ru": "Ванадзор",
@@ -7176,7 +7179,7 @@
          43.4256519
       ],
       "code": "vardgineti",
-      "type": "secondary",
+      "tier": "halt",
       "name_en": "Vardgineti",
       "name_ka": "ვარდგინეთი",
       "name_ru": "Вардгинети",
@@ -7246,7 +7249,7 @@
          44.9483887
       ],
       "code": "veli",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Veli",
       "name_ka": "ველი",
       "name_ru": "Вели",
@@ -7315,7 +7318,7 @@
          44.507897
       ],
       "code": "yerevan",
-      "type": "secondary",
+      "tier": "main",
       "name_en": "Yerevan",
       "name_ka": "ერევანი",
       "name_ru": "Ереван",
@@ -7361,7 +7364,7 @@
          47.1494065
       ],
       "code": "yevlakh",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Yevlakh",
       "name_ka": "Yevlax Stansiyası",
       "name_ru": "Евлах",
@@ -7431,7 +7434,7 @@
          44.7730314
       ],
       "code": "zahesi",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Zahesi",
       "name_ka": "ზაჰესი",
       "name_ru": "Захеси",
@@ -7501,7 +7504,7 @@
          43.039096
       ],
       "code": "zestafoni",
-      "type": "secondary",
+      "tier": "regular",
       "name_en": "Zestafoni",
       "name_ka": "ზესტაფონი",
       "name_ru": "Зестафони",
@@ -7680,7 +7683,7 @@
          41.8601677
       ],
       "code": "zugdidi",
-      "type": "secondary",
+      "tier": "main",
       "name_en": "Zugdidi",
       "name_ka": "ზუგდიდი",
       "name_ru": "Зугдиди",

@@ -25,6 +25,9 @@ export const DEFAULT_MAP_CENTER = [44.799748, 41.721700]; // [lon, lat]
 
 export const DEFAULT_MAP_ZOOM = 7;
 
+// On the main page halts show only from this zoom on, at country scale they crowd the larger stations
+export const HALTS_MIN_ZOOM = 9;
+
 export const DESKTOP_THRESHOLD = 768;
 
 export const DESKTOP_BOUNDS_PADDING = 30;

@@ -12,12 +12,15 @@ pageNotFound: Page Not Found
 pageNotFoundText: The requested page doesn't exist or has been moved.
 returnHome: Return to Home 
 footerText: "🚂 Georgian train timetables since 2024"
-showMap: Show the map
 allNews: All news
 lastUpdated: Last updated
 mainPageTitle: Georgian trains on the map
 mainPageIntro: Timetables of all passenger trains in Georgia and international trains to Yerevan and Baku. Pick a route, a station or a point on the map.
-hideMap: Hide the map
 galleryPrevious: Previous photo
 galleryNext: Next photo
 galleryClose: Close
+stationsMain: Main stations
+stationsRegular: Other stations
+stationsHalts: Halts
+stationsHaltsDescription: Trains stop here, but Georgian Railways does not publish the stop times.
+expandMap: Expand map

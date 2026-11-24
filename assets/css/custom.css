@@ -762,6 +762,31 @@ body, html {
     border: 2px solid #fff;
 }
 
+/* Station tiers (scripts/make_stations_files.py). The rules come after .active so that its border
+   shorthand does not reset the width */
+.station-marker.station-marker-main {
+    width: 24px;
+    height: 24px;
+    border-width: 3px;
+    z-index: 1;
+}
+
+.station-marker.station-marker-halt {
+    width: 12px;
+    height: 12px;
+}
+
+/* A 12px dot is too small to tap, the pseudo-element widens the hit area */
+.station-marker-halt::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+}
+
+.halts-hidden .station-marker-halt:not(.active) {
+    display: none;
+}
+
 .station-icon {
     width: 14px;
     height: 14px;

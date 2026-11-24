@@ -3,7 +3,7 @@
 import json
 import pytest
 import fastjsonschema
-from utils import STATIONS_FILE, time_string_to_minutes
+from utils import STATIONS_FILE, STATION_META_FILE, time_string_to_minutes
 
 STATIONS_SCHEMA = {
   "$schema": "http://json-schema.org/schema#",
@@ -25,9 +25,13 @@ STATIONS_SCHEMA = {
       "type": "string",
       "minLength": 1
     },
-    "type": {
+    "tier": {
       "type": "string",
-      "enum": ["primary", "secondary", "beach", "airport", "main"]
+      "enum": ["main", "regular", "halt"]
+    },
+    "icon": {
+      "type": "string",
+      "enum": ["beach", "airport", "star"]
     },
     "name_en": {
       "type": "string",
@@ -67,7 +71,7 @@ STATIONS_SCHEMA = {
     "id",
     "coords",
     "code",
-    "type",
+    "tier",
     "name_en",
     "name_ka",
     "name_ru",
@@ -137,3 +141,10 @@ class TestDataStationsFile:
                 station_validator(station)
             except fastjsonschema.JsonSchemaException as e:
                 pytest.fail(f"Станция {station['code']} не соответствует схеме: {e}")
+
+    def test_station_meta_codes_exist(self, stations_data):
+        """A typo in a station_meta.json code would silently leave the station without its tier or icon"""
+        with open(STATION_META_FILE, 'r', encoding='utf-8') as f:
+            station_meta = json.load(f)
+        unknown = sorted(set(station_meta) - set(stations_data))
+        assert not unknown, f"Коды из station_meta.json, которых нет в stations.json: {unknown}"

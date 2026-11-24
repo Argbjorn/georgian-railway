@@ -1,0 +1,8 @@
+{
+   "tbilisicentralstation": {"tier": "main", "icon": "star"},
+   "batumicentral": {"tier": "main", "icon": "beach"},
+   "kutaisi1": {"tier": "main"},
+   "zugdidi": {"tier": "main"},
+   "poti": {"tier": "main"},
+   "kutaisiinternationalairport": {"icon": "airport"}
+}
