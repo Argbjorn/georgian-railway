@@ -70,9 +70,9 @@ export const routes = [
       "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. <br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -161,9 +161,9 @@ export const routes = [
       "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. <br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -252,9 +252,9 @@ export const routes = [
       "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. <br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -343,9 +343,9 @@ export const routes = [
       "train_type": "ady",
       "operator": "AR",
       "has_arrival_time": false,
-      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020. The service is operated by a new Stadler train of Azerbaijan Railways — not the double-deck seated Stadler that runs between Tbilisi and Batumi, but a comfortable sleeping train.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
-      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. Маршрут обслуживается новым поездом Stadler Азербайджанских железных дорог — это не двухэтажный сидячий Stadler, который ходит между Тбилиси и Батуми, а комфортный спальный поезд.<br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
-      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ. მარშრუტი მომსახურდება აზერბაიჯანის რკინიგზის ახალი Stadler-ის მატარებლით — ეს არ არის ორსართულიანი სასხდომი Stadler, რომელიც თბილისსა და ბათუმს შორის მოძრაობს, არამედ კომფორტული სასძინებელი მატარებელი.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
+      "description_en": "The Baku — Tbilisi — Baku train launched on May 26, 2026, for the first time since the route was suspended in 2020.<br><br>Important: tickets (in both directions) can only be purchased by citizens of countries with a visa-free regime with Azerbaijan. Citizens of the European Union, the United Kingdom, the USA, and a number of other countries cannot purchase tickets. The list of visa-free countries can be found on the <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">website of the Ministry of Foreign Affairs of Azerbaijan</a>.",
+      "description_ru": "Поезд Баку — Тбилиси — Баку запущен 26 мая 2026 года, впервые после закрытия этого направления в 2020 году. <br><br>Важно: билеты (в обе стороны) могут приобрести только граждане стран, имеющих безвизовый режим с Азербайджаном. Граждане Евросоюза, Великобритании, США и ряда других стран купить билет не могут. Список стран с безвизовым режимом можно найти на <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">сайте МИД Азербайджана</a>.",
+      "description_ka": "ბაქო — თბილისი — ბაქოს მატარებელი გაიხსნა 2026 წლის 26 მაისს, პირველად 2020 წელს ამ მიმართულების დახურვის შემდეგ.<br><br>მნიშვნელოვანია: ბილეთების შეძენა (ორივე მიმართულებით) შეუძლიათ მხოლოდ იმ ქვეყნების მოქალაქეებს, რომლებსაც აზერბაიჯანთან უვიზო რეჟიმი აქვთ. ევროკავშირის, დიდი ბრიტანეთის, აშშ-ის და სხვა ქვეყნების მოქალაქეებს ბილეთის შეძენა არ შეუძლიათ. უვიზო რეჟიმის მქონე ქვეყნების სია შეგიძლიათ იხილოთ <a href=\"https://mfa.gov.az/en/category/viza/vizasiz-gedis-gelis-rejimi-tetbiq-olunan-olkeler\" target=\"_blank\">აზერბაიჯანის საგარეო საქმეთა სამინისტროს საიტზე</a>.",
       "extended_description_en": null,
       "extended_description_ru": null,
       "extended_description_ka": null,
@@ -3029,6 +3029,13 @@ export const routes = [
             "stop_time": 1
          },
          {
+            "code": "didube",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": "-",
+            "stop_time": null
+         },
+         {
             "code": "tbilisicentralstation",
             "role": "end",
             "departure_time": "-",
@@ -3286,7 +3293,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -3298,112 +3305,119 @@ export const routes = [
             "code": "zugdidi",
             "role": "start",
             "departure_time": "18:00",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "ingiri",
             "role": "middle",
-            "departure_time": "18:03",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:15",
+            "arrival_time": "18:13",
+            "stop_time": 2
          },
          {
             "code": "kheta",
             "role": "middle",
-            "departure_time": "18:49",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:50",
+            "arrival_time": "18:49",
+            "stop_time": 1
          },
          {
             "code": "khobi",
             "role": "middle",
-            "departure_time": "18:59",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:01",
+            "arrival_time": "18:59",
+            "stop_time": 2
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "19:19",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:27",
+            "arrival_time": "19:19",
+            "stop_time": 8
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "19:42",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:44",
+            "arrival_time": "19:42",
+            "stop_time": 2
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "20:00",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:03",
+            "arrival_time": "20:00",
+            "stop_time": 3
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "20:14",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:16",
+            "arrival_time": "20:14",
+            "stop_time": 2
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "20:29",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:36",
+            "arrival_time": "20:29",
+            "stop_time": 7
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "20:57",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:00",
+            "arrival_time": "20:57",
+            "stop_time": 3
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "21:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:20",
+            "arrival_time": "21:18",
+            "stop_time": 2
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "21:33",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:34",
+            "arrival_time": "21:33",
+            "stop_time": 1
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "21:44",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:45",
+            "arrival_time": "21:44",
+            "stop_time": 1
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "22:02",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "22:05",
+            "arrival_time": "22:02",
+            "stop_time": 3
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "22:31",
-            "arrival_time": null,
+            "departure_time": "22:33",
+            "arrival_time": "22:31",
+            "stop_time": 2
+         },
+         {
+            "code": "didube",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "23:27",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "23:27",
             "stop_time": null
          }
       ],
@@ -3433,7 +3447,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -3445,112 +3459,112 @@ export const routes = [
             "code": "tbilisicentralstation",
             "role": "start",
             "departure_time": "08:15",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "09:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:06",
+            "arrival_time": "09:04",
+            "stop_time": 2
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "09:33",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:36",
+            "arrival_time": "09:33",
+            "stop_time": 3
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "09:53",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:54",
+            "arrival_time": "09:53",
+            "stop_time": 1
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "10:04",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:05",
+            "arrival_time": "10:04",
+            "stop_time": 1
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "10:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:20",
+            "arrival_time": "10:18",
+            "stop_time": 2
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "10:38",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:41",
+            "arrival_time": "10:38",
+            "stop_time": 3
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "11:03",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:10",
+            "arrival_time": "11:03",
+            "stop_time": 7
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "11:22",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:24",
+            "arrival_time": "11:22",
+            "stop_time": 2
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "11:34",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:37",
+            "arrival_time": "11:34",
+            "stop_time": 3
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "11:55",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:57",
+            "arrival_time": "11:55",
+            "stop_time": 2
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "12:12",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:17",
+            "arrival_time": "12:12",
+            "stop_time": 5
          },
          {
             "code": "khobi",
             "role": "middle",
-            "departure_time": "12:35",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:37",
+            "arrival_time": "12:35",
+            "stop_time": 2
          },
          {
             "code": "kheta",
             "role": "middle",
-            "departure_time": "12:47",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "12:48",
+            "arrival_time": "12:47",
+            "stop_time": 1
          },
          {
             "code": "ingiri",
             "role": "middle",
-            "departure_time": "13:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "13:23",
+            "arrival_time": "13:21",
+            "stop_time": 2
          },
          {
             "code": "zugdidi",
             "role": "end",
-            "departure_time": "13:36",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "13:36",
             "stop_time": null
          }
       ],
@@ -3580,7 +3594,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -3592,105 +3606,112 @@ export const routes = [
             "code": "poti",
             "role": "start",
             "departure_time": "08:10",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "chaladidi",
             "role": "middle",
-            "departure_time": "08:25",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:27",
+            "arrival_time": "08:25",
+            "stop_time": 2
          },
          {
             "code": "kvaloni",
             "role": "middle",
-            "departure_time": "08:37",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:39",
+            "arrival_time": "08:37",
+            "stop_time": 2
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "08:48",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "08:56",
+            "arrival_time": "08:48",
+            "stop_time": 8
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "09:08",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:12",
+            "arrival_time": "09:08",
+            "stop_time": 4
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "09:28",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:31",
+            "arrival_time": "09:28",
+            "stop_time": 3
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "09:42",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "09:44",
+            "arrival_time": "09:42",
+            "stop_time": 2
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "09:56",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:00",
+            "arrival_time": "09:56",
+            "stop_time": 4
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "10:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:24",
+            "arrival_time": "10:21",
+            "stop_time": 3
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "10:42",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:44",
+            "arrival_time": "10:42",
+            "stop_time": 2
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "10:57",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "10:58",
+            "arrival_time": "10:57",
+            "stop_time": 1
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "11:08",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:09",
+            "arrival_time": "11:08",
+            "stop_time": 1
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "11:26",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "11:29",
+            "arrival_time": "11:26",
+            "stop_time": 3
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "11:55",
-            "arrival_time": null,
+            "departure_time": "11:57",
+            "arrival_time": "11:55",
+            "stop_time": 2
+         },
+         {
+            "code": "didube",
+            "role": "middle",
+            "departure_time": "-",
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "tbilisicentralstation",
             "role": "end",
-            "departure_time": "12:51",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "12:51",
             "stop_time": null
          }
       ],
@@ -3720,7 +3741,7 @@ export const routes = [
       "online_tickets_new_site": true,
       "train_type": "vmk-grt",
       "operator": "GR",
-      "has_arrival_time": false,
+      "has_arrival_time": true,
       "description_en": null,
       "description_ru": null,
       "description_ka": null,
@@ -3732,105 +3753,105 @@ export const routes = [
             "code": "tbilisicentralstation",
             "role": "start",
             "departure_time": "17:30",
-            "arrival_time": null,
+            "arrival_time": "-",
             "stop_time": null
          },
          {
             "code": "gori",
             "role": "middle",
-            "departure_time": "18:19",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:21",
+            "arrival_time": "18:19",
+            "stop_time": 2
          },
          {
             "code": "khashuri",
             "role": "middle",
-            "departure_time": "18:48",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "18:51",
+            "arrival_time": "18:48",
+            "stop_time": 3
          },
          {
             "code": "moliti",
             "role": "middle",
-            "departure_time": "19:08",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:09",
+            "arrival_time": "19:08",
+            "stop_time": 1
          },
          {
             "code": "marelisi",
             "role": "middle",
-            "departure_time": "19:19",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:20",
+            "arrival_time": "19:19",
+            "stop_time": 1
          },
          {
             "code": "kharagauli",
             "role": "middle",
-            "departure_time": "19:33",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:35",
+            "arrival_time": "19:33",
+            "stop_time": 2
          },
          {
             "code": "zestafoni",
             "role": "middle",
-            "departure_time": "19:53",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "19:56",
+            "arrival_time": "19:53",
+            "stop_time": 3
          },
          {
             "code": "rioni",
             "role": "middle",
-            "departure_time": "20:18",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:22",
+            "arrival_time": "20:18",
+            "stop_time": 4
          },
          {
             "code": "kutaisiinternationalairport",
             "role": "middle",
-            "departure_time": "20:34",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:36",
+            "arrival_time": "20:34",
+            "stop_time": 2
          },
          {
             "code": "samtredia1",
             "role": "middle",
-            "departure_time": "20:46",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "20:49",
+            "arrival_time": "20:46",
+            "stop_time": 3
          },
          {
             "code": "abasha",
             "role": "middle",
-            "departure_time": "21:06",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:09",
+            "arrival_time": "21:06",
+            "stop_time": 3
          },
          {
             "code": "senaki",
             "role": "middle",
-            "departure_time": "21:21",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:26",
+            "arrival_time": "21:21",
+            "stop_time": 5
          },
          {
             "code": "kvaloni",
             "role": "middle",
-            "departure_time": "21:35",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:37",
+            "arrival_time": "21:35",
+            "stop_time": 2
          },
          {
             "code": "chaladidi",
             "role": "middle",
-            "departure_time": "21:47",
-            "arrival_time": null,
-            "stop_time": null
+            "departure_time": "21:49",
+            "arrival_time": "21:47",
+            "stop_time": 2
          },
          {
             "code": "poti",
             "role": "end",
-            "departure_time": "22:04",
-            "arrival_time": null,
+            "departure_time": "-",
+            "arrival_time": "22:04",
             "stop_time": null
          }
       ],
