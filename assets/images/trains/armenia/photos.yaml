@@ -1,0 +1,11 @@
+cover: exterior-1.jpg
+
+galleries:
+  main:
+    - src: exterior-1.jpg
+      alt:
+        ru: Электровоз ВЛ10-149 с поездом «Армения»
+        en: VL10-149 electric locomotive with the Armenia train
+        ka: ელმავალი VL10-149 მატარებლით „სომხეთი“
+      copyright: pav_ezh
+      copyright_link: https://www.threads.com/@pav_ezh

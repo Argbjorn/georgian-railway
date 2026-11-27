@@ -1,7 +1,7 @@
 ---
 title: "Поезд «Армения»"
 description: "Фирменный поезд «Армения» Южно-Кавказской железной дороги из Еревана в Тбилиси и Батуми: классы, удобства, еда и багаж."
-images: [/images/share/trains-list.jpg]
+images: [/images/share/trains/armenia.jpg]
 summary: "спальные вагоны ЮКЖД 2021 года, плацкарт, купе и СВ"
 weight: 6
 ---
